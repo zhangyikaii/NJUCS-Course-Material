@@ -1,0 +1,100 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/My_design/Trigger/simulation/modelsim
+vmyasynchro
+Z1 !s110 1554625456
+!i10b 1
+!s100 f8HJF5m>7<P6nO]To:m?W0
+Ijg44SDh_=^0bfZg_0`MBA2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1554623954
+8E:/My_design/Trigger/myasynchro.v
+FE:/My_design/Trigger/myasynchro.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1554625456.000000
+!s107 E:/My_design/Trigger/myasynchro.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/Trigger|E:/My_design/Trigger/myasynchro.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/My_design/Trigger
+Z7 tCvgOpt 0
+vmysynchro
+R1
+!i10b 1
+!s100 zRb3WU1Yz18:cNFJMMVoA3
+ICB9LAfVl6;;TK3;alLEG[0
+R2
+R0
+w1554623613
+8E:/My_design/Trigger/mysynchro.v
+FE:/My_design/Trigger/mysynchro.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/My_design/Trigger/mysynchro.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/Trigger|E:/My_design/Trigger/mysynchro.v|
+!i113 1
+R5
+R6
+R7
+vTrigger
+R1
+!i10b 1
+!s100 3_EaVe4GjI?J7Sc03X4cm0
+InzN3oHE>jJJWQba?h]ga81
+R2
+R0
+w1554624044
+8E:/My_design/Trigger/Trigger.v
+FE:/My_design/Trigger/Trigger.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/My_design/Trigger/Trigger.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/Trigger|E:/My_design/Trigger/Trigger.v|
+!i113 1
+R5
+R6
+R7
+n@trigger
+vTrigger_vlg_tst
+R1
+!i10b 1
+!s100 OO[0fI:ENKgl1QC31d_>G3
+ISc8Di90djeb[Hm`08f`Od2
+R2
+R0
+w1554625398
+8E:/My_design/Trigger/simulation/modelsim/Trigger.vt
+FE:/My_design/Trigger/simulation/modelsim/Trigger.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/My_design/Trigger/simulation/modelsim/Trigger.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/Trigger/simulation/modelsim|E:/My_design/Trigger/simulation/modelsim/Trigger.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/My_design/Trigger/simulation/modelsim
+R7
+n@trigger_vlg_tst
