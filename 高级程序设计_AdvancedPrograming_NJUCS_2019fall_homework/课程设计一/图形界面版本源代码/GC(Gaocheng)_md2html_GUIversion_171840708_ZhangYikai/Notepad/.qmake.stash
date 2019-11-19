@@ -1,0 +1,21 @@
+QMAKE_CXX.INCDIRS = \
+    E:/QT5.10.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include \
+    E:/QT5.10.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed \
+    E:/QT5.10.0/Tools/mingw530_32/i686-w64-mingw32/include \
+    E:/QT5.10.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ \
+    E:/QT5.10.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 \
+    E:/QT5.10.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward
+QMAKE_CXX.LIBDIRS = \
+    E:/QT5.10.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0 \
+    E:/QT5.10.0/Tools/mingw530_32/lib/gcc \
+    E:/QT5.10.0/Tools/mingw530_32/i686-w64-mingw32/lib \
+    E:/QT5.10.0/Tools/mingw530_32/lib
+QMAKE_CXX.QT_COMPILER_STDCXX = 199711L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 5
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 3
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 0
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
