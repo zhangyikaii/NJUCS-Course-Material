@@ -1,1 +1,9 @@
-# DataMining_NJUCS_2019spring_homework
+# 南京大学 NJU 计算机系 CS 数据挖掘2019春季课程 大作业 代码 报告
+
+---
+
+任务: 短文本多分类, 为短文本推荐合适的`Emoji` :feet:
+
+没有`BERT`之类, 就是简单的`word2vec` + `LSTM`, `tf-idf` + 机器学习的方法似乎效果更不好.
+
+入门的第一个`NLP`项目哈哈, 最后好像是`Top 20%`, 另外课程score: `93`.
