@@ -1,0 +1,42 @@
+|exp03
+x[0] => Equal0.IN31
+x[1] => y.DATAA
+x[1] => Equal0.IN30
+x[2] => y.OUTPUTSELECT
+x[2] => y.DATAA
+x[2] => Equal0.IN29
+x[3] => y.OUTPUTSELECT
+x[3] => y.OUTPUTSELECT
+x[3] => Equal0.IN28
+x[4] => y.OUTPUTSELECT
+x[4] => y.OUTPUTSELECT
+x[4] => y.DATAA
+x[4] => Equal0.IN27
+x[5] => y.OUTPUTSELECT
+x[5] => y.OUTPUTSELECT
+x[5] => y.OUTPUTSELECT
+x[5] => Equal0.IN26
+x[6] => y.OUTPUTSELECT
+x[6] => y.OUTPUTSELECT
+x[6] => y.OUTPUTSELECT
+x[6] => Equal0.IN25
+x[7] => y.OUTPUTSELECT
+x[7] => y.OUTPUTSELECT
+x[7] => y.OUTPUTSELECT
+x[7] => Equal0.IN24
+en => y.OUTPUTSELECT
+en => y.OUTPUTSELECT
+en => y.OUTPUTSELECT
+y[0] << y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] << y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] << y.DB_MAX_OUTPUT_PORT_TYPE
+flag << Equal0.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] << seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] << seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] << WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] << WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

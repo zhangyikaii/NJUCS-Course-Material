@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/My_design/exp030/simulation/modelsim
+vexp030
+Z1 !s110 1552827258
+!i10b 1
+!s100 zcIKi53fjabJdcS65LRBQ3
+IA;0:JdLa<V^EAzdPTGcOh2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1552825479
+8E:/My_design/exp030/exp030.v
+FE:/My_design/exp030/exp030.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1552827258.000000
+!s107 E:/My_design/exp030/exp030.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/exp030|E:/My_design/exp030/exp030.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/My_design/exp030
+Z6 tCvgOpt 0
+vexp030_vlg_tst
+R1
+!i10b 1
+!s100 `Q?[8VZJzZX<>XfUn<BYm1
+I3mio28B1fBK9T8_iEIjh30
+R2
+R0
+w1552826660
+8E:/My_design/exp030/simulation/modelsim/exp030.vt
+FE:/My_design/exp030/simulation/modelsim/exp030.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/My_design/exp030/simulation/modelsim/exp030.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/exp030/simulation/modelsim|E:/My_design/exp030/simulation/modelsim/exp030.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/My_design/exp030/simulation/modelsim
+R6

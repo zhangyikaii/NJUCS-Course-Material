@@ -1,0 +1,18 @@
+|exp030
+x[0] => Mux0.IN19
+x[0] => Mux1.IN19
+x[0] => Mux2.IN19
+x[1] => Mux0.IN18
+x[1] => Mux1.IN18
+x[1] => Mux2.IN18
+x[2] => Mux0.IN17
+x[2] => Mux1.IN17
+x[2] => Mux2.IN17
+x[3] => Mux0.IN16
+x[3] => Mux1.IN16
+x[3] => Mux2.IN16
+en => y[1].IN1
+y[0] << y[0].DB_MAX_OUTPUT_PORT_TYPE
+y[1] << y[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

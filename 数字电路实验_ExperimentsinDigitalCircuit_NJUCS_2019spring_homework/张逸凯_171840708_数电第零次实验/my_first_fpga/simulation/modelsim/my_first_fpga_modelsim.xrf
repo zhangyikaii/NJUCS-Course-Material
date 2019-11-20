@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, E:/My_design/my_first_fpga/my_first_fpga.v
+source_file = 1, E:/My_design/my_first_fpga/db/my_first_fpga.cbx.xml
+design_name = my_first_fpga
+instance = comp, \F~output , F~output, my_first_fpga, 1
+instance = comp, \A~input , A~input, my_first_fpga, 1
+instance = comp, \B~input , B~input, my_first_fpga, 1
+instance = comp, \F~0 , F~0, my_first_fpga, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, my_first_fpga, 1

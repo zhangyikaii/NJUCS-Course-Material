@@ -1,0 +1,50 @@
+# Reading E:/intelFPGA_lite/modelsim_ase/tcl/vsim/pref.tcl
+# do sregister_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying E:/intelFPGA_lite/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/My_design/sregister {E:/My_design/sregister/sregister.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:38:13 on Apr 28,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/My_design/sregister" E:/My_design/sregister/sregister.v 
+# -- Compiling module sregister
+# 
+# Top level modules:
+# 	sregister
+# End time: 10:38:13 on Apr 28,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/My_design/sregister/simulation/modelsim {E:/My_design/sregister/simulation/modelsim/sregister.vt}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:38:13 on Apr 28,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/My_design/sregister/simulation/modelsim" E:/My_design/sregister/simulation/modelsim/sregister.vt 
+# -- Compiling module sregister_vlg_tst
+# 
+# Top level modules:
+# 	sregister_vlg_tst
+# End time: 10:38:14 on Apr 28,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  sregister_vlg_tst
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" sregister_vlg_tst 
+# Start time: 10:38:14 on Apr 28,2019
+# Loading work.sregister_vlg_tst
+# Loading work.sregister
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 10:48:24 on Apr 28,2019, Elapsed time: 0:10:10
+# Errors: 0, Warnings: 0

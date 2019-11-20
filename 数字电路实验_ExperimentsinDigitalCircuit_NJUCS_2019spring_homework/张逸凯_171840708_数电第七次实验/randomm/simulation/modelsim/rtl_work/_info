@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/My_design/randomm/simulation/modelsim
+vrandomm
+Z1 !s110 1556435408
+!i10b 1
+!s100 7W1@VIccb8CBRTzNCaD4G3
+IFV4F_zDhU?^cjCjK?8Hd53
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1556425116
+8E:/My_design/randomm/randomm.v
+FE:/My_design/randomm/randomm.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1556435408.000000
+!s107 E:/My_design/randomm/randomm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/randomm|E:/My_design/randomm/randomm.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/My_design/randomm
+Z6 tCvgOpt 0
+vrandomm_vlg_tst
+R1
+!i10b 1
+!s100 noB`g<2JkVQinBVmDV[R]2
+IhOd7:;MjgF@Wa4l=^5@QE0
+R2
+R0
+w1556425363
+8E:/My_design/randomm/simulation/modelsim/randomm.vt
+FE:/My_design/randomm/simulation/modelsim/randomm.vt
+L0 28
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/My_design/randomm/simulation/modelsim/randomm.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/My_design/randomm/simulation/modelsim|E:/My_design/randomm/simulation/modelsim/randomm.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/My_design/randomm/simulation/modelsim
+R6
