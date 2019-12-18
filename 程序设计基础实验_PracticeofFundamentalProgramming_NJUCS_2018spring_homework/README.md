@@ -4,11 +4,6 @@
 
 大一的课程, 第一次接触这样代码量的项目, 挺好玩的但是很花时间..
 
-score: `95`
+sco:92
 
-:grinning:
-
-
-
-`star` 一下 :star2:
-
+star :night_with_stars:

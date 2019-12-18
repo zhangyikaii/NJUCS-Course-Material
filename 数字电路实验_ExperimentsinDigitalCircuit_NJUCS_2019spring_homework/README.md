@@ -4,11 +4,11 @@
 
 *感谢 Hongqiu Wu, Xiangrong Bin 同学!*
 
-score: `97`, 虽然是个水课
+sco:97
 
 :slightly_smiling_face:
 
 
 
-`star` 一下呗! :night_with_stars:
+star :night_with_stars:
 

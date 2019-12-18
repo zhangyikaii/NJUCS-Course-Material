@@ -4,6 +4,10 @@
 
 任务: 短文本多分类, 为短文本推荐合适的`Emoji` :feet:
 
-没有`BERT`之类, 就是简单的`word2vec` + `LSTM`, `tf-idf` + 机器学习的方法似乎效果更不好.
+没有Transformer, 就是简单的`word2vec` + `LSTM`, `tf-idf` + 机器学习的方法似乎效果更不好.
 
-入门的第一个`NLP`项目哈哈, 最后好像是`Top 20%`, 另外课程score: `93`.
+sco:90
+
+
+
+star :night_with_stars:

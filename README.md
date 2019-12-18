@@ -4,11 +4,12 @@
 
 `Nanjing University course materials`
 
-上过或正在上的一些课程资料, 主要是作业, 实验报告, 大作业代码.
+我上过或正在上的一些课程资料, 主要是作业, 实验报告, 大作业代码.
 
 
 
 加油!!! 更新中..
 
-:slightly_smiling_face:
 
+
+star :night_with_stars:
