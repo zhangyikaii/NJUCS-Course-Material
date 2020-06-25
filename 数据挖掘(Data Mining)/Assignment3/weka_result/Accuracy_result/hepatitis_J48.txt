@@ -1,0 +1,93 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+ASCITES = no
+|   SPIDERS = no
+|   |   PROTIME <= 43
+|   |   |   FATIGUE = no: LIVE (3.0)
+|   |   |   FATIGUE = yes: DIE (3.0)
+|   |   PROTIME > 43: LIVE (92.0/3.0)
+|   SPIDERS = yes
+|   |   SEX = male: LIVE (6.0)
+|   |   SEX = female
+|   |   |   LIVER_FIRM = no
+|   |   |   |   ALK_PHOSPHATE <= 115: DIE (8.0/1.0)
+|   |   |   |   ALK_PHOSPHATE > 115: LIVE (2.0)
+|   |   |   LIVER_FIRM = yes
+|   |   |   |   BILIRUBIN <= 1.427517: LIVE (11.0)
+|   |   |   |   BILIRUBIN > 1.427517
+|   |   |   |   |   HISTOLOGY = no: DIE (2.0)
+|   |   |   |   |   HISTOLOGY = yes
+|   |   |   |   |   |   ALK_PHOSPHATE <= 110: DIE (3.0)
+|   |   |   |   |   |   ALK_PHOSPHATE > 110: LIVE (5.0)
+ASCITES = yes
+|   AGE <= 28: LIVE (3.0)
+|   AGE > 28: DIE (17.0/3.0)
+
+Number of Leaves  : 	12
+
+Size of the tree : 	23
+
+
+Time taken to build model: 0.6 seconds
+
+Time taken to test model on training data: 0.02 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         148               95.4839 %
+Incorrectly Classified Instances         7                4.5161 %
+Kappa statistic                          0.8637
+Mean absolute error                      0.0806
+Root mean squared error                  0.2008
+Relative absolute error                 24.44   %
+Root relative squared error             49.6    %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.906    0.033    0.879      0.906    0.892      0.864    0.953     0.864     DIE
+                 0.967    0.094    0.975      0.967    0.971      0.864    0.953     0.978     LIVE
+Weighted Avg.    0.955    0.081    0.955      0.955    0.955      0.864    0.953     0.954     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  29   3 |   a = DIE
+   4 119 |   b = LIVE
+
+Time taken to perform cross-validation: 0.59 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         125               80.6452 %
+Incorrectly Classified Instances        30               19.3548 %
+Kappa statistic                          0.3807
+Mean absolute error                      0.218 
+Root mean squared error                  0.4203
+Relative absolute error                 66.0075 %
+Root relative squared error            103.8002 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.469    0.106    0.536      0.469    0.500      0.382    0.692     0.433     DIE
+                 0.894    0.531    0.866      0.894    0.880      0.382    0.692     0.846     LIVE
+Weighted Avg.    0.806    0.443    0.798      0.806    0.802      0.382    0.692     0.760     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  15  17 |   a = DIE
+  13 110 |   b = LIVE
+

@@ -1,0 +1,513 @@
+item: ('lp',) , 0.101
+item: ('ll', 'make', 'less') , 0.101
+item: ('make', 'll', 'ls') , 0.101
+item: ('ls', 'make', 'll', 'cd') , 0.101
+item: ('less', 'll', 'make', 'cd') , 0.101
+item: ('-s',) , 0.103
+item: ('-', 'grep') , 0.103
+item: ('ll', 'mv') , 0.103
+item: ('grep', '-', 'cd') , 0.103
+item: ('ll', 'mv', 'cd') , 0.103
+item: ('ls', 'less', 'll', '-') , 0.103
+item: ('less', 'll', '-', 'cd', 'ls') , 0.103
+item: ('rm', 'mv') , 0.104
+item: ('qu', 'ls') , 0.104
+item: ('make', 'ls', 'less') , 0.104
+item: ('rm', 'mv', 'ls') , 0.104
+item: ('qu', 'ls', 'cd') , 0.104
+item: ('rm', 'mv', 'cd') , 0.104
+item: ('mv', 'ls', 'rm', 'cd') , 0.104
+item: ('ls', 'less', 'make', 'cd') , 0.104
+item: ('ll', 'grep') , 0.106
+item: ('ll', 'grep', 'cd') , 0.106
+item: ('make', '-') , 0.108
+item: ('-', 'ls', 'less') , 0.108
+item: ('make', '-', 'cd') , 0.108
+item: ('ls', 'less', '-', 'cd') , 0.108
+item: ('vi', 'ls') , 0.110
+item: ('vi', 'ls', 'cd') , 0.110
+item: ('make', 'll') , 0.112
+item: ('qu', 'cd') , 0.112
+item: ('ll', 'make', 'cd') , 0.112
+item: ('ll', '-', 'less') , 0.112
+item: ('less', 'll', '-', 'cd') , 0.112
+item: ('grep', 'less') , 0.114
+item: ('ll', '-', 'ls') , 0.114
+item: ('rm', 'ls', 'less') , 0.114
+item: ('less', 'grep', 'cd') , 0.114
+item: ('ls', 'less', 'rm', 'cd') , 0.114
+item: ('ls', 'll', '-', 'cd') , 0.114
+item: ('make', 'less') , 0.115
+item: ('vi', 'cd') , 0.115
+item: ('make', 'less', 'cd') , 0.115
+item: ('qu',) , 0.117
+item: ('-', 'less') , 0.117
+item: ('rm', 'less') , 0.117
+item: ('less', '-', 'cd') , 0.117
+item: ('rm', 'less', 'cd') , 0.117
+item: ('grep', 'ls') , 0.121
+item: ('grep', 'ls', 'cd') , 0.121
+item: ('ll', '-') , 0.125
+item: ('ll', '-', 'cd') , 0.125
+item: ('vi',) , 0.126
+item: ('cp', 'ls') , 0.126
+item: ('rm', 'll', 'ls') , 0.126
+item: ('cp', 'ls', 'cd') , 0.126
+item: ('ll', 'ls', 'less') , 0.126
+item: ('ls', 'rm', 'll', 'cd') , 0.126
+item: ('ls', 'less', 'll', 'cd') , 0.126
+item: ('m', 'ls', 'cd') , 0.128
+item: ('cp',) , 0.130
+item: ('cp', 'cd') , 0.130
+item: ('m', 'ls') , 0.130
+item: ('-', 'ls') , 0.130
+item: ('-', 'ls', 'cd') , 0.130
+item: ('mv', 'ls') , 0.134
+item: ('mv', 'ls', 'cd') , 0.134
+item: ('rm', 'll') , 0.136
+item: ('make', 'ls') , 0.136
+item: ('make', 'ls', 'cd') , 0.136
+item: ('rm', 'll', 'cd') , 0.136
+item: ('mv',) , 0.137
+item: ('mv', 'cd') , 0.137
+item: ('m', 'cd') , 0.137
+item: ('exit', 'ls') , 0.137
+item: ('exit', 'ls', 'cd') , 0.137
+item: ('grep', 'cd') , 0.141
+item: ('ll', 'less', 'cd') , 0.141
+item: ('-',) , 0.143
+item: ('ll', 'less') , 0.143
+item: ('-', 'cd') , 0.143
+item: ('grep',) , 0.145
+item: ('m',) , 0.148
+item: ('ls', 'less') , 0.168
+item: ('less', 'ls', 'cd') , 0.168
+item: ('make',) , 0.174
+item: ('make', 'cd') , 0.174
+item: ('ll', 'ls', 'cd') , 0.181
+item: ('rm', 'ls') , 0.183
+item: ('ll', 'ls') , 0.183
+item: ('rm', 'ls', 'cd') , 0.183
+item: ('exit', 'cd') , 0.190
+item: ('cd', 'less') , 0.194
+item: ('less',) , 0.196
+item: ('rm',) , 0.201
+item: ('rm', 'cd') , 0.201
+item: ('ll', 'cd') , 0.214
+item: ('ll',) , 0.218
+item: ('exec',) , 0.242
+item: ('exit',) , 0.361
+item: ('ls', 'cd') , 0.368
+item: ('ls',) , 0.370
+item: ('cd',) , 0.507
+
+------------------------ RULES:
+Rule: ('ls',) ==> ('ll', '-') , 0.307
+Rule: ('ls',) ==> ('rm', 'less') , 0.307
+Rule: ('ls',) ==> ('rm', 'cd', 'less') , 0.307
+Rule: ('ls',) ==> ('ll', '-', 'cd') , 0.307
+Rule: ('ls', 'cd') ==> ('rm', 'less') , 0.308
+Rule: ('ls', 'cd') ==> ('ll', '-') , 0.308
+Rule: ('ls',) ==> ('grep',) , 0.327
+Rule: ('ls',) ==> ('grep', 'cd') , 0.327
+Rule: ('ls', 'cd') ==> ('grep',) , 0.328
+Rule: ('cd',) ==> ('ls', 'less') , 0.332
+Rule: ('ls',) ==> ('cp',) , 0.342
+Rule: ('ls',) ==> ('rm', 'll') , 0.342
+Rule: ('ls',) ==> ('cp', 'cd') , 0.342
+Rule: ('ls',) ==> ('ll', 'less') , 0.342
+Rule: ('ls',) ==> ('rm', 'll', 'cd') , 0.342
+Rule: ('ls',) ==> ('ll', 'cd', 'less') , 0.342
+Rule: ('cd',) ==> ('make',) , 0.343
+Rule: ('ls', 'cd') ==> ('cp',) , 0.343
+Rule: ('ls', 'cd') ==> ('rm', 'll') , 0.343
+Rule: ('ls', 'cd') ==> ('ll', 'less') , 0.343
+Rule: ('ls',) ==> ('m', 'cd') , 0.347
+Rule: ('ls', 'cd') ==> ('m',) , 0.348
+Rule: ('ls',) ==> ('m',) , 0.351
+Rule: ('ls',) ==> ('-',) , 0.351
+Rule: ('ls',) ==> ('-', 'cd') , 0.351
+Rule: ('ls', 'cd') ==> ('-',) , 0.353
+Rule: ('cd',) ==> ('ll', 'ls') , 0.357
+Rule: ('cd',) ==> ('rm', 'ls') , 0.361
+Rule: ('ls',) ==> ('mv',) , 0.361
+Rule: ('ls',) ==> ('mv', 'cd') , 0.361
+Rule: ('ls', 'cd') ==> ('mv',) , 0.363
+Rule: ('ls',) ==> ('make',) , 0.366
+Rule: ('ls',) ==> ('make', 'cd') , 0.366
+Rule: ('ls', 'cd') ==> ('make',) , 0.368
+Rule: ('ls',) ==> ('exit',) , 0.371
+Rule: ('ls',) ==> ('exit', 'cd') , 0.371
+Rule: ('ls', 'cd') ==> ('exit',) , 0.373
+Rule: ('cd',) ==> ('exit',) , 0.375
+Rule: ('exit',) ==> ('ls',) , 0.381
+Rule: ('exit',) ==> ('ls', 'cd') , 0.381
+Rule: ('cd',) ==> ('less',) , 0.383
+Rule: ('cd',) ==> ('rm',) , 0.397
+Rule: ('cd',) ==> ('ll',) , 0.422
+Rule: ('ls',) ==> ('less',) , 0.455
+Rule: ('ls',) ==> ('cd', 'less') , 0.455
+Rule: ('ls', 'cd') ==> ('less',) , 0.458
+Rule: ('ll',) ==> ('make', 'less') , 0.462
+Rule: ('ll',) ==> ('make', 'ls') , 0.462
+Rule: ('ll',) ==> ('make', 'ls', 'cd') , 0.462
+Rule: ('ll',) ==> ('make', 'cd', 'less') , 0.462
+Rule: ('ll', 'cd') ==> ('make', 'ls') , 0.470
+Rule: ('ll', 'cd') ==> ('make', 'less') , 0.470
+Rule: ('ll',) ==> ('mv',) , 0.471
+Rule: ('ll',) ==> ('mv', 'cd') , 0.471
+Rule: ('ll',) ==> ('-', 'ls', 'less') , 0.471
+Rule: ('ll',) ==> ('cd', '-', 'ls', 'less') , 0.471
+Rule: ('ll', 'cd') ==> ('mv',) , 0.479
+Rule: ('ll', 'cd') ==> ('-', 'ls', 'less') , 0.479
+Rule: ('ll',) ==> ('grep',) , 0.487
+Rule: ('ll',) ==> ('grep', 'cd') , 0.487
+Rule: ('ls',) ==> ('ll', 'cd') , 0.490
+Rule: ('ls', 'cd') ==> ('ll',) , 0.493
+Rule: ('ls',) ==> ('rm',) , 0.495
+Rule: ('ls',) ==> ('ll',) , 0.495
+Rule: ('ls',) ==> ('rm', 'cd') , 0.495
+Rule: ('ll', 'cd') ==> ('grep',) , 0.496
+Rule: ('ls', 'cd') ==> ('rm',) , 0.498
+Rule: ('ll',) ==> ('make',) , 0.513
+Rule: ('ll',) ==> ('make', 'cd') , 0.513
+Rule: ('ll',) ==> ('-', 'less') , 0.513
+Rule: ('ll',) ==> ('cd', '-', 'less') , 0.513
+Rule: ('less',) ==> ('ll', 'make') , 0.514
+Rule: ('less',) ==> ('ll', 'make', 'cd') , 0.514
+Rule: ('rm',) ==> ('mv',) , 0.518
+Rule: ('rm',) ==> ('mv', 'ls') , 0.518
+Rule: ('rm',) ==> ('mv', 'cd') , 0.518
+Rule: ('rm', 'cd') ==> ('mv',) , 0.518
+Rule: ('rm',) ==> ('mv', 'ls', 'cd') , 0.518
+Rule: ('rm', 'cd') ==> ('mv', 'ls') , 0.518
+Rule: ('cd', 'less') ==> ('ll', 'make') , 0.519
+Rule: ('ll',) ==> ('-', 'ls') , 0.521
+Rule: ('ll',) ==> ('-', 'ls', 'cd') , 0.521
+Rule: ('ll', 'cd') ==> ('make',) , 0.521
+Rule: ('ll', 'cd') ==> ('-', 'less') , 0.521
+Rule: ('less',) ==> ('ll', '-', 'ls') , 0.523
+Rule: ('less',) ==> ('ll', '-', 'ls', 'cd') , 0.523
+Rule: ('exit',) ==> ('cd',) , 0.528
+Rule: ('cd', 'less') ==> ('ll', '-', 'ls') , 0.528
+Rule: ('ll', 'cd') ==> ('-', 'ls') , 0.530
+Rule: ('less',) ==> ('make', 'ls') , 0.533
+Rule: ('less',) ==> ('make', 'ls', 'cd') , 0.533
+Rule: ('cd', 'less') ==> ('make', 'ls') , 0.538
+Rule: ('ll', 'ls') ==> ('make',) , 0.550
+Rule: ('ll', 'ls') ==> ('make', 'cd') , 0.550
+Rule: ('less',) ==> ('-', 'ls') , 0.551
+Rule: ('less',) ==> ('-', 'ls', 'cd') , 0.551
+Rule: ('ll', 'ls', 'cd') ==> ('make',) , 0.556
+Rule: ('cd', 'less') ==> ('-', 'ls') , 0.557
+Rule: ('ll', 'ls') ==> ('-', 'less') , 0.560
+Rule: ('ll', 'ls') ==> ('cd', '-', 'less') , 0.560
+Rule: ('rm',) ==> ('ls', 'less') , 0.564
+Rule: ('rm',) ==> ('cd', 'ls', 'less') , 0.564
+Rule: ('rm', 'cd') ==> ('ls', 'less') , 0.564
+Rule: ('ll', 'ls', 'cd') ==> ('-', 'less') , 0.566
+Rule: ('rm', 'ls') ==> ('mv',) , 0.570
+Rule: ('rm', 'ls') ==> ('mv', 'cd') , 0.570
+Rule: ('rm', 'ls', 'cd') ==> ('mv',) , 0.570
+Rule: ('less',) ==> ('ll', '-') , 0.570
+Rule: ('less',) ==> ('ll', '-', 'cd') , 0.570
+Rule: ('ll',) ==> ('-',) , 0.571
+Rule: ('ll',) ==> ('-', 'cd') , 0.571
+Rule: ('cd', 'less') ==> ('ll', '-') , 0.575
+Rule: ('make',) ==> ('ll', 'less') , 0.579
+Rule: ('make',) ==> ('ll', 'ls') , 0.579
+Rule: ('make',) ==> ('ll', 'ls', 'cd') , 0.579
+Rule: ('make', 'cd') ==> ('ll', 'ls') , 0.579
+Rule: ('make',) ==> ('ll', 'cd', 'less') , 0.579
+Rule: ('make', 'cd') ==> ('ll', 'less') , 0.579
+Rule: ('less',) ==> ('grep',) , 0.579
+Rule: ('less',) ==> ('rm', 'ls') , 0.579
+Rule: ('less',) ==> ('grep', 'cd') , 0.579
+Rule: ('less',) ==> ('rm', 'ls', 'cd') , 0.579
+Rule: ('ll',) ==> ('rm', 'ls') , 0.580
+Rule: ('ll',) ==> ('ls', 'less') , 0.580
+Rule: ('ll',) ==> ('rm', 'ls', 'cd') , 0.580
+Rule: ('ll',) ==> ('cd', 'ls', 'less') , 0.580
+Rule: ('ll', 'cd') ==> ('-',) , 0.581
+Rule: ('rm',) ==> ('less',) , 0.582
+Rule: ('rm',) ==> ('cd', 'less') , 0.582
+Rule: ('rm', 'cd') ==> ('less',) , 0.582
+Rule: ('cd', 'less') ==> ('grep',) , 0.585
+Rule: ('cd', 'less') ==> ('rm', 'ls') , 0.585
+Rule: ('less',) ==> ('make',) , 0.589
+Rule: ('less',) ==> ('make', 'cd') , 0.589
+Rule: ('ll', 'cd') ==> ('rm', 'ls') , 0.590
+Rule: ('ll', 'cd') ==> ('ls', 'less') , 0.590
+Rule: ('cd', 'less') ==> ('make',) , 0.594
+Rule: ('less',) ==> ('-',) , 0.598
+Rule: ('less',) ==> ('rm',) , 0.598
+Rule: ('less',) ==> ('-', 'cd') , 0.598
+Rule: ('less',) ==> ('rm', 'cd') , 0.598
+Rule: ('make',) ==> ('ls', 'less') , 0.600
+Rule: ('make',) ==> ('cd', 'ls', 'less') , 0.600
+Rule: ('make', 'cd') ==> ('ls', 'less') , 0.600
+Rule: ('cd', 'less') ==> ('-',) , 0.604
+Rule: ('cd', 'less') ==> ('rm',) , 0.604
+Rule: ('ls', 'less') ==> ('ll', '-') , 0.609
+Rule: ('ls', 'less') ==> ('ll', '-', 'cd') , 0.609
+Rule: ('cd', 'ls', 'less') ==> ('ll', '-') , 0.609
+Rule: ('ls', 'less') ==> ('make',) , 0.620
+Rule: ('ls', 'less') ==> ('make', 'cd') , 0.620
+Rule: ('cd', 'ls', 'less') ==> ('make',) , 0.620
+Rule: ('ll', 'ls') ==> ('-',) , 0.620
+Rule: ('rm', 'ls') ==> ('less',) , 0.620
+Rule: ('rm', 'ls') ==> ('cd', 'less') , 0.620
+Rule: ('rm', 'ls', 'cd') ==> ('less',) , 0.620
+Rule: ('ll', 'ls') ==> ('-', 'cd') , 0.620
+Rule: ('make',) ==> ('-',) , 0.621
+Rule: ('make',) ==> ('-', 'cd') , 0.621
+Rule: ('make', 'cd') ==> ('-',) , 0.621
+Rule: ('ll',) ==> ('rm',) , 0.622
+Rule: ('ll',) ==> ('rm', 'cd') , 0.622
+Rule: ('ll', 'ls', 'cd') ==> ('-',) , 0.626
+Rule: ('rm',) ==> ('ll', 'ls') , 0.627
+Rule: ('rm',) ==> ('ll', 'ls', 'cd') , 0.627
+Rule: ('rm', 'cd') ==> ('ll', 'ls') , 0.627
+Rule: ('ll', 'cd') ==> ('rm',) , 0.632
+Rule: ('ls', 'less') ==> ('-',) , 0.641
+Rule: ('ls', 'less') ==> ('-', 'cd') , 0.641
+Rule: ('cd', 'ls', 'less') ==> ('-',) , 0.641
+Rule: ('make',) ==> ('ll',) , 0.642
+Rule: ('make',) ==> ('ll', 'cd') , 0.642
+Rule: ('make', 'cd') ==> ('ll',) , 0.642
+Rule: ('less',) ==> ('ll', 'ls') , 0.645
+Rule: ('less',) ==> ('ll', 'ls', 'cd') , 0.645
+Rule: ('ll',) ==> ('cd', 'less') , 0.647
+Rule: ('cd', 'less') ==> ('ll', 'ls') , 0.651
+Rule: ('ll',) ==> ('less',) , 0.655
+Rule: ('ll', 'cd') ==> ('less',) , 0.658
+Rule: ('make',) ==> ('less',) , 0.663
+Rule: ('make',) ==> ('cd', 'less') , 0.663
+Rule: ('make', 'cd') ==> ('less',) , 0.663
+Rule: ('rm',) ==> ('ll',) , 0.673
+Rule: ('rm',) ==> ('ll', 'cd') , 0.673
+Rule: ('rm', 'cd') ==> ('ll',) , 0.673
+Rule: ('ls', 'less') ==> ('rm',) , 0.674
+Rule: ('ls', 'less') ==> ('rm', 'cd') , 0.674
+Rule: ('cd', 'ls', 'less') ==> ('rm',) , 0.674
+Rule: ('rm', 'ls') ==> ('ll',) , 0.690
+Rule: ('ll', 'ls') ==> ('rm',) , 0.690
+Rule: ('ll', 'ls') ==> ('less',) , 0.690
+Rule: ('rm', 'ls') ==> ('ll', 'cd') , 0.690
+Rule: ('ll', 'ls') ==> ('rm', 'cd') , 0.690
+Rule: ('rm', 'ls', 'cd') ==> ('ll',) , 0.690
+Rule: ('ll', 'ls') ==> ('cd', 'less') , 0.690
+Rule: ('ll', 'ls', 'cd') ==> ('rm',) , 0.697
+Rule: ('ll', 'ls', 'cd') ==> ('less',) , 0.697
+Rule: ('ll', 'less') ==> ('make',) , 0.705
+Rule: ('ll', 'less') ==> ('make', 'cd') , 0.705
+Rule: ('grep',) ==> ('-',) , 0.709
+Rule: ('grep',) ==> ('-', 'cd') , 0.709
+Rule: ('ll', 'cd', 'less') ==> ('make',) , 0.714
+Rule: ('-',) ==> ('grep',) , 0.718
+Rule: ('-',) ==> ('grep', 'cd') , 0.718
+Rule: ('-', 'cd') ==> ('grep',) , 0.718
+Rule: ('-',) ==> ('ll', 'ls', 'less') , 0.718
+Rule: ('ll', 'less') ==> ('-', 'ls') , 0.718
+Rule: ('-',) ==> ('ll', 'cd', 'ls', 'less') , 0.718
+Rule: ('ll', 'less') ==> ('-', 'ls', 'cd') , 0.718
+Rule: ('-', 'cd') ==> ('ll', 'ls', 'less') , 0.718
+Rule: ('less',) ==> ('ll', 'cd') , 0.720
+Rule: ('exit', 'cd') ==> ('ls',) , 0.721
+Rule: ('cd',) ==> ('ls',) , 0.726
+Rule: ('cd', 'less') ==> ('ll',) , 0.726
+Rule: ('grep', 'cd') ==> ('-',) , 0.727
+Rule: ('ll', 'cd', 'less') ==> ('-', 'ls') , 0.727
+Rule: ('less',) ==> ('ll',) , 0.729
+Rule: ('grep',) ==> ('ll',) , 0.734
+Rule: ('grep',) ==> ('ll', 'cd') , 0.734
+Rule: ('make', 'ls') ==> ('ll',) , 0.743
+Rule: ('make', 'ls') ==> ('ll', 'cd') , 0.743
+Rule: ('make', 'ls', 'cd') ==> ('ll',) , 0.743
+Rule: ('mv',) ==> ('ll',) , 0.747
+Rule: ('mv',) ==> ('ll', 'cd') , 0.747
+Rule: ('mv', 'cd') ==> ('ll',) , 0.747
+Rule: ('ls', 'less') ==> ('ll',) , 0.750
+Rule: ('ls', 'less') ==> ('ll', 'cd') , 0.750
+Rule: ('cd', 'ls', 'less') ==> ('ll',) , 0.750
+Rule: ('grep', 'cd') ==> ('ll',) , 0.753
+Rule: ('-',) ==> ('make',) , 0.756
+Rule: ('-',) ==> ('ls', 'less') , 0.756
+Rule: ('-',) ==> ('make', 'cd') , 0.756
+Rule: ('-', 'cd') ==> ('make',) , 0.756
+Rule: ('-',) ==> ('cd', 'ls', 'less') , 0.756
+Rule: ('-', 'cd') ==> ('ls', 'less') , 0.756
+Rule: ('mv',) ==> ('rm',) , 0.760
+Rule: ('mv',) ==> ('rm', 'ls') , 0.760
+Rule: ('mv',) ==> ('rm', 'cd') , 0.760
+Rule: ('mv', 'cd') ==> ('rm',) , 0.760
+Rule: ('mv',) ==> ('rm', 'ls', 'cd') , 0.760
+Rule: ('mv', 'cd') ==> ('rm', 'ls') , 0.760
+Rule: ('make', 'ls') ==> ('less',) , 0.770
+Rule: ('make', 'ls') ==> ('cd', 'less') , 0.770
+Rule: ('make', 'ls', 'cd') ==> ('less',) , 0.770
+Rule: ('make',) ==> ('ls',) , 0.779
+Rule: ('make',) ==> ('ls', 'cd') , 0.779
+Rule: ('make', 'cd') ==> ('ls',) , 0.779
+Rule: ('mv', 'ls') ==> ('rm',) , 0.781
+Rule: ('mv', 'ls') ==> ('rm', 'cd') , 0.781
+Rule: ('mv', 'ls', 'cd') ==> ('rm',) , 0.781
+Rule: ('-',) ==> ('ll', 'less') , 0.782
+Rule: ('ll', 'less') ==> ('-',) , 0.782
+Rule: ('-',) ==> ('ll', 'cd', 'less') , 0.782
+Rule: ('ll', 'less') ==> ('-', 'cd') , 0.782
+Rule: ('-', 'cd') ==> ('ll', 'less') , 0.782
+Rule: ('grep',) ==> ('less',) , 0.785
+Rule: ('grep',) ==> ('cd', 'less') , 0.785
+Rule: ('-', 'ls') ==> ('ll', 'less') , 0.789
+Rule: ('-', 'ls') ==> ('ll', 'cd', 'less') , 0.789
+Rule: ('-', 'ls', 'cd') ==> ('ll', 'less') , 0.789
+Rule: ('ll', 'cd', 'less') ==> ('-',) , 0.792
+Rule: ('-',) ==> ('ll', 'ls') , 0.795
+Rule: ('-',) ==> ('ll', 'ls', 'cd') , 0.795
+Rule: ('-', 'cd') ==> ('ll', 'ls') , 0.795
+Rule: ('grep', 'cd') ==> ('less',) , 0.805
+Rule: ('ll', 'ls', 'less') ==> ('-',) , 0.812
+Rule: ('ll', 'ls', 'less') ==> ('-', 'cd') , 0.812
+Rule: ('ll', 'cd', 'ls', 'less') ==> ('-',) , 0.812
+Rule: ('-',) ==> ('less',) , 0.821
+Rule: ('-',) ==> ('cd', 'less') , 0.821
+Rule: ('-', 'cd') ==> ('less',) , 0.821
+Rule: ('ll', '-') ==> ('ls', 'less') , 0.824
+Rule: ('ll', '-') ==> ('cd', 'ls', 'less') , 0.824
+Rule: ('ll', '-', 'cd') ==> ('ls', 'less') , 0.824
+Rule: ('-', 'ls') ==> ('less',) , 0.831
+Rule: ('-', 'ls') ==> ('cd', 'less') , 0.831
+Rule: ('-', 'ls', 'cd') ==> ('less',) , 0.831
+Rule: ('ll',) ==> ('ls', 'cd') , 0.832
+Rule: ('grep',) ==> ('ls',) , 0.835
+Rule: ('grep',) ==> ('ls', 'cd') , 0.835
+Rule: ('ll',) ==> ('ls',) , 0.840
+Rule: ('ll', 'cd') ==> ('ls',) , 0.846
+Rule: ('grep', 'cd') ==> ('ls',) , 0.857
+Rule: ('less',) ==> ('ls',) , 0.860
+Rule: ('less',) ==> ('ls', 'cd') , 0.860
+Rule: ('m',) ==> ('ls', 'cd') , 0.864
+Rule: ('cd', 'less') ==> ('ls',) , 0.868
+Rule: ('vi',) ==> ('ls',) , 0.870
+Rule: ('vi',) ==> ('ls', 'cd') , 0.870
+Rule: ('-',) ==> ('ll',) , 0.872
+Rule: ('-',) ==> ('ll', 'cd') , 0.872
+Rule: ('-', 'cd') ==> ('ll',) , 0.872
+Rule: ('make', 'less') ==> ('ll',) , 0.873
+Rule: ('make', 'less') ==> ('ll', 'cd') , 0.873
+Rule: ('make', 'cd', 'less') ==> ('ll',) , 0.873
+Rule: ('-', 'ls') ==> ('ll',) , 0.873
+Rule: ('-', 'ls') ==> ('ll', 'cd') , 0.873
+Rule: ('-', 'ls', 'cd') ==> ('ll',) , 0.873
+Rule: ('-', 'less') ==> ('ll', 'ls') , 0.875
+Rule: ('-', 'less') ==> ('ll', 'ls', 'cd') , 0.875
+Rule: ('cd', '-', 'less') ==> ('ll', 'ls') , 0.875
+Rule: ('m',) ==> ('ls',) , 0.877
+Rule: ('ll', 'less') ==> ('ls',) , 0.885
+Rule: ('ll', 'less') ==> ('ls', 'cd') , 0.885
+Rule: ('qu',) ==> ('ls',) , 0.891
+Rule: ('qu',) ==> ('ls', 'cd') , 0.891
+Rule: ('ll', 'cd', 'less') ==> ('ls',) , 0.896
+Rule: ('ll', '-') ==> ('less',) , 0.897
+Rule: ('ll', '-') ==> ('cd', 'less') , 0.897
+Rule: ('ll', '-', 'cd') ==> ('less',) , 0.897
+Rule: ('ll', 'make') ==> ('less',) , 0.902
+Rule: ('make', 'll') ==> ('ls',) , 0.902
+Rule: ('make', 'll') ==> ('ls', 'cd') , 0.902
+Rule: ('make', 'll', 'cd') ==> ('ls',) , 0.902
+Rule: ('ll', 'make') ==> ('cd', 'less') , 0.902
+Rule: ('ll', 'make', 'cd') ==> ('less',) , 0.902
+Rule: ('ll', '-', 'ls') ==> ('less',) , 0.903
+Rule: ('ll', '-', 'ls') ==> ('cd', 'less') , 0.903
+Rule: ('ll', '-', 'ls', 'cd') ==> ('less',) , 0.903
+Rule: ('make', 'less') ==> ('ls',) , 0.905
+Rule: ('make', 'less') ==> ('ls', 'cd') , 0.905
+Rule: ('make', 'cd', 'less') ==> ('ls',) , 0.905
+Rule: ('rm',) ==> ('ls',) , 0.909
+Rule: ('rm',) ==> ('ls', 'cd') , 0.909
+Rule: ('rm', 'cd') ==> ('ls',) , 0.909
+Rule: ('-',) ==> ('ls',) , 0.910
+Rule: ('-',) ==> ('ls', 'cd') , 0.910
+Rule: ('-', 'cd') ==> ('ls',) , 0.910
+Rule: ('ll', '-') ==> ('ls',) , 0.912
+Rule: ('ll', '-') ==> ('ls', 'cd') , 0.912
+Rule: ('ll', '-', 'cd') ==> ('ls',) , 0.912
+Rule: ('vi',) ==> ('cd',) , 0.913
+Rule: ('ll', '-', 'less') ==> ('ls',) , 0.918
+Rule: ('ll', '-', 'less') ==> ('ls', 'cd') , 0.918
+Rule: ('ll', 'cd', '-', 'less') ==> ('ls',) , 0.918
+Rule: ('-', 'less') ==> ('ls',) , 0.922
+Rule: ('-', 'less') ==> ('ls', 'cd') , 0.922
+Rule: ('cd', '-', 'less') ==> ('ls',) , 0.922
+Rule: ('m',) ==> ('cd',) , 0.926
+Rule: ('rm', 'll') ==> ('ls',) , 0.932
+Rule: ('rm', 'll') ==> ('ls', 'cd') , 0.932
+Rule: ('rm', 'll', 'cd') ==> ('ls',) , 0.932
+Rule: ('m', 'cd') ==> ('ls',) , 0.933
+Rule: ('qu', 'cd') ==> ('ls',) , 0.934
+Rule: ('-', 'ls', 'less') ==> ('ll',) , 0.949
+Rule: ('-', 'ls', 'less') ==> ('ll', 'cd') , 0.949
+Rule: ('cd', '-', 'ls', 'less') ==> ('ll',) , 0.949
+Rule: ('vi', 'cd') ==> ('ls',) , 0.952
+Rule: ('qu',) ==> ('cd',) , 0.953
+Rule: ('-', 'less') ==> ('ll',) , 0.953
+Rule: ('-', 'less') ==> ('ll', 'cd') , 0.953
+Rule: ('cd', '-', 'less') ==> ('ll',) , 0.953
+Rule: ('rm', 'less') ==> ('ls',) , 0.969
+Rule: ('rm', 'less') ==> ('ls', 'cd') , 0.969
+Rule: ('rm', 'cd', 'less') ==> ('ls',) , 0.969
+Rule: ('cp',) ==> ('ls',) , 0.972
+Rule: ('cp',) ==> ('ls', 'cd') , 0.972
+Rule: ('cp', 'cd') ==> ('ls',) , 0.972
+Rule: ('mv',) ==> ('ls',) , 0.973
+Rule: ('mv',) ==> ('ls', 'cd') , 0.973
+Rule: ('mv', 'cd') ==> ('ls',) , 0.973
+Rule: ('grep',) ==> ('cd',) , 0.975
+Rule: ('ll',) ==> ('cd',) , 0.983
+Rule: ('m', 'ls') ==> ('cd',) , 0.986
+Rule: ('ll', 'less') ==> ('cd',) , 0.987
+Rule: ('ll', 'ls') ==> ('cd',) , 0.990
+Rule: ('less',) ==> ('cd',) , 0.991
+Rule: ('ls',) ==> ('cd',) , 0.995
+Rule: ('cp',) ==> ('cd',) , 1.000
+Rule: ('mv',) ==> ('cd',) , 1.000
+Rule: ('rm',) ==> ('cd',) , 1.000
+Rule: ('make',) ==> ('cd',) , 1.000
+Rule: ('-',) ==> ('cd',) , 1.000
+Rule: ('make', 'ls') ==> ('cd',) , 1.000
+Rule: ('ll', 'grep') ==> ('cd',) , 1.000
+Rule: ('-', 'less') ==> ('cd',) , 1.000
+Rule: ('exit', 'ls') ==> ('cd',) , 1.000
+Rule: ('rm', 'mv') ==> ('ls',) , 1.000
+Rule: ('grep', 'less') ==> ('cd',) , 1.000
+Rule: ('qu', 'ls') ==> ('cd',) , 1.000
+Rule: ('rm', 'less') ==> ('cd',) , 1.000
+Rule: ('cp', 'ls') ==> ('cd',) , 1.000
+Rule: ('mv', 'ls') ==> ('cd',) , 1.000
+Rule: ('-', 'grep') ==> ('cd',) , 1.000
+Rule: ('ll', 'mv') ==> ('cd',) , 1.000
+Rule: ('rm', 'mv') ==> ('cd',) , 1.000
+Rule: ('make', '-') ==> ('cd',) , 1.000
+Rule: ('rm', 'll') ==> ('cd',) , 1.000
+Rule: ('-', 'ls') ==> ('cd',) , 1.000
+Rule: ('vi', 'ls') ==> ('cd',) , 1.000
+Rule: ('ls', 'less') ==> ('cd',) , 1.000
+Rule: ('ll', '-') ==> ('cd',) , 1.000
+Rule: ('rm', 'ls') ==> ('cd',) , 1.000
+Rule: ('grep', 'ls') ==> ('cd',) , 1.000
+Rule: ('ll', 'make') ==> ('cd',) , 1.000
+Rule: ('make', 'less') ==> ('cd',) , 1.000
+Rule: ('rm', 'll', 'ls') ==> ('cd',) , 1.000
+Rule: ('rm', 'ls', 'less') ==> ('cd',) , 1.000
+Rule: ('-', 'ls', 'less') ==> ('cd',) , 1.000
+Rule: ('make', 'll', 'ls') ==> ('cd',) , 1.000
+Rule: ('ll', '-', 'ls') ==> ('cd',) , 1.000
+Rule: ('ll', 'ls', 'less') ==> ('cd',) , 1.000
+Rule: ('ll', 'make', 'less') ==> ('cd',) , 1.000
+Rule: ('ll', '-', 'less') ==> ('cd',) , 1.000
+Rule: ('rm', 'mv') ==> ('ls', 'cd') , 1.000
+Rule: ('rm', 'mv', 'ls') ==> ('cd',) , 1.000
+Rule: ('rm', 'mv', 'cd') ==> ('ls',) , 1.000
+Rule: ('make', 'ls', 'less') ==> ('cd',) , 1.000
+Rule: ('ll', '-', 'ls', 'less') ==> ('cd',) , 1.000

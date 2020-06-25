@@ -1,0 +1,145 @@
+item: ('vi', 'finger') , 0.101
+item: ('ls', 'finger', 'elm') , 0.101
+item: ('more',) , 0.105
+item: ('rm', 'ls') , 0.107
+item: ('vi', 'ls', 'elm') , 0.107
+item: ('elm', 'ls', 'fg') , 0.112
+item: ('exit', 'ls', 'vi', 'cd') , 0.112
+item: ('ls', 'fg') , 0.114
+item: ('rm',) , 0.116
+item: ('exit', 'fg') , 0.117
+item: ('fg', 'exit', 'elm') , 0.117
+item: ('elm', 'finger', 'fg') , 0.117
+item: ('finger', 'fg') , 0.119
+item: ('exit', 'rlogin') , 0.119
+item: ('vi', 'exit', 'cd') , 0.119
+item: ('vi', 'elm') , 0.121
+item: ('elm', 'ls', 'cd') , 0.128
+item: ('exit', 'ls', 'elm') , 0.130
+item: ('vi', 'exit', 'ls') , 0.132
+item: ('cd', 'elm') , 0.133
+item: ('finger', 'ls') , 0.139
+item: ('vi', 'exit') , 0.160
+item: ('exit', 'finger', 'elm') , 0.160
+item: ('vi', 'ls', 'cd') , 0.160
+item: ('vi', 'cd') , 0.167
+item: ('rlogin',) , 0.169
+item: ('fg', 'elm') , 0.174
+item: ('fg',) , 0.176
+item: ('exit', 'ls', 'cd') , 0.178
+item: ('ls', 'elm') , 0.181
+item: ('exit', 'cd') , 0.189
+item: ('vi', 'ls') , 0.192
+item: ('finger', 'elm') , 0.214
+item: ('vi',) , 0.221
+item: ('exit', 'finger') , 0.230
+item: ('ls', 'cd') , 0.251
+item: ('exit', 'ls') , 0.254
+item: ('cd',) , 0.262
+item: ('finger',) , 0.297
+item: ('ls',) , 0.352
+item: ('exit', 'elm') , 0.450
+item: ('elm',) , 0.591
+item: ('exit',) , 0.769
+
+------------------------ RULES:
+Rule: ('ls',) ==> ('rm',) , 0.303
+Rule: ('ls',) ==> ('vi', 'elm') , 0.303
+Rule: ('elm',) ==> ('ls',) , 0.307
+Rule: ('ls',) ==> ('fg', 'elm') , 0.318
+Rule: ('ls',) ==> ('vi', 'exit', 'cd') , 0.318
+Rule: ('ls',) ==> ('fg',) , 0.323
+Rule: ('exit',) ==> ('ls',) , 0.331
+Rule: ('finger',) ==> ('vi',) , 0.341
+Rule: ('finger',) ==> ('ls', 'elm') , 0.341
+Rule: ('exit', 'elm') ==> ('finger',) , 0.356
+Rule: ('elm',) ==> ('finger',) , 0.361
+Rule: ('ls',) ==> ('cd', 'elm') , 0.364
+Rule: ('ls',) ==> ('exit', 'elm') , 0.369
+Rule: ('ls',) ==> ('vi', 'exit') , 0.374
+Rule: ('ls',) ==> ('finger',) , 0.394
+Rule: ('finger',) ==> ('fg', 'elm') , 0.395
+Rule: ('finger',) ==> ('fg',) , 0.401
+Rule: ('cd',) ==> ('vi', 'exit', 'ls') , 0.429
+Rule: ('exit', 'ls') ==> ('vi', 'cd') , 0.441
+Rule: ('ls', 'cd') ==> ('vi', 'exit') , 0.447
+Rule: ('ls',) ==> ('vi', 'cd') , 0.455
+Rule: ('cd',) ==> ('vi', 'exit') , 0.456
+Rule: ('vi',) ==> ('finger',) , 0.460
+Rule: ('finger',) ==> ('ls',) , 0.467
+Rule: ('finger', 'elm') ==> ('ls',) , 0.475
+Rule: ('vi',) ==> ('ls', 'elm') , 0.484
+Rule: ('cd',) ==> ('ls', 'elm') , 0.490
+Rule: ('ls',) ==> ('exit', 'cd') , 0.505
+Rule: ('vi',) ==> ('exit', 'ls', 'cd') , 0.508
+Rule: ('cd',) ==> ('elm',) , 0.510
+Rule: ('exit', 'ls') ==> ('elm',) , 0.510
+Rule: ('ls', 'cd') ==> ('elm',) , 0.511
+Rule: ('ls',) ==> ('elm',) , 0.515
+Rule: ('exit', 'ls') ==> ('vi',) , 0.517
+Rule: ('finger',) ==> ('exit', 'elm') , 0.539
+Rule: ('vi',) ==> ('exit', 'cd') , 0.540
+Rule: ('ls',) ==> ('vi',) , 0.545
+Rule: ('vi',) ==> ('elm',) , 0.548
+Rule: ('finger', 'elm') ==> ('fg',) , 0.550
+Rule: ('vi', 'ls') ==> ('elm',) , 0.556
+Rule: ('ls', 'elm') ==> ('finger',) , 0.559
+Rule: ('vi', 'ls') ==> ('exit', 'cd') , 0.583
+Rule: ('exit',) ==> ('elm',) , 0.586
+Rule: ('ls', 'elm') ==> ('vi',) , 0.588
+Rule: ('exit', 'cd') ==> ('vi', 'ls') , 0.594
+Rule: ('vi',) ==> ('exit', 'ls') , 0.597
+Rule: ('cd',) ==> ('vi', 'ls') , 0.612
+Rule: ('ls', 'elm') ==> ('fg',) , 0.618
+Rule: ('exit', 'ls', 'cd') ==> ('vi',) , 0.630
+Rule: ('exit', 'cd') ==> ('vi',) , 0.632
+Rule: ('fg',) ==> ('ls', 'elm') , 0.636
+Rule: ('ls', 'cd') ==> ('vi',) , 0.638
+Rule: ('cd',) ==> ('vi',) , 0.639
+Rule: ('fg', 'elm') ==> ('ls',) , 0.643
+Rule: ('fg',) ==> ('ls',) , 0.646
+Rule: ('fg',) ==> ('exit',) , 0.667
+Rule: ('fg',) ==> ('exit', 'elm') , 0.667
+Rule: ('fg',) ==> ('finger', 'elm') , 0.667
+Rule: ('vi', 'cd') ==> ('exit', 'ls') , 0.670
+Rule: ('elm', 'fg') ==> ('exit',) , 0.673
+Rule: ('fg', 'elm') ==> ('finger',) , 0.673
+Rule: ('fg',) ==> ('finger',) , 0.677
+Rule: ('cd',) ==> ('exit', 'ls') , 0.680
+Rule: ('vi', 'ls') ==> ('exit',) , 0.685
+Rule: ('exit', 'finger') ==> ('elm',) , 0.698
+Rule: ('exit', 'ls') ==> ('cd',) , 0.699
+Rule: ('vi', 'exit') ==> ('ls', 'cd') , 0.700
+Rule: ('vi', 'ls', 'cd') ==> ('exit',) , 0.700
+Rule: ('rlogin',) ==> ('exit',) , 0.705
+Rule: ('ls', 'elm') ==> ('cd',) , 0.706
+Rule: ('ls', 'cd') ==> ('exit',) , 0.709
+Rule: ('ls',) ==> ('cd',) , 0.712
+Rule: ('vi', 'cd') ==> ('exit',) , 0.713
+Rule: ('ls', 'elm') ==> ('exit',) , 0.716
+Rule: ('finger',) ==> ('elm',) , 0.719
+Rule: ('cd',) ==> ('exit',) , 0.721
+Rule: ('ls',) ==> ('exit',) , 0.722
+Rule: ('vi',) ==> ('exit',) , 0.726
+Rule: ('vi',) ==> ('ls', 'cd') , 0.726
+Rule: ('ls', 'finger') ==> ('elm',) , 0.731
+Rule: ('vi', 'exit') ==> ('cd',) , 0.744
+Rule: ('finger', 'elm') ==> ('exit',) , 0.750
+Rule: ('vi',) ==> ('cd',) , 0.758
+Rule: ('elm',) ==> ('exit',) , 0.762
+Rule: ('finger',) ==> ('exit',) , 0.772
+Rule: ('vi', 'exit') ==> ('ls',) , 0.822
+Rule: ('vi', 'ls') ==> ('cd',) , 0.833
+Rule: ('vi', 'exit', 'ls') ==> ('cd',) , 0.851
+Rule: ('vi',) ==> ('ls',) , 0.871
+Rule: ('vi', 'elm') ==> ('ls',) , 0.882
+Rule: ('rm',) ==> ('ls',) , 0.923
+Rule: ('vi', 'exit', 'cd') ==> ('ls',) , 0.940
+Rule: ('exit', 'cd') ==> ('ls',) , 0.943
+Rule: ('vi', 'cd') ==> ('ls',) , 0.957
+Rule: ('cd',) ==> ('ls',) , 0.959
+Rule: ('cd', 'elm') ==> ('ls',) , 0.960
+Rule: ('ls', 'fg') ==> ('elm',) , 0.984
+Rule: ('finger', 'fg') ==> ('elm',) , 0.985
+Rule: ('fg',) ==> ('elm',) , 0.990
+Rule: ('exit', 'fg') ==> ('elm',) , 1.000

@@ -1,0 +1,118 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                         Class
+Attribute      tested_negative tested_positive
+                        (0.65)          (0.35)
+===============================================
+preg
+  mean                   3.4234          4.9795
+  std. dev.              3.0166          3.6827
+  weight sum                500             268
+  precision              1.0625          1.0625
+
+plas
+  mean                 109.9541        141.2581
+  std. dev.             26.1114         31.8728
+  weight sum                500             268
+  precision              1.4741          1.4741
+
+pres
+  mean                  68.1397          70.718
+  std. dev.             17.9834         21.4094
+  weight sum                500             268
+  precision              2.6522          2.6522
+
+skin
+  mean                  19.8356         22.2824
+  std. dev.             14.8974         17.6992
+  weight sum                500             268
+  precision                1.98            1.98
+
+insu
+  mean                  68.8507        100.2812
+  std. dev.              98.828        138.4883
+  weight sum                500             268
+  precision               4.573           4.573
+
+mass
+  mean                  30.3009         35.1475
+  std. dev.              7.6833          7.2537
+  weight sum                500             268
+  precision              0.2717          0.2717
+
+pedi
+  mean                   0.4297          0.5504
+  std. dev.              0.2986          0.3715
+  weight sum                500             268
+  precision              0.0045          0.0045
+
+age
+  mean                  31.2494         37.0808
+  std. dev.             11.6059         10.9146
+  weight sum                500             268
+  precision              1.1765          1.1765
+
+
+
+Time taken to build model: 0.58 seconds
+
+Time taken to test model on training data: 0.14 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         586               76.3021 %
+Incorrectly Classified Instances       182               23.6979 %
+Kappa statistic                          0.4674
+Mean absolute error                      0.2811
+Root mean squared error                  0.4133
+Relative absolute error                 61.8486 %
+Root relative squared error             86.7082 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.842    0.384    0.803      0.842    0.822      0.469    0.825     0.902     tested_negative
+                 0.616    0.158    0.676      0.616    0.645      0.469    0.825     0.684     tested_positive
+Weighted Avg.    0.763    0.305    0.759      0.763    0.760      0.469    0.825     0.826     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 421  79 |   a = tested_negative
+ 103 165 |   b = tested_positive
+
+Time taken to perform cross-validation: 0.14 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         586               76.3021 %
+Incorrectly Classified Instances       182               23.6979 %
+Kappa statistic                          0.4664
+Mean absolute error                      0.2841
+Root mean squared error                  0.4168
+Relative absolute error                 62.5028 %
+Root relative squared error             87.4349 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.844    0.388    0.802      0.844    0.823      0.468    0.819     0.892     tested_negative
+                 0.612    0.156    0.678      0.612    0.643      0.468    0.819     0.671     tested_positive
+Weighted Avg.    0.763    0.307    0.759      0.763    0.760      0.468    0.819     0.815     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 422  78 |   a = tested_negative
+ 104 164 |   b = tested_positive
+

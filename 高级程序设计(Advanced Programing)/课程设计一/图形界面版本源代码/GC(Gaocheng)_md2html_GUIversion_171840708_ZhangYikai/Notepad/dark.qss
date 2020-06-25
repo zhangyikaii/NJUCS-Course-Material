@@ -1,0 +1,153 @@
+/*
+*
+* Author : Naihai
+*
+* Date : 2018/02/19
+*
+* Description : Dark Theme
+*
+*/
+
+/**********主界面**********/
+
+QWidget#Notepad {
+    border: 1px solid rgb(50, 50, 50);
+    background: rgb(50, 50, 50);
+}
+
+/**********子界面中央背景**********/
+QWidget#centerWidget {
+    background: rgb(50, 50, 50);
+}
+
+/**********编辑器内容背景**********/
+QWidget#textEdit {
+    background: rgb(50, 50, 50);
+}
+
+/**********菜单栏**********/
+QMenuBar {
+    background: rgb(57, 58, 60);
+    border: none;
+}
+QMenuBar::item {
+    padding: 5px 10px 5px 10px;
+    background: transparent;
+}
+QMenuBar::item:enabled {
+    color: rgb(227, 234, 242);
+}
+QMenuBar::item:!enabled {
+    color: rgb(155, 155, 155);
+}
+QMenuBar::item:enabled:selected {
+    background: rgba(255, 255, 255, 40);
+}
+
+/**********菜单**********/
+QMenu {
+    border: 1px solid rgb(100, 100, 100);
+    background: rgb(68, 69, 73);
+}
+QMenu::item {
+    height: 22px;
+    padding: 0px 25px 0px 20px;
+}
+QMenu::item:enabled {
+    color: rgb(225, 225, 225);
+}
+QMenu::item:!enabled {
+    color: rgb(155, 155, 155);
+}
+QMenu::item:enabled:selected {
+    color: rgb(230, 230, 230);
+    background: rgba(255, 255, 255, 40);
+}
+QMenu::separator {
+    height: 1px;
+    background: rgb(100, 100, 100);
+}
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
+}
+QMenu::icon {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/**********状态栏**********/
+QStatusBar {
+    background: rgb(57, 58, 60);
+}
+QStatusBar::item {
+    border: none;
+    border-right: 1px solid rgb(100, 100, 100);
+}
+
+
+
+/**********分组框**********/
+QGroupBox {
+    font-size: 15px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    color: rgb(175, 175, 175);
+    top: -12px;
+    left: 10px;
+}
+
+/**********页签项**********/
+QTabWidget::pane {
+    border: none;
+    border-top: 3px solid rgb(0, 160, 230);
+    background: rgb(57, 58, 60);
+}
+QTabWidget::tab-bar {
+    border: none;
+}
+QTabBar::tab {
+    border: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: rgb(175, 175, 175);
+    background: rgb(255, 255, 255, 30);
+    height: 28px;
+    min-width: 85px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+QTabBar::tab:hover {
+    background: rgb(255, 255, 255, 40);
+}
+QTabBar::tab:selected {
+    color: white;
+    background: rgb(0, 160, 230);
+}
+
+QTabWidget#tabWidget::pane {
+    border: 1px solid rgb(45, 45, 45);
+    background: rgb(57, 58, 60);
+    margin-top: -1px;
+}
+
+QTabBar#tabBar::tab {
+    border: 1px solid rgb(45, 45, 45);
+    border-bottom: none;
+    background: transparent;
+}
+QTabBar#tabBar::tab:hover {
+    color: white;
+}
+QTabBar#tabBar::tab:selected {
+    color: white;
+    background: rgb(57, 58, 60);
+}
+
+QDialog#FindDialog {
+    background: rgb(50, 50, 50);
+}

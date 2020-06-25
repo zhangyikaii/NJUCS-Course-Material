@@ -1,0 +1,4 @@
+'True Positives','False Negatives','False Positives','True Negatives','False Positive Rate','True Positive Rate',Precision,Recall,Fallout,FMeasure,'Sample Size',Lift,Threshold
+307,0,383,0,1,1,0.444928,1,0.555072,0.615848,1,1,0.001605
+239,68,63,320,0.164491,0.778502,0.791391,0.778502,0.208609,0.784893,0.437681,1.778696,0.998395
+0,307,0,383,0,0,?,0,?,?,0,?,0.998405

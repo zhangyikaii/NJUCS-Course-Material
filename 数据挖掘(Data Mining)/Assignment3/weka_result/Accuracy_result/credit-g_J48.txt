@@ -1,0 +1,210 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+checking_status = <0
+|   foreign_worker = yes
+|   |   duration <= 11
+|   |   |   existing_credits <= 1
+|   |   |   |   property_magnitude = real estate: good (8.0/1.0)
+|   |   |   |   property_magnitude = life insurance
+|   |   |   |   |   own_telephone = none: bad (2.0)
+|   |   |   |   |   own_telephone = yes: good (4.0)
+|   |   |   |   property_magnitude = car: good (2.0/1.0)
+|   |   |   |   property_magnitude = no known property: bad (3.0)
+|   |   |   existing_credits > 1: good (14.0)
+|   |   duration > 11
+|   |   |   job = unemp/unskilled non res: bad (5.0/1.0)
+|   |   |   job = unskilled resident
+|   |   |   |   purpose = new car
+|   |   |   |   |   own_telephone = none: bad (10.0/2.0)
+|   |   |   |   |   own_telephone = yes: good (2.0)
+|   |   |   |   purpose = used car: bad (1.0)
+|   |   |   |   purpose = furniture/equipment
+|   |   |   |   |   employment = unemployed: good (0.0)
+|   |   |   |   |   employment = <1: bad (3.0)
+|   |   |   |   |   employment = 1<=X<4: good (4.0)
+|   |   |   |   |   employment = 4<=X<7: good (1.0)
+|   |   |   |   |   employment = >=7: good (2.0)
+|   |   |   |   purpose = radio/tv
+|   |   |   |   |   existing_credits <= 1: bad (10.0/3.0)
+|   |   |   |   |   existing_credits > 1: good (2.0)
+|   |   |   |   purpose = domestic appliance: bad (1.0)
+|   |   |   |   purpose = repairs: bad (1.0)
+|   |   |   |   purpose = education: bad (1.0)
+|   |   |   |   purpose = vacation: bad (0.0)
+|   |   |   |   purpose = retraining: good (1.0)
+|   |   |   |   purpose = business: good (3.0)
+|   |   |   |   purpose = other: good (1.0)
+|   |   |   job = skilled
+|   |   |   |   other_parties = none
+|   |   |   |   |   duration <= 30
+|   |   |   |   |   |   savings_status = <100
+|   |   |   |   |   |   |   credit_history = no credits/all paid: bad (8.0/1.0)
+|   |   |   |   |   |   |   credit_history = all paid: bad (6.0)
+|   |   |   |   |   |   |   credit_history = existing paid
+|   |   |   |   |   |   |   |   own_telephone = none
+|   |   |   |   |   |   |   |   |   existing_credits <= 1
+|   |   |   |   |   |   |   |   |   |   property_magnitude = real estate
+|   |   |   |   |   |   |   |   |   |   |   age <= 26: bad (5.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 26: good (2.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = life insurance: bad (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = car
+|   |   |   |   |   |   |   |   |   |   |   credit_amount <= 1386: bad (3.0)
+|   |   |   |   |   |   |   |   |   |   |   credit_amount > 1386: good (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = no known property: good (2.0)
+|   |   |   |   |   |   |   |   |   existing_credits > 1: bad (3.0)
+|   |   |   |   |   |   |   |   own_telephone = yes: bad (5.0)
+|   |   |   |   |   |   |   credit_history = delayed previously: bad (4.0)
+|   |   |   |   |   |   |   credit_history = critical/other existing credit: good (14.0/4.0)
+|   |   |   |   |   |   savings_status = 100<=X<500
+|   |   |   |   |   |   |   credit_history = no credits/all paid: good (0.0)
+|   |   |   |   |   |   |   credit_history = all paid: good (1.0)
+|   |   |   |   |   |   |   credit_history = existing paid: bad (3.0)
+|   |   |   |   |   |   |   credit_history = delayed previously: good (0.0)
+|   |   |   |   |   |   |   credit_history = critical/other existing credit: good (2.0)
+|   |   |   |   |   |   savings_status = 500<=X<1000: good (4.0/1.0)
+|   |   |   |   |   |   savings_status = >=1000: good (4.0)
+|   |   |   |   |   |   savings_status = no known savings
+|   |   |   |   |   |   |   existing_credits <= 1
+|   |   |   |   |   |   |   |   own_telephone = none: bad (9.0/1.0)
+|   |   |   |   |   |   |   |   own_telephone = yes: good (4.0/1.0)
+|   |   |   |   |   |   |   existing_credits > 1: good (2.0)
+|   |   |   |   |   duration > 30: bad (30.0/3.0)
+|   |   |   |   other_parties = co applicant: bad (7.0/1.0)
+|   |   |   |   other_parties = guarantor: good (12.0/3.0)
+|   |   |   job = high qualif/self emp/mgmt: good (30.0/8.0)
+|   foreign_worker = no: good (15.0/2.0)
+checking_status = 0<=X<200
+|   credit_amount <= 9857
+|   |   savings_status = <100
+|   |   |   other_parties = none
+|   |   |   |   duration <= 42
+|   |   |   |   |   personal_status = male div/sep: bad (8.0/2.0)
+|   |   |   |   |   personal_status = female div/dep/mar
+|   |   |   |   |   |   purpose = new car: bad (5.0/1.0)
+|   |   |   |   |   |   purpose = used car: bad (1.0)
+|   |   |   |   |   |   purpose = furniture/equipment
+|   |   |   |   |   |   |   duration <= 10: bad (3.0)
+|   |   |   |   |   |   |   duration > 10
+|   |   |   |   |   |   |   |   duration <= 21: good (6.0/1.0)
+|   |   |   |   |   |   |   |   duration > 21: bad (2.0)
+|   |   |   |   |   |   purpose = radio/tv: good (8.0/2.0)
+|   |   |   |   |   |   purpose = domestic appliance: good (0.0)
+|   |   |   |   |   |   purpose = repairs: good (1.0)
+|   |   |   |   |   |   purpose = education: good (4.0/2.0)
+|   |   |   |   |   |   purpose = vacation: good (0.0)
+|   |   |   |   |   |   purpose = retraining: good (0.0)
+|   |   |   |   |   |   purpose = business
+|   |   |   |   |   |   |   residence_since <= 2: good (3.0)
+|   |   |   |   |   |   |   residence_since > 2: bad (2.0)
+|   |   |   |   |   |   purpose = other: good (0.0)
+|   |   |   |   |   personal_status = male single: good (52.0/15.0)
+|   |   |   |   |   personal_status = male mar/wid
+|   |   |   |   |   |   duration <= 10: good (6.0)
+|   |   |   |   |   |   duration > 10: bad (10.0/3.0)
+|   |   |   |   |   personal_status = female single: good (0.0)
+|   |   |   |   duration > 42: bad (7.0)
+|   |   |   other_parties = co applicant: good (2.0)
+|   |   |   other_parties = guarantor
+|   |   |   |   purpose = new car: bad (2.0)
+|   |   |   |   purpose = used car: good (0.0)
+|   |   |   |   purpose = furniture/equipment: good (0.0)
+|   |   |   |   purpose = radio/tv: good (18.0/1.0)
+|   |   |   |   purpose = domestic appliance: good (0.0)
+|   |   |   |   purpose = repairs: good (0.0)
+|   |   |   |   purpose = education: good (0.0)
+|   |   |   |   purpose = vacation: good (0.0)
+|   |   |   |   purpose = retraining: good (0.0)
+|   |   |   |   purpose = business: good (0.0)
+|   |   |   |   purpose = other: good (0.0)
+|   |   savings_status = 100<=X<500
+|   |   |   purpose = new car: bad (15.0/5.0)
+|   |   |   purpose = used car: good (3.0)
+|   |   |   purpose = furniture/equipment: bad (4.0/1.0)
+|   |   |   purpose = radio/tv: bad (8.0/2.0)
+|   |   |   purpose = domestic appliance: good (0.0)
+|   |   |   purpose = repairs: good (2.0)
+|   |   |   purpose = education: good (0.0)
+|   |   |   purpose = vacation: good (0.0)
+|   |   |   purpose = retraining: good (0.0)
+|   |   |   purpose = business
+|   |   |   |   housing = rent
+|   |   |   |   |   existing_credits <= 1: good (2.0)
+|   |   |   |   |   existing_credits > 1: bad (2.0)
+|   |   |   |   housing = own: good (6.0)
+|   |   |   |   housing = for free: bad (1.0)
+|   |   |   purpose = other: good (1.0)
+|   |   savings_status = 500<=X<1000: good (11.0/3.0)
+|   |   savings_status = >=1000: good (13.0/3.0)
+|   |   savings_status = no known savings: good (41.0/5.0)
+|   credit_amount > 9857: bad (20.0/3.0)
+checking_status = >=200: good (63.0/14.0)
+checking_status = no checking: good (394.0/46.0)
+
+Number of Leaves  : 	103
+
+Size of the tree : 	140
+
+
+Time taken to build model: 1.04 seconds
+
+Time taken to test model on training data: 0.05 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         855               85.5    %
+Incorrectly Classified Instances       145               14.5    %
+Kappa statistic                          0.6251
+Mean absolute error                      0.2312
+Root mean squared error                  0.34  
+Relative absolute error                 55.0377 %
+Root relative squared error             74.2015 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.956    0.380    0.854      0.956    0.902      0.640    0.857     0.905     good
+                 0.620    0.044    0.857      0.620    0.720      0.640    0.857     0.783     bad
+Weighted Avg.    0.855    0.279    0.855      0.855    0.847      0.640    0.857     0.869     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 669  31 |   a = good
+ 114 186 |   b = bad
+
+Time taken to perform cross-validation: 0.67 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         705               70.5    %
+Incorrectly Classified Instances       295               29.5    %
+Kappa statistic                          0.2467
+Mean absolute error                      0.3467
+Root mean squared error                  0.4796
+Relative absolute error                 82.5233 %
+Root relative squared error            104.6565 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.840    0.610    0.763      0.840    0.799      0.251    0.639     0.746     good
+                 0.390    0.160    0.511      0.390    0.442      0.251    0.639     0.449     bad
+Weighted Avg.    0.705    0.475    0.687      0.705    0.692      0.251    0.639     0.657     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 588 112 |   a = good
+ 183 117 |   b = bad
+

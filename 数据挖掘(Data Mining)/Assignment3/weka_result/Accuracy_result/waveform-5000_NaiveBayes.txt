@@ -1,0 +1,314 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                 Class
+Attribute            0       1       2
+                (0.34)  (0.33)  (0.33)
+=======================================
+x1
+  mean          -0.0271 -0.0205 -0.0075
+  std. dev.      0.9943  0.9859  1.0233
+  weight sum       1692    1653    1655
+  precision       0.013   0.013   0.013
+
+x2
+  mean           0.4821  0.4729    0.02
+  std. dev.      1.0059  1.0378  1.0045
+  weight sum       1692    1653    1655
+  precision      0.0138  0.0138  0.0138
+
+x3
+  mean           1.0013  0.9279  0.0137
+  std. dev.      1.1235  1.1414   0.999
+  weight sum       1692    1653    1655
+  precision      0.0127  0.0127  0.0127
+
+x4
+  mean           1.5324  1.4511  0.0151
+  std. dev.      1.3469  1.3344  1.0039
+  weight sum       1692    1653    1655
+  precision       0.013   0.013   0.013
+
+x5
+  mean           2.0879  1.9558 -0.0027
+  std. dev.      1.5311  1.5092  0.9923
+  weight sum       1692    1653    1655
+  precision      0.0131  0.0131  0.0131
+
+x6
+  mean           2.6056  2.9445  0.4662
+  std. dev.       1.751  1.5096  1.0768
+  weight sum       1692    1653    1655
+  precision      0.0136  0.0136  0.0136
+
+x7
+  mean           3.0631  3.9765  0.9495
+  std. dev.      1.9787  1.5196  1.1617
+  weight sum       1692    1653    1655
+  precision      0.0129  0.0129  0.0129
+
+x8
+  mean           2.6093   3.986  1.4517
+  std. dev.      1.7224  1.1689  1.3096
+  weight sum       1692    1653    1655
+  precision      0.0128  0.0128  0.0128
+
+x9
+  mean           2.0352  4.0109  1.9987
+  std. dev.      1.5199  1.0064   1.543
+  weight sum       1692    1653    1655
+  precision      0.0126  0.0126  0.0126
+
+x10
+  mean           2.0089  4.0007  3.0016
+  std. dev.      1.1675  1.1535  1.5142
+  weight sum       1692    1653    1655
+  precision      0.0135  0.0135  0.0135
+
+x11
+  mean            2.025   3.996  3.9762
+  std. dev.      0.9957  1.5327  1.5023
+  weight sum       1692    1653    1655
+  precision      0.0124  0.0124  0.0124
+
+x12
+  mean           1.9966  3.0185   3.992
+  std. dev.      1.1659  1.5317  1.1573
+  weight sum       1692    1653    1655
+  precision      0.0131  0.0131  0.0131
+
+x13
+  mean           1.9798   1.982  3.9943
+  std. dev.      1.5087   1.489  1.0331
+  weight sum       1692    1653    1655
+  precision       0.012   0.012   0.012
+
+x14
+  mean           2.4476  1.5525  4.0179
+  std. dev.      1.7471  1.3406  1.1718
+  weight sum       1692    1653    1655
+  precision      0.0146  0.0146  0.0146
+
+x15
+  mean           2.9727  1.0041  3.9456
+  std. dev.      1.9421  1.1561   1.562
+  weight sum       1692    1653    1655
+  precision      0.0127  0.0127  0.0127
+
+x16
+  mean           2.3976  0.4903  3.0468
+  std. dev.      1.6717  1.0356  1.5344
+  weight sum       1692    1653    1655
+  precision       0.013   0.013   0.013
+
+x17
+  mean           1.9705 -0.0058  2.0343
+  std. dev.      1.5188   0.981   1.547
+  weight sum       1692    1653    1655
+  precision      0.0141  0.0141  0.0141
+
+x18
+  mean           1.4653  0.0097  1.4739
+  std. dev.      1.3256  1.0077  1.3436
+  weight sum       1692    1653    1655
+  precision      0.0142  0.0142  0.0142
+
+x19
+  mean           0.9482  0.0275  0.9765
+  std. dev.      1.1455  1.0106  1.1834
+  weight sum       1692    1653    1655
+  precision       0.014   0.014   0.014
+
+x20
+  mean            0.471 -0.0091  0.5202
+  std. dev.       1.027  1.0202  1.0628
+  weight sum       1692    1653    1655
+  precision       0.014   0.014   0.014
+
+x21
+  mean          -0.0022 -0.0016 -0.0125
+  std. dev.      1.0033  1.0043  1.0113
+  weight sum       1692    1653    1655
+  precision      0.0138  0.0138  0.0138
+
+x22
+  mean          -0.0199 -0.0286 -0.0198
+  std. dev.      1.0116   1.003  0.9894
+  weight sum       1692    1653    1655
+  precision      0.0133  0.0133  0.0133
+
+x23
+  mean          -0.0139  0.0389   0.019
+  std. dev.      0.9943  0.9633  0.9701
+  weight sum       1692    1653    1655
+  precision      0.0141  0.0141  0.0141
+
+x24
+  mean          -0.0127    0.01 -0.0014
+  std. dev.      1.0202  0.9919  1.0239
+  weight sum       1692    1653    1655
+  precision      0.0132  0.0132  0.0132
+
+x25
+  mean           0.0124  -0.025  0.0059
+  std. dev.      0.9862  1.0032  1.0122
+  weight sum       1692    1653    1655
+  precision      0.0145  0.0145  0.0145
+
+x26
+  mean           0.0045 -0.0265 -0.0142
+  std. dev.      0.9824  0.9647  0.9961
+  weight sum       1692    1653    1655
+  precision      0.0143  0.0143  0.0143
+
+x27
+  mean           0.0017 -0.0227  0.0217
+  std. dev.      0.9946  0.9727  0.9922
+  weight sum       1692    1653    1655
+  precision      0.0139  0.0139  0.0139
+
+x28
+  mean           0.0195  0.0159  0.0036
+  std. dev.      1.0167  1.0129  0.9866
+  weight sum       1692    1653    1655
+  precision      0.0137  0.0137  0.0137
+
+x29
+  mean          -0.0317   0.005  0.0288
+  std. dev.      1.0068  0.9849  0.9836
+  weight sum       1692    1653    1655
+  precision      0.0141  0.0141  0.0141
+
+x30
+  mean           0.0155  -0.025 -0.0209
+  std. dev.      0.9672  0.9848   1.006
+  weight sum       1692    1653    1655
+  precision      0.0132  0.0132  0.0132
+
+x31
+  mean          -0.0025 -0.0151  0.0229
+  std. dev.      1.0094  0.9954  0.9924
+  weight sum       1692    1653    1655
+  precision      0.0137  0.0137  0.0137
+
+x32
+  mean           0.0356  0.0221  0.0334
+  std. dev.      0.9785  0.9846  1.0126
+  weight sum       1692    1653    1655
+  precision      0.0125  0.0125  0.0125
+
+x33
+  mean           0.0005  0.0198  0.0218
+  std. dev.       1.005  1.0372  1.0042
+  weight sum       1692    1653    1655
+  precision      0.0129  0.0129  0.0129
+
+x34
+  mean           0.0534  0.0332  0.0125
+  std. dev.      1.0174  1.0189   0.972
+  weight sum       1692    1653    1655
+  precision      0.0149  0.0149  0.0149
+
+x35
+  mean          -0.0053  0.0495 -0.0112
+  std. dev.      1.0095  1.0049  0.9955
+  weight sum       1692    1653    1655
+  precision      0.0131  0.0131  0.0131
+
+x36
+  mean           0.0499 -0.0076   0.014
+  std. dev.      0.9771  1.0087  0.9955
+  weight sum       1692    1653    1655
+  precision      0.0133  0.0133  0.0133
+
+x37
+  mean          -0.0265  -0.043 -0.0073
+  std. dev.       0.991  0.9905  0.9942
+  weight sum       1692    1653    1655
+  precision      0.0132  0.0132  0.0132
+
+x38
+  mean          -0.0285  0.0336 -0.0372
+  std. dev.      1.0121   0.993    0.98
+  weight sum       1692    1653    1655
+  precision      0.0135  0.0135  0.0135
+
+x39
+  mean           0.0008  0.0043 -0.0199
+  std. dev.      1.0091  0.9986  1.0232
+  weight sum       1692    1653    1655
+  precision      0.0129  0.0129  0.0129
+
+x40
+  mean           0.0484  0.0258  0.0034
+  std. dev.       1.021  1.0056  0.9805
+  weight sum       1692    1653    1655
+  precision      0.0137  0.0137  0.0137
+
+
+
+Time taken to build model: 0.9 seconds
+
+Time taken to test model on training data: 0.3 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        4011               80.22   %
+Incorrectly Classified Instances       989               19.78   %
+Kappa statistic                          0.7038
+Mean absolute error                      0.1344
+Root mean squared error                  0.3352
+Relative absolute error                 30.2524 %
+Root relative squared error             71.1174 %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.530    0.005    0.982      0.530    0.688      0.643    0.943     0.914     0
+                 0.938    0.143    0.764      0.938    0.842      0.762    0.967     0.933     1
+                 0.945    0.148    0.760      0.945    0.842      0.762    0.963     0.917     2
+Weighted Avg.    0.802    0.098    0.837      0.802    0.790      0.722    0.957     0.922     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  896  390  406 |    a = 0
+   14 1551   88 |    b = 1
+    2   89 1564 |    c = 2
+
+Time taken to perform cross-validation: 0.6 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        4000               80      %
+Incorrectly Classified Instances      1000               20      %
+Kappa statistic                          0.7005
+Mean absolute error                      0.1357
+Root mean squared error                  0.3369
+Relative absolute error                 30.5282 %
+Root relative squared error             71.4731 %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.526    0.005    0.980      0.526    0.685      0.639    0.941     0.911     0
+                 0.936    0.145    0.762      0.936    0.840      0.758    0.966     0.931     1
+                 0.944    0.149    0.758      0.944    0.841      0.761    0.962     0.915     2
+Weighted Avg.    0.800    0.099    0.835      0.800    0.788      0.719    0.956     0.919     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+  890  394  408 |    a = 0
+   16 1547   90 |    b = 1
+    2   90 1563 |    c = 2
+

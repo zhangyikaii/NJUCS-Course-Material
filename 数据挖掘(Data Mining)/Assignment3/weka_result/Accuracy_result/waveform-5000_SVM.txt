@@ -1,0 +1,82 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     waveform-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    5000
+Attributes:   41
+              x1
+              x2
+              x3
+              x4
+              x5
+              x6
+              x7
+              x8
+              x9
+              x10
+              x11
+              x12
+              x13
+              x14
+              x15
+              x16
+              x17
+              x18
+              x19
+              x20
+              x21
+              x22
+              x23
+              x24
+              x25
+              x26
+              x27
+              x28
+              x29
+              x30
+              x31
+              x32
+              x33
+              x34
+              x35
+              x36
+              x37
+              x38
+              x39
+              x40
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 2.29 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        4321               86.42   %
+Incorrectly Classified Instances       679               13.58   %
+Kappa statistic                          0.7963
+Mean absolute error                      0.0905
+Root mean squared error                  0.3009
+Relative absolute error                 20.3712 %
+Root relative squared error             63.8297 %
+Total Number of Instances             5000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.818    0.058    0.878      0.818    0.847      0.774    0.880     0.780     0
+                 0.875    0.068    0.865      0.875    0.870      0.805    0.904     0.798     1
+                 0.901    0.078    0.851      0.901    0.875      0.812    0.911     0.799     2
+Weighted Avg.    0.864    0.068    0.865      0.864    0.864      0.797    0.898     0.792     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1384  144  164 |    a = 0
+  110 1446   97 |    b = 1
+   82   82 1491 |    c = 2
+

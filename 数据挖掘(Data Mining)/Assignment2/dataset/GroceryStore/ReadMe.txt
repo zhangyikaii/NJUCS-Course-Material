@@ -1,0 +1,1 @@
+This data set contains transaction records of a grocery store in a month. Each line is a transaction, where the purchased items line in {}, separated by “,” (the space is replaced by “/”).  In total, there are 9835 transactions of 169 items.

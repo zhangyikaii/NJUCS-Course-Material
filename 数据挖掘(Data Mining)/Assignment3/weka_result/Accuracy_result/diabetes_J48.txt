@@ -1,0 +1,109 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+plas <= 127
+|   mass <= 26.4: tested_negative (132.0/3.0)
+|   mass > 26.4
+|   |   age <= 28: tested_negative (180.0/22.0)
+|   |   age > 28
+|   |   |   plas <= 99: tested_negative (55.0/10.0)
+|   |   |   plas > 99
+|   |   |   |   pedi <= 0.56: tested_negative (84.0/34.0)
+|   |   |   |   pedi > 0.56
+|   |   |   |   |   preg <= 6
+|   |   |   |   |   |   age <= 30: tested_positive (4.0)
+|   |   |   |   |   |   age > 30
+|   |   |   |   |   |   |   age <= 34: tested_negative (7.0/1.0)
+|   |   |   |   |   |   |   age > 34
+|   |   |   |   |   |   |   |   mass <= 33.1: tested_positive (6.0)
+|   |   |   |   |   |   |   |   mass > 33.1: tested_negative (4.0/1.0)
+|   |   |   |   |   preg > 6: tested_positive (13.0)
+plas > 127
+|   mass <= 29.9
+|   |   plas <= 145: tested_negative (41.0/6.0)
+|   |   plas > 145
+|   |   |   age <= 25: tested_negative (4.0)
+|   |   |   age > 25
+|   |   |   |   age <= 61
+|   |   |   |   |   mass <= 27.1: tested_positive (12.0/1.0)
+|   |   |   |   |   mass > 27.1
+|   |   |   |   |   |   pres <= 82
+|   |   |   |   |   |   |   pedi <= 0.396: tested_positive (8.0/1.0)
+|   |   |   |   |   |   |   pedi > 0.396: tested_negative (3.0)
+|   |   |   |   |   |   pres > 82: tested_negative (4.0)
+|   |   |   |   age > 61: tested_negative (4.0)
+|   mass > 29.9
+|   |   plas <= 157
+|   |   |   pres <= 61: tested_positive (15.0/1.0)
+|   |   |   pres > 61
+|   |   |   |   age <= 30: tested_negative (40.0/13.0)
+|   |   |   |   age > 30: tested_positive (60.0/17.0)
+|   |   plas > 157: tested_positive (92.0/12.0)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	39
+
+
+Time taken to build model: 0.73 seconds
+
+Time taken to test model on training data: 0.08 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         646               84.1146 %
+Incorrectly Classified Instances       122               15.8854 %
+Kappa statistic                          0.6319
+Mean absolute error                      0.2383
+Root mean squared error                  0.3452
+Relative absolute error                 52.4339 %
+Root relative squared error             72.4207 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.936    0.336    0.839      0.936    0.885      0.642    0.888     0.915     tested_negative
+                 0.664    0.064    0.848      0.664    0.745      0.642    0.888     0.808     tested_positive
+Weighted Avg.    0.841    0.241    0.842      0.841    0.836      0.642    0.888     0.878     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 468  32 |   a = tested_negative
+  90 178 |   b = tested_positive
+
+Time taken to perform cross-validation: 1.03 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         567               73.8281 %
+Incorrectly Classified Instances       201               26.1719 %
+Kappa statistic                          0.4164
+Mean absolute error                      0.3158
+Root mean squared error                  0.4463
+Relative absolute error                 69.4841 %
+Root relative squared error             93.6293 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.814    0.403    0.790      0.814    0.802      0.417    0.751     0.811     tested_negative
+                 0.597    0.186    0.632      0.597    0.614      0.417    0.751     0.572     tested_positive
+Weighted Avg.    0.738    0.327    0.735      0.738    0.736      0.417    0.751     0.727     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 407  93 |   a = tested_negative
+ 108 160 |   b = tested_positive
+

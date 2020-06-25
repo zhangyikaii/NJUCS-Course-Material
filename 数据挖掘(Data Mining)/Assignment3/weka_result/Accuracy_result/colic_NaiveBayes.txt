@@ -1,0 +1,212 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                                    Class
+Attribute                             yes      no
+                                   (0.63)  (0.37)
+==================================================
+surgery
+  yes                                191.0    27.0
+  no                                  43.0   111.0
+  [total]                            234.0   138.0
+
+Age
+  adult                              213.0   129.0
+  young                               21.0     9.0
+  [total]                            234.0   138.0
+
+rectal_temperature
+  mean                             38.1102 38.1335
+  std. dev.                         0.6831  0.5609
+  weight sum                           232     136
+  precision                          0.135   0.135
+
+pulse
+  mean                             75.6478 62.4891
+  std. dev.                        27.5175 23.9341
+  weight sum                           232     136
+  precision                         2.8519  2.8519
+
+respiratory_rate
+  mean                             33.0474 26.1412
+  std. dev.                        17.6656 11.2275
+  weight sum                           232     136
+  precision                            2.2     2.2
+
+temp_extremities
+  normal                              50.0    47.0
+  warm                                19.0    22.0
+  cool                               140.0    62.0
+  cold                                27.0     9.0
+  [total]                            236.0   140.0
+
+peripheral_pulse
+  normal                             127.0   109.0
+  increased                            3.0     5.0
+  reduced                             94.0    24.0
+  absent                              12.0     2.0
+  [total]                            236.0   140.0
+
+mucous_membranes
+  normal pink                         80.0    68.0
+  bright pink                         22.0    18.0
+  pale pink                           55.0    28.0
+  pale cyanotic                       42.0    10.0
+  bright red                          19.0    11.0
+  dark cyanotic                       20.0     7.0
+  [total]                            238.0   142.0
+
+capillary_refill_time
+  <3                                 161.0   111.0
+  >=3                                 72.0    26.0
+  meaning unknown                      2.0     2.0
+  [total]                            235.0   139.0
+
+pain
+  alert no pain                       10.0    41.0
+  depressed                           52.0    27.0
+  intermittent mild pain              90.0    57.0
+  intermittent severe pain            40.0     9.0
+  continuous severe pain              45.0     7.0
+  [total]                            237.0   141.0
+
+peristalsis
+  hypermotile                         17.0    34.0
+  normal                              10.0    14.0
+  hypomotile                         134.0    74.0
+  absent                              75.0    18.0
+  [total]                            236.0   140.0
+
+abdominal_distension
+  none                                87.0    81.0
+  slight                              37.0    40.0
+  moderate                            75.0    12.0
+  severe                              37.0     7.0
+  [total]                            236.0   140.0
+
+nasogastric_tube
+  none                                58.0    33.0
+  slight                             160.0    94.0
+  significant                         17.0    12.0
+  [total]                            235.0   139.0
+
+nasogastric_reflux
+  none                               157.0   119.0
+  >1l                                 37.0    10.0
+  <1l                                 41.0    10.0
+  [total]                            235.0   139.0
+
+nasogastric_reflux_PH
+  mean                              4.9717  5.0184
+  std. dev.                         0.9431  0.7198
+  weight sum                           232     136
+  precision                         0.3125  0.3125
+
+rectal_examination
+  normal                              34.0    36.0
+  increased                            8.0     8.0
+  decreased                           37.0    26.0
+  absent                             157.0    70.0
+  [total]                            236.0   140.0
+
+abdomen
+  normal                              10.0    23.0
+  other                                6.0    20.0
+  firm feces in large intestine        5.0    16.0
+  distended small intestine           52.0     5.0
+  distended large intestine          164.0    77.0
+  [total]                            237.0   141.0
+
+packed_cell_volume
+  mean                             47.0613 43.3406
+  std. dev.                        10.5214  9.5139
+  weight sum                           232     136
+  precision                         1.3148  1.3148
+
+total_protein
+  mean                             23.2192 27.4039
+  std. dev.                        25.2134 27.3096
+  weight sum                           232     136
+  precision                         1.0202  1.0202
+
+abdominocentesis_appearance
+  clear                               26.0    28.0
+  cloudy                             155.0   103.0
+  serosanguinous                      54.0     8.0
+  [total]                            235.0   139.0
+
+abdomcentesis_total_protein
+  mean                              2.9976   2.866
+  std. dev.                         1.1521  1.1651
+  weight sum                           232     136
+  precision                         0.2273  0.2273
+
+outcome
+  lived                              119.0   110.0
+  died                                80.0    11.0
+  euthanized                          36.0    18.0
+  [total]                            235.0   139.0
+
+
+
+Time taken to build model: 0.56 seconds
+
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         292               79.3478 %
+Incorrectly Classified Instances        76               20.6522 %
+Kappa statistic                          0.5647
+Mean absolute error                      0.2147
+Root mean squared error                  0.4067
+Relative absolute error                 46.0472 %
+Root relative squared error             84.2514 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.810    0.235    0.855      0.810    0.832      0.566    0.858     0.873     yes
+                 0.765    0.190    0.703      0.765    0.732      0.566    0.858     0.840     no
+Weighted Avg.    0.793    0.218    0.798      0.793    0.795      0.566    0.858     0.861     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 188  44 |   a = yes
+  32 104 |   b = no
+
+Time taken to perform cross-validation: 0.19 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         285               77.4457 %
+Incorrectly Classified Instances        83               22.5543 %
+Kappa statistic                          0.531 
+Mean absolute error                      0.2305
+Root mean squared error                  0.4232
+Relative absolute error                 49.4409 %
+Root relative squared error             87.6625 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.776    0.228    0.853      0.776    0.813      0.535    0.838     0.847     yes
+                 0.772    0.224    0.669      0.772    0.717      0.535    0.838     0.813     no
+Weighted Avg.    0.774    0.227    0.785      0.774    0.777      0.535    0.838     0.834     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 180  52 |   a = yes
+  31 105 |   b = no
+

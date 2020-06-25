@@ -1,0 +1,48 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     pima_diabetes-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    768
+Attributes:   9
+              preg
+              plas
+              pres
+              skin
+              insu
+              mass
+              pedi
+              age
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         500               65.1042 %
+Incorrectly Classified Instances       268               34.8958 %
+Kappa statistic                          0     
+Mean absolute error                      0.349 
+Root mean squared error                  0.5907
+Relative absolute error                 76.7774 %
+Root relative squared error            123.9347 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    1.000    0.651      1.000    0.789      ?        0.500     0.651     tested_negative
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.349     tested_positive
+Weighted Avg.    0.651    0.651    ?          0.651    ?          ?        0.500     0.546     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tested_negative
+ 268   0 |   b = tested_positive
+

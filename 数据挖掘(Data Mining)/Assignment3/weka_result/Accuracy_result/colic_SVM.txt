@@ -1,0 +1,62 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     horse-colic-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    368
+Attributes:   23
+              surgery
+              Age
+              rectal_temperature
+              pulse
+              respiratory_rate
+              temp_extremities
+              peripheral_pulse
+              mucous_membranes
+              capillary_refill_time
+              pain
+              peristalsis
+              abdominal_distension
+              nasogastric_tube
+              nasogastric_reflux
+              nasogastric_reflux_PH
+              rectal_examination
+              abdomen
+              packed_cell_volume
+              total_protein
+              abdominocentesis_appearance
+              abdomcentesis_total_protein
+              outcome
+              surgical_lesion
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 0.17 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         268               72.8261 %
+Incorrectly Classified Instances       100               27.1739 %
+Kappa statistic                          0.373 
+Mean absolute error                      0.2717
+Root mean squared error                  0.5213
+Relative absolute error                 58.2875 %
+Root relative squared error            107.9896 %
+Total Number of Instances              368     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.884    0.537    0.737      0.884    0.804      0.390    0.673     0.725     yes
+                 0.463    0.116    0.700      0.463    0.558      0.390    0.673     0.523     no
+Weighted Avg.    0.728    0.381    0.724      0.728    0.713      0.390    0.673     0.650     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 205  27 |   a = yes
+  73  63 |   b = no
+

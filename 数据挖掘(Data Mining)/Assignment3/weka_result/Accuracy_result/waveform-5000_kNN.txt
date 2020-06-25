@@ -1,0 +1,70 @@
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.84 seconds
+
+Time taken to test model on training data: 3.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        5000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0003
+Root mean squared error                  0.0003
+Relative absolute error                  0.06   %
+Root relative squared error              0.06   %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     0
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     1
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     2
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1692    0    0 |    a = 0
+    0 1653    0 |    b = 1
+    0    0 1655 |    c = 2
+
+Time taken to perform cross-validation: 5.28 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        3681               73.62   %
+Incorrectly Classified Instances      1319               26.38   %
+Kappa statistic                          0.6043
+Mean absolute error                      0.176 
+Root mean squared error                  0.4192
+Relative absolute error                 39.6125 %
+Root relative squared error             88.9336 %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.700    0.142    0.716      0.700    0.708      0.561    0.779     0.603     0
+                 0.754    0.128    0.745      0.754    0.749      0.624    0.813     0.643     1
+                 0.755    0.126    0.748      0.755    0.751      0.628    0.815     0.646     2
+Weighted Avg.    0.736    0.132    0.736      0.736    0.736      0.604    0.802     0.630     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1185  254  253 |    a = 0
+  238 1246  169 |    b = 1
+  232  173 1250 |    c = 2
+

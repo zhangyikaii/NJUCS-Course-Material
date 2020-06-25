@@ -1,0 +1,86 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.KStar -B 20 -M a
+Relation:     waveform-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    5000
+Attributes:   41
+              x1
+              x2
+              x3
+              x4
+              x5
+              x6
+              x7
+              x8
+              x9
+              x10
+              x11
+              x12
+              x13
+              x14
+              x15
+              x16
+              x17
+              x18
+              x19
+              x20
+              x21
+              x22
+              x23
+              x24
+              x25
+              x26
+              x27
+              x28
+              x29
+              x30
+              x31
+              x32
+              x33
+              x34
+              x35
+              x36
+              x37
+              x38
+              x39
+              x40
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        3674               73.48   %
+Incorrectly Classified Instances      1326               26.52   %
+Kappa statistic                          0.6022
+Mean absolute error                      0.1792
+Root mean squared error                  0.4002
+Relative absolute error                 40.319  %
+Root relative squared error             84.8889 %
+Total Number of Instances             5000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.705    0.147    0.711      0.705    0.708      0.560    0.881     0.789     0
+                 0.764    0.131    0.742      0.764    0.753      0.628    0.911     0.811     1
+                 0.736    0.120    0.752      0.736    0.744      0.619    0.914     0.814     2
+Weighted Avg.    0.735    0.133    0.735      0.735    0.735      0.602    0.902     0.804     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1193  238  261 |    a = 0
+  249 1263  141 |    b = 1
+  236  201 1218 |    c = 2
+

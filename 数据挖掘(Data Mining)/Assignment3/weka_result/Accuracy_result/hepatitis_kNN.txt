@@ -1,0 +1,66 @@
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.49 seconds
+
+Time taken to test model on training data: 0.08 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         155              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0064
+Root mean squared error                  0.0064
+Relative absolute error                  1.931  %
+Root relative squared error              1.5736 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     DIE
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     LIVE
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  32   0 |   a = DIE
+   0 123 |   b = LIVE
+
+Time taken to perform cross-validation: 0.08 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         125               80.6452 %
+Incorrectly Classified Instances        30               19.3548 %
+Kappa statistic                          0.4093
+Mean absolute error                      0.1979
+Root mean squared error                  0.4369
+Relative absolute error                 59.9276 %
+Root relative squared error            107.8887 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.531    0.122    0.531      0.531    0.531      0.409    0.687     0.390     DIE
+                 0.878    0.469    0.878      0.878    0.878      0.409    0.687     0.861     LIVE
+Weighted Avg.    0.806    0.397    0.806      0.806    0.806      0.409    0.687     0.764     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  17  15 |   a = DIE
+  15 108 |   b = LIVE
+

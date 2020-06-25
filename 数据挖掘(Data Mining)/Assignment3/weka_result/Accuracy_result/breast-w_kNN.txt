@@ -1,0 +1,66 @@
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.67 seconds
+
+Time taken to test model on training data: 0.22 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         699              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0009
+Root mean squared error                  0.0011
+Relative absolute error                  0.2091 %
+Root relative squared error              0.2354 %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     benign
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     malignant
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 458   0 |   a = benign
+   0 241 |   b = malignant
+
+Time taken to perform cross-validation: 0.13 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         666               95.279  %
+Incorrectly Classified Instances        33                4.721  %
+Kappa statistic                          0.8948
+Mean absolute error                      0.0473
+Root mean squared error                  0.2128
+Relative absolute error                 10.4642 %
+Root relative squared error             44.7723 %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.972    0.083    0.957      0.972    0.964      0.895    0.974     0.982     benign
+                 0.917    0.028    0.944      0.917    0.931      0.895    0.974     0.923     malignant
+Weighted Avg.    0.953    0.064    0.953      0.953    0.953      0.895    0.974     0.962     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 445  13 |   a = benign
+  20 221 |   b = malignant
+

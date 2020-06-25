@@ -1,0 +1,24 @@
+To,	Location
+
+Q[7],PIN_AF24		
+Q[6],PIN_AE24
+Q[5],PIN_AF25
+Q[4],PIN_AG25
+Q[3],PIN_AD24
+Q[2],PIN_AC23
+Q[1],PIN_AB23
+Q[0],PIN_AA24
+choose[2], PIN_AA15
+choose[1], PIN_AA14
+choose[0], PIN_AK4
+clk, PIN_AJ4
+data_in[7],	PIN_AD30
+data_in[6], PIN_AC28
+data_in[5], PIN_V25
+data_in[4], PIN_W25
+data_in[3], PIN_AC30
+data_in[2], PIN_AB28
+data_in[1], PIN_Y27
+data_in[0], PIN_AB30
+en,			PIN_AA30
+inone,		PIN_AC29

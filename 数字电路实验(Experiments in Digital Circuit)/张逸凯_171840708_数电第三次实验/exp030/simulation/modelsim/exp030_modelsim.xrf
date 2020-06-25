@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, E:/My_design/exp030/exp030.v
+source_file = 1, E:/My_design/exp030/db/exp030.cbx.xml
+design_name = exp030
+instance = comp, \y[0]~output , y[0]~output, exp030, 1
+instance = comp, \y[1]~output , y[1]~output, exp030, 1
+instance = comp, \x[0]~input , x[0]~input, exp030, 1
+instance = comp, \x[2]~input , x[2]~input, exp030, 1
+instance = comp, \Mux0~0 , Mux0~0, exp030, 1
+instance = comp, \en~input , en~input, exp030, 1
+instance = comp, \x[1]~input , x[1]~input, exp030, 1
+instance = comp, \x[3]~input , x[3]~input, exp030, 1
+instance = comp, \y[1]~2 , y[1]~2, exp030, 1
+instance = comp, \Mux1~0 , Mux1~0, exp030, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, exp030, 1

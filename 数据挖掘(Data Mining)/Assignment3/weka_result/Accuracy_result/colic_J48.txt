@@ -1,0 +1,94 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+surgery = yes: yes (216.0/26.0)
+surgery = no
+|   outcome = lived: no (110.0/13.0)
+|   outcome = died
+|   |   abdominocentesis_appearance = clear: no (1.0)
+|   |   abdominocentesis_appearance = cloudy
+|   |   |   abdomcentesis_total_protein <= 3.2
+|   |   |   |   nasogastric_tube = none: yes (9.0)
+|   |   |   |   nasogastric_tube = slight
+|   |   |   |   |   abdominal_distension = none: no (3.0)
+|   |   |   |   |   abdominal_distension = slight: no (0.0)
+|   |   |   |   |   abdominal_distension = moderate: no (0.0)
+|   |   |   |   |   abdominal_distension = severe: yes (4.0/1.0)
+|   |   |   |   nasogastric_tube = significant: yes (1.0)
+|   |   |   abdomcentesis_total_protein > 3.2: no (2.0)
+|   |   abdominocentesis_appearance = serosanguinous: yes (3.0)
+|   outcome = euthanized
+|   |   mucous_membranes = normal pink: yes (5.0)
+|   |   mucous_membranes = bright pink: yes (0.0)
+|   |   mucous_membranes = pale pink: yes (4.0/1.0)
+|   |   mucous_membranes = pale cyanotic: yes (5.0/1.0)
+|   |   mucous_membranes = bright red: no (4.0)
+|   |   mucous_membranes = dark cyanotic: yes (1.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	24
+
+
+Time taken to build model: 0.63 seconds
+
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         326               88.587  %
+Incorrectly Classified Instances        42               11.413  %
+Kappa statistic                          0.749 
+Mean absolute error                      0.1991
+Root mean squared error                  0.3155
+Relative absolute error                 42.7104 %
+Root relative squared error             65.366  %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.944    0.213    0.883      0.944    0.913      0.752    0.881     0.885     yes
+                 0.787    0.056    0.892      0.787    0.836      0.752    0.881     0.803     no
+Weighted Avg.    0.886    0.155    0.886      0.886    0.884      0.752    0.881     0.854     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 219  13 |   a = yes
+  29 107 |   b = no
+
+Time taken to perform cross-validation: 0.69 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         306               83.1522 %
+Incorrectly Classified Instances        62               16.8478 %
+Kappa statistic                          0.6259
+Mean absolute error                      0.2444
+Root mean squared error                  0.3843
+Relative absolute error                 52.4142 %
+Root relative squared error             79.6195 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.914    0.309    0.835      0.914    0.872      0.632    0.787     0.801     yes
+                 0.691    0.086    0.825      0.691    0.752      0.632    0.787     0.665     no
+Weighted Avg.    0.832    0.227    0.831      0.832    0.828      0.632    0.787     0.751     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 212  20 |   a = yes
+  42  94 |   b = no
+

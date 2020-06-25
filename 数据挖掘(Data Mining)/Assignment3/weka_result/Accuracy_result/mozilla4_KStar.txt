@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.73 seconds
+
+Time taken to test model on training data: 113.36 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       15518               99.8263 %
+Incorrectly Classified Instances        27                0.1737 %
+Kappa statistic                          0.9961
+Mean absolute error                      0.0057
+Root mean squared error                  0.0439
+Relative absolute error                  1.2916 %
+Root relative squared error              9.3562 %
+Total Number of Instances            15545     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.002    0.996      0.999    0.997      0.996    1.000     1.000     0
+                 0.998    0.001    0.999      0.998    0.999      0.996    1.000     1.000     1
+Weighted Avg.    0.998    0.002    0.998      0.998    0.998      0.996    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+  5101     7 |     a = 0
+    20 10417 |     b = 1
+
+Time taken to perform cross-validation: 126.12 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances       14351               92.3191 %
+Incorrectly Classified Instances      1194                7.6809 %
+Kappa statistic                          0.8273
+Mean absolute error                      0.0785
+Root mean squared error                  0.2671
+Relative absolute error                 17.7978 %
+Root relative squared error             56.8751 %
+Total Number of Instances            15545     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.899    0.065    0.871      0.899    0.885      0.828    0.950     0.890     0
+                 0.935    0.101    0.950      0.935    0.942      0.828    0.945     0.960     1
+Weighted Avg.    0.923    0.089    0.924      0.923    0.923      0.828    0.946     0.937     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4593  515 |    a = 0
+  679 9758 |    b = 1
+

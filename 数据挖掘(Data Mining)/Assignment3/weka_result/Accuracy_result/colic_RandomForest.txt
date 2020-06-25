@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.45 seconds
+
+Time taken to test model on training data: 0.18 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         368              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0942
+Root mean squared error                  0.1256
+Relative absolute error                 20.2003 %
+Root relative squared error             26.0142 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     yes
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     no
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 232   0 |   a = yes
+   0 136 |   b = no
+
+Time taken to perform cross-validation: 1.68 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         313               85.0543 %
+Incorrectly Classified Instances        55               14.9457 %
+Kappa statistic                          0.6707
+Mean absolute error                      0.2574
+Root mean squared error                  0.3382
+Relative absolute error                 55.2183 %
+Root relative squared error             70.065  %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.918    0.265    0.855      0.918    0.886      0.674    0.897     0.911     yes
+                 0.735    0.082    0.840      0.735    0.784      0.674    0.897     0.877     no
+Weighted Avg.    0.851    0.197    0.850      0.851    0.848      0.674    0.897     0.898     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 213  19 |   a = yes
+  36 100 |   b = no
+

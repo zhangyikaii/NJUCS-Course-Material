@@ -1,0 +1,16 @@
+﻿  main.cpp
+E:\VS2019_project\Project4\Project4\video.h(74,41): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(106,41): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(136,40): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(161,41): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(186,40): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(223,4): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(288,3): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\video.h(291,3): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(155,21): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(191,4): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(196,4): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(202,4): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(208,5): warning C4018:  “<”: 有符号/无符号不匹配
+E:\VS2019_project\Project4\Project4\admin.h(252,4): warning C4018:  “<”: 有符号/无符号不匹配
+  Project4.vcxproj -> E:\VS2019_project\Project4\Debug\Project4.exe

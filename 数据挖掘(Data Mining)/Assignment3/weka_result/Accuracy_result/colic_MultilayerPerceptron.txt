@@ -1,0 +1,2091 @@
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.7937244145398268
+    Node 2    1.5358124588700424
+    Node 3    2.255768050983397
+    Node 4    -3.1634746417772925
+    Node 5    -1.8132979797637203
+    Node 6    -2.852058149287392
+    Node 7    -1.881815147666066
+    Node 8    -2.0162347381634267
+    Node 9    1.4889766898039845
+    Node 10    -1.8701700612188008
+    Node 11    -2.640237220007263
+    Node 12    -2.549998725418121
+    Node 13    0.10650501667201472
+    Node 14    1.664781175738531
+    Node 15    -2.767498916272993
+    Node 16    -1.4497728109403571
+    Node 17    2.7601015405849436
+    Node 18    1.7668265664907086
+    Node 19    -1.530396958969372
+    Node 20    -2.766612314977976
+    Node 21    2.2740801695084802
+    Node 22    2.454755571166703
+    Node 23    -1.4065099997915809
+    Node 24    -1.6852242110101294
+    Node 25    1.393850744140471
+    Node 26    1.5834731541528624
+    Node 27    -2.530369391328931
+    Node 28    2.3861244253740663
+    Node 29    1.4862281221517335
+    Node 30    1.543357687169993
+    Node 31    3.137092568917482
+    Node 32    0.4094946761142575
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    1.807024128630779
+    Node 2    -1.5645016550987862
+    Node 3    -2.256551349484616
+    Node 4    3.2012744702786646
+    Node 5    1.8199866868943393
+    Node 6    2.811607799211788
+    Node 7    1.8783138400522172
+    Node 8    1.9620371176028377
+    Node 9    -1.4687079983396671
+    Node 10    1.8801031845924743
+    Node 11    2.6667052281239148
+    Node 12    2.543365977941301
+    Node 13    -0.08079782438408187
+    Node 14    -1.6619096674650364
+    Node 15    2.770833143937524
+    Node 16    1.4110160781238563
+    Node 17    -2.763284754373654
+    Node 18    -1.7697814762394162
+    Node 19    1.5258958066843238
+    Node 20    2.8098285524308606
+    Node 21    -2.2772951814154427
+    Node 22    -2.458376517647996
+    Node 23    1.4006657002435419
+    Node 24    1.6641641679766284
+    Node 25    -1.4095514750942812
+    Node 26    -1.5777959086547146
+    Node 27    2.5275127967959974
+    Node 28    -2.383616039040436
+    Node 29    -1.5020682683955602
+    Node 30    -1.5428382904438154
+    Node 31    -3.127385501993837
+    Node 32    -0.3629347376172295
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    0.07196899027324262
+    Attrib surgery=no    -0.35362891295338195
+    Attrib Age=young    0.34725098779915187
+    Attrib rectal_temperature    -0.42944326772418845
+    Attrib pulse    -0.22751786993634393
+    Attrib respiratory_rate    0.16653157560868803
+    Attrib temp_extremities=normal    0.317359270391958
+    Attrib temp_extremities=warm    0.14306827247223763
+    Attrib temp_extremities=cool    -0.36779365628360017
+    Attrib temp_extremities=cold    -0.2928666369057775
+    Attrib peripheral_pulse=normal    -0.24838411566375113
+    Attrib peripheral_pulse=increased    0.07575168084889712
+    Attrib peripheral_pulse=reduced    -0.20813693976527436
+    Attrib peripheral_pulse=absent    0.2331158985219928
+    Attrib mucous_membranes=normal pink    -0.2594407617191932
+    Attrib mucous_membranes=bright pink    0.032107889211217405
+    Attrib mucous_membranes=pale pink    0.2273069863319085
+    Attrib mucous_membranes=pale cyanotic    0.04015447972073916
+    Attrib mucous_membranes=bright red    0.19695563038950983
+    Attrib mucous_membranes=dark cyanotic    -0.3649528731580563
+    Attrib capillary_refill_time=<3    -0.21951334844241535
+    Attrib capillary_refill_time=>=3    0.21649845939037216
+    Attrib capillary_refill_time=meaning unknown    -0.09272648187875462
+    Attrib pain=alert no pain    -0.31870864416856926
+    Attrib pain=depressed    0.46904552821141265
+    Attrib pain=intermittent mild pain    -0.38294435557946
+    Attrib pain=intermittent severe pain    0.324814913779827
+    Attrib pain=continuous severe pain    -0.3279747505985041
+    Attrib peristalsis=hypermotile    0.3483900741298494
+    Attrib peristalsis=normal    -0.5695812188870457
+    Attrib peristalsis=hypomotile    0.15475174319762078
+    Attrib peristalsis=absent    -0.09454282469507523
+    Attrib abdominal_distension=none    -0.15875855572002162
+    Attrib abdominal_distension=slight    0.04050185876624674
+    Attrib abdominal_distension=moderate    -0.19576653854660253
+    Attrib abdominal_distension=severe    0.16602313754372386
+    Attrib nasogastric_tube=none    -0.1636535033548396
+    Attrib nasogastric_tube=slight    0.3119296145654329
+    Attrib nasogastric_tube=significant    -0.1717610143214429
+    Attrib nasogastric_reflux=none    -0.936915341398716
+    Attrib nasogastric_reflux=>1l    0.2546919901107782
+    Attrib nasogastric_reflux=<1l    0.6033049258508152
+    Attrib nasogastric_reflux_PH    -0.348090583490443
+    Attrib rectal_examination=normal    0.12892567696167814
+    Attrib rectal_examination=increased    -0.1388624343355929
+    Attrib rectal_examination=decreased    -0.02886726462877316
+    Attrib rectal_examination=absent    0.0040935190248001735
+    Attrib abdomen=normal    -0.2555740187118686
+    Attrib abdomen=other    0.16346713282401226
+    Attrib abdomen=firm feces in large intestine    -0.21996966377371216
+    Attrib abdomen=distended small intestine    0.971311394632733
+    Attrib abdomen=distended large intestine    -0.980227282396367
+    Attrib packed_cell_volume    0.4145995443631206
+    Attrib total_protein    -0.7113451608867168
+    Attrib abdominocentesis_appearance=clear    -0.2948203249117768
+    Attrib abdominocentesis_appearance=cloudy    -0.29346338080236395
+    Attrib abdominocentesis_appearance=serosanguinous    0.49461557507930054
+    Attrib abdomcentesis_total_protein    0.18055739272077032
+    Attrib outcome=lived    0.5370805517805622
+    Attrib outcome=died    0.49557691473704507
+    Attrib outcome=euthanized    -1.115076898218547
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.0544958643329776
+    Attrib surgery=no    0.6165393592760977
+    Attrib Age=young    0.30053722365731134
+    Attrib rectal_temperature    0.07783977898394764
+    Attrib pulse    0.11478118344565065
+    Attrib respiratory_rate    0.39082589010204777
+    Attrib temp_extremities=normal    -0.010035053072714748
+    Attrib temp_extremities=warm    0.10587160150048128
+    Attrib temp_extremities=cool    0.18549169960328687
+    Attrib temp_extremities=cold    -0.24848090890898172
+    Attrib peripheral_pulse=normal    -0.32387915625665514
+    Attrib peripheral_pulse=increased    0.13645618982168528
+    Attrib peripheral_pulse=reduced    -0.7162987829865683
+    Attrib peripheral_pulse=absent    0.9069631881091976
+    Attrib mucous_membranes=normal pink    0.11691557387031698
+    Attrib mucous_membranes=bright pink    0.06143407689429479
+    Attrib mucous_membranes=pale pink    0.08301797415556096
+    Attrib mucous_membranes=pale cyanotic    -0.46222159733112245
+    Attrib mucous_membranes=bright red    -0.10280636952530091
+    Attrib mucous_membranes=dark cyanotic    0.5519159242599639
+    Attrib capillary_refill_time=<3    0.20930541353324864
+    Attrib capillary_refill_time=>=3    -0.12126898576987392
+    Attrib capillary_refill_time=meaning unknown    -0.07217486024238708
+    Attrib pain=alert no pain    -0.0065127596660718625
+    Attrib pain=depressed    0.24902780955262033
+    Attrib pain=intermittent mild pain    -0.4739623387232543
+    Attrib pain=intermittent severe pain    1.0163066611879614
+    Attrib pain=continuous severe pain    -0.6076300724405636
+    Attrib peristalsis=hypermotile    0.8872409970855185
+    Attrib peristalsis=normal    -0.6714681691549874
+    Attrib peristalsis=hypomotile    -0.47345331292348014
+    Attrib peristalsis=absent    0.26983811059828594
+    Attrib abdominal_distension=none    -0.2178834720167939
+    Attrib abdominal_distension=slight    -0.13591513987360604
+    Attrib abdominal_distension=moderate    0.5182791415308003
+    Attrib abdominal_distension=severe    -0.005091889407548725
+    Attrib nasogastric_tube=none    0.6543136759267263
+    Attrib nasogastric_tube=slight    -0.12631289793762773
+    Attrib nasogastric_tube=significant    -0.49839392760627904
+    Attrib nasogastric_reflux=none    -0.4799664207771571
+    Attrib nasogastric_reflux=>1l    -0.14137156101969467
+    Attrib nasogastric_reflux=<1l    0.6849797627900925
+    Attrib nasogastric_reflux_PH    -0.3056799365284035
+    Attrib rectal_examination=normal    0.6572039317538894
+    Attrib rectal_examination=increased    -0.013173028373201865
+    Attrib rectal_examination=decreased    -0.2183217943759966
+    Attrib rectal_examination=absent    -0.321699108597001
+    Attrib abdomen=normal    0.7002904173309579
+    Attrib abdomen=other    -0.018078453965733734
+    Attrib abdomen=firm feces in large intestine    -0.2348317435436759
+    Attrib abdomen=distended small intestine    0.5401497131896246
+    Attrib abdomen=distended large intestine    -0.8325179888948023
+    Attrib packed_cell_volume    0.7279030414644528
+    Attrib total_protein    -0.45471227044264806
+    Attrib abdominocentesis_appearance=clear    -0.26955191966287867
+    Attrib abdominocentesis_appearance=cloudy    0.7493921100116299
+    Attrib abdominocentesis_appearance=serosanguinous    -0.39889254116414785
+    Attrib abdomcentesis_total_protein    0.23014256584602072
+    Attrib outcome=lived    -0.6565171530154009
+    Attrib outcome=died    0.5826887547121713
+    Attrib outcome=euthanized    0.16906093071006112
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.13869800023296314
+    Attrib surgery=no    3.047537980405597
+    Attrib Age=young    0.5988039603513795
+    Attrib rectal_temperature    0.6300043323423024
+    Attrib pulse    0.10607378163615924
+    Attrib respiratory_rate    -1.0704244967710688
+    Attrib temp_extremities=normal    0.39164433597333437
+    Attrib temp_extremities=warm    0.5873746836516762
+    Attrib temp_extremities=cool    -1.2257124858609374
+    Attrib temp_extremities=cold    0.49422193897376904
+    Attrib peripheral_pulse=normal    0.12009614808508824
+    Attrib peripheral_pulse=increased    0.015580203858922857
+    Attrib peripheral_pulse=reduced    0.16007706462746238
+    Attrib peripheral_pulse=absent    -0.038085878064720864
+    Attrib mucous_membranes=normal pink    -0.9169560576258591
+    Attrib mucous_membranes=bright pink    1.2242492991607998
+    Attrib mucous_membranes=pale pink    -0.22767165597906847
+    Attrib mucous_membranes=pale cyanotic    -0.38801663066030684
+    Attrib mucous_membranes=bright red    0.05920950891645597
+    Attrib mucous_membranes=dark cyanotic    0.6846748511718476
+    Attrib capillary_refill_time=<3    -0.05015827563849558
+    Attrib capillary_refill_time=>=3    0.038975911361314654
+    Attrib capillary_refill_time=meaning unknown    0.07723467605379213
+    Attrib pain=alert no pain    0.29296472465552675
+    Attrib pain=depressed    -0.7464911469435639
+    Attrib pain=intermittent mild pain    0.19951268986158213
+    Attrib pain=intermittent severe pain    0.11923738269481605
+    Attrib pain=continuous severe pain    0.31371073758097956
+    Attrib peristalsis=hypermotile    0.45989170506847854
+    Attrib peristalsis=normal    0.12309487687485803
+    Attrib peristalsis=hypomotile    -0.2061273300944453
+    Attrib peristalsis=absent    -0.1322065970957814
+    Attrib abdominal_distension=none    0.6754454755094471
+    Attrib abdominal_distension=slight    1.2021257095153723
+    Attrib abdominal_distension=moderate    -0.985416259592288
+    Attrib abdominal_distension=severe    -0.7450551566897251
+    Attrib nasogastric_tube=none    0.3162115291169958
+    Attrib nasogastric_tube=slight    -0.2765004772441571
+    Attrib nasogastric_tube=significant    0.051046573781739206
+    Attrib nasogastric_reflux=none    -0.7466180916906188
+    Attrib nasogastric_reflux=>1l    0.879752743139235
+    Attrib nasogastric_reflux=<1l    -0.018923548567857988
+    Attrib nasogastric_reflux_PH    0.7470688673940795
+    Attrib rectal_examination=normal    -0.20583613381368518
+    Attrib rectal_examination=increased    0.9005503005260795
+    Attrib rectal_examination=decreased    -0.0197391482312193
+    Attrib rectal_examination=absent    -0.3854837108402681
+    Attrib abdomen=normal    0.7798046981868794
+    Attrib abdomen=other    -0.5046223344510608
+    Attrib abdomen=firm feces in large intestine    -0.31118141438267455
+    Attrib abdomen=distended small intestine    -0.12445372343406552
+    Attrib abdomen=distended large intestine    0.40675848249757185
+    Attrib packed_cell_volume    0.285318995517857
+    Attrib total_protein    -1.021193559233356
+    Attrib abdominocentesis_appearance=clear    0.6730238364931372
+    Attrib abdominocentesis_appearance=cloudy    -0.42325175248677605
+    Attrib abdominocentesis_appearance=serosanguinous    -0.09870110595072967
+    Attrib abdomcentesis_total_protein    0.7510502280565939
+    Attrib outcome=lived    1.6059461889328315
+    Attrib outcome=died    -1.0135294004570434
+    Attrib outcome=euthanized    -0.46732558035687227
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.3045768445496049
+    Attrib surgery=no    1.851128793327878
+    Attrib Age=young    0.13276016256106152
+    Attrib rectal_temperature    -0.10006728022110742
+    Attrib pulse    -0.014038144768335264
+    Attrib respiratory_rate    -1.14802231118241
+    Attrib temp_extremities=normal    0.48400351989168344
+    Attrib temp_extremities=warm    0.17399723946432394
+    Attrib temp_extremities=cool    -0.31745219589200036
+    Attrib temp_extremities=cold    0.16708117466726408
+    Attrib peripheral_pulse=normal    0.46300685514921536
+    Attrib peripheral_pulse=increased    0.21765564678287644
+    Attrib peripheral_pulse=reduced    -0.12015995656862972
+    Attrib peripheral_pulse=absent    0.012852445835290228
+    Attrib mucous_membranes=normal pink    -0.6138015657924342
+    Attrib mucous_membranes=bright pink    0.5913241046336967
+    Attrib mucous_membranes=pale pink    -0.07131892723683857
+    Attrib mucous_membranes=pale cyanotic    -0.24648935213789452
+    Attrib mucous_membranes=bright red    0.7587077115539739
+    Attrib mucous_membranes=dark cyanotic    0.7581430132060221
+    Attrib capillary_refill_time=<3    -0.14573497321663548
+    Attrib capillary_refill_time=>=3    0.003972659601312664
+    Attrib capillary_refill_time=meaning unknown    0.31217942881683863
+    Attrib pain=alert no pain    0.5514287491011866
+    Attrib pain=depressed    -0.7749386732958167
+    Attrib pain=intermittent mild pain    0.29477414327455903
+    Attrib pain=intermittent severe pain    0.2739341622921072
+    Attrib pain=continuous severe pain    0.5412677763190211
+    Attrib peristalsis=hypermotile    0.19058829346459236
+    Attrib peristalsis=normal    0.5398524213641259
+    Attrib peristalsis=hypomotile    -0.061780169769889995
+    Attrib peristalsis=absent    -0.1567325363462183
+    Attrib abdominal_distension=none    0.6714213500033303
+    Attrib abdominal_distension=slight    0.7895840298769543
+    Attrib abdominal_distension=moderate    -0.7119293912288996
+    Attrib abdominal_distension=severe    -0.23432112937152585
+    Attrib nasogastric_tube=none    -0.44220540857751167
+    Attrib nasogastric_tube=slight    0.5097804752723952
+    Attrib nasogastric_tube=significant    0.23205833301569692
+    Attrib nasogastric_reflux=none    0.0053537973024801525
+    Attrib nasogastric_reflux=>1l    0.015417203075740306
+    Attrib nasogastric_reflux=<1l    0.2894188587756801
+    Attrib nasogastric_reflux_PH    0.6337484910066656
+    Attrib rectal_examination=normal    0.157324569555398
+    Attrib rectal_examination=increased    0.44237849146526204
+    Attrib rectal_examination=decreased    -0.13550611641463983
+    Attrib rectal_examination=absent    0.06612953643412833
+    Attrib abdomen=normal    0.39875890142802634
+    Attrib abdomen=other    -0.1558007070189099
+    Attrib abdomen=firm feces in large intestine    0.19273479911939156
+    Attrib abdomen=distended small intestine    -0.12545632788673994
+    Attrib abdomen=distended large intestine    0.4721414172672332
+    Attrib packed_cell_volume    0.7593149747016948
+    Attrib total_protein    -0.47064518868121646
+    Attrib abdominocentesis_appearance=clear    0.13214720435924845
+    Attrib abdominocentesis_appearance=cloudy    -0.22092380998608652
+    Attrib abdominocentesis_appearance=serosanguinous    0.35375387175425355
+    Attrib abdomcentesis_total_protein    0.4420133166460147
+    Attrib outcome=lived    1.1615212596810567
+    Attrib outcome=died    0.2045307628087406
+    Attrib outcome=euthanized    -1.1041840881637923
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.12984833067325463
+    Attrib surgery=no    2.792428106929398
+    Attrib Age=young    0.48772118912068446
+    Attrib rectal_temperature    0.744416393625349
+    Attrib pulse    0.043345335977389286
+    Attrib respiratory_rate    -0.9941470877422219
+    Attrib temp_extremities=normal    0.26916616362702395
+    Attrib temp_extremities=warm    0.6067997239105793
+    Attrib temp_extremities=cool    -1.173417861147856
+    Attrib temp_extremities=cold    0.41738987863936095
+    Attrib peripheral_pulse=normal    -0.03805903222738169
+    Attrib peripheral_pulse=increased    0.07527152660230771
+    Attrib peripheral_pulse=reduced    0.20056737204547814
+    Attrib peripheral_pulse=absent    -0.08715985828063413
+    Attrib mucous_membranes=normal pink    -0.7874388387550243
+    Attrib mucous_membranes=bright pink    1.0818275514393212
+    Attrib mucous_membranes=pale pink    -0.1588813362543458
+    Attrib mucous_membranes=pale cyanotic    -0.37310361208668547
+    Attrib mucous_membranes=bright red    -0.0759639288610615
+    Attrib mucous_membranes=dark cyanotic    0.6885704512489488
+    Attrib capillary_refill_time=<3    0.062483835670303925
+    Attrib capillary_refill_time=>=3    -0.08351892204749435
+    Attrib capillary_refill_time=meaning unknown    0.11652095553266492
+    Attrib pain=alert no pain    0.22166512471683567
+    Attrib pain=depressed    -0.5271854406977671
+    Attrib pain=intermittent mild pain    0.2834559929877215
+    Attrib pain=intermittent severe pain    0.08634828514980734
+    Attrib pain=continuous severe pain    0.27714274303019737
+    Attrib peristalsis=hypermotile    0.6849297254558022
+    Attrib peristalsis=normal    -0.12379419582379364
+    Attrib peristalsis=hypomotile    -0.23615223717045394
+    Attrib peristalsis=absent    -0.14923454987308943
+    Attrib abdominal_distension=none    0.4625019516024949
+    Attrib abdominal_distension=slight    1.2929666779873672
+    Attrib abdominal_distension=moderate    -0.8783853287214434
+    Attrib abdominal_distension=severe    -0.6511331476373812
+    Attrib nasogastric_tube=none    0.44855043590173427
+    Attrib nasogastric_tube=slight    -0.3954688537752495
+    Attrib nasogastric_tube=significant    0.036307540031937285
+    Attrib nasogastric_reflux=none    -0.6115862306224064
+    Attrib nasogastric_reflux=>1l    0.7355107739848143
+    Attrib nasogastric_reflux=<1l    -0.02179178371911125
+    Attrib nasogastric_reflux_PH    0.7138789352286328
+    Attrib rectal_examination=normal    -0.16406967419501273
+    Attrib rectal_examination=increased    0.8459274618895833
+    Attrib rectal_examination=decreased    -0.10992205580943612
+    Attrib rectal_examination=absent    -0.3887590926770425
+    Attrib abdomen=normal    0.4021979725497699
+    Attrib abdomen=other    -0.15281239069269187
+    Attrib abdomen=firm feces in large intestine    -0.18170409829863593
+    Attrib abdomen=distended small intestine    -0.1045921834778698
+    Attrib abdomen=distended large intestine    0.3360654566690996
+    Attrib packed_cell_volume    0.16643183651272261
+    Attrib total_protein    -0.7607521035684336
+    Attrib abdominocentesis_appearance=clear    0.6247282333259663
+    Attrib abdominocentesis_appearance=cloudy    -0.4219206972076424
+    Attrib abdominocentesis_appearance=serosanguinous    -0.07096072588751706
+    Attrib abdomcentesis_total_protein    0.34882744527868453
+    Attrib outcome=lived    1.4921125810699458
+    Attrib outcome=died    -0.982135096065454
+    Attrib outcome=euthanized    -0.4727974249109704
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.3073281793105674
+    Attrib surgery=no    2.291918030497507
+    Attrib Age=young    0.17915222000140624
+    Attrib rectal_temperature    0.4185838082035491
+    Attrib pulse    -0.03564926624450019
+    Attrib respiratory_rate    -1.3854983387406412
+    Attrib temp_extremities=normal    0.21820689882575292
+    Attrib temp_extremities=warm    0.1663565002476549
+    Attrib temp_extremities=cool    -0.2994012100958292
+    Attrib temp_extremities=cold    0.3545538086594377
+    Attrib peripheral_pulse=normal    -0.017033527576578382
+    Attrib peripheral_pulse=increased    0.16515063621307427
+    Attrib peripheral_pulse=reduced    0.3543237378653104
+    Attrib peripheral_pulse=absent    -0.11589164076831479
+    Attrib mucous_membranes=normal pink    0.12449740682259254
+    Attrib mucous_membranes=bright pink    0.04668877175026624
+    Attrib mucous_membranes=pale pink    -0.15903264164911446
+    Attrib mucous_membranes=pale cyanotic    -0.4008755421290017
+    Attrib mucous_membranes=bright red    0.48906028877709984
+    Attrib mucous_membranes=dark cyanotic    0.9721053177691037
+    Attrib capillary_refill_time=<3    -0.19516882624858617
+    Attrib capillary_refill_time=>=3    0.14324726384349118
+    Attrib capillary_refill_time=meaning unknown    0.26450083195822405
+    Attrib pain=alert no pain    0.2751008744631624
+    Attrib pain=depressed    -0.26706720390278743
+    Attrib pain=intermittent mild pain    -0.2444153954970086
+    Attrib pain=intermittent severe pain    0.5785632094660064
+    Attrib pain=continuous severe pain    0.40087413348540396
+    Attrib peristalsis=hypermotile    0.5704537750455061
+    Attrib peristalsis=normal    0.22234974780405636
+    Attrib peristalsis=hypomotile    -0.1318333332545635
+    Attrib peristalsis=absent    -0.09918065594907534
+    Attrib abdominal_distension=none    0.3837043479048273
+    Attrib abdominal_distension=slight    0.7327247703009516
+    Attrib abdominal_distension=moderate    -0.7363289285416874
+    Attrib abdominal_distension=severe    0.16664494335814833
+    Attrib nasogastric_tube=none    -0.20036335179554987
+    Attrib nasogastric_tube=slight    0.46751189040083135
+    Attrib nasogastric_tube=significant    0.07218777003092536
+    Attrib nasogastric_reflux=none    0.06508094804583203
+    Attrib nasogastric_reflux=>1l    0.2844951441164106
+    Attrib nasogastric_reflux=<1l    -0.1438686215151035
+    Attrib nasogastric_reflux_PH    0.785818781231573
+    Attrib rectal_examination=normal    -0.17839594434908768
+    Attrib rectal_examination=increased    0.642746741299231
+    Attrib rectal_examination=decreased    0.28304435015877216
+    Attrib rectal_examination=absent    -0.20994870372649127
+    Attrib abdomen=normal    0.2377011825349172
+    Attrib abdomen=other    0.12799742747307263
+    Attrib abdomen=firm feces in large intestine    0.010957215944359945
+    Attrib abdomen=distended small intestine    -0.5434506699332669
+    Attrib abdomen=distended large intestine    1.0402377564797138
+    Attrib packed_cell_volume    0.5297382585867282
+    Attrib total_protein    -0.37091360450175304
+    Attrib abdominocentesis_appearance=clear    0.3754386767595494
+    Attrib abdominocentesis_appearance=cloudy    -0.13185021152813978
+    Attrib abdominocentesis_appearance=serosanguinous    -0.03621834172826509
+    Attrib abdomcentesis_total_protein    0.41300652478889444
+    Attrib outcome=lived    1.1301343608437406
+    Attrib outcome=died    -0.19863812988283486
+    Attrib outcome=euthanized    -0.7143273040716241
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.08710090233217714
+    Attrib surgery=no    -0.8568655876166985
+    Attrib Age=young    -0.10242782197625946
+    Attrib rectal_temperature    -0.23567810582667387
+    Attrib pulse    0.29139300191891326
+    Attrib respiratory_rate    -0.05375280437176877
+    Attrib temp_extremities=normal    -0.0922482288697515
+    Attrib temp_extremities=warm    -0.16608240165586316
+    Attrib temp_extremities=cool    0.32339862999369057
+    Attrib temp_extremities=cold    0.15864122502060304
+    Attrib peripheral_pulse=normal    0.2898978899906914
+    Attrib peripheral_pulse=increased    0.12486497761199511
+    Attrib peripheral_pulse=reduced    -0.012036726306134699
+    Attrib peripheral_pulse=absent    -0.10926050433330893
+    Attrib mucous_membranes=normal pink    -0.24798396139232443
+    Attrib mucous_membranes=bright pink    0.04328611547538476
+    Attrib mucous_membranes=pale pink    0.23680248497068168
+    Attrib mucous_membranes=pale cyanotic    0.8711615249179947
+    Attrib mucous_membranes=bright red    0.009925407873103332
+    Attrib mucous_membranes=dark cyanotic    -0.3361972648941926
+    Attrib capillary_refill_time=<3    -0.02367984015331833
+    Attrib capillary_refill_time=>=3    -0.045242854599290436
+    Attrib capillary_refill_time=meaning unknown    0.17832882688490942
+    Attrib pain=alert no pain    -0.039754343206711576
+    Attrib pain=depressed    0.5777818078485469
+    Attrib pain=intermittent mild pain    0.005444166246634504
+    Attrib pain=intermittent severe pain    -0.19583590734075576
+    Attrib pain=continuous severe pain    0.04116458737437121
+    Attrib peristalsis=hypermotile    -0.24099073279773223
+    Attrib peristalsis=normal    0.23016248437640646
+    Attrib peristalsis=hypomotile    0.27480816108354617
+    Attrib peristalsis=absent    0.027180169432498357
+    Attrib abdominal_distension=none    -0.688074120235622
+    Attrib abdominal_distension=slight    0.2686019431029374
+    Attrib abdominal_distension=moderate    0.730265655633685
+    Attrib abdominal_distension=severe    -0.07785275656135654
+    Attrib nasogastric_tube=none    0.45225388392595994
+    Attrib nasogastric_tube=slight    -0.46151778235748775
+    Attrib nasogastric_tube=significant    0.14529552043376737
+    Attrib nasogastric_reflux=none    -0.07283976782815389
+    Attrib nasogastric_reflux=>1l    0.16425356631354487
+    Attrib nasogastric_reflux=<1l    0.09006840400124724
+    Attrib nasogastric_reflux_PH    -0.21358511392708981
+    Attrib rectal_examination=normal    0.3319525193429205
+    Attrib rectal_examination=increased    0.06343627128181392
+    Attrib rectal_examination=decreased    -0.07763366068317602
+    Attrib rectal_examination=absent    -0.11798660906808023
+    Attrib abdomen=normal    0.07017515550269522
+    Attrib abdomen=other    0.12145657324212113
+    Attrib abdomen=firm feces in large intestine    0.6563904750172389
+    Attrib abdomen=distended small intestine    -0.27808599693318764
+    Attrib abdomen=distended large intestine    -0.20734338652051032
+    Attrib packed_cell_volume    -0.42093129818445363
+    Attrib total_protein    0.24152911246213737
+    Attrib abdominocentesis_appearance=clear    0.10815225374886685
+    Attrib abdominocentesis_appearance=cloudy    -0.33129637441470966
+    Attrib abdominocentesis_appearance=serosanguinous    0.39368584284747987
+    Attrib abdomcentesis_total_protein    -0.3774068570666438
+    Attrib outcome=lived    0.10062734639191785
+    Attrib outcome=died    0.04937538335285239
+    Attrib outcome=euthanized    0.009949512749185955
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.005320127387602741
+    Attrib surgery=no    -0.19254182267463818
+    Attrib Age=young    0.4445762254483884
+    Attrib rectal_temperature    -0.15290021012099972
+    Attrib pulse    -0.11878287018146122
+    Attrib respiratory_rate    0.011591622463421469
+    Attrib temp_extremities=normal    0.33827927044169737
+    Attrib temp_extremities=warm    0.27910561991989
+    Attrib temp_extremities=cool    -0.5946146278316154
+    Attrib temp_extremities=cold    -0.05478529319438443
+    Attrib peripheral_pulse=normal    -0.6818985478642299
+    Attrib peripheral_pulse=increased    0.14331473217748153
+    Attrib peripheral_pulse=reduced    0.46679298138691855
+    Attrib peripheral_pulse=absent    0.03557597789736819
+    Attrib mucous_membranes=normal pink    -0.5867347361054408
+    Attrib mucous_membranes=bright pink    0.22488779325157862
+    Attrib mucous_membranes=pale pink    -0.02426231134832328
+    Attrib mucous_membranes=pale cyanotic    0.15491553768727886
+    Attrib mucous_membranes=bright red    0.40126227604392994
+    Attrib mucous_membranes=dark cyanotic    -0.2834432423878009
+    Attrib capillary_refill_time=<3    -0.44503921113278
+    Attrib capillary_refill_time=>=3    0.43452470020636197
+    Attrib capillary_refill_time=meaning unknown    -0.07629629550596899
+    Attrib pain=alert no pain    -0.0011224134220940735
+    Attrib pain=depressed    0.4790592522167228
+    Attrib pain=intermittent mild pain    -0.3451928282511466
+    Attrib pain=intermittent severe pain    -0.09845150250881445
+    Attrib pain=continuous severe pain    -0.05206055280438018
+    Attrib peristalsis=hypermotile    0.6497201189049717
+    Attrib peristalsis=normal    -0.583370284390321
+    Attrib peristalsis=hypomotile    -0.08486983821122558
+    Attrib peristalsis=absent    -0.07643423766182382
+    Attrib abdominal_distension=none    0.2643159923678778
+    Attrib abdominal_distension=slight    0.02457862480029217
+    Attrib abdominal_distension=moderate    0.015555414489655731
+    Attrib abdominal_distension=severe    -0.33020497880902333
+    Attrib nasogastric_tube=none    0.22492285670399295
+    Attrib nasogastric_tube=slight    0.04167191149418387
+    Attrib nasogastric_tube=significant    -0.3142857628465637
+    Attrib nasogastric_reflux=none    0.1423805144607983
+    Attrib nasogastric_reflux=>1l    -0.14571466649990508
+    Attrib nasogastric_reflux=<1l    0.04162753829964541
+    Attrib nasogastric_reflux_PH    -0.04261670215916734
+    Attrib rectal_examination=normal    0.10549594863241875
+    Attrib rectal_examination=increased    -0.02022361740065787
+    Attrib rectal_examination=decreased    -0.02343466289511688
+    Attrib rectal_examination=absent    -0.10511836716910213
+    Attrib abdomen=normal    0.0982123439583499
+    Attrib abdomen=other    -0.048492394007161765
+    Attrib abdomen=firm feces in large intestine    0.09551465474345744
+    Attrib abdomen=distended small intestine    0.46072443706740757
+    Attrib abdomen=distended large intestine    -0.6860555223335214
+    Attrib packed_cell_volume    0.5292388174064625
+    Attrib total_protein    -0.760246281560465
+    Attrib abdominocentesis_appearance=clear    0.026872777399565072
+    Attrib abdominocentesis_appearance=cloudy    -0.030519056403080693
+    Attrib abdominocentesis_appearance=serosanguinous    0.055918726342470124
+    Attrib abdomcentesis_total_protein    0.12318034701295046
+    Attrib outcome=lived    -0.2784070574402047
+    Attrib outcome=died    0.7647849001849946
+    Attrib outcome=euthanized    -0.452752472964778
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -0.057677906375550585
+    Attrib surgery=no    -0.8326507980347094
+    Attrib Age=young    -0.46624860386352673
+    Attrib rectal_temperature    0.22346673840649858
+    Attrib pulse    1.0162372727662052
+    Attrib respiratory_rate    -0.005627678282372522
+    Attrib temp_extremities=normal    -0.29178675364858103
+    Attrib temp_extremities=warm    -0.32091001502902955
+    Attrib temp_extremities=cool    0.3657912624154578
+    Attrib temp_extremities=cold    0.3405906030639017
+    Attrib peripheral_pulse=normal    -0.046420562628515016
+    Attrib peripheral_pulse=increased    -0.004901447957316208
+    Attrib peripheral_pulse=reduced    0.02557413427733187
+    Attrib peripheral_pulse=absent    0.23703778374164092
+    Attrib mucous_membranes=normal pink    -0.4381416993480457
+    Attrib mucous_membranes=bright pink    -0.18433205982876963
+    Attrib mucous_membranes=pale pink    0.16053947666774673
+    Attrib mucous_membranes=pale cyanotic    0.4017863953684314
+    Attrib mucous_membranes=bright red    0.36422521860493806
+    Attrib mucous_membranes=dark cyanotic    -0.10861738274264833
+    Attrib capillary_refill_time=<3    -0.19933615674148586
+    Attrib capillary_refill_time=>=3    0.1939676741857854
+    Attrib capillary_refill_time=meaning unknown    0.028133838913422263
+    Attrib pain=alert no pain    0.3269979987291458
+    Attrib pain=depressed    0.08629269087809902
+    Attrib pain=intermittent mild pain    0.13152973647586202
+    Attrib pain=intermittent severe pain    0.15387807049440924
+    Attrib pain=continuous severe pain    -0.6373816057382562
+    Attrib peristalsis=hypermotile    -0.37282240254432764
+    Attrib peristalsis=normal    0.3162028840169843
+    Attrib peristalsis=hypomotile    0.3168790308715988
+    Attrib peristalsis=absent    0.018217454634903766
+    Attrib abdominal_distension=none    -0.6428243982234844
+    Attrib abdominal_distension=slight    0.39556491446654846
+    Attrib abdominal_distension=moderate    0.37647193281367236
+    Attrib abdominal_distension=severe    0.032768788971197824
+    Attrib nasogastric_tube=none    0.22516911937214829
+    Attrib nasogastric_tube=slight    -0.349591472107365
+    Attrib nasogastric_tube=significant    0.17465749197301095
+    Attrib nasogastric_reflux=none    0.3083050275059656
+    Attrib nasogastric_reflux=>1l    -0.04285563786945298
+    Attrib nasogastric_reflux=<1l    -0.24730914872107124
+    Attrib nasogastric_reflux_PH    -0.05214000215215836
+    Attrib rectal_examination=normal    0.2402789942387077
+    Attrib rectal_examination=increased    0.1531634672929367
+    Attrib rectal_examination=decreased    -0.27837025712478
+    Attrib rectal_examination=absent    0.06938252077644276
+    Attrib abdomen=normal    0.3581796096732469
+    Attrib abdomen=other    0.1728386961022845
+    Attrib abdomen=firm feces in large intestine    0.583567637578183
+    Attrib abdomen=distended small intestine    -0.23347151165746013
+    Attrib abdomen=distended large intestine    -0.6218725927337945
+    Attrib packed_cell_volume    -0.15122574409672535
+    Attrib total_protein    1.125636835225479
+    Attrib abdominocentesis_appearance=clear    0.03566802207113592
+    Attrib abdominocentesis_appearance=cloudy    0.1970741520164818
+    Attrib abdominocentesis_appearance=serosanguinous    -0.11565961949548624
+    Attrib abdomcentesis_total_protein    -0.5388559428421644
+    Attrib outcome=lived    -0.22273985479720204
+    Attrib outcome=died    0.07245241460953647
+    Attrib outcome=euthanized    0.2586128253076927
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -0.18822065003151595
+    Attrib surgery=no    2.8992354221894954
+    Attrib Age=young    -0.0026690114668584137
+    Attrib rectal_temperature    0.24254029846835257
+    Attrib pulse    -0.12533447095604633
+    Attrib respiratory_rate    -1.5728788368414057
+    Attrib temp_extremities=normal    0.46505522760502443
+    Attrib temp_extremities=warm    0.2706356484648048
+    Attrib temp_extremities=cool    -0.5970244867051994
+    Attrib temp_extremities=cold    0.2595421844074391
+    Attrib peripheral_pulse=normal    0.26655903905260436
+    Attrib peripheral_pulse=increased    0.1801172517866746
+    Attrib peripheral_pulse=reduced    0.3403543519045042
+    Attrib peripheral_pulse=absent    -0.3122173441188278
+    Attrib mucous_membranes=normal pink    -0.2565808256887472
+    Attrib mucous_membranes=bright pink    0.03331429283471837
+    Attrib mucous_membranes=pale pink    -0.5034916845571826
+    Attrib mucous_membranes=pale cyanotic    -0.7136547905174397
+    Attrib mucous_membranes=bright red    1.330640859600326
+    Attrib mucous_membranes=dark cyanotic    0.9959469269703702
+    Attrib capillary_refill_time=<3    -0.4912916176980116
+    Attrib capillary_refill_time=>=3    0.4876776420748633
+    Attrib capillary_refill_time=meaning unknown    0.24878909641090255
+    Attrib pain=alert no pain    0.31625703776328096
+    Attrib pain=depressed    -0.6871983627091223
+    Attrib pain=intermittent mild pain    0.02197471030694157
+    Attrib pain=intermittent severe pain    0.8331718389366147
+    Attrib pain=continuous severe pain    0.2608513134163649
+    Attrib peristalsis=hypermotile    0.5454218411712215
+    Attrib peristalsis=normal    0.07671144897830659
+    Attrib peristalsis=hypomotile    0.08244207684875811
+    Attrib peristalsis=absent    -0.21638936612126605
+    Attrib abdominal_distension=none    0.5450937342644553
+    Attrib abdominal_distension=slight    0.6555327374654746
+    Attrib abdominal_distension=moderate    -0.8506051324451598
+    Attrib abdominal_distension=severe    0.10358482199746169
+    Attrib nasogastric_tube=none    -0.1773234373207904
+    Attrib nasogastric_tube=slight    0.36967691372318545
+    Attrib nasogastric_tube=significant    0.0036937556723757566
+    Attrib nasogastric_reflux=none    -0.21587152903553494
+    Attrib nasogastric_reflux=>1l    0.21980240436335968
+    Attrib nasogastric_reflux=<1l    0.11724666140766135
+    Attrib nasogastric_reflux_PH    0.9061820748253328
+    Attrib rectal_examination=normal    -0.15836850203739986
+    Attrib rectal_examination=increased    0.5007263737609978
+    Attrib rectal_examination=decreased    0.4579992704239688
+    Attrib rectal_examination=absent    -0.5133877694434931
+    Attrib abdomen=normal    0.11010555264154151
+    Attrib abdomen=other    -0.1881131344192196
+    Attrib abdomen=firm feces in large intestine    -0.04889754684018482
+    Attrib abdomen=distended small intestine    -0.20412876895834872
+    Attrib abdomen=distended large intestine    0.9971634436924911
+    Attrib packed_cell_volume    0.8034378624433849
+    Attrib total_protein    -0.49184352500580475
+    Attrib abdominocentesis_appearance=clear    0.7016898743659459
+    Attrib abdominocentesis_appearance=cloudy    -0.3880152242578393
+    Attrib abdominocentesis_appearance=serosanguinous    -0.05613281149627501
+    Attrib abdomcentesis_total_protein    0.30415860510947706
+    Attrib outcome=lived    1.309647103547406
+    Attrib outcome=died    -0.0850722582534113
+    Attrib outcome=euthanized    -1.0041616499653798
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.13392165343851012
+    Attrib surgery=no    -0.9911717036597207
+    Attrib Age=young    -0.7032413277755233
+    Attrib rectal_temperature    0.5451199480570802
+    Attrib pulse    1.4605377255363892
+    Attrib respiratory_rate    0.48045236339873887
+    Attrib temp_extremities=normal    -0.28486570875430556
+    Attrib temp_extremities=warm    -0.3851559444297611
+    Attrib temp_extremities=cool    0.346908049280402
+    Attrib temp_extremities=cold    0.5438607296946382
+    Attrib peripheral_pulse=normal    -0.1444969864019024
+    Attrib peripheral_pulse=increased    -0.03581435916091741
+    Attrib peripheral_pulse=reduced    -0.3329170255188322
+    Attrib peripheral_pulse=absent    0.6849885733098412
+    Attrib mucous_membranes=normal pink    -0.23222383538158645
+    Attrib mucous_membranes=bright pink    -0.16730904843027958
+    Attrib mucous_membranes=pale pink    0.2862595885842148
+    Attrib mucous_membranes=pale cyanotic    0.33539574456079235
+    Attrib mucous_membranes=bright red    0.2764550014382246
+    Attrib mucous_membranes=dark cyanotic    0.10862552007385873
+    Attrib capillary_refill_time=<3    -0.39606832199755215
+    Attrib capillary_refill_time=>=3    0.40897940653285547
+    Attrib capillary_refill_time=meaning unknown    0.11908603615043695
+    Attrib pain=alert no pain    0.3336926755790441
+    Attrib pain=depressed    0.028274119315529225
+    Attrib pain=intermittent mild pain    0.23577292435199182
+    Attrib pain=intermittent severe pain    0.2913484352991567
+    Attrib pain=continuous severe pain    -0.6081124784777587
+    Attrib peristalsis=hypermotile    -0.4381893172694329
+    Attrib peristalsis=normal    0.5278276746372708
+    Attrib peristalsis=hypomotile    -0.038419539488994583
+    Attrib peristalsis=absent    0.13680480999775807
+    Attrib abdominal_distension=none    -0.28072374288377533
+    Attrib abdominal_distension=slight    -0.12604330477864267
+    Attrib abdominal_distension=moderate    0.6244038202628501
+    Attrib abdominal_distension=severe    -0.033444539176358826
+    Attrib nasogastric_tube=none    0.12650535983604294
+    Attrib nasogastric_tube=slight    -0.017025302231379498
+    Attrib nasogastric_tube=significant    0.053390994739869274
+    Attrib nasogastric_reflux=none    0.06198937816930267
+    Attrib nasogastric_reflux=>1l    0.053130376560975336
+    Attrib nasogastric_reflux=<1l    0.049537585301607366
+    Attrib nasogastric_reflux_PH    -0.3709911887427744
+    Attrib rectal_examination=normal    -0.14868823283623564
+    Attrib rectal_examination=increased    0.11722675305626448
+    Attrib rectal_examination=decreased    -0.08061826427513161
+    Attrib rectal_examination=absent    0.2905692700168032
+    Attrib abdomen=normal    0.3763187074964345
+    Attrib abdomen=other    0.15484451980097755
+    Attrib abdomen=firm feces in large intestine    0.19028845034721772
+    Attrib abdomen=distended small intestine    0.03065379559556245
+    Attrib abdomen=distended large intestine    -0.3600753174002123
+    Attrib packed_cell_volume    -0.08257853192050121
+    Attrib total_protein    1.7275149923109732
+    Attrib abdominocentesis_appearance=clear    0.09878444855996574
+    Attrib abdominocentesis_appearance=cloudy    0.17335626766621773
+    Attrib abdominocentesis_appearance=serosanguinous    -0.16801350021963654
+    Attrib abdomcentesis_total_protein    -0.5366850859450459
+    Attrib outcome=lived    -0.9184030049362266
+    Attrib outcome=died    0.35978090659802736
+    Attrib outcome=euthanized    0.6641170065599257
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -0.09867075555401783
+    Attrib surgery=no    0.05445168521606847
+    Attrib Age=young    0.0741669043675206
+    Attrib rectal_temperature    -0.07198668901858567
+    Attrib pulse    0.035518070222854456
+    Attrib respiratory_rate    0.0737025096768152
+    Attrib temp_extremities=normal    0.07849206023430587
+    Attrib temp_extremities=warm    0.04566928091994682
+    Attrib temp_extremities=cool    -0.047780042991148526
+    Attrib temp_extremities=cold    0.013060943605414415
+    Attrib peripheral_pulse=normal    -0.03702710132608345
+    Attrib peripheral_pulse=increased    0.08714621974637611
+    Attrib peripheral_pulse=reduced    0.05835119266098524
+    Attrib peripheral_pulse=absent    0.11657041362198194
+    Attrib mucous_membranes=normal pink    -0.021994887161037376
+    Attrib mucous_membranes=bright pink    0.06818732115730226
+    Attrib mucous_membranes=pale pink    0.03905468712884992
+    Attrib mucous_membranes=pale cyanotic    0.04491809522071936
+    Attrib mucous_membranes=bright red    0.10261833150706583
+    Attrib mucous_membranes=dark cyanotic    0.027121637503442583
+    Attrib capillary_refill_time=<3    -0.08458867911071309
+    Attrib capillary_refill_time=>=3    0.06809051873324999
+    Attrib capillary_refill_time=meaning unknown    0.09673090810700453
+    Attrib pain=alert no pain    0.09059461094773717
+    Attrib pain=depressed    0.12044809372717855
+    Attrib pain=intermittent mild pain    0.0369053139448434
+    Attrib pain=intermittent severe pain    0.02031189614726018
+    Attrib pain=continuous severe pain    0.10295836310183518
+    Attrib peristalsis=hypermotile    0.14600372123609093
+    Attrib peristalsis=normal    0.030409972743960335
+    Attrib peristalsis=hypomotile    0.015926547022970482
+    Attrib peristalsis=absent    0.06632154899150942
+    Attrib abdominal_distension=none    0.019662828390366826
+    Attrib abdominal_distension=slight    0.09135104970814943
+    Attrib abdominal_distension=moderate    0.06916163636808541
+    Attrib abdominal_distension=severe    0.012980877376153131
+    Attrib nasogastric_tube=none    0.1148375657556028
+    Attrib nasogastric_tube=slight    -0.06058985534322864
+    Attrib nasogastric_tube=significant    0.025994903935775967
+    Attrib nasogastric_reflux=none    -0.14037646038510637
+    Attrib nasogastric_reflux=>1l    0.02833499991726305
+    Attrib nasogastric_reflux=<1l    0.18628563272194978
+    Attrib nasogastric_reflux_PH    0.0026702010009630396
+    Attrib rectal_examination=normal    0.07559575077021374
+    Attrib rectal_examination=increased    0.0464392868760541
+    Attrib rectal_examination=decreased    0.03243247877909062
+    Attrib rectal_examination=absent    -0.10808559330111385
+    Attrib abdomen=normal    0.14152408072881084
+    Attrib abdomen=other    0.07692414446501745
+    Attrib abdomen=firm feces in large intestine    0.06902464706998893
+    Attrib abdomen=distended small intestine    0.20523607627752274
+    Attrib abdomen=distended large intestine    -0.12737980811536465
+    Attrib packed_cell_volume    0.05864421202505101
+    Attrib total_protein    -0.12026975222206535
+    Attrib abdominocentesis_appearance=clear    0.08017777286218548
+    Attrib abdominocentesis_appearance=cloudy    -0.04641352742072125
+    Attrib abdominocentesis_appearance=serosanguinous    0.1350552041017799
+    Attrib abdomcentesis_total_protein    0.059787513632961795
+    Attrib outcome=lived    -0.06185445853476865
+    Attrib outcome=died    0.12828986298631712
+    Attrib outcome=euthanized    -0.015026590367833489
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    0.1738930951509919
+    Attrib surgery=no    -1.235168369166177
+    Attrib Age=young    0.5630826048846707
+    Attrib rectal_temperature    -0.595588625263004
+    Attrib pulse    -0.7833225403490977
+    Attrib respiratory_rate    -0.23964869820860377
+    Attrib temp_extremities=normal    0.5847192903523506
+    Attrib temp_extremities=warm    0.35924595843687385
+    Attrib temp_extremities=cool    -0.7580758580329645
+    Attrib temp_extremities=cold    -0.43097851317063374
+    Attrib peripheral_pulse=normal    -0.49291944348205924
+    Attrib peripheral_pulse=increased    0.09088766575077488
+    Attrib peripheral_pulse=reduced    0.1571050785741562
+    Attrib peripheral_pulse=absent    -0.07136731063679666
+    Attrib mucous_membranes=normal pink    -1.0882965995793716
+    Attrib mucous_membranes=bright pink    -0.07794010827085661
+    Attrib mucous_membranes=pale pink    0.1896976126662535
+    Attrib mucous_membranes=pale cyanotic    0.652190011658578
+    Attrib mucous_membranes=bright red    -0.11148362922960783
+    Attrib mucous_membranes=dark cyanotic    -0.1291428981155327
+    Attrib capillary_refill_time=<3    -0.4964180650480473
+    Attrib capillary_refill_time=>=3    0.5324919775245148
+    Attrib capillary_refill_time=meaning unknown    -0.18012188384049274
+    Attrib pain=alert no pain    0.30767490404671444
+    Attrib pain=depressed    -0.4080368497061644
+    Attrib pain=intermittent mild pain    -0.5768039471444705
+    Attrib pain=intermittent severe pain    0.7426503275898971
+    Attrib pain=continuous severe pain    -0.44326539086136857
+    Attrib peristalsis=hypermotile    0.3052019703116722
+    Attrib peristalsis=normal    -0.48350586269076334
+    Attrib peristalsis=hypomotile    -0.41440340141510995
+    Attrib peristalsis=absent    0.2599647223515896
+    Attrib abdominal_distension=none    -0.24375006035882363
+    Attrib abdominal_distension=slight    -0.13000706047788857
+    Attrib abdominal_distension=moderate    0.3672917000700268
+    Attrib abdominal_distension=severe    -0.29007793479124133
+    Attrib nasogastric_tube=none    1.0207738644454398
+    Attrib nasogastric_tube=slight    -0.6988369634030722
+    Attrib nasogastric_tube=significant    -0.3908189083467271
+    Attrib nasogastric_reflux=none    0.19626397255165548
+    Attrib nasogastric_reflux=>1l    -0.2660078703378931
+    Attrib nasogastric_reflux=<1l    -0.16533428123965555
+    Attrib nasogastric_reflux_PH    0.04595735749082974
+    Attrib rectal_examination=normal    -0.27174672080306095
+    Attrib rectal_examination=increased    -0.14349278735320323
+    Attrib rectal_examination=decreased    -0.16005101698617855
+    Attrib rectal_examination=absent    0.2746226187253413
+    Attrib abdomen=normal    -0.40833733208341577
+    Attrib abdomen=other    -0.05830035302353494
+    Attrib abdomen=firm feces in large intestine    -0.2608846452658304
+    Attrib abdomen=distended small intestine    0.5230331268086381
+    Attrib abdomen=distended large intestine    -0.12395679095234094
+    Attrib packed_cell_volume    0.15380967648579172
+    Attrib total_protein    -0.6081170551160356
+    Attrib abdominocentesis_appearance=clear    -0.27029323257127313
+    Attrib abdominocentesis_appearance=cloudy    -0.4787344701922485
+    Attrib abdominocentesis_appearance=serosanguinous    0.5954674954769683
+    Attrib abdomcentesis_total_protein    0.25381871761201985
+    Attrib outcome=lived    -0.029439672970929278
+    Attrib outcome=died    0.9161519196065119
+    Attrib outcome=euthanized    -0.9794821852875143
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -0.2828688028148362
+    Attrib surgery=no    -0.24656572659156242
+    Attrib Age=young    -1.188291264061532
+    Attrib rectal_temperature    0.8231155164404039
+    Attrib pulse    2.7643959146670567
+    Attrib respiratory_rate    0.7335348643001803
+    Attrib temp_extremities=normal    -0.24121618806499895
+    Attrib temp_extremities=warm    0.32929513391949033
+    Attrib temp_extremities=cool    -0.5627622926839964
+    Attrib temp_extremities=cold    1.1592130700319845
+    Attrib peripheral_pulse=normal    -0.16723108854225677
+    Attrib peripheral_pulse=increased    0.19300059415041826
+    Attrib peripheral_pulse=reduced    -0.39342772673447174
+    Attrib peripheral_pulse=absent    0.9464939148981514
+    Attrib mucous_membranes=normal pink    0.30219830360959055
+    Attrib mucous_membranes=bright pink    0.020291160214852094
+    Attrib mucous_membranes=pale pink    0.4156791983919371
+    Attrib mucous_membranes=pale cyanotic    -0.4106874898320148
+    Attrib mucous_membranes=bright red    0.6061408436300454
+    Attrib mucous_membranes=dark cyanotic    0.29460460852325215
+    Attrib capillary_refill_time=<3    -0.05990778995530312
+    Attrib capillary_refill_time=>=3    -0.032890572753810826
+    Attrib capillary_refill_time=meaning unknown    0.40996678611775433
+    Attrib pain=alert no pain    1.076819049538477
+    Attrib pain=depressed    -0.8856126633285939
+    Attrib pain=intermittent mild pain    1.278442053600435
+    Attrib pain=intermittent severe pain    -0.12504937091297247
+    Attrib pain=continuous severe pain    -0.4854446622320955
+    Attrib peristalsis=hypermotile    0.5843329517180998
+    Attrib peristalsis=normal    0.400976481545413
+    Attrib peristalsis=hypomotile    -0.5533792065695531
+    Attrib peristalsis=absent    0.17652340235084613
+    Attrib abdominal_distension=none    1.710794658750472
+    Attrib abdominal_distension=slight    0.16007871110789898
+    Attrib abdominal_distension=moderate    -0.9126963744177661
+    Attrib abdominal_distension=severe    -0.36503918131415564
+    Attrib nasogastric_tube=none    -0.8495344584526903
+    Attrib nasogastric_tube=slight    1.1238760283196538
+    Attrib nasogastric_tube=significant    0.03944013741693628
+    Attrib nasogastric_reflux=none    0.7032418854238163
+    Attrib nasogastric_reflux=>1l    -0.3970654382963481
+    Attrib nasogastric_reflux=<1l    -0.036460809216858056
+    Attrib nasogastric_reflux_PH    0.5087258738767546
+    Attrib rectal_examination=normal    -0.1750673010052027
+    Attrib rectal_examination=increased    0.5470059015317235
+    Attrib rectal_examination=decreased    -0.6017067115417873
+    Attrib rectal_examination=absent    0.8345261263853573
+    Attrib abdomen=normal    0.8651330872301554
+    Attrib abdomen=other    0.10619089448310746
+    Attrib abdomen=firm feces in large intestine    0.31544430664452705
+    Attrib abdomen=distended small intestine    0.5611228616277238
+    Attrib abdomen=distended large intestine    -0.9327116712974073
+    Attrib packed_cell_volume    1.3275431822866932
+    Attrib total_protein    2.8818408591675557
+    Attrib abdominocentesis_appearance=clear    -0.060148431901310605
+    Attrib abdominocentesis_appearance=cloudy    0.45090495526707436
+    Attrib abdominocentesis_appearance=serosanguinous    -0.11760453048065464
+    Attrib abdomcentesis_total_protein    -1.1154673218114215
+    Attrib outcome=lived    0.05552027752467334
+    Attrib outcome=died    1.3230951790758136
+    Attrib outcome=euthanized    -1.0267401953499498
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    -0.1157587186307317
+    Attrib surgery=no    1.7636920116916157
+    Attrib Age=young    -0.07851803735555912
+    Attrib rectal_temperature    0.09869156139167859
+    Attrib pulse    0.30251352528125103
+    Attrib respiratory_rate    -0.9420320263346531
+    Attrib temp_extremities=normal    0.27720785379946145
+    Attrib temp_extremities=warm    0.07734900888079851
+    Attrib temp_extremities=cool    -0.23570695544767284
+    Attrib temp_extremities=cold    0.19790215866876276
+    Attrib peripheral_pulse=normal    0.47016823833658133
+    Attrib peripheral_pulse=increased    0.06771920197516587
+    Attrib peripheral_pulse=reduced    -0.11007041503005215
+    Attrib peripheral_pulse=absent    -0.08269219120234848
+    Attrib mucous_membranes=normal pink    -0.4668316749031747
+    Attrib mucous_membranes=bright pink    0.08622004151425981
+    Attrib mucous_membranes=pale pink    -0.2820890842862766
+    Attrib mucous_membranes=pale cyanotic    -0.17626661436241964
+    Attrib mucous_membranes=bright red    0.9944935901893736
+    Attrib mucous_membranes=dark cyanotic    0.4408956409277764
+    Attrib capillary_refill_time=<3    -0.5629247270180516
+    Attrib capillary_refill_time=>=3    0.591370921436828
+    Attrib capillary_refill_time=meaning unknown    0.22333576969880042
+    Attrib pain=alert no pain    0.14839013894609374
+    Attrib pain=depressed    -0.5819176200958359
+    Attrib pain=intermittent mild pain    -0.07511994691215866
+    Attrib pain=intermittent severe pain    0.3647154026990896
+    Attrib pain=continuous severe pain    0.6287452463499523
+    Attrib peristalsis=hypermotile    0.2058038260907372
+    Attrib peristalsis=normal    0.3962855344328977
+    Attrib peristalsis=hypomotile    -0.2792291500775523
+    Attrib peristalsis=absent    0.046890833206052585
+    Attrib abdominal_distension=none    0.3940489574977848
+    Attrib abdominal_distension=slight    0.30802028618738536
+    Attrib abdominal_distension=moderate    -0.8052666564069692
+    Attrib abdominal_distension=severe    0.42223769407400674
+    Attrib nasogastric_tube=none    0.019263730548428355
+    Attrib nasogastric_tube=slight    0.18490675450297744
+    Attrib nasogastric_tube=significant    -0.05689285526745952
+    Attrib nasogastric_reflux=none    0.2592297003213471
+    Attrib nasogastric_reflux=>1l    -0.0660715595986504
+    Attrib nasogastric_reflux=<1l    -0.027555590756437598
+    Attrib nasogastric_reflux_PH    0.5051682582560619
+    Attrib rectal_examination=normal    -0.1408800287235174
+    Attrib rectal_examination=increased    0.2594481621490107
+    Attrib rectal_examination=decreased    0.36228865005425004
+    Attrib rectal_examination=absent    -0.23362179057591556
+    Attrib abdomen=normal    0.1751289224810979
+    Attrib abdomen=other    -0.10732095190196869
+    Attrib abdomen=firm feces in large intestine    0.21313346601215633
+    Attrib abdomen=distended small intestine    -0.4470970401683925
+    Attrib abdomen=distended large intestine    0.6760204446074167
+    Attrib packed_cell_volume    0.476267494749118
+    Attrib total_protein    0.06480260563132505
+    Attrib abdominocentesis_appearance=clear    0.20972158283566983
+    Attrib abdominocentesis_appearance=cloudy    0.11248692032848451
+    Attrib abdominocentesis_appearance=serosanguinous    -0.13797141701300214
+    Attrib abdomcentesis_total_protein    0.1983985756535144
+    Attrib outcome=lived    0.8228447478507143
+    Attrib outcome=died    0.18593577317186738
+    Attrib outcome=euthanized    -0.9789672745577211
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    0.3410432689379652
+    Attrib surgery=no    -2.8214516181422398
+    Attrib Age=young    0.10241394440903027
+    Attrib rectal_temperature    -0.7295812388874734
+    Attrib pulse    -0.027884837266234384
+    Attrib respiratory_rate    2.680480919290747
+    Attrib temp_extremities=normal    0.5360844910299787
+    Attrib temp_extremities=warm    -0.23119675804570372
+    Attrib temp_extremities=cool    -0.6880437678104135
+    Attrib temp_extremities=cold    -0.40144105087909354
+    Attrib peripheral_pulse=normal    -0.27499460564224315
+    Attrib peripheral_pulse=increased    -0.3077890327075578
+    Attrib peripheral_pulse=reduced    -0.6897036184643761
+    Attrib peripheral_pulse=absent    0.4477032562563587
+    Attrib mucous_membranes=normal pink    -0.24083494508083447
+    Attrib mucous_membranes=bright pink    -0.5869724925679246
+    Attrib mucous_membranes=pale pink    0.35445802548862987
+    Attrib mucous_membranes=pale cyanotic    0.4410332060218977
+    Attrib mucous_membranes=bright red    -0.607066347376558
+    Attrib mucous_membranes=dark cyanotic    -0.8219159348296777
+    Attrib capillary_refill_time=<3    0.2523058511174677
+    Attrib capillary_refill_time=>=3    -0.15135677394781352
+    Attrib capillary_refill_time=meaning unknown    -0.5198591708019342
+    Attrib pain=alert no pain    -0.6750189723010586
+    Attrib pain=depressed    -0.1346602374114336
+    Attrib pain=intermittent mild pain    1.073035046341702
+    Attrib pain=intermittent severe pain    -0.8809335708480639
+    Attrib pain=continuous severe pain    -0.5478087388869615
+    Attrib peristalsis=hypermotile    -0.3995389252031887
+    Attrib peristalsis=normal    -1.55677080415832
+    Attrib peristalsis=hypomotile    0.2911664879274472
+    Attrib peristalsis=absent    0.918756594393446
+    Attrib abdominal_distension=none    -0.46881547325187595
+    Attrib abdominal_distension=slight    -1.1414145650911802
+    Attrib abdominal_distension=moderate    1.4193897866872605
+    Attrib abdominal_distension=severe    -0.6129595948482862
+    Attrib nasogastric_tube=none    0.012501122289700179
+    Attrib nasogastric_tube=slight    -0.23693121189312
+    Attrib nasogastric_tube=significant    -0.23400275941568188
+    Attrib nasogastric_reflux=none    0.3297309606013925
+    Attrib nasogastric_reflux=>1l    0.0439277817534115
+    Attrib nasogastric_reflux=<1l    -0.783665337364738
+    Attrib nasogastric_reflux_PH    -0.3731240666375511
+    Attrib rectal_examination=normal    -0.1983884719909512
+    Attrib rectal_examination=increased    -0.4202857864044592
+    Attrib rectal_examination=decreased    -0.8248595995574447
+    Attrib rectal_examination=absent    0.6212369975419323
+    Attrib abdomen=normal    -0.8831290382747787
+    Attrib abdomen=other    0.3161481603029615
+    Attrib abdomen=firm feces in large intestine    0.3513024926069765
+    Attrib abdomen=distended small intestine    0.5079552951617666
+    Attrib abdomen=distended large intestine    -1.4623686461820113
+    Attrib packed_cell_volume    -0.9372666357582646
+    Attrib total_protein    -0.9157062299882204
+    Attrib abdominocentesis_appearance=clear    0.5457440271399918
+    Attrib abdominocentesis_appearance=cloudy    -1.2157554625375078
+    Attrib abdominocentesis_appearance=serosanguinous    0.18967563693176365
+    Attrib abdomcentesis_total_protein    -0.8174875960203364
+    Attrib outcome=lived    -2.2599300888652896
+    Attrib outcome=died    1.0884164618285606
+    Attrib outcome=euthanized    0.749142352158241
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    -0.044648292567038415
+    Attrib surgery=no    0.09724976995215992
+    Attrib Age=young    0.3468231474697265
+    Attrib rectal_temperature    0.21828922071941123
+    Attrib pulse    -0.035031885048695525
+    Attrib respiratory_rate    -0.1602636384025222
+    Attrib temp_extremities=normal    -0.10803537343180943
+    Attrib temp_extremities=warm    0.4236101754616237
+    Attrib temp_extremities=cool    -0.13755892507833245
+    Attrib temp_extremities=cold    0.02795845030690847
+    Attrib peripheral_pulse=normal    -0.771017373397522
+    Attrib peripheral_pulse=increased    0.17640548112230167
+    Attrib peripheral_pulse=reduced    0.4520225874964857
+    Attrib peripheral_pulse=absent    0.3045794859679728
+    Attrib mucous_membranes=normal pink    -0.6577435919991762
+    Attrib mucous_membranes=bright pink    0.31657722929562754
+    Attrib mucous_membranes=pale pink    0.27909966023624505
+    Attrib mucous_membranes=pale cyanotic    -0.022595576688527488
+    Attrib mucous_membranes=bright red    0.08051702635722739
+    Attrib mucous_membranes=dark cyanotic    0.3338981483147059
+    Attrib capillary_refill_time=<3    -0.15594675534181018
+    Attrib capillary_refill_time=>=3    0.1223303062315769
+    Attrib capillary_refill_time=meaning unknown    0.029271559429585446
+    Attrib pain=alert no pain    0.2082850114973014
+    Attrib pain=depressed    0.09299522306557657
+    Attrib pain=intermittent mild pain    -0.4810918647098677
+    Attrib pain=intermittent severe pain    0.5423794121389881
+    Attrib pain=continuous severe pain    -0.11666705159990795
+    Attrib peristalsis=hypermotile    0.7797654660522243
+    Attrib peristalsis=normal    -0.2701838661142939
+    Attrib peristalsis=hypomotile    -0.8093082707435394
+    Attrib peristalsis=absent    0.4073194856136092
+    Attrib abdominal_distension=none    -0.13461103938828423
+    Attrib abdominal_distension=slight    0.550925492085981
+    Attrib abdominal_distension=moderate    0.1453082073700988
+    Attrib abdominal_distension=severe    -0.37377904156115804
+    Attrib nasogastric_tube=none    0.5162567136876298
+    Attrib nasogastric_tube=slight    -0.30567896786564547
+    Attrib nasogastric_tube=significant    -0.13112746990200239
+    Attrib nasogastric_reflux=none    0.24602645863167838
+    Attrib nasogastric_reflux=>1l    -0.10744611632831456
+    Attrib nasogastric_reflux=<1l    -0.030991607888705267
+    Attrib nasogastric_reflux_PH    0.2410570899010107
+    Attrib rectal_examination=normal    0.13825098135049638
+    Attrib rectal_examination=increased    0.13782108878042929
+    Attrib rectal_examination=decreased    -0.2994452098412846
+    Attrib rectal_examination=absent    0.2569842600445609
+    Attrib abdomen=normal    0.3324484600174385
+    Attrib abdomen=other    -0.034885179797465
+    Attrib abdomen=firm feces in large intestine    0.21068616339683158
+    Attrib abdomen=distended small intestine    0.40296348674274846
+    Attrib abdomen=distended large intestine    -0.674473597160022
+    Attrib packed_cell_volume    0.690430009696232
+    Attrib total_protein    -0.7350457061179816
+    Attrib abdominocentesis_appearance=clear    -0.0028912164986143562
+    Attrib abdominocentesis_appearance=cloudy    0.7067055743483304
+    Attrib abdominocentesis_appearance=serosanguinous    -0.581788670368263
+    Attrib abdomcentesis_total_protein    0.35884190820794837
+    Attrib outcome=lived    -0.7479782685371963
+    Attrib outcome=died    0.6368932413797014
+    Attrib outcome=euthanized    0.25540912158615625
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    -0.18747345530243015
+    Attrib surgery=no    1.7110035790603948
+    Attrib Age=young    0.31323761194836863
+    Attrib rectal_temperature    0.3980880420204328
+    Attrib pulse    0.03973245418201587
+    Attrib respiratory_rate    -0.8666443211736528
+    Attrib temp_extremities=normal    0.3483461750397366
+    Attrib temp_extremities=warm    0.1710920959285638
+    Attrib temp_extremities=cool    -0.5825098102156884
+    Attrib temp_extremities=cold    0.4256155444577455
+    Attrib peripheral_pulse=normal    -0.14553039273170415
+    Attrib peripheral_pulse=increased    0.10795314638441954
+    Attrib peripheral_pulse=reduced    0.2352491764913204
+    Attrib peripheral_pulse=absent    0.10416102839950031
+    Attrib mucous_membranes=normal pink    -0.012069948893077925
+    Attrib mucous_membranes=bright pink    0.11718417790471759
+    Attrib mucous_membranes=pale pink    0.21242079875959205
+    Attrib mucous_membranes=pale cyanotic    -0.30000015101771965
+    Attrib mucous_membranes=bright red    -0.16032625981503895
+    Attrib mucous_membranes=dark cyanotic    0.6910193470935021
+    Attrib capillary_refill_time=<3    -0.02604034301602717
+    Attrib capillary_refill_time=>=3    -0.030582697706981368
+    Attrib capillary_refill_time=meaning unknown    0.23604338131840563
+    Attrib pain=alert no pain    0.3095796577025265
+    Attrib pain=depressed    -0.3832606932609896
+    Attrib pain=intermittent mild pain    0.06195102280458987
+    Attrib pain=intermittent severe pain    0.17485252985142286
+    Attrib pain=continuous severe pain    0.3093674536722603
+    Attrib peristalsis=hypermotile    0.12034413512808223
+    Attrib peristalsis=normal    0.2884130549546621
+    Attrib peristalsis=hypomotile    -0.23979386239501682
+    Attrib peristalsis=absent    0.12606281236970923
+    Attrib abdominal_distension=none    0.3497054026441096
+    Attrib abdominal_distension=slight    0.6361985591843878
+    Attrib abdominal_distension=moderate    -0.46647405467745323
+    Attrib abdominal_distension=severe    -0.19216944719143744
+    Attrib nasogastric_tube=none    -0.09379281406778286
+    Attrib nasogastric_tube=slight    0.21258209710420806
+    Attrib nasogastric_tube=significant    0.05165594281389976
+    Attrib nasogastric_reflux=none    -0.1125275149016108
+    Attrib nasogastric_reflux=>1l    0.49685216616079125
+    Attrib nasogastric_reflux=<1l    -0.29889086879289944
+    Attrib nasogastric_reflux_PH    0.6274597349368947
+    Attrib rectal_examination=normal    -0.020260069972332862
+    Attrib rectal_examination=increased    0.5572542389890466
+    Attrib rectal_examination=decreased    0.11542996219128607
+    Attrib rectal_examination=absent    -0.4203923382542632
+    Attrib abdomen=normal    0.6204045674802104
+    Attrib abdomen=other    -0.09876572629152233
+    Attrib abdomen=firm feces in large intestine    0.1358690681066355
+    Attrib abdomen=distended small intestine    -0.6028518719216321
+    Attrib abdomen=distended large intestine    0.534868734631449
+    Attrib packed_cell_volume    0.19257383460080454
+    Attrib total_protein    -0.5508857984647777
+    Attrib abdominocentesis_appearance=clear    0.36694806599370183
+    Attrib abdominocentesis_appearance=cloudy    -0.12958206097823735
+    Attrib abdominocentesis_appearance=serosanguinous    -0.08221246546876779
+    Attrib abdomcentesis_total_protein    0.44847570939066833
+    Attrib outcome=lived    0.8885920443479379
+    Attrib outcome=died    -0.23718128661420165
+    Attrib outcome=euthanized    -0.5157479862984262
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    -0.17048775840066133
+    Attrib surgery=no    -1.2036093625210385
+    Attrib Age=young    -0.21138845753560562
+    Attrib rectal_temperature    -0.24295174545972736
+    Attrib pulse    0.32087445178358487
+    Attrib respiratory_rate    -0.21702162645794099
+    Attrib temp_extremities=normal    -0.2977587163143586
+    Attrib temp_extremities=warm    -0.3823713715066745
+    Attrib temp_extremities=cool    0.6440619115752696
+    Attrib temp_extremities=cold    0.48515236697285297
+    Attrib peripheral_pulse=normal    0.07887176077119058
+    Attrib peripheral_pulse=increased    0.06398601070662571
+    Attrib peripheral_pulse=reduced    0.109124950755339
+    Attrib peripheral_pulse=absent    0.06973511201307617
+    Attrib mucous_membranes=normal pink    -0.11954207440436969
+    Attrib mucous_membranes=bright pink    -0.2025778529592997
+    Attrib mucous_membranes=pale pink    0.35885348914239223
+    Attrib mucous_membranes=pale cyanotic    1.0071808603250298
+    Attrib mucous_membranes=bright red    -0.10644623295091456
+    Attrib mucous_membranes=dark cyanotic    -0.32915737661626565
+    Attrib capillary_refill_time=<3    0.09814999062798363
+    Attrib capillary_refill_time=>=3    -0.16900778404507716
+    Attrib capillary_refill_time=meaning unknown    0.18843621830500765
+    Attrib pain=alert no pain    0.05387097297269637
+    Attrib pain=depressed    0.9805819980014739
+    Attrib pain=intermittent mild pain    -0.09084413101769222
+    Attrib pain=intermittent severe pain    -0.3355835763101977
+    Attrib pain=continuous severe pain    -0.15476354925590524
+    Attrib peristalsis=hypermotile    -0.33503102462566303
+    Attrib peristalsis=normal    0.51939369094282
+    Attrib peristalsis=hypomotile    0.0733897411618996
+    Attrib peristalsis=absent    0.09301052418360438
+    Attrib abdominal_distension=none    -0.6505952995049701
+    Attrib abdominal_distension=slight    0.17390390444477935
+    Attrib abdominal_distension=moderate    0.7363720275743587
+    Attrib abdominal_distension=severe    0.08430930838340019
+    Attrib nasogastric_tube=none    0.8068920674687136
+    Attrib nasogastric_tube=slight    -0.8399762571078693
+    Attrib nasogastric_tube=significant    0.23415878406548302
+    Attrib nasogastric_reflux=none    -0.1829601108939354
+    Attrib nasogastric_reflux=>1l    0.344554480251768
+    Attrib nasogastric_reflux=<1l    -0.07290140343009291
+    Attrib nasogastric_reflux_PH    -0.288656414719587
+    Attrib rectal_examination=normal    0.1423603731850967
+    Attrib rectal_examination=increased    0.08077635867981534
+    Attrib rectal_examination=decreased    0.036211026506435956
+    Attrib rectal_examination=absent    -0.06270541909052424
+    Attrib abdomen=normal    0.09350357316849392
+    Attrib abdomen=other    0.20242506217058517
+    Attrib abdomen=firm feces in large intestine    0.7889577208168614
+    Attrib abdomen=distended small intestine    -0.3494206479992442
+    Attrib abdomen=distended large intestine    -0.34292332797480723
+    Attrib packed_cell_volume    -0.5482671099445511
+    Attrib total_protein    0.48027769060633885
+    Attrib abdominocentesis_appearance=clear    0.22640215037992317
+    Attrib abdominocentesis_appearance=cloudy    -0.1944390005950355
+    Attrib abdominocentesis_appearance=serosanguinous    0.07343859807759419
+    Attrib abdomcentesis_total_protein    -0.4339553914568488
+    Attrib outcome=lived    0.1513621112420502
+    Attrib outcome=died    0.02840069283514217
+    Attrib outcome=euthanized    0.04613322671522396
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    0.0264526072372964
+    Attrib surgery=no    -1.3774589866409608
+    Attrib Age=young    0.7406453309438349
+    Attrib rectal_temperature    -0.5058208430491746
+    Attrib pulse    -0.39426251039129606
+    Attrib respiratory_rate    1.8681591503830544
+    Attrib temp_extremities=normal    1.0628672009328364
+    Attrib temp_extremities=warm    0.5237395769702597
+    Attrib temp_extremities=cool    -0.8517443784309805
+    Attrib temp_extremities=cold    -0.7105623949135975
+    Attrib peripheral_pulse=normal    -0.029797023341021456
+    Attrib peripheral_pulse=increased    0.2222002603399577
+    Attrib peripheral_pulse=reduced    -0.22542956193780658
+    Attrib peripheral_pulse=absent    -0.043239587750880173
+    Attrib mucous_membranes=normal pink    0.604531687489911
+    Attrib mucous_membranes=bright pink    -0.46784947012900097
+    Attrib mucous_membranes=pale pink    0.39672435854801663
+    Attrib mucous_membranes=pale cyanotic    -0.1526043882766497
+    Attrib mucous_membranes=bright red    -0.39440264482714954
+    Attrib mucous_membranes=dark cyanotic    -0.13249266964686743
+    Attrib capillary_refill_time=<3    -0.16921020423376051
+    Attrib capillary_refill_time=>=3    0.135725242267352
+    Attrib capillary_refill_time=meaning unknown    -0.07074051035756314
+    Attrib pain=alert no pain    -0.5367005116691099
+    Attrib pain=depressed    -0.10239905818095406
+    Attrib pain=intermittent mild pain    -0.43892141282655583
+    Attrib pain=intermittent severe pain    0.24118812284045296
+    Attrib pain=continuous severe pain    0.8142989099025404
+    Attrib peristalsis=hypermotile    -0.6453310101361234
+    Attrib peristalsis=normal    -0.3150106541257771
+    Attrib peristalsis=hypomotile    1.3076535874938953
+    Attrib peristalsis=absent    -0.38827763393002224
+    Attrib abdominal_distension=none    0.10926492614524858
+    Attrib abdominal_distension=slight    -1.085591108695222
+    Attrib abdominal_distension=moderate    0.14045254770630697
+    Attrib abdominal_distension=severe    0.8599026773309905
+    Attrib nasogastric_tube=none    -0.7735257544954769
+    Attrib nasogastric_tube=slight    0.31274289739426386
+    Attrib nasogastric_tube=significant    0.3202787217604448
+    Attrib nasogastric_reflux=none    -0.5040783255627196
+    Attrib nasogastric_reflux=>1l    0.23177807008230772
+    Attrib nasogastric_reflux=<1l    0.28756274841721224
+    Attrib nasogastric_reflux_PH    -0.5279234147031815
+    Attrib rectal_examination=normal    0.3798847704641561
+    Attrib rectal_examination=increased    -0.17806716087328817
+    Attrib rectal_examination=decreased    0.6819630983281421
+    Attrib rectal_examination=absent    -1.004139534993192
+    Attrib abdomen=normal    -1.0496174911745255
+    Attrib abdomen=other    0.44584472762448596
+    Attrib abdomen=firm feces in large intestine    -0.19414202231606537
+    Attrib abdomen=distended small intestine    0.2450625661779622
+    Attrib abdomen=distended large intestine    0.29929161124754644
+    Attrib packed_cell_volume    -1.2596598977011602
+    Attrib total_protein    0.7695192036634589
+    Attrib abdominocentesis_appearance=clear    -0.09294363321805812
+    Attrib abdominocentesis_appearance=cloudy    -0.743582096150243
+    Attrib abdominocentesis_appearance=serosanguinous    0.7583710194114988
+    Attrib abdomcentesis_total_protein    0.05722183466461561
+    Attrib outcome=lived    1.6132451006250956
+    Attrib outcome=died    -1.1626362394541945
+    Attrib outcome=euthanized    -0.4526047395256754
+Sigmoid Node 22
+    Inputs    Weights
+    Threshold    -0.09159965391365292
+    Attrib surgery=no    -1.3995236029075204
+    Attrib Age=young    0.7113381715560797
+    Attrib rectal_temperature    -0.3818564090155639
+    Attrib pulse    0.054056312760988656
+    Attrib respiratory_rate    1.9365824678479069
+    Attrib temp_extremities=normal    0.6500995455438682
+    Attrib temp_extremities=warm    -0.06276589718709435
+    Attrib temp_extremities=cool    -0.16361308173586414
+    Attrib temp_extremities=cold    -0.27027896253470907
+    Attrib peripheral_pulse=normal    0.1022539177554236
+    Attrib peripheral_pulse=increased    0.18965404777248046
+    Attrib peripheral_pulse=reduced    -0.21003265851171263
+    Attrib peripheral_pulse=absent    0.019620716307077103
+    Attrib mucous_membranes=normal pink    0.2343329182110081
+    Attrib mucous_membranes=bright pink    -0.6921712839465566
+    Attrib mucous_membranes=pale pink    0.6675666115240462
+    Attrib mucous_membranes=pale cyanotic    -0.05041929780831076
+    Attrib mucous_membranes=bright red    0.0780374685541316
+    Attrib mucous_membranes=dark cyanotic    -0.010193506332485726
+    Attrib capillary_refill_time=<3    -0.0576635904101255
+    Attrib capillary_refill_time=>=3    0.12307944735310693
+    Attrib capillary_refill_time=meaning unknown    0.020487977918725187
+    Attrib pain=alert no pain    -0.2655968861991973
+    Attrib pain=depressed    -0.05296353009789944
+    Attrib pain=intermittent mild pain    0.1850762630672149
+    Attrib pain=intermittent severe pain    0.17489142443703645
+    Attrib pain=continuous severe pain    0.2528453425295216
+    Attrib peristalsis=hypermotile    -0.32702973533536284
+    Attrib peristalsis=normal    0.06767045921820533
+    Attrib peristalsis=hypomotile    0.5268870973928477
+    Attrib peristalsis=absent    -0.15978629518221285
+    Attrib abdominal_distension=none    -0.11602553521519643
+    Attrib abdominal_distension=slight    -0.6523127655198454
+    Attrib abdominal_distension=moderate    0.5716645404888346
+    Attrib abdominal_distension=severe    0.39046570440354694
+    Attrib nasogastric_tube=none    -0.5461427091558447
+    Attrib nasogastric_tube=slight    0.4522802233540058
+    Attrib nasogastric_tube=significant    0.08685914212891206
+    Attrib nasogastric_reflux=none    -0.8212971999150196
+    Attrib nasogastric_reflux=>1l    0.3539651447742542
+    Attrib nasogastric_reflux=<1l    0.5303346159698854
+    Attrib nasogastric_reflux_PH    -0.5968969660403121
+    Attrib rectal_examination=normal    0.4589519040187347
+    Attrib rectal_examination=increased    0.05995683625388268
+    Attrib rectal_examination=decreased    0.3639475266862853
+    Attrib rectal_examination=absent    -0.8461755191080094
+    Attrib abdomen=normal    -0.6225462036224125
+    Attrib abdomen=other    0.6150948841665135
+    Attrib abdomen=firm feces in large intestine    -0.8820640723284526
+    Attrib abdomen=distended small intestine    0.4729626873289787
+    Attrib abdomen=distended large intestine    0.6307431609458302
+    Attrib packed_cell_volume    -0.9278262270973284
+    Attrib total_protein    0.7096874706038064
+    Attrib abdominocentesis_appearance=clear    0.15791833207771908
+    Attrib abdominocentesis_appearance=cloudy    -0.6712340316875495
+    Attrib abdominocentesis_appearance=serosanguinous    0.5653387524272747
+    Attrib abdomcentesis_total_protein    -0.5981661860574216
+    Attrib outcome=lived    2.142443709536938
+    Attrib outcome=died    -0.8405879904660993
+    Attrib outcome=euthanized    -1.1401267820095262
+Sigmoid Node 23
+    Inputs    Weights
+    Threshold    -0.17556189307372608
+    Attrib surgery=no    0.932603737292528
+    Attrib Age=young    -0.04521783772288679
+    Attrib rectal_temperature    0.3674951913625626
+    Attrib pulse    0.2749633303787305
+    Attrib respiratory_rate    -0.3777909027643395
+    Attrib temp_extremities=normal    -0.21157229533611957
+    Attrib temp_extremities=warm    0.11579993255191803
+    Attrib temp_extremities=cool    -0.2995100379225931
+    Attrib temp_extremities=cold    0.6816276293747712
+    Attrib peripheral_pulse=normal    -0.09118859624012357
+    Attrib peripheral_pulse=increased    0.07401423277330163
+    Attrib peripheral_pulse=reduced    -0.1340266238621554
+    Attrib peripheral_pulse=absent    0.4839106029978083
+    Attrib mucous_membranes=normal pink    0.8179004693407547
+    Attrib mucous_membranes=bright pink    0.00880840149678355
+    Attrib mucous_membranes=pale pink    -0.538575858521133
+    Attrib mucous_membranes=pale cyanotic    -0.39157098230141996
+    Attrib mucous_membranes=bright red    0.5176643685880997
+    Attrib mucous_membranes=dark cyanotic    0.19195754225191553
+    Attrib capillary_refill_time=<3    -0.4100348575138557
+    Attrib capillary_refill_time=>=3    0.4341837664609228
+    Attrib capillary_refill_time=meaning unknown    0.2182036021720772
+    Attrib pain=alert no pain    0.4147250483385106
+    Attrib pain=depressed    -0.16881130436865058
+    Attrib pain=intermittent mild pain    -0.3527293501951202
+    Attrib pain=intermittent severe pain    0.3689088085026287
+    Attrib pain=continuous severe pain    0.14962530918001102
+    Attrib peristalsis=hypermotile    0.07653070678093231
+    Attrib peristalsis=normal    0.5480907343973151
+    Attrib peristalsis=hypomotile    -0.5229496200276299
+    Attrib peristalsis=absent    0.22852667553394856
+    Attrib abdominal_distension=none    0.30712457819739847
+    Attrib abdominal_distension=slight    0.2714000466582925
+    Attrib abdominal_distension=moderate    -0.5668748862639221
+    Attrib abdominal_distension=severe    0.24854643918157693
+    Attrib nasogastric_tube=none    -0.3552817578869623
+    Attrib nasogastric_tube=slight    0.5471153674650743
+    Attrib nasogastric_tube=significant    -0.03933719418435627
+    Attrib nasogastric_reflux=none    0.3553417924153162
+    Attrib nasogastric_reflux=>1l    0.08342996615605143
+    Attrib nasogastric_reflux=<1l    -0.30611871761181914
+    Attrib nasogastric_reflux_PH    0.4501524412490997
+    Attrib rectal_examination=normal    -0.384314119623801
+    Attrib rectal_examination=increased    0.4726576368697931
+    Attrib rectal_examination=decreased    0.37061810064309464
+    Attrib rectal_examination=absent    -0.1311090897283531
+    Attrib abdomen=normal    0.5743757573666793
+    Attrib abdomen=other    0.16232547102689115
+    Attrib abdomen=firm feces in large intestine    0.03219898342902043
+    Attrib abdomen=distended small intestine    -0.38295211837302984
+    Attrib abdomen=distended large intestine    0.1253935170022405
+    Attrib packed_cell_volume    -0.04413404719236238
+    Attrib total_protein    0.33331188244192794
+    Attrib abdominocentesis_appearance=clear    0.269894766971055
+    Attrib abdominocentesis_appearance=cloudy    0.03239017476522959
+    Attrib abdominocentesis_appearance=serosanguinous    -0.27653461613309654
+    Attrib abdomcentesis_total_protein    0.26207027824360984
+    Attrib outcome=lived    0.43584489218385886
+    Attrib outcome=died    0.021757084247901962
+    Attrib outcome=euthanized    -0.2556360765846593
+Sigmoid Node 24
+    Inputs    Weights
+    Threshold    -0.12084119988944712
+    Attrib surgery=no    0.12420609478354475
+    Attrib Age=young    -0.40062691597873923
+    Attrib rectal_temperature    0.3070647721616271
+    Attrib pulse    0.2804418869998547
+    Attrib respiratory_rate    -0.3621619242336784
+    Attrib temp_extremities=normal    -0.3128044653503876
+    Attrib temp_extremities=warm    -0.11961331917464739
+    Attrib temp_extremities=cool    -0.1520105018245486
+    Attrib temp_extremities=cold    0.9190127304800293
+    Attrib peripheral_pulse=normal    -0.5011754724545374
+    Attrib peripheral_pulse=increased    0.014246595671478176
+    Attrib peripheral_pulse=reduced    0.055460074519833986
+    Attrib peripheral_pulse=absent    0.7430462309343655
+    Attrib mucous_membranes=normal pink    0.47793445640433424
+    Attrib mucous_membranes=bright pink    0.09415409168585082
+    Attrib mucous_membranes=pale pink    0.500044557622941
+    Attrib mucous_membranes=pale cyanotic    -0.3538453094575643
+    Attrib mucous_membranes=bright red    0.06542245325964739
+    Attrib mucous_membranes=dark cyanotic    -0.04166979413966247
+    Attrib capillary_refill_time=<3    -0.3963086818447874
+    Attrib capillary_refill_time=>=3    0.3950814157947626
+    Attrib capillary_refill_time=meaning unknown    0.20310429068589947
+    Attrib pain=alert no pain    0.965567184127821
+    Attrib pain=depressed    -0.24905127025267723
+    Attrib pain=intermittent mild pain    0.11969258177956328
+    Attrib pain=intermittent severe pain    0.19775863959768528
+    Attrib pain=continuous severe pain    -0.4464742822878156
+    Attrib peristalsis=hypermotile    -0.19118914390280287
+    Attrib peristalsis=normal    0.8422063287982673
+    Attrib peristalsis=hypomotile    -0.2818835534805953
+    Attrib peristalsis=absent    -0.13742543681152478
+    Attrib abdominal_distension=none    0.4829190505910338
+    Attrib abdominal_distension=slight    0.5434509975016018
+    Attrib abdominal_distension=moderate    -0.8037446157768728
+    Attrib abdominal_distension=severe    0.007974320463226624
+    Attrib nasogastric_tube=none    -0.47210534468727927
+    Attrib nasogastric_tube=slight    0.36828641949585855
+    Attrib nasogastric_tube=significant    0.3039777728251635
+    Attrib nasogastric_reflux=none    0.43259391148475784
+    Attrib nasogastric_reflux=>1l    -0.09084115374278898
+    Attrib nasogastric_reflux=<1l    -0.21849795703192482
+    Attrib nasogastric_reflux_PH    0.3077350501050863
+    Attrib rectal_examination=normal    -0.37103247703654446
+    Attrib rectal_examination=increased    0.4260067812615181
+    Attrib rectal_examination=decreased    -0.2147403010166378
+    Attrib rectal_examination=absent    0.4768536737484719
+    Attrib abdomen=normal    0.6705964788222134
+    Attrib abdomen=other    0.24829803316224486
+    Attrib abdomen=firm feces in large intestine    0.13722266575130487
+    Attrib abdomen=distended small intestine    0.3689153952571152
+    Attrib abdomen=distended large intestine    -0.9835388702929347
+    Attrib packed_cell_volume    -0.12013524797767218
+    Attrib total_protein    1.1064895590455022
+    Attrib abdominocentesis_appearance=clear    0.08951110249205986
+    Attrib abdominocentesis_appearance=cloudy    0.2723171539750968
+    Attrib abdominocentesis_appearance=serosanguinous    -0.21170349441950556
+    Attrib abdomcentesis_total_protein    0.1485669227631591
+    Attrib outcome=lived    0.05483868338218197
+    Attrib outcome=died    -0.27198088491629063
+    Attrib outcome=euthanized    0.336934212595275
+Sigmoid Node 25
+    Inputs    Weights
+    Threshold    0.11981450380546407
+    Attrib surgery=no    -0.9715831128819657
+    Attrib Age=young    0.5353302666546341
+    Attrib rectal_temperature    -0.5275258345448006
+    Attrib pulse    -0.7025281196354256
+    Attrib respiratory_rate    0.735610407556228
+    Attrib temp_extremities=normal    0.9527003936793483
+    Attrib temp_extremities=warm    0.14150469606439064
+    Attrib temp_extremities=cool    -0.5500804608493886
+    Attrib temp_extremities=cold    -0.8420878194862861
+    Attrib peripheral_pulse=normal    -0.21584477819056683
+    Attrib peripheral_pulse=increased    0.02476143221719474
+    Attrib peripheral_pulse=reduced    0.20398245498323253
+    Attrib peripheral_pulse=absent    -0.3067359662349015
+    Attrib mucous_membranes=normal pink    -0.7171912164533552
+    Attrib mucous_membranes=bright pink    0.06397508675281138
+    Attrib mucous_membranes=pale pink    0.7338692199467185
+    Attrib mucous_membranes=pale cyanotic    0.2312304849688121
+    Attrib mucous_membranes=bright red    -0.3675408981275955
+    Attrib mucous_membranes=dark cyanotic    -0.589933172410671
+    Attrib capillary_refill_time=<3    0.3972971745445313
+    Attrib capillary_refill_time=>=3    -0.3223917852894764
+    Attrib capillary_refill_time=meaning unknown    -0.1341808778571697
+    Attrib pain=alert no pain    -0.3314005549345011
+    Attrib pain=depressed    -0.5081143673192129
+    Attrib pain=intermittent mild pain    0.30235959110675653
+    Attrib pain=intermittent severe pain    0.023497401296506484
+    Attrib pain=continuous severe pain    -0.03359141368473448
+    Attrib peristalsis=hypermotile    0.14525815835630992
+    Attrib peristalsis=normal    -0.9706590954962114
+    Attrib peristalsis=hypomotile    0.9013594371223707
+    Attrib peristalsis=absent    -0.35480493378051176
+    Attrib abdominal_distension=none    -0.7236945991459303
+    Attrib abdominal_distension=slight    -0.42211109701629224
+    Attrib abdominal_distension=moderate    1.4810604426090277
+    Attrib abdominal_distension=severe    -0.6467704712062016
+    Attrib nasogastric_tube=none    0.4526152629212279
+    Attrib nasogastric_tube=slight    -0.33573201972159605
+    Attrib nasogastric_tube=significant    -0.3798228085864125
+    Attrib nasogastric_reflux=none    0.28943698881467017
+    Attrib nasogastric_reflux=>1l    -0.23469967449969215
+    Attrib nasogastric_reflux=<1l    -0.2365088219357413
+    Attrib nasogastric_reflux_PH    -0.08453629302250328
+    Attrib rectal_examination=normal    0.404447744461164
+    Attrib rectal_examination=increased    -0.41987482540313265
+    Attrib rectal_examination=decreased    -0.14389249410832708
+    Attrib rectal_examination=absent    -0.1835046356361578
+    Attrib abdomen=normal    -1.1711416227835738
+    Attrib abdomen=other    -0.12493522823051631
+    Attrib abdomen=firm feces in large intestine    0.26482642212093815
+    Attrib abdomen=distended small intestine    0.6600982545636739
+    Attrib abdomen=distended large intestine    -0.07359705602933596
+    Attrib packed_cell_volume    -0.3058504098467299
+    Attrib total_protein    -1.566397854787995
+    Attrib abdominocentesis_appearance=clear    -0.2694648055970135
+    Attrib abdominocentesis_appearance=cloudy    -0.30601727151400065
+    Attrib abdominocentesis_appearance=serosanguinous    0.3992047681328743
+    Attrib abdomcentesis_total_protein    -0.08585508731938887
+    Attrib outcome=lived    -0.8331652473384442
+    Attrib outcome=died    -0.1286318113627061
+    Attrib outcome=euthanized    0.7664869929422088
+Sigmoid Node 26
+    Inputs    Weights
+    Threshold    0.12418746231890229
+    Attrib surgery=no    -1.500921476098808
+    Attrib Age=young    0.7969928471590815
+    Attrib rectal_temperature    -0.7342412612892525
+    Attrib pulse    -0.30543164322398175
+    Attrib respiratory_rate    1.122016102367194
+    Attrib temp_extremities=normal    0.7279220768108644
+    Attrib temp_extremities=warm    0.07011443787025301
+    Attrib temp_extremities=cool    -0.24913500991235676
+    Attrib temp_extremities=cold    -0.7858623434339899
+    Attrib peripheral_pulse=normal    -0.222580432577435
+    Attrib peripheral_pulse=increased    0.1135044465300207
+    Attrib peripheral_pulse=reduced    -0.060642362813229315
+    Attrib peripheral_pulse=absent    -0.02035372069759545
+    Attrib mucous_membranes=normal pink    0.147837116692957
+    Attrib mucous_membranes=bright pink    -0.7276526299301137
+    Attrib mucous_membranes=pale pink    0.6635740005110637
+    Attrib mucous_membranes=pale cyanotic    0.19697516650085783
+    Attrib mucous_membranes=bright red    -0.5948722296886011
+    Attrib mucous_membranes=dark cyanotic    0.02603323986530759
+    Attrib capillary_refill_time=<3    -0.5287236228364948
+    Attrib capillary_refill_time=>=3    0.587189019647555
+    Attrib capillary_refill_time=meaning unknown    -0.18463256887065393
+    Attrib pain=alert no pain    0.05321017870253239
+    Attrib pain=depressed    -1.2556053691108215
+    Attrib pain=intermittent mild pain    0.2602382199382102
+    Attrib pain=intermittent severe pain    0.7921096658788199
+    Attrib pain=continuous severe pain    -0.12807504566101077
+    Attrib peristalsis=hypermotile    -0.7443079173099082
+    Attrib peristalsis=normal    0.11721431111476456
+    Attrib peristalsis=hypomotile    -0.15135992467122183
+    Attrib peristalsis=absent    0.5512617496181328
+    Attrib abdominal_distension=none    -1.0248818670396929
+    Attrib abdominal_distension=slight    -0.6095030121553167
+    Attrib abdominal_distension=moderate    0.47699882550348227
+    Attrib abdominal_distension=severe    1.0381112348597976
+    Attrib nasogastric_tube=none    0.31806699128242183
+    Attrib nasogastric_tube=slight    -0.4872505047499498
+    Attrib nasogastric_tube=significant    0.06285144698418346
+    Attrib nasogastric_reflux=none    -0.4095939556455849
+    Attrib nasogastric_reflux=>1l    0.0899580244721978
+    Attrib nasogastric_reflux=<1l    0.2928078544578043
+    Attrib nasogastric_reflux_PH    -0.12132052811466108
+    Attrib rectal_examination=normal    0.11478896537152951
+    Attrib rectal_examination=increased    -0.09047267672403905
+    Attrib rectal_examination=decreased    -0.4654523293729664
+    Attrib rectal_examination=absent    0.37862450375199236
+    Attrib abdomen=normal    -1.1859994695684855
+    Attrib abdomen=other    0.333795484037123
+    Attrib abdomen=firm feces in large intestine    -0.7667482606935352
+    Attrib abdomen=distended small intestine    0.7238294991050553
+    Attrib abdomen=distended large intestine    0.6814075949085557
+    Attrib packed_cell_volume    -0.6334181574655134
+    Attrib total_protein    0.02663278701873265
+    Attrib abdominocentesis_appearance=clear    -0.09031743302078361
+    Attrib abdominocentesis_appearance=cloudy    -1.0636385607484449
+    Attrib abdominocentesis_appearance=serosanguinous    1.012534308649049
+    Attrib abdomcentesis_total_protein    0.32474293483264655
+    Attrib outcome=lived    0.9553861087713877
+    Attrib outcome=died    -0.238257305140546
+    Attrib outcome=euthanized    -0.7526655519359242
+Sigmoid Node 27
+    Inputs    Weights
+    Threshold    -0.08596681721489861
+    Attrib surgery=no    -1.324464634177355
+    Attrib Age=young    -0.5306047776922135
+    Attrib rectal_temperature    0.21490750004650655
+    Attrib pulse    0.894364288115256
+    Attrib respiratory_rate    0.013485990974750686
+    Attrib temp_extremities=normal    -0.5740135011354786
+    Attrib temp_extremities=warm    -0.5341651095424244
+    Attrib temp_extremities=cool    0.383514577328135
+    Attrib temp_extremities=cold    0.8830285425186649
+    Attrib peripheral_pulse=normal    -0.40423580420210414
+    Attrib peripheral_pulse=increased    -0.10371464910552448
+    Attrib peripheral_pulse=reduced    -0.17040442334248665
+    Attrib peripheral_pulse=absent    0.7649120330205842
+    Attrib mucous_membranes=normal pink    0.129959502848494
+    Attrib mucous_membranes=bright pink    -0.31158716904852407
+    Attrib mucous_membranes=pale pink    0.4251845378226838
+    Attrib mucous_membranes=pale cyanotic    0.6740008060775294
+    Attrib mucous_membranes=bright red    -0.28787198221077237
+    Attrib mucous_membranes=dark cyanotic    -0.37646757042635615
+    Attrib capillary_refill_time=<3    -0.003515510833396362
+    Attrib capillary_refill_time=>=3    0.02986605277801731
+    Attrib capillary_refill_time=meaning unknown    0.10876601034826736
+    Attrib pain=alert no pain    0.3091069047207032
+    Attrib pain=depressed    0.6076813516242148
+    Attrib pain=intermittent mild pain    0.06174330565008669
+    Attrib pain=intermittent severe pain    -0.24086610139087658
+    Attrib pain=continuous severe pain    -0.5264518060477406
+    Attrib peristalsis=hypermotile    -0.5593569976658587
+    Attrib peristalsis=normal    0.6353380067639004
+    Attrib peristalsis=hypomotile    -0.2848063732983557
+    Attrib peristalsis=absent    0.2739813748293151
+    Attrib abdominal_distension=none    -0.3961389029771446
+    Attrib abdominal_distension=slight    0.17566722772272372
+    Attrib abdominal_distension=moderate    0.5736451979930449
+    Attrib abdominal_distension=severe    -0.1962644311642778
+    Attrib nasogastric_tube=none    0.4555911494655449
+    Attrib nasogastric_tube=slight    -0.610183499798215
+    Attrib nasogastric_tube=significant    0.16828200765727563
+    Attrib nasogastric_reflux=none    0.31849293649302135
+    Attrib nasogastric_reflux=>1l    0.10490384374252552
+    Attrib nasogastric_reflux=<1l    -0.2676205667206117
+    Attrib nasogastric_reflux_PH    -0.27518427481086477
+    Attrib rectal_examination=normal    -0.1395757638266147
+    Attrib rectal_examination=increased    0.16273151222310708
+    Attrib rectal_examination=decreased    -0.10016729771226243
+    Attrib rectal_examination=absent    0.21917007949596234
+    Attrib abdomen=normal    0.4259973641993153
+    Attrib abdomen=other    0.18080344093672526
+    Attrib abdomen=firm feces in large intestine    0.5923577372136792
+    Attrib abdomen=distended small intestine    -0.15219879687390164
+    Attrib abdomen=distended large intestine    -0.872686448322348
+    Attrib packed_cell_volume    -0.5359375345589352
+    Attrib total_protein    1.1049413986872327
+    Attrib abdominocentesis_appearance=clear    0.1249105428506109
+    Attrib abdominocentesis_appearance=cloudy    0.25839972981787185
+    Attrib abdominocentesis_appearance=serosanguinous    -0.2359150929693271
+    Attrib abdomcentesis_total_protein    -0.44054778310502324
+    Attrib outcome=lived    0.03253763187925626
+    Attrib outcome=died    -0.08157529476780419
+    Attrib outcome=euthanized    0.09706709569722441
+Sigmoid Node 28
+    Inputs    Weights
+    Threshold    -0.07111009276695504
+    Attrib surgery=no    -1.2298101828725545
+    Attrib Age=young    0.8203648398180998
+    Attrib rectal_temperature    -0.386742313970263
+    Attrib pulse    -0.3766013329598588
+    Attrib respiratory_rate    0.0574312345082565
+    Attrib temp_extremities=normal    0.5435248397809668
+    Attrib temp_extremities=warm    0.6777613727065295
+    Attrib temp_extremities=cool    -1.1128704835741319
+    Attrib temp_extremities=cold    -0.05286885298350666
+    Attrib peripheral_pulse=normal    -0.7817917731194384
+    Attrib peripheral_pulse=increased    0.32064300842367954
+    Attrib peripheral_pulse=reduced    0.850273809803027
+    Attrib peripheral_pulse=absent    -0.30458005693667667
+    Attrib mucous_membranes=normal pink    -0.5537847853443741
+    Attrib mucous_membranes=bright pink    0.17272086307567705
+    Attrib mucous_membranes=pale pink    -0.37474619017870436
+    Attrib mucous_membranes=pale cyanotic    0.4874862431692791
+    Attrib mucous_membranes=bright red    0.6383390490702658
+    Attrib mucous_membranes=dark cyanotic    -0.24128776954662778
+    Attrib capillary_refill_time=<3    -0.5813946242731229
+    Attrib capillary_refill_time=>=3    0.6191505830405545
+    Attrib capillary_refill_time=meaning unknown    -0.09243454957565751
+    Attrib pain=alert no pain    -0.4600323906158713
+    Attrib pain=depressed    0.8585271500707705
+    Attrib pain=intermittent mild pain    -0.5035459323470665
+    Attrib pain=intermittent severe pain    0.06188797220501226
+    Attrib pain=continuous severe pain    0.14153752810790649
+    Attrib peristalsis=hypermotile    0.2436350766263515
+    Attrib peristalsis=normal    -0.6110545754412485
+    Attrib peristalsis=hypomotile    0.6414474689887419
+    Attrib peristalsis=absent    -0.23397030846597053
+    Attrib abdominal_distension=none    0.4414690679778487
+    Attrib abdominal_distension=slight    -0.11022532304239237
+    Attrib abdominal_distension=moderate    0.010588548338520205
+    Attrib abdominal_distension=severe    -0.35480331428859097
+    Attrib nasogastric_tube=none    0.12543851358003713
+    Attrib nasogastric_tube=slight    0.07928515220048442
+    Attrib nasogastric_tube=significant    -0.21333657840666395
+    Attrib nasogastric_reflux=none    0.2861463708342927
+    Attrib nasogastric_reflux=>1l    -0.17053766903507409
+    Attrib nasogastric_reflux=<1l    -0.053595076624446215
+    Attrib nasogastric_reflux_PH    -0.021293327660998843
+    Attrib rectal_examination=normal    -0.3702210739522349
+    Attrib rectal_examination=increased    0.1174194980475749
+    Attrib rectal_examination=decreased    0.05345160913096073
+    Attrib rectal_examination=absent    0.16193691260061402
+    Attrib abdomen=normal    -0.5245697371299419
+    Attrib abdomen=other    0.08154633374652766
+    Attrib abdomen=firm feces in large intestine    0.5326698698666875
+    Attrib abdomen=distended small intestine    0.5502772285113086
+    Attrib abdomen=distended large intestine    -0.5939762948460897
+    Attrib packed_cell_volume    0.5216739964960218
+    Attrib total_protein    -0.9183709709323401
+    Attrib abdominocentesis_appearance=clear    -0.18709800220539405
+    Attrib abdominocentesis_appearance=cloudy    -0.3213559568818178
+    Attrib abdominocentesis_appearance=serosanguinous    0.48507664549449186
+    Attrib abdomcentesis_total_protein    0.4433646603783254
+    Attrib outcome=lived    0.2359747478898822
+    Attrib outcome=died    0.7779893235339055
+    Attrib outcome=euthanized    -1.0949781151218196
+Sigmoid Node 29
+    Inputs    Weights
+    Threshold    -0.037051831587447126
+    Attrib surgery=no    0.5036835525067429
+    Attrib Age=young    0.2663471248807131
+    Attrib rectal_temperature    6.810832785814932E-4
+    Attrib pulse    -0.1716383790780172
+    Attrib respiratory_rate    -0.1282459907964071
+    Attrib temp_extremities=normal    0.16525061108897887
+    Attrib temp_extremities=warm    0.24446939292796116
+    Attrib temp_extremities=cool    -0.1325635611996482
+    Attrib temp_extremities=cold    -0.13726848622405977
+    Attrib peripheral_pulse=normal    -0.2937011563793196
+    Attrib peripheral_pulse=increased    0.1352548586524038
+    Attrib peripheral_pulse=reduced    -0.19390367017713778
+    Attrib peripheral_pulse=absent    0.38364909373503264
+    Attrib mucous_membranes=normal pink    0.056858118634978735
+    Attrib mucous_membranes=bright pink    0.08800528326121498
+    Attrib mucous_membranes=pale pink    0.042883196350694874
+    Attrib mucous_membranes=pale cyanotic    -0.2120839704052907
+    Attrib mucous_membranes=bright red    -0.11592247946343315
+    Attrib mucous_membranes=dark cyanotic    0.37205808623719244
+    Attrib capillary_refill_time=<3    0.22243465183325853
+    Attrib capillary_refill_time=>=3    -0.18520703908009442
+    Attrib capillary_refill_time=meaning unknown    0.05633895365875659
+    Attrib pain=alert no pain    0.14783343263785792
+    Attrib pain=depressed    0.07488497703853003
+    Attrib pain=intermittent mild pain    -0.40381551006875416
+    Attrib pain=intermittent severe pain    0.6518115649633659
+    Attrib pain=continuous severe pain    -0.30488566993938815
+    Attrib peristalsis=hypermotile    0.7192753384740744
+    Attrib peristalsis=normal    -0.33380758061980137
+    Attrib peristalsis=hypomotile    -0.4801933866143838
+    Attrib peristalsis=absent    0.22172641125492004
+    Attrib abdominal_distension=none    -0.060945384887792296
+    Attrib abdominal_distension=slight    0.08490348544416672
+    Attrib abdominal_distension=moderate    0.1703618123686656
+    Attrib abdominal_distension=severe    -0.06668006590155072
+    Attrib nasogastric_tube=none    0.5629741116707156
+    Attrib nasogastric_tube=slight    -0.2441672170790215
+    Attrib nasogastric_tube=significant    -0.22553550723639834
+    Attrib nasogastric_reflux=none    -0.07204302550471525
+    Attrib nasogastric_reflux=>1l    -0.09289943444286017
+    Attrib nasogastric_reflux=<1l    0.26971099551400907
+    Attrib nasogastric_reflux_PH    0.01158065507979688
+    Attrib rectal_examination=normal    0.28554064398196755
+    Attrib rectal_examination=increased    -0.0033383712326582405
+    Attrib rectal_examination=decreased    -0.26443520865601144
+    Attrib rectal_examination=absent    0.1517721023876456
+    Attrib abdomen=normal    0.3567873415577192
+    Attrib abdomen=other    0.04413265755537349
+    Attrib abdomen=firm feces in large intestine    0.09261276785178117
+    Attrib abdomen=distended small intestine    0.3989375301226782
+    Attrib abdomen=distended large intestine    -0.6149763763772893
+    Attrib packed_cell_volume    0.6094467587062983
+    Attrib total_protein    -0.6914488934646922
+    Attrib abdominocentesis_appearance=clear    -0.15400851339935936
+    Attrib abdominocentesis_appearance=cloudy    0.6864849301400748
+    Attrib abdominocentesis_appearance=serosanguinous    -0.5162259906470876
+    Attrib abdomcentesis_total_protein    0.3390165674814364
+    Attrib outcome=lived    -0.6941765438755393
+    Attrib outcome=died    0.3867978380772166
+    Attrib outcome=euthanized    0.31049271391211264
+Sigmoid Node 30
+    Inputs    Weights
+    Threshold    0.09382751446595251
+    Attrib surgery=no    -0.9530049589018668
+    Attrib Age=young    1.0500742780198709
+    Attrib rectal_temperature    -0.3647241963528254
+    Attrib pulse    -1.3297905237210064
+    Attrib respiratory_rate    0.8425699958531621
+    Attrib temp_extremities=normal    0.7955122319935071
+    Attrib temp_extremities=warm    0.27255867615918455
+    Attrib temp_extremities=cool    -0.6723896051041894
+    Attrib temp_extremities=cold    -0.572667678056317
+    Attrib peripheral_pulse=normal    -0.8492594841115394
+    Attrib peripheral_pulse=increased    0.21198412189639987
+    Attrib peripheral_pulse=reduced    -0.14478244877793367
+    Attrib peripheral_pulse=absent    0.5621157778608312
+    Attrib mucous_membranes=normal pink    1.0306918579179334
+    Attrib mucous_membranes=bright pink    -0.1526473029221371
+    Attrib mucous_membranes=pale pink    0.27253777705531357
+    Attrib mucous_membranes=pale cyanotic    -0.08245728280387649
+    Attrib mucous_membranes=bright red    -1.2661113421589545
+    Attrib mucous_membranes=dark cyanotic    -0.3809920063262037
+    Attrib capillary_refill_time=<3    -0.1673037093969408
+    Attrib capillary_refill_time=>=3    0.11505807010952371
+    Attrib capillary_refill_time=meaning unknown    -0.1676340124575501
+    Attrib pain=alert no pain    -0.5596715768976546
+    Attrib pain=depressed    -0.4704134742643868
+    Attrib pain=intermittent mild pain    -0.3309686806325249
+    Attrib pain=intermittent severe pain    0.3406442390311919
+    Attrib pain=continuous severe pain    0.7246815254848341
+    Attrib peristalsis=hypermotile    -0.8193992014334229
+    Attrib peristalsis=normal    -0.9130865685172233
+    Attrib peristalsis=hypomotile    0.8027281853385649
+    Attrib peristalsis=absent    0.566804461601817
+    Attrib abdominal_distension=none    -0.5532407921038087
+    Attrib abdominal_distension=slight    -0.6608713461113633
+    Attrib abdominal_distension=moderate    1.5957593715327538
+    Attrib abdominal_distension=severe    -0.5427884267037468
+    Attrib nasogastric_tube=none    0.09198949734657488
+    Attrib nasogastric_tube=slight    0.22623368947486985
+    Attrib nasogastric_tube=significant    -0.35086960288477115
+    Attrib nasogastric_reflux=none    -0.009298420875737694
+    Attrib nasogastric_reflux=>1l    0.1516924098998753
+    Attrib nasogastric_reflux=<1l    -0.328432113543224
+    Attrib nasogastric_reflux_PH    -0.05361467406365886
+    Attrib rectal_examination=normal    -0.08960881845198371
+    Attrib rectal_examination=increased    -0.4032082149627322
+    Attrib rectal_examination=decreased    0.6746798235933417
+    Attrib rectal_examination=absent    -0.39504657060947856
+    Attrib abdomen=normal    -1.643274603309392
+    Attrib abdomen=other    0.4488881949119794
+    Attrib abdomen=firm feces in large intestine    0.0014299344879025997
+    Attrib abdomen=distended small intestine    -0.3471914853502536
+    Attrib abdomen=distended large intestine    1.1675944264727156
+    Attrib packed_cell_volume    -0.7493934407430488
+    Attrib total_protein    -2.0641218419429372
+    Attrib abdominocentesis_appearance=clear    0.2344580227717804
+    Attrib abdominocentesis_appearance=cloudy    -0.8585222316323411
+    Attrib abdominocentesis_appearance=serosanguinous    0.5157106770688036
+    Attrib abdomcentesis_total_protein    0.3634460278057785
+    Attrib outcome=lived    -0.5438861320214314
+    Attrib outcome=died    -0.26532273814838847
+    Attrib outcome=euthanized    0.62253050795823
+Sigmoid Node 31
+    Inputs    Weights
+    Threshold    0.007278420030914547
+    Attrib surgery=no    -1.5786215613970824
+    Attrib Age=young    0.9540489077645269
+    Attrib rectal_temperature    -0.44005130028137235
+    Attrib pulse    0.42004342223289826
+    Attrib respiratory_rate    2.1748184015208123
+    Attrib temp_extremities=normal    0.7193431308029665
+    Attrib temp_extremities=warm    -0.49583995204233566
+    Attrib temp_extremities=cool    0.08780491150734124
+    Attrib temp_extremities=cold    -0.3540556771812845
+    Attrib peripheral_pulse=normal    -0.9254264157909203
+    Attrib peripheral_pulse=increased    0.05504687877895919
+    Attrib peripheral_pulse=reduced    -0.48413480261337183
+    Attrib peripheral_pulse=absent    1.223237875638859
+    Attrib mucous_membranes=normal pink    -0.8403477503156859
+    Attrib mucous_membranes=bright pink    -0.3006886765018497
+    Attrib mucous_membranes=pale pink    0.34454914642624324
+    Attrib mucous_membranes=pale cyanotic    0.25242488794941653
+    Attrib mucous_membranes=bright red    0.28719638507203027
+    Attrib mucous_membranes=dark cyanotic    0.03472206499527661
+    Attrib capillary_refill_time=<3    0.2255774682888212
+    Attrib capillary_refill_time=>=3    -0.18488118350344251
+    Attrib capillary_refill_time=meaning unknown    -0.08649731608265171
+    Attrib pain=alert no pain    -0.578195390129529
+    Attrib pain=depressed    -0.7099390882588326
+    Attrib pain=intermittent mild pain    0.4328245747540397
+    Attrib pain=intermittent severe pain    0.8763735533976243
+    Attrib pain=continuous severe pain    -0.08889842592218174
+    Attrib peristalsis=hypermotile    -0.3688336748750614
+    Attrib peristalsis=normal    0.07554894162584562
+    Attrib peristalsis=hypomotile    0.2266002485387476
+    Attrib peristalsis=absent    0.048207406157083875
+    Attrib abdominal_distension=none    -0.8935877298004273
+    Attrib abdominal_distension=slight    -0.48839947506925635
+    Attrib abdominal_distension=moderate    0.14150487193772973
+    Attrib abdominal_distension=severe    1.1558048405342205
+    Attrib nasogastric_tube=none    -0.8550216249468708
+    Attrib nasogastric_tube=slight    0.7907615876566477
+    Attrib nasogastric_tube=significant    0.023755852052904328
+    Attrib nasogastric_reflux=none    -0.21691369503967806
+    Attrib nasogastric_reflux=>1l    0.07072854341392036
+    Attrib nasogastric_reflux=<1l    0.11660527341989851
+    Attrib nasogastric_reflux_PH    -0.21384556547560213
+    Attrib rectal_examination=normal    -0.053268711104651915
+    Attrib rectal_examination=increased    -0.02603093262281602
+    Attrib rectal_examination=decreased    0.5900490525021412
+    Attrib rectal_examination=absent    -0.555768523260719
+    Attrib abdomen=normal    -0.7921234588236927
+    Attrib abdomen=other    0.5770310430236874
+    Attrib abdomen=firm feces in large intestine    -0.8171045506690918
+    Attrib abdomen=distended small intestine    0.40099531396713045
+    Attrib abdomen=distended large intestine    0.5409964245038359
+    Attrib packed_cell_volume    -0.8519242144741485
+    Attrib total_protein    0.6078381516903794
+    Attrib abdominocentesis_appearance=clear    0.3584836762233929
+    Attrib abdominocentesis_appearance=cloudy    -0.7043389977430583
+    Attrib abdominocentesis_appearance=serosanguinous    0.2961721051015292
+    Attrib abdomcentesis_total_protein    -0.3998334199847943
+    Attrib outcome=lived    2.1494456154762704
+    Attrib outcome=died    -0.730610273935312
+    Attrib outcome=euthanized    -1.4281952880156774
+Sigmoid Node 32
+    Inputs    Weights
+    Threshold    -0.06543237619540127
+    Attrib surgery=no    0.28371023893411806
+    Attrib Age=young    0.08441500133450155
+    Attrib rectal_temperature    -0.09580953177319584
+    Attrib pulse    -0.11045100585610056
+    Attrib respiratory_rate    0.06730297184974036
+    Attrib temp_extremities=normal    0.058484720051404274
+    Attrib temp_extremities=warm    0.08244606786503508
+    Attrib temp_extremities=cool    -0.08007138805833863
+    Attrib temp_extremities=cold    -0.05768035797183858
+    Attrib peripheral_pulse=normal    0.016531388483663718
+    Attrib peripheral_pulse=increased    0.08345254633757096
+    Attrib peripheral_pulse=reduced    0.018699463919610495
+    Attrib peripheral_pulse=absent    0.034363549666487025
+    Attrib mucous_membranes=normal pink    -0.015247140796426627
+    Attrib mucous_membranes=bright pink    0.0880674588936494
+    Attrib mucous_membranes=pale pink    0.007211667236535361
+    Attrib mucous_membranes=pale cyanotic    0.08585840520039464
+    Attrib mucous_membranes=bright red    0.08305443239883184
+    Attrib mucous_membranes=dark cyanotic    -0.03433779529156409
+    Attrib capillary_refill_time=<3    0.030944494790579948
+    Attrib capillary_refill_time=>=3    -0.009222045204871115
+    Attrib capillary_refill_time=meaning unknown    0.0795868379044695
+    Attrib pain=alert no pain    -0.017420117697128187
+    Attrib pain=depressed    0.1497434645444133
+    Attrib pain=intermittent mild pain    -0.09723876442420007
+    Attrib pain=intermittent severe pain    0.03926290430152948
+    Attrib pain=continuous severe pain    -0.009517755379068663
+    Attrib peristalsis=hypermotile    0.2627095906576844
+    Attrib peristalsis=normal    -0.08926860253223304
+    Attrib peristalsis=hypomotile    -0.06895296830534219
+    Attrib peristalsis=absent    -0.009914247350505789
+    Attrib abdominal_distension=none    0.13471449742348052
+    Attrib abdominal_distension=slight    0.006538320790071146
+    Attrib abdominal_distension=moderate    0.09389008366064588
+    Attrib abdominal_distension=severe    -0.08091301928552042
+    Attrib nasogastric_tube=none    0.1277756045206036
+    Attrib nasogastric_tube=slight    -0.024543749381449348
+    Attrib nasogastric_tube=significant    -0.01691836763745394
+    Attrib nasogastric_reflux=none    -0.23320288557681879
+    Attrib nasogastric_reflux=>1l    0.05724071430295414
+    Attrib nasogastric_reflux=<1l    0.30708700954961676
+    Attrib nasogastric_reflux_PH    -0.04551702668571786
+    Attrib rectal_examination=normal    0.18914654217432775
+    Attrib rectal_examination=increased    -0.01780766441578936
+    Attrib rectal_examination=decreased    0.008668375068117197
+    Attrib rectal_examination=absent    -0.18028607538819583
+    Attrib abdomen=normal    0.24006402817391295
+    Attrib abdomen=other    0.023678412887952274
+    Attrib abdomen=firm feces in large intestine    0.0022447216028234477
+    Attrib abdomen=distended small intestine    0.3133978302866163
+    Attrib abdomen=distended large intestine    -0.372663187396686
+    Attrib packed_cell_volume    0.043694771255456295
+    Attrib total_protein    -0.2241409590263014
+    Attrib abdominocentesis_appearance=clear    -0.015103444165334323
+    Attrib abdominocentesis_appearance=cloudy    0.025736743891622876
+    Attrib abdominocentesis_appearance=serosanguinous    -0.020242700590840535
+    Attrib abdomcentesis_total_protein    0.09716137061719587
+    Attrib outcome=lived    -0.0662552504967895
+    Attrib outcome=died    0.09173975911934942
+    Attrib outcome=euthanized    -0.02199427333961781
+Class yes
+    Input
+    Node 0
+Class no
+    Input
+    Node 1
+
+
+Time taken to build model: 6.16 seconds
+
+Time taken to test model on training data: 0.11 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         361               98.0978 %
+Incorrectly Classified Instances         7                1.9022 %
+Kappa statistic                          0.9589
+Mean absolute error                      0.0238
+Root mean squared error                  0.1347
+Relative absolute error                  5.1078 %
+Root relative squared error             27.8991 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.996    0.044    0.975      0.996    0.985      0.959    0.972     0.973     yes
+                 0.956    0.004    0.992      0.956    0.974      0.959    0.972     0.972     no
+Weighted Avg.    0.981    0.029    0.981      0.981    0.981      0.959    0.972     0.973     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 231   1 |   a = yes
+   6 130 |   b = no
+
+Time taken to perform cross-validation: 52.89 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         286               77.7174 %
+Incorrectly Classified Instances        82               22.2826 %
+Kappa statistic                          0.5247
+Mean absolute error                      0.2218
+Root mean squared error                  0.4368
+Relative absolute error                 47.5725 %
+Root relative squared error             90.4804 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.815    0.287    0.829      0.815    0.822      0.525    0.850     0.895     yes
+                 0.713    0.185    0.693      0.713    0.703      0.525    0.850     0.785     no
+Weighted Avg.    0.777    0.249    0.779      0.777    0.778      0.525    0.850     0.855     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 189  43 |   a = yes
+  39  97 |   b = no
+

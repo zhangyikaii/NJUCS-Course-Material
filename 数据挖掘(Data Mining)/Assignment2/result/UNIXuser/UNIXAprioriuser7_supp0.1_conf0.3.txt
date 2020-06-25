@@ -1,0 +1,33 @@
+item: ('mail',) , 0.102
+item: ('X',) , 0.108
+item: ('clear', 'ls') , 0.108
+item: ('clear', 'cd') , 0.117
+item: ('z', 'ls', 'cd') , 0.125
+item: ('z', 'm') , 0.139
+item: ('clear', 'z') , 0.143
+item: ('z', 'ls') , 0.144
+item: ('z', 'cd') , 0.172
+item: ('ls', 'cd') , 0.190
+item: ('ls',) , 0.233
+item: ('clear',) , 0.237
+item: ('cd',) , 0.266
+item: ('m',) , 0.287
+item: ('z',) , 0.550
+
+------------------------ RULES:
+Rule: ('z',) ==> ('cd',) , 0.312
+Rule: ('cd',) ==> ('clear',) , 0.441
+Rule: ('clear',) ==> ('ls',) , 0.456
+Rule: ('ls',) ==> ('clear',) , 0.465
+Rule: ('cd',) ==> ('z', 'ls') , 0.472
+Rule: ('m',) ==> ('z',) , 0.484
+Rule: ('clear',) ==> ('cd',) , 0.494
+Rule: ('ls',) ==> ('z', 'cd') , 0.538
+Rule: ('clear',) ==> ('z',) , 0.601
+Rule: ('ls',) ==> ('z',) , 0.619
+Rule: ('cd',) ==> ('z',) , 0.646
+Rule: ('ls', 'cd') ==> ('z',) , 0.659
+Rule: ('cd',) ==> ('ls',) , 0.716
+Rule: ('z', 'cd') ==> ('ls',) , 0.730
+Rule: ('ls',) ==> ('cd',) , 0.817
+Rule: ('z', 'ls') ==> ('cd',) , 0.870

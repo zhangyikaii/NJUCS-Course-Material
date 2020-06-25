@@ -1,0 +1,59 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     hepatitis-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    155
+Attributes:   20
+              AGE
+              SEX
+              STEROID
+              ANTIVIRALS
+              FATIGUE
+              MALAISE
+              ANOREXIA
+              LIVER_BIG
+              LIVER_FIRM
+              SPLEEN_PALPABLE
+              SPIDERS
+              ASCITES
+              VARICES
+              BILIRUBIN
+              ALK_PHOSPHATE
+              SGOT
+              ALBUMIN
+              PROTIME
+              HISTOLOGY
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         123               79.3548 %
+Incorrectly Classified Instances        32               20.6452 %
+Kappa statistic                          0     
+Mean absolute error                      0.2065
+Root mean squared error                  0.4544
+Relative absolute error                 62.5234 %
+Root relative squared error            112.2084 %
+Total Number of Instances              155     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.206     DIE
+                 1.000    1.000    0.794      1.000    0.885      ?        0.500     0.794     LIVE
+Weighted Avg.    0.794    0.794    ?          0.794    ?          ?        0.500     0.672     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+   0  32 |   a = DIE
+   0 123 |   b = LIVE
+

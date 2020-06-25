@@ -1,0 +1,6 @@
+Extra Info (176236): Started Fast Input/Output/OE register processing
+Extra Info (176237): Finished Fast Input/Output/OE register processing
+Extra Info (176238): Start inferring scan chains for DSP blocks
+Extra Info (176239): Inferring scan chains for DSP blocks is complete
+Extra Info (176246): Moving registers into I/O cells, DSP blocks, and RAM blocks to improve timing and density
+Extra Info (176247): Finished moving registers into I/O cells, DSP blocks, and RAM blocks

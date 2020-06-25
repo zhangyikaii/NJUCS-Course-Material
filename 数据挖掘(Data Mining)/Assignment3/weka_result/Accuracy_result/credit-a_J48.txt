@@ -1,0 +1,116 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (228.0/21.0)
+|   A10 = f
+|   |   A15 <= 444
+|   |   |   A7 = v
+|   |   |   |   A4 = u
+|   |   |   |   |   A14 <= 112
+|   |   |   |   |   |   A15 <= 33: + (14.0)
+|   |   |   |   |   |   A15 > 33: - (3.0/1.0)
+|   |   |   |   |   A14 > 112
+|   |   |   |   |   |   A15 <= 70: - (30.0/10.0)
+|   |   |   |   |   |   A15 > 70: + (2.0)
+|   |   |   |   A4 = y
+|   |   |   |   |   A13 = g: - (12.0/2.0)
+|   |   |   |   |   A13 = p: - (0.0)
+|   |   |   |   |   A13 = s: + (3.0/1.0)
+|   |   |   |   A4 = l: - (0.0)
+|   |   |   |   A4 = t: - (0.0)
+|   |   |   A7 = h: + (27.0/8.0)
+|   |   |   A7 = bb
+|   |   |   |   A2 <= 27.33: + (3.0)
+|   |   |   |   A2 > 27.33
+|   |   |   |   |   A3 <= 1.375: + (3.0/1.0)
+|   |   |   |   |   A3 > 1.375: - (8.0)
+|   |   |   A7 = j: - (1.0)
+|   |   |   A7 = n: + (0.0)
+|   |   |   A7 = z: + (0.0)
+|   |   |   A7 = dd: + (1.0)
+|   |   |   A7 = ff: - (5.0/1.0)
+|   |   |   A7 = o: + (0.0)
+|   |   A15 > 444: + (21.0/1.0)
+A9 = f
+|   A3 <= 0.165
+|   |   A7 = v
+|   |   |   A2 <= 35.58: - (20.0/4.0)
+|   |   |   A2 > 35.58: + (4.0)
+|   |   A7 = h: - (0.0)
+|   |   A7 = bb: + (1.0)
+|   |   A7 = j: + (1.0)
+|   |   A7 = n: + (1.0)
+|   |   A7 = z: - (0.0)
+|   |   A7 = dd: - (0.0)
+|   |   A7 = ff: - (4.0)
+|   |   A7 = o: - (0.0)
+|   A3 > 0.165: - (298.0/12.0)
+
+Number of Leaves  : 	32
+
+Size of the tree : 	46
+
+
+Time taken to build model: 0.75 seconds
+
+Time taken to test model on training data: 0.04 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         628               91.0145 %
+Incorrectly Classified Instances        62                8.9855 %
+Kappa statistic                          0.8182
+Mean absolute error                      0.1493
+Root mean squared error                  0.2732
+Relative absolute error                 30.2194 %
+Root relative squared error             54.9732 %
+Total Number of Instances              690     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.902    0.084    0.896      0.902    0.899      0.818    0.943     0.906     +
+                 0.916    0.098    0.921      0.916    0.919      0.818    0.943     0.936     -
+Weighted Avg.    0.910    0.091    0.910      0.910    0.910      0.818    0.943     0.923     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 277  30 |   a = +
+  32 351 |   b = -
+
+Time taken to perform cross-validation: 0.84 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         593               85.942  %
+Incorrectly Classified Instances        97               14.058  %
+Kappa statistic                          0.7151
+Mean absolute error                      0.1925
+Root mean squared error                  0.3375
+Relative absolute error                 38.9675 %
+Root relative squared error             67.9034 %
+Total Number of Instances              690     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.837    0.123    0.845      0.837    0.841      0.715    0.874     0.788     +
+                 0.877    0.163    0.870      0.877    0.874      0.715    0.874     0.861     -
+Weighted Avg.    0.859    0.145    0.859      0.859    0.859      0.715    0.874     0.829     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 257  50 |   a = +
+  47 336 |   b = -
+

@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.57 seconds
+
+Time taken to test model on training data: 0.71 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         699              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0003
+Root mean squared error                  0.0036
+Relative absolute error                  0.0701 %
+Root relative squared error              0.753  %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     benign
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     malignant
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 458   0 |   a = benign
+   0 241 |   b = malignant
+
+Time taken to perform cross-validation: 0.61 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         667               95.422  %
+Incorrectly Classified Instances        32                4.578  %
+Kappa statistic                          0.8975
+Mean absolute error                      0.0558
+Root mean squared error                  0.188 
+Relative absolute error                 12.344  %
+Root relative squared error             39.5641 %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.978    0.091    0.953      0.978    0.966      0.898    0.990     0.995     benign
+                 0.909    0.022    0.956      0.909    0.932      0.898    0.990     0.977     malignant
+Weighted Avg.    0.954    0.067    0.954      0.954    0.954      0.898    0.990     0.989     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 448  10 |   a = benign
+  22 219 |   b = malignant
+

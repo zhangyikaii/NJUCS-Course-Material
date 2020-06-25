@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.66 seconds
+
+Time taken to test model on training data: 0.71 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         368              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0015
+Root mean squared error                  0.0158
+Relative absolute error                  0.3317 %
+Root relative squared error              3.2719 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     yes
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     no
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 232   0 |   a = yes
+   0 136 |   b = no
+
+Time taken to perform cross-validation: 0.47 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         272               73.913  %
+Incorrectly Classified Instances        96               26.087  %
+Kappa statistic                          0.4419
+Mean absolute error                      0.2728
+Root mean squared error                  0.4588
+Relative absolute error                 58.5127 %
+Root relative squared error             95.0375 %
+Total Number of Instances              368     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.789    0.346    0.796      0.789    0.792      0.442    0.800     0.866     yes
+                 0.654    0.211    0.645      0.654    0.650      0.442    0.800     0.734     no
+Weighted Avg.    0.739    0.296    0.740      0.739    0.740      0.442    0.800     0.817     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 183  49 |   a = yes
+  47  89 |   b = no
+

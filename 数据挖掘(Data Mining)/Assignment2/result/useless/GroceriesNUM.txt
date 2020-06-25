@@ -1,0 +1,169 @@
+baby food	1
+sound storage medium	1
+preservation products	2
+kitchen utensil	4
+bags	4
+baby cosmetics	6
+frozen chicken	6
+toilet cleaner	7
+make up remover	8
+whisky	8
+salad dressing	8
+liqueur	9
+rubbing alcohol	10
+hair spray	11
+frozen fruits	12
+cream	13
+honey	15
+decalcifier	15
+organic products	16
+specialty vegetables	17
+ready soups	18
+flower soil/fertilizer	19
+prosecco	20
+organic sausage	22
+cocoa drinks	22
+tidbits	23
+pudding powder	23
+cooking chocolate	25
+soap	26
+bathroom cleaner	27
+cookware	27
+potato products	28
+fish	29
+snack products	30
+nut snack	31
+canned fruit	32
+artif. sweetener	32
+syrup	32
+nuts/prunes	33
+skin care	35
+abrasive cleaner	35
+specialty fat	36
+tea	38
+brandy	41
+light bulbs	41
+ketchup	42
+meat spreads	42
+rum	44
+male cosmetics	45
+cleaner	50
+liver loaf	50
+curd cheese	50
+spices	51
+jam	53
+sauces	54
+softener	54
+sparkling wine	55
+cereals	56
+dental care	57
+kitchen towels	59
+female sanitary products	60
+vinegar	64
+finished products	64
+soups	67
+zwieback	68
+popcorn	71
+instant coffee	73
+rice	75
+liquor (appetizer)	78
+Instant food products	79
+turkey	80
+house keeping products	82
+frozen potato products	83
+specialty cheese	84
+dog food	84
+candles	88
+chocolate marshmallow	89
+sweet spreads	89
+mayonnaise	90
+photo/film	91
+pet care	93
+condensed milk	101
+roll products 	101
+flower (seeds)	102
+dish cleaner	103
+canned vegetables	106
+frozen dessert	106
+salt	106
+liquor	109
+spread cheese	110
+cling film/bags	112
+frozen fish	115
+mustard	118
+packaged fruit/vegetables	128
+cake bar	130
+seasonal products	140
+canned fish	148
+pasta	148
+herbs	160
+processed cheese	163
+soft cheese	168
+pot plants	170
+flour	171
+dishes	173
+semi-finished bread	174
+baking powder	174
+pickled vegetables	176
+white wine	187
+detergent	189
+red/blush wine	189
+chewing gum	207
+grapes	220
+cat food	229
+sliced cheese	241
+hard cheese	241
+ice cream	246
+meat	254
+ham	256
+beverages	256
+specialty bar	269
+butter milk	275
+oil	276
+misc. beverages	279
+frozen meals	279
+candy	294
+specialty chocolate	299
+onions	305
+hygiene articles	324
+hamburger meat	327
+berries	327
+UHT-milk	329
+sugar	333
+dessert	365
+long life bakery product	368
+salty snack	372
+waffles	378
+cream cheese 	390
+white bread	414
+chicken	422
+frozen vegetables	473
+chocolate	488
+napkins	515
+beef	516
+curd	524
+butter	545
+pork	567
+coffee	571
+margarine	576
+frankfurter	580
+domestic eggs	624
+brown bread	638
+whipped/sour cream	705
+fruit/vegetable juice	711
+pip fruit	744
+canned beer	764
+newspapers	785
+bottled beer	792
+citrus fruit	814
+pastry	875
+sausage	924
+shopping bags	969
+tropical fruit	1032
+root vegetables	1072
+bottled water	1087
+yogurt	1372
+soda	1715
+rolls/buns	1809
+other vegetables	1903
+whole milk	2513

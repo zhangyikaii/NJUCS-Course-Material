@@ -1,0 +1,171 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                     Class
+Attribute              DIE     LIVE
+                    (0.21)   (0.79)
+====================================
+AGE
+  mean              46.5937  39.7932
+  std. dev.          9.8256  12.7611
+  weight sum             32      123
+  precision          1.4792   1.4792
+
+SEX
+  male                  1.0     17.0
+  female               33.0    108.0
+  [total]              34.0    125.0
+
+STEROID
+  no                   21.0     57.0
+  yes                  13.0     68.0
+  [total]              34.0    125.0
+
+ANTIVIRALS
+  no                   31.0    102.0
+  yes                   3.0     23.0
+  [total]              34.0    125.0
+
+FATIGUE
+  no                    3.0     53.0
+  yes                  31.0     72.0
+  [total]              34.0    125.0
+
+MALAISE
+  no                   10.0     86.0
+  yes                  24.0     39.0
+  [total]              34.0    125.0
+
+ANOREXIA
+  no                   23.0    102.0
+  yes                  11.0     23.0
+  [total]              34.0    125.0
+
+LIVER_BIG
+  no                    4.0     23.0
+  yes                  30.0    102.0
+  [total]              34.0    125.0
+
+LIVER_FIRM
+  no                   20.0     77.0
+  yes                  14.0     48.0
+  [total]              34.0    125.0
+
+SPLEEN_PALPABLE
+  no                   21.0    106.0
+  yes                  13.0     19.0
+  [total]              34.0    125.0
+
+SPIDERS
+  no                   11.0     95.0
+  yes                  23.0     30.0
+  [total]              34.0    125.0
+
+ASCITES
+  no                   19.0    118.0
+  yes                  15.0      7.0
+  [total]              34.0    125.0
+
+VARICES
+  no                   22.0    117.0
+  yes                  12.0      8.0
+  [total]              34.0    125.0
+
+BILIRUBIN
+  mean               2.4629   1.1452
+  std. dev.          1.8665   0.7034
+  weight sum             32      123
+  precision          0.2265   0.2265
+
+ALK_PHOSPHATE
+  mean             117.7888 101.5766
+  std. dev.         46.7461  45.6864
+  weight sum             32      123
+  precision           3.241    3.241
+
+SGOT
+  mean              98.5908   82.717
+  std. dev.         96.9498  85.7509
+  weight sum             32      123
+  precision          7.5476   7.5476
+
+ALBUMIN
+  mean               3.2667   3.9709
+  std. dev.          0.5971   0.5269
+  weight sum             32      123
+  precision          0.1483   0.1483
+
+PROTIME
+  mean              51.3494    64.32
+  std. dev.         15.1062  16.6228
+  weight sum             32      123
+  precision          2.2727   2.2727
+
+HISTOLOGY
+  no                    8.0     79.0
+  yes                  26.0     46.0
+  [total]              34.0    125.0
+
+
+
+Time taken to build model: 0.65 seconds
+
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         133               85.8065 %
+Incorrectly Classified Instances        22               14.1935 %
+Kappa statistic                          0.5766
+Mean absolute error                      0.1499
+Root mean squared error                  0.3431
+Relative absolute error                 45.4462 %
+Root relative squared error             84.7657 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.688    0.098    0.647      0.688    0.667      0.577    0.910     0.745     DIE
+                 0.902    0.313    0.917      0.902    0.910      0.577    0.910     0.974     LIVE
+Weighted Avg.    0.858    0.268    0.862      0.858    0.860      0.577    0.910     0.927     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  22  10 |   a = DIE
+  12 111 |   b = LIVE
+
+Time taken to perform cross-validation: 0.14 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         130               83.871  %
+Incorrectly Classified Instances        25               16.129  %
+Kappa statistic                          0.5242
+Mean absolute error                      0.17  
+Root mean squared error                  0.3721
+Relative absolute error                 51.486  %
+Root relative squared error             91.8835 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.656    0.114    0.600      0.656    0.627      0.525    0.852     0.678     DIE
+                 0.886    0.344    0.908      0.886    0.897      0.525    0.852     0.946     LIVE
+Weighted Avg.    0.839    0.296    0.845      0.839    0.841      0.525    0.852     0.890     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  21  11 |   a = DIE
+  14 109 |   b = LIVE
+

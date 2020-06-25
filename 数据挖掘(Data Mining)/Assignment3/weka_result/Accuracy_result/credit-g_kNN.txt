@@ -1,0 +1,66 @@
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.76 seconds
+
+Time taken to test model on training data: 0.24 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        1000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.001 
+Root mean squared error                  0.001 
+Relative absolute error                  0.2375 %
+Root relative squared error              0.2178 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     good
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     bad
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 700   0 |   a = good
+   0 300 |   b = bad
+
+Time taken to perform cross-validation: 0.18 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         720               72      %
+Incorrectly Classified Instances       280               28      %
+Kappa statistic                          0.3243
+Mean absolute error                      0.2805
+Root mean squared error                  0.5286
+Relative absolute error                 66.7546 %
+Root relative squared error            115.3422 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.810    0.490    0.794      0.810    0.802      0.325    0.660     0.776     good
+                 0.510    0.190    0.535      0.510    0.522      0.325    0.660     0.420     bad
+Weighted Avg.    0.720    0.400    0.716      0.720    0.718      0.325    0.660     0.669     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 567 133 |   a = good
+ 147 153 |   b = bad
+

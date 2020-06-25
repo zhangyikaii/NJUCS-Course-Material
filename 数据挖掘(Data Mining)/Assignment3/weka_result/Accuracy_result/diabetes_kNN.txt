@@ -1,0 +1,66 @@
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.68 seconds
+
+Time taken to test model on training data: 0.24 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         768              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0013
+Root mean squared error                  0.0013
+Relative absolute error                  0.2857 %
+Root relative squared error              0.2725 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tested_negative
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tested_positive
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tested_negative
+   0 268 |   b = tested_positive
+
+Time taken to perform cross-validation: 0.16 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         539               70.1823 %
+Incorrectly Classified Instances       229               29.8177 %
+Kappa statistic                          0.3304
+Mean absolute error                      0.2988
+Root mean squared error                  0.5453
+Relative absolute error                 65.7327 %
+Root relative squared error            114.3977 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.794    0.470    0.759      0.794    0.776      0.331    0.650     0.732     tested_negative
+                 0.530    0.206    0.580      0.530    0.554      0.331    0.650     0.469     tested_positive
+Weighted Avg.    0.702    0.378    0.696      0.702    0.698      0.331    0.650     0.640     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 397 103 |   a = tested_negative
+ 126 142 |   b = tested_positive
+

@@ -1,0 +1,301 @@
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+DESIGN_COMPLEXITY <= 1
+|   HALSTEAD_ERROR_EST <= 0.11
+|   |   CYCLOMATIC_DENSITY <= 0.18
+|   |   |   EDGE_COUNT <= 3: FALSE (217.0/5.0)
+|   |   |   EDGE_COUNT > 3
+|   |   |   |   LOC_COMMENTS <= 2
+|   |   |   |   |   LOC_CODE_AND_COMMENT <= 3
+|   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.02
+|   |   |   |   |   |   |   LOC_BLANK <= 0: FALSE (2.0)
+|   |   |   |   |   |   |   LOC_BLANK > 0: TRUE (5.0)
+|   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.02
+|   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.04: FALSE (9.0)
+|   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.04
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.08
+|   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS <= 6: TRUE (3.0)
+|   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS > 6
+|   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE <= 17
+|   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS <= 1: FALSE (15.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS > 1
+|   |   |   |   |   |   |   |   |   |   |   |   GLOBAL_DATA_DENSITY <= 0.75: FALSE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   GLOBAL_DATA_DENSITY > 0.75: TRUE (3.0)
+|   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE > 17: TRUE (3.0)
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.08: FALSE (6.0)
+|   |   |   |   |   LOC_CODE_AND_COMMENT > 3: TRUE (5.0)
+|   |   |   |   LOC_COMMENTS > 2: FALSE (35.0/1.0)
+|   |   CYCLOMATIC_DENSITY > 0.18: FALSE (15554.0/46.0)
+|   HALSTEAD_ERROR_EST > 0.11: FALSE (196.0/57.0)
+DESIGN_COMPLEXITY > 1
+|   LOC_TOTAL <= 7
+|   |   NODE_COUNT <= 66: FALSE (184.0/8.0)
+|   |   NODE_COUNT > 66
+|   |   |   GLOBAL_DATA_DENSITY <= 0.88: TRUE (4.0)
+|   |   |   GLOBAL_DATA_DENSITY > 0.88: FALSE (6.0/1.0)
+|   LOC_TOTAL > 7
+|   |   LOC_CODE_AND_COMMENT <= 16
+|   |   |   ESSENTIAL_COMPLEXITY <= 8
+|   |   |   |   GLOBAL_DATA_DENSITY <= 0.8
+|   |   |   |   |   PARAMETER_COUNT <= 0
+|   |   |   |   |   |   LOC_CODE_AND_COMMENT <= 5
+|   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY <= 6
+|   |   |   |   |   |   |   |   CALL_PAIRS <= 3
+|   |   |   |   |   |   |   |   |   LOC_COMMENTS <= 9
+|   |   |   |   |   |   |   |   |   |   DESIGN_DENSITY <= 0.92: FALSE (49.0/2.0)
+|   |   |   |   |   |   |   |   |   |   DESIGN_DENSITY > 0.92
+|   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS <= 10: FALSE (11.0)
+|   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS > 10: TRUE (7.0)
+|   |   |   |   |   |   |   |   |   LOC_COMMENTS > 9
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_CONTENT <= 46.96
+|   |   |   |   |   |   |   |   |   |   |   DESIGN_COMPLEXITY <= 2: TRUE (8.0)
+|   |   |   |   |   |   |   |   |   |   |   DESIGN_COMPLEXITY > 2
+|   |   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT <= 10: FALSE (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT > 10: TRUE (4.0)
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_CONTENT > 46.96: FALSE (4.0)
+|   |   |   |   |   |   |   |   CALL_PAIRS > 3
+|   |   |   |   |   |   |   |   |   DESIGN_DENSITY <= 0.7: FALSE (37.0)
+|   |   |   |   |   |   |   |   |   DESIGN_DENSITY > 0.7
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.07
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.01: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.01
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK <= 3: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK <= 33
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NUM_OPERATORS <= 66: TRUE (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NUM_OPERATORS > 66: FALSE (16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK > 33: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY > 3: FALSE (6.0)
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.07: FALSE (13.0)
+|   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY > 6
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 1.35
+|   |   |   |   |   |   |   |   |   CYCLOMATIC_COMPLEXITY <= 9: TRUE (4.0)
+|   |   |   |   |   |   |   |   |   CYCLOMATIC_COMPLEXITY > 9
+|   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE <= 57: FALSE (5.0)
+|   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE > 57
+|   |   |   |   |   |   |   |   |   |   |   CALL_PAIRS <= 4: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   CALL_PAIRS > 4: TRUE (6.0)
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 1.35: FALSE (7.0)
+|   |   |   |   |   |   LOC_CODE_AND_COMMENT > 5
+|   |   |   |   |   |   |   LOC_CODE_AND_COMMENT <= 6: TRUE (7.0/1.0)
+|   |   |   |   |   |   |   LOC_CODE_AND_COMMENT > 6
+|   |   |   |   |   |   |   |   GLOBAL_DATA_COMPLEXITY <= 12
+|   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY <= 0.1
+|   |   |   |   |   |   |   |   |   |   CALL_PAIRS <= 8: TRUE (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   CALL_PAIRS > 8: FALSE (4.0)
+|   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY > 0.1: FALSE (5.0)
+|   |   |   |   |   |   |   |   GLOBAL_DATA_COMPLEXITY > 12: TRUE (5.0/1.0)
+|   |   |   |   |   PARAMETER_COUNT > 0: FALSE (18.0)
+|   |   |   |   GLOBAL_DATA_DENSITY > 0.8
+|   |   |   |   |   NUM_UNIQUE_OPERATORS <= 12
+|   |   |   |   |   |   HALSTEAD_LEVEL <= 0.12
+|   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY <= 3
+|   |   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY <= 1
+|   |   |   |   |   |   |   |   |   CYCLOMATIC_DENSITY <= 0.2
+|   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY <= 0.1
+|   |   |   |   |   |   |   |   |   |   |   DESIGN_DENSITY <= 0.83: FALSE (38.0)
+|   |   |   |   |   |   |   |   |   |   |   DESIGN_DENSITY > 0.83
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS <= 1: TRUE (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY <= 0.07
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CYCLOMATIC_DENSITY <= 0.13
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CALL_PAIRS <= 42
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE <= 37: FALSE (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_EXECUTABLE > 37
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK <= 37: TRUE (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK > 37: FALSE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CALL_PAIRS > 42: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CYCLOMATIC_DENSITY > 0.13: TRUE (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY > 0.07: FALSE (10.0)
+|   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY > 0.1: FALSE (65.0/4.0)
+|   |   |   |   |   |   |   |   |   CYCLOMATIC_DENSITY > 0.2
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_LENGTH <= 51: TRUE (5.0)
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_LENGTH > 51
+|   |   |   |   |   |   |   |   |   |   |   PERCENT_COMMENTS <= 8.7: FALSE (8.0)
+|   |   |   |   |   |   |   |   |   |   |   PERCENT_COMMENTS > 8.7
+|   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.1
+|   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.08
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS <= 9: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS > 9
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY <= 0.18: FALSE (11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY > 0.18
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS <= 8: TRUE (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LOC_COMMENTS > 8: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.08: TRUE (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.1: FALSE (4.0)
+|   |   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY > 1: FALSE (9.0)
+|   |   |   |   |   |   |   ESSENTIAL_COMPLEXITY > 3
+|   |   |   |   |   |   |   |   LOC_BLANK <= 2: TRUE (5.0)
+|   |   |   |   |   |   |   |   LOC_BLANK > 2: FALSE (6.0/1.0)
+|   |   |   |   |   |   HALSTEAD_LEVEL > 0.12
+|   |   |   |   |   |   |   HALSTEAD_EFFORT <= 552.07: FALSE (9.0)
+|   |   |   |   |   |   |   HALSTEAD_EFFORT > 552.07
+|   |   |   |   |   |   |   |   PARAMETER_COUNT <= 1
+|   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.14
+|   |   |   |   |   |   |   |   |   |   CALL_PAIRS <= 2
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.03: FALSE (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.03
+|   |   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS <= 10: TRUE (29.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS > 10: FALSE (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   CALL_PAIRS > 2
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.09: FALSE (8.0)
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.09: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.14
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.07
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_EFFORT <= 649.15: TRUE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   HALSTEAD_EFFORT > 649.15
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK <= 4: FALSE (15.0)
+|   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK > 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK <= 8: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   LOC_BLANK > 8: FALSE (3.0)
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.07: TRUE (4.0)
+|   |   |   |   |   |   |   |   PARAMETER_COUNT > 1: TRUE (4.0)
+|   |   |   |   |   NUM_UNIQUE_OPERATORS > 12
+|   |   |   |   |   |   LOC_COMMENTS <= 0
+|   |   |   |   |   |   |   CONDITION_COUNT <= 10: FALSE (2.0)
+|   |   |   |   |   |   |   CONDITION_COUNT > 10
+|   |   |   |   |   |   |   |   CALL_PAIRS <= 1
+|   |   |   |   |   |   |   |   |   CONDITION_COUNT <= 16: TRUE (3.0)
+|   |   |   |   |   |   |   |   |   CONDITION_COUNT > 16: FALSE (3.0)
+|   |   |   |   |   |   |   |   CALL_PAIRS > 1: TRUE (26.0/2.0)
+|   |   |   |   |   |   LOC_COMMENTS > 0
+|   |   |   |   |   |   |   ESSENTIAL_DENSITY <= 0.53
+|   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS <= 18
+|   |   |   |   |   |   |   |   |   BRANCH_COUNT <= 3: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   BRANCH_COUNT > 3: TRUE (13.0)
+|   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS > 18
+|   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS <= 19: FALSE (8.0)
+|   |   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS > 19
+|   |   |   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT <= 0
+|   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT <= 12: FALSE (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT > 12
+|   |   |   |   |   |   |   |   |   |   |   |   GLOBAL_DATA_DENSITY <= 0.96: FALSE (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   GLOBAL_DATA_DENSITY > 0.96
+|   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.03
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_DIFFICULTY <= 65.64: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_DIFFICULTY > 65.64: TRUE (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.03: TRUE (4.0)
+|   |   |   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT > 0: TRUE (86.0/38.0)
+|   |   |   |   |   |   |   ESSENTIAL_DENSITY > 0.53
+|   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT <= 3
+|   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY <= 0.24: FALSE (28.0)
+|   |   |   |   |   |   |   |   |   NORMALIZED_CYLOMATIC_COMPLEXITY > 0.24
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.08: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.08: TRUE (2.0)
+|   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT > 3
+|   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.3: TRUE (3.0)
+|   |   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.3: FALSE (2.0)
+|   |   |   ESSENTIAL_COMPLEXITY > 8
+|   |   |   |   NUM_UNIQUE_OPERATORS <= 13: FALSE (8.0/1.0)
+|   |   |   |   NUM_UNIQUE_OPERATORS > 13
+|   |   |   |   |   NUM_OPERANDS <= 84
+|   |   |   |   |   |   LOC_COMMENTS <= 3: TRUE (2.0)
+|   |   |   |   |   |   LOC_COMMENTS > 3
+|   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS <= 18: FALSE (10.0)
+|   |   |   |   |   |   |   NUM_UNIQUE_OPERATORS > 18
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST <= 0.27: TRUE (2.0)
+|   |   |   |   |   |   |   |   HALSTEAD_ERROR_EST > 0.27: FALSE (3.0)
+|   |   |   |   |   NUM_OPERANDS > 84
+|   |   |   |   |   |   CALL_PAIRS <= 9
+|   |   |   |   |   |   |   GLOBAL_DATA_DENSITY <= 0.75
+|   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT <= 0: FALSE (4.0/1.0)
+|   |   |   |   |   |   |   |   LOC_CODE_AND_COMMENT > 0
+|   |   |   |   |   |   |   |   |   DECISION_COUNT <= 26
+|   |   |   |   |   |   |   |   |   |   MODIFIED_CONDITION_COUNT <= 18
+|   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT <= 18: FALSE (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   DECISION_COUNT > 18: TRUE (5.0)
+|   |   |   |   |   |   |   |   |   |   MODIFIED_CONDITION_COUNT > 18: FALSE (2.0)
+|   |   |   |   |   |   |   |   |   DECISION_COUNT > 26: TRUE (15.0)
+|   |   |   |   |   |   |   GLOBAL_DATA_DENSITY > 0.75: TRUE (21.0)
+|   |   |   |   |   |   CALL_PAIRS > 9
+|   |   |   |   |   |   |   HALSTEAD_LEVEL <= 0.03
+|   |   |   |   |   |   |   |   PERCENT_COMMENTS <= 13.69: FALSE (7.0)
+|   |   |   |   |   |   |   |   PERCENT_COMMENTS > 13.69
+|   |   |   |   |   |   |   |   |   DESIGN_COMPLEXITY <= 23
+|   |   |   |   |   |   |   |   |   |   MULTIPLE_CONDITION_COUNT <= 49: TRUE (13.0/1.0)
+|   |   |   |   |   |   |   |   |   |   MULTIPLE_CONDITION_COUNT > 49: FALSE (6.0)
+|   |   |   |   |   |   |   |   |   DESIGN_COMPLEXITY > 23: TRUE (12.0)
+|   |   |   |   |   |   |   HALSTEAD_LEVEL > 0.03: FALSE (5.0)
+|   |   LOC_CODE_AND_COMMENT > 16
+|   |   |   CALL_PAIRS <= 2: FALSE (8.0)
+|   |   |   CALL_PAIRS > 2
+|   |   |   |   LOC_CODE_AND_COMMENT <= 34
+|   |   |   |   |   LOC_COMMENTS <= 155
+|   |   |   |   |   |   HALSTEAD_LEVEL <= 0.01: TRUE (20.0/1.0)
+|   |   |   |   |   |   HALSTEAD_LEVEL > 0.01
+|   |   |   |   |   |   |   LOC_BLANK <= 20
+|   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS <= 42: TRUE (12.0/1.0)
+|   |   |   |   |   |   |   |   NUM_UNIQUE_OPERANDS > 42: FALSE (7.0/1.0)
+|   |   |   |   |   |   |   LOC_BLANK > 20: TRUE (9.0)
+|   |   |   |   |   LOC_COMMENTS > 155: FALSE (5.0/1.0)
+|   |   |   |   LOC_CODE_AND_COMMENT > 34: TRUE (19.0)
+
+Number of Leaves  : 	116
+
+Size of the tree : 	231
+
+
+Time taken to build model: 2.52 seconds
+
+Time taken to test model on training data: 0.17 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       16999               98.9119 %
+Incorrectly Classified Instances       187                1.0881 %
+Kappa statistic                          0.7974
+Mean absolute error                      0.0173
+Root mean squared error                  0.0929
+Relative absolute error                 29.5901 %
+Root relative squared error             54.4208 %
+Total Number of Instances            17186     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.997    0.262    0.992      0.997    0.994      0.801    0.952     0.997     FALSE
+                 0.738    0.003    0.880      0.738    0.803      0.801    0.952     0.837     TRUE
+Weighted Avg.    0.989    0.254    0.989      0.989    0.989      0.801    0.952     0.992     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 16618    52 |     a = FALSE
+   135   381 |     b = TRUE
+
+Time taken to perform cross-validation: 7.68 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances       16750               97.4631 %
+Incorrectly Classified Instances       436                2.5369 %
+Kappa statistic                          0.5102
+Mean absolute error                      0.0322
+Root mean squared error                  0.1507
+Relative absolute error                 55.2172 %
+Root relative squared error             88.3248 %
+Total Number of Instances            17186     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.990    0.537    0.984      0.990    0.987      0.515    0.817     0.983     FALSE
+                 0.463    0.010    0.601      0.463    0.523      0.515    0.817     0.426     TRUE
+Weighted Avg.    0.975    0.521    0.972      0.975    0.973      0.515    0.817     0.967     
+
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 16511   159 |     a = FALSE
+   277   239 |     b = TRUE
+

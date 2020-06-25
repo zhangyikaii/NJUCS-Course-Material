@@ -1,0 +1,8 @@
+|my_first_fpga
+A => F.IN0
+A => F.IN0
+B => F.IN1
+B => F.IN1
+F << F.DB_MAX_OUTPUT_PORT_TYPE
+
+

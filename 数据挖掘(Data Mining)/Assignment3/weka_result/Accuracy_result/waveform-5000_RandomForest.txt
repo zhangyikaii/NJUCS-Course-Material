@@ -1,0 +1,72 @@
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 3.74 seconds
+
+Time taken to test model on training data: 0.65 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        5000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0694
+Root mean squared error                  0.1034
+Relative absolute error                 15.6159 %
+Root relative squared error             21.9334 %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     0
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     1
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     2
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1692    0    0 |    a = 0
+    0 1653    0 |    b = 1
+    0    0 1655 |    c = 2
+
+Time taken to perform cross-validation: 22.56 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        4253               85.06   %
+Incorrectly Classified Instances       747               14.94   %
+Kappa statistic                          0.776 
+Mean absolute error                      0.1907
+Root mean squared error                  0.277 
+Relative absolute error                 42.904  %
+Root relative squared error             58.7623 %
+Total Number of Instances             5000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.785    0.060    0.869      0.785    0.825      0.744    0.958     0.927     0
+                 0.871    0.077    0.848      0.871    0.859      0.789    0.971     0.939     1
+                 0.898    0.087    0.837      0.898    0.866      0.798    0.970     0.934     2
+Weighted Avg.    0.851    0.075    0.852      0.851    0.850      0.777    0.966     0.933     
+
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1328  170  194 |    a = 0
+  118 1439   96 |    b = 1
+   82   87 1486 |    c = 2
+

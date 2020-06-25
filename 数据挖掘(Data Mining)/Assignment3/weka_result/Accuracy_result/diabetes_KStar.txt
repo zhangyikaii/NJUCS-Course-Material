@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.62 seconds
+
+Time taken to test model on training data: 1.1 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         768              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0002
+Root mean squared error                  0.0013
+Relative absolute error                  0.0472 %
+Root relative squared error              0.272  %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tested_negative
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     tested_positive
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 500   0 |   a = tested_negative
+   0 268 |   b = tested_positive
+
+Time taken to perform cross-validation: 1.14 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         531               69.1406 %
+Incorrectly Classified Instances       237               30.8594 %
+Kappa statistic                          0.2895
+Mean absolute error                      0.3275
+Root mean squared error                  0.4969
+Relative absolute error                 72.055  %
+Root relative squared error            104.2509 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.814    0.537    0.739      0.814    0.775      0.293    0.714     0.825     tested_negative
+                 0.463    0.186    0.571      0.463    0.511      0.293    0.714     0.511     tested_positive
+Weighted Avg.    0.691    0.415    0.680      0.691    0.683      0.293    0.714     0.715     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 407  93 |   a = tested_negative
+ 144 124 |   b = tested_positive
+

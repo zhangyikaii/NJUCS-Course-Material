@@ -1,0 +1,141 @@
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -2.7229322532147213
+    Node 2    1.4723226659593016
+    Node 3    7.820430499517925
+    Node 4    2.4438687225161058
+    Node 5    3.201530885671735
+    Node 6    -3.028108946415126
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    2.722932258743451
+    Node 2    -1.4723226671089324
+    Node 3    -7.820430653667111
+    Node 4    -2.4438687292638233
+    Node 5    -3.201530892432127
+    Node 6    3.0281089587884145
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.87837544881838
+    Attrib preg    -9.079447868879242
+    Attrib plas    -9.396273506987917
+    Attrib pres    2.9422558149576776
+    Attrib skin    2.0758003770037368
+    Attrib insu    -8.023036419765168
+    Attrib mass    -10.734818857856771
+    Attrib pedi    -3.351846628388006
+    Attrib age    10.737145998129124
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -7.418945790100178
+    Attrib preg    1.15067357427161
+    Attrib plas    -1.9072546608611596
+    Attrib pres    3.4032823123017653
+    Attrib skin    -7.795475278795803
+    Attrib insu    0.5709218287459247
+    Attrib mass    -6.1769858300956875
+    Attrib pedi    11.30181125188743
+    Attrib age    2.158947378531027
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    0.3325483432081201
+    Attrib preg    0.9103698712206623
+    Attrib plas    -13.824796952946127
+    Attrib pres    -6.399366681265747
+    Attrib skin    3.372641947485112
+    Attrib insu    -3.0955093615541673
+    Attrib mass    -8.775026662333566
+    Attrib pedi    -5.1923681596094315
+    Attrib age    9.269528793152954
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -3.3767476603255835
+    Attrib preg    9.122015480585302
+    Attrib plas    -12.642913808448132
+    Attrib pres    5.675804474758246
+    Attrib skin    -0.06085501320155377
+    Attrib insu    2.3070185070106217
+    Attrib mass    -5.23208091635601
+    Attrib pedi    -0.7354842913650297
+    Attrib age    -19.2656337017977
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    0.05437383478947769
+    Attrib preg    12.836762781789405
+    Attrib plas    -6.062276016682751
+    Attrib pres    -1.3896840458164672
+    Attrib skin    0.34997084802063716
+    Attrib insu    -2.2119408147264896
+    Attrib mass    -0.9589656235929852
+    Attrib pedi    6.090003751353246
+    Attrib age    -8.833262465394625
+Class tested_negative
+    Input
+    Node 0
+Class tested_positive
+    Input
+    Node 1
+
+
+Time taken to build model: 1.22 seconds
+
+Time taken to test model on training data: 0.07 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         619               80.599  %
+Incorrectly Classified Instances       149               19.401  %
+Kappa statistic                          0.5904
+Mean absolute error                      0.2852
+Root mean squared error                  0.3815
+Relative absolute error                 62.75   %
+Root relative squared error             80.0495 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.802    0.187    0.889      0.802    0.843      0.596    0.872     0.917     tested_negative
+                 0.813    0.198    0.688      0.813    0.745      0.596    0.872     0.796     tested_positive
+Weighted Avg.    0.806    0.191    0.819      0.806    0.809      0.596    0.872     0.874     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 401  99 |   a = tested_negative
+  50 218 |   b = tested_positive
+
+Time taken to perform cross-validation: 4.61 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         579               75.3906 %
+Incorrectly Classified Instances       189               24.6094 %
+Kappa statistic                          0.4484
+Mean absolute error                      0.2955
+Root mean squared error                  0.4215
+Relative absolute error                 65.0135 %
+Root relative squared error             88.4274 %
+Total Number of Instances              768     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.832    0.392    0.798      0.832    0.815      0.449    0.793     0.850     tested_negative
+                 0.608    0.168    0.660      0.608    0.633      0.449    0.793     0.667     tested_positive
+Weighted Avg.    0.754    0.314    0.750      0.754    0.751      0.449    0.793     0.786     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 416  84 |   a = tested_negative
+ 105 163 |   b = tested_positive
+

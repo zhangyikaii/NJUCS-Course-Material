@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.54 seconds
+
+Time taken to test model on training data: 0.12 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        1103               99.459  %
+Incorrectly Classified Instances         6                0.541  %
+Kappa statistic                          0.9571
+Mean absolute error                      0.0373
+Root mean squared error                  0.0942
+Relative absolute error                 28.7424 %
+Root relative squared error             37.0516 %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.065    0.995      0.999    0.997      0.957    1.000     1.000     false
+                 0.935    0.001    0.986      0.935    0.960      0.957    1.000     0.996     true
+Weighted Avg.    0.995    0.060    0.995      0.995    0.995      0.957    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1031    1 |    a = false
+    5   72 |    b = true
+
+Time taken to perform cross-validation: 2.8 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        1039               93.688  %
+Incorrectly Classified Instances        70                6.312  %
+Kappa statistic                          0.367 
+Mean absolute error                      0.0949
+Root mean squared error                  0.2223
+Relative absolute error                 72.9953 %
+Root relative squared error             87.469  %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.984    0.701    0.950      0.984    0.967      0.391    0.875     0.987     false
+                 0.299    0.016    0.590      0.299    0.397      0.391    0.875     0.458     true
+Weighted Avg.    0.937    0.654    0.925      0.937    0.927      0.391    0.875     0.950     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1016   16 |    a = false
+   54   23 |    b = true
+

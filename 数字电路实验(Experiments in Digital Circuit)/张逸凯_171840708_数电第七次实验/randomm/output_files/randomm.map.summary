@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sun Apr 28 15:41:59 2019
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : randomm
+Top-level Entity Name : randomm
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 22
+Total pins : 35
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

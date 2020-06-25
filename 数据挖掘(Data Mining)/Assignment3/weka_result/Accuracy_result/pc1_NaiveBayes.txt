@@ -1,0 +1,196 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                          Class
+Attribute                 false        true
+                         (0.93)      (0.07)
+============================================
+loc
+  mean                   20.7932     58.2099
+  std. dev.              24.8464     91.1885
+  weight sum                1032          77
+  precision               5.4727      5.4727
+
+v(g)
+  mean                    4.8429      10.333
+  std. dev.               7.5933     19.7882
+  weight sum                1032          77
+  precision               2.8723      2.8723
+
+ev(g)
+  mean                    1.9688      4.5095
+  std. dev.               4.4432     14.7696
+  weight sum                1032          77
+  precision               4.6923      4.6923
+
+iv(G)
+  mean                    2.2382      6.3377
+  std. dev.               5.0973      16.535
+  weight sum                1032          77
+  precision               4.0667      4.0667
+
+N
+  mean                   105.296    277.1561
+  std. dev.             159.8902    436.6819
+  weight sum                1032          77
+  precision               8.9518      8.9518
+
+V
+  mean                  605.2495   1962.1572
+  std. dev.            1098.0284   3864.0693
+  weight sum                1032          77
+  precision              34.3612     34.3612
+
+L
+  mean                    0.1312      0.1299
+  std. dev.                0.146      0.1733
+  weight sum                1032          77
+  precision               0.0455      0.0455
+
+D
+  mean                   14.9814     21.0789
+  std. dev.              16.0801     18.3993
+  weight sum                1032          77
+  precision               0.4423      0.4423
+
+I
+  mean                   30.8453     60.5666
+  std. dev.              33.0954     50.1912
+  weight sum                1032          77
+  precision               0.7279      0.7279
+
+E
+  mean                 23169.637 102156.5211
+  std. dev.          146044.0783 356816.2315
+  weight sum                1032          77
+  precision            4813.9854   4813.9854
+
+B
+  mean                    0.2007       0.665
+  std. dev.               0.3689      1.2893
+  weight sum                1032          77
+  precision               0.0692      0.0692
+
+T
+  mean                 1286.5119   5680.0799
+  std. dev.            8112.7718  19846.0541
+  weight sum                1032          77
+  precision             268.6524    268.6524
+
+lOCode
+  mean                   20.0218     53.9889
+  std. dev.              23.5881     87.5886
+  weight sum                1032          77
+  precision               5.3571      5.3571
+
+lOComment
+  mean                     3.911     14.8119
+  std. dev.               8.9883     20.0298
+  weight sum                1032          77
+  precision               3.0577      3.0577
+
+locCodeAndComment
+  mean                    0.6067      3.6861
+  std. dev.               2.6522      7.5651
+  weight sum                1032          77
+  precision                2.087       2.087
+
+lOBlank
+  mean                    5.4378     18.9649
+  std. dev.                9.773     28.2362
+  weight sum                1032          77
+  precision               4.4118      4.4118
+
+uniq_Op
+  mean                   12.9274      19.204
+  std. dev.               7.4459      13.299
+  weight sum                1032          77
+  precision               2.1778      2.1778
+
+uniq_Opnd
+  mean                   18.7575     51.1716
+  std. dev.              20.0201     76.1351
+  weight sum                1032          77
+  precision               5.1238      5.1238
+
+total_Op
+  mean                   59.5965    157.7579
+  std. dev.              88.7909    254.7009
+  weight sum                1032          77
+  precision               7.0996      7.0996
+
+total_Opnd
+  mean                   45.7953    119.5191
+  std. dev.              71.6525    182.5573
+  weight sum                1032          77
+  precision               5.6634      5.6634
+
+branchCount
+  mean                    8.4776     18.1616
+  std. dev.              14.2719      34.294
+  weight sum                1032          77
+  precision               3.8525      3.8525
+
+
+
+Time taken to build model: 0.65 seconds
+
+Time taken to test model on training data: 0.15 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         988               89.0893 %
+Incorrectly Classified Instances       121               10.9107 %
+Kappa statistic                          0.2168
+Mean absolute error                      0.1079
+Root mean squared error                  0.3253
+Relative absolute error                 83.0503 %
+Root relative squared error            127.9943 %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.935    0.701    0.947      0.935    0.941      0.218    0.713     0.966     false
+                 0.299    0.065    0.256      0.299    0.275      0.218    0.713     0.195     true
+Weighted Avg.    0.891    0.657    0.899      0.891    0.895      0.218    0.713     0.912     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 965  67 |   a = false
+  54  23 |   b = true
+
+Time taken to perform cross-validation: 0.25 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         989               89.1794 %
+Incorrectly Classified Instances       120               10.8206 %
+Kappa statistic                          0.219 
+Mean absolute error                      0.1079
+Root mean squared error                  0.3255
+Relative absolute error                 83.0591 %
+Root relative squared error            128.0382 %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.936    0.701    0.947      0.936    0.942      0.220    0.650     0.954     false
+                 0.299    0.064    0.258      0.299    0.277      0.220    0.650     0.179     true
+Weighted Avg.    0.892    0.657    0.899      0.892    0.895      0.220    0.650     0.900     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 966  66 |   a = false
+  54  23 |   b = true
+

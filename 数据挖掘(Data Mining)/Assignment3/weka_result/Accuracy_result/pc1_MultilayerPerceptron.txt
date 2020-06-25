@@ -1,0 +1,362 @@
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -4.94788992955857
+    Node 2    5.595068187326777
+    Node 3    1.0490033539564516
+    Node 4    4.64557180650684
+    Node 5    1.9078701612271969
+    Node 6    3.7004230412304993
+    Node 7    1.5588366104850575
+    Node 8    1.739729831829127
+    Node 9    1.335437112343211
+    Node 10    1.3614248205517112
+    Node 11    1.4296679718752894
+    Node 12    1.8483387715027886
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    4.948178072374748
+    Node 2    -5.596048212068978
+    Node 3    -1.0239251566149854
+    Node 4    -4.691204371509557
+    Node 5    -1.8872873740373548
+    Node 6    -3.6611999168179774
+    Node 7    -1.588865700398585
+    Node 8    -1.7180538933442182
+    Node 9    -1.3920203183532407
+    Node 10    -1.3110807689207487
+    Node 11    -1.431530376723992
+    Node 12    -1.8538611433943497
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.5430143896552835
+    Attrib loc    -4.671931107929546
+    Attrib v(g)    0.4596794999241716
+    Attrib ev(g)    12.89738032169585
+    Attrib iv(G)    1.7773953255914843
+    Attrib N    -2.5611596566883934
+    Attrib V    -2.4623282305718517
+    Attrib L    2.6933216032019116
+    Attrib D    3.062236565597313
+    Attrib I    4.755405105209537
+    Attrib E    1.0522691043998134
+    Attrib B    -2.5305002894797357
+    Attrib T    1.0935152995604103
+    Attrib lOCode    -3.9777502223734613
+    Attrib lOComment    -8.858883368195206
+    Attrib locCodeAndComment    -6.272061768855575
+    Attrib lOBlank    1.1870897334588637
+    Attrib uniq_Op    -5.731345777307957
+    Attrib uniq_Opnd    -5.831623468720284
+    Attrib total_Op    -3.393386522254706
+    Attrib total_Opnd    -1.3511474290162508
+    Attrib branchCount    3.0326973742014274
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.7742141646432406
+    Attrib loc    -0.5651807979248246
+    Attrib v(g)    0.9052587614454015
+    Attrib ev(g)    0.8560017177367794
+    Attrib iv(G)    0.8476503848692738
+    Attrib N    -0.13194484547524346
+    Attrib V    -0.09538997607646602
+    Attrib L    -1.1486656916370368
+    Attrib D    3.0963633146391416
+    Attrib I    0.22946505141227497
+    Attrib E    1.351565125791238
+    Attrib B    -0.4257758537633852
+    Attrib T    1.3268451198295117
+    Attrib lOCode    -0.27068807700781783
+    Attrib lOComment    -0.17622695344228023
+    Attrib locCodeAndComment    -2.0719594818183134
+    Attrib lOBlank    -1.2758766967318989
+    Attrib uniq_Op    -1.851820351581771
+    Attrib uniq_Opnd    -2.4993170175676345
+    Attrib total_Op    -0.19346632129414654
+    Attrib total_Opnd    -0.062309842640771496
+    Attrib branchCount    1.4462581451336698
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.122533900200236
+    Attrib loc    -0.8143613833570454
+    Attrib v(g)    -0.2825555434921827
+    Attrib ev(g)    -0.5619300389816484
+    Attrib iv(G)    -0.40653660590417756
+    Attrib N    0.5618394000364858
+    Attrib V    -0.24891368463095434
+    Attrib L    0.08190291105741278
+    Attrib D    3.7498495812790726
+    Attrib I    -0.728936694889159
+    Attrib E    1.047383226644263
+    Attrib B    -0.27865992111405763
+    Attrib T    1.0327429026794812
+    Attrib lOCode    -1.0024943647103948
+    Attrib lOComment    2.619814072467129
+    Attrib locCodeAndComment    3.9355046963445526
+    Attrib lOBlank    0.18549076787207472
+    Attrib uniq_Op    -0.5274953588489159
+    Attrib uniq_Opnd    -2.49163636455551
+    Attrib total_Op    0.08040353023707017
+    Attrib total_Opnd    1.1669921117077273
+    Attrib branchCount    0.19868231982560286
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -1.2481399194564604
+    Attrib loc    -0.2702011872418196
+    Attrib v(g)    1.0156135647627955
+    Attrib ev(g)    -0.2601156938993183
+    Attrib iv(G)    0.35900054203033144
+    Attrib N    -0.07091421162633459
+    Attrib V    -0.28527221088715216
+    Attrib L    -0.725042097970342
+    Attrib D    3.8485925019179703
+    Attrib I    -1.6583528384073618
+    Attrib E    1.1308181123351457
+    Attrib B    -0.5458970471395936
+    Attrib T    1.1704446446834738
+    Attrib lOCode    -0.19869980910518534
+    Attrib lOComment    -1.476265309627666
+    Attrib locCodeAndComment    0.43306869117898605
+    Attrib lOBlank    0.2931016672205328
+    Attrib uniq_Op    -0.0869554248865048
+    Attrib uniq_Opnd    -2.585524531204864
+    Attrib total_Op    -0.19914485582051947
+    Attrib total_Opnd    0.08796739409988985
+    Attrib branchCount    1.668491742209398
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -1.0105719569625138
+    Attrib loc    -0.6956126718381231
+    Attrib v(g)    -0.014574131307699446
+    Attrib ev(g)    -0.4472379367922857
+    Attrib iv(G)    -0.1859004355790594
+    Attrib N    0.46161374602479094
+    Attrib V    -0.20967804436573959
+    Attrib L    -0.13227654895896251
+    Attrib D    3.4334884501009304
+    Attrib I    -0.8492945272166212
+    Attrib E    1.0207329057673775
+    Attrib B    -0.2224712380472955
+    Attrib T    1.0351538337492638
+    Attrib lOCode    -0.9234824717701067
+    Attrib lOComment    2.411404115258928
+    Attrib locCodeAndComment    3.305930635044619
+    Attrib lOBlank    0.01572976072773568
+    Attrib uniq_Op    -0.6132834518553368
+    Attrib uniq_Opnd    -2.265449118409043
+    Attrib total_Op    0.07474335327977816
+    Attrib total_Opnd    1.0243515494507693
+    Attrib branchCount    0.3933467411724215
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.1576062733657846
+    Attrib loc    -0.5775136742773405
+    Attrib v(g)    1.545642039455144
+    Attrib ev(g)    1.3787751664835024
+    Attrib iv(G)    1.4685660735887336
+    Attrib N    -0.5842991253330057
+    Attrib V    -0.2846164215592602
+    Attrib L    -1.8777159828256758
+    Attrib D    3.795279415841448
+    Attrib I    -1.6204267169173476
+    Attrib E    1.5693971533257316
+    Attrib B    -0.7906366175282704
+    Attrib T    1.5628959421060098
+    Attrib lOCode    -0.27899845667506795
+    Attrib lOComment    0.6494378618180302
+    Attrib locCodeAndComment    -2.7069528980828963
+    Attrib lOBlank    -1.7459564674080652
+    Attrib uniq_Op    -1.5274004944821484
+    Attrib uniq_Opnd    -2.692598638137757
+    Attrib total_Op    -0.48116305597858056
+    Attrib total_Opnd    -0.7580554646831251
+    Attrib branchCount    2.1861345056729538
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -2.413811089732119
+    Attrib loc    -0.8310053133917248
+    Attrib v(g)    1.453327721092247
+    Attrib ev(g)    1.8651866871710567
+    Attrib iv(G)    1.4442663953650654
+    Attrib N    -0.5593064444347374
+    Attrib V    -0.2580235319882511
+    Attrib L    -2.130320931775403
+    Attrib D    3.879071643819848
+    Attrib I    -0.7005878696297605
+    Attrib E    1.7877716152710048
+    Attrib B    -0.7840035063977684
+    Attrib T    1.7379663129176273
+    Attrib lOCode    -0.41247182942264526
+    Attrib lOComment    1.1936033223726057
+    Attrib locCodeAndComment    -3.4979023983894924
+    Attrib lOBlank    -1.965779219361369
+    Attrib uniq_Op    -2.4848955013833196
+    Attrib uniq_Opnd    -3.114526493355624
+    Attrib total_Op    -0.42864428435958785
+    Attrib total_Opnd    -0.6838281753909183
+    Attrib branchCount    2.168259383142516
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -2.0005327825530412
+    Attrib loc    -0.5503280360956525
+    Attrib v(g)    1.4076331978913512
+    Attrib ev(g)    1.292493035718657
+    Attrib iv(G)    1.2430389830079758
+    Attrib N    -0.4824060285121856
+    Attrib V    -0.3220690996183383
+    Attrib L    -1.578106712306628
+    Attrib D    3.494522114068934
+    Attrib I    -1.1779686214101632
+    Attrib E    1.5321197157584188
+    Attrib B    -0.7757715861182041
+    Attrib T    1.511378549887246
+    Attrib lOCode    -0.20708261963883173
+    Attrib lOComment    0.3773699013219081
+    Attrib locCodeAndComment    -2.537308380891787
+    Attrib lOBlank    -1.4213350668803302
+    Attrib uniq_Op    -1.4840790964815285
+    Attrib uniq_Opnd    -2.6788506280350055
+    Attrib total_Op    -0.4133925500121872
+    Attrib total_Opnd    -0.6172764915234121
+    Attrib branchCount    1.9717728043457814
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -2.077417603301464
+    Attrib loc    -0.6192475195336055
+    Attrib v(g)    1.178713638093309
+    Attrib ev(g)    1.3568230456396269
+    Attrib iv(G)    1.183962048129388
+    Attrib N    -0.4571236958735868
+    Attrib V    -0.22093743557971635
+    Attrib L    -1.5578759124893502
+    Attrib D    3.3629726936172832
+    Attrib I    -0.6814252229371623
+    Attrib E    1.485621173456865
+    Attrib B    -0.641997680614147
+    Attrib T    1.554502317964594
+    Attrib lOCode    -0.25594048322171903
+    Attrib lOComment    0.5465097695359169
+    Attrib locCodeAndComment    -2.6452477926961397
+    Attrib lOBlank    -1.5712049832402428
+    Attrib uniq_Op    -1.906231929145653
+    Attrib uniq_Opnd    -2.6600805179535576
+    Attrib total_Op    -0.37844721058957503
+    Attrib total_Opnd    -0.46723698695482035
+    Attrib branchCount    1.8656976500469522
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -2.35641951910595
+    Attrib loc    -1.4297306293938512
+    Attrib v(g)    0.9497127716465541
+    Attrib ev(g)    2.5855982500107384
+    Attrib iv(G)    1.3256301215856487
+    Attrib N    -0.5629423381250567
+    Attrib V    -0.2905323284744886
+    Attrib L    0.016588294293832868
+    Attrib D    3.380912165606817
+    Attrib I    1.2180024394790623
+    Attrib E    1.7153123850221796
+    Attrib B    -1.0157392958097473
+    Attrib T    1.7309024445848846
+    Attrib lOCode    -0.8006393753301159
+    Attrib lOComment    2.5714224182472947
+    Attrib locCodeAndComment    -5.318647961659434
+    Attrib lOBlank    -1.8467591606266074
+    Attrib uniq_Op    -4.117662582300355
+    Attrib uniq_Opnd    -3.6262243102183778
+    Attrib total_Op    -0.5512403740886781
+    Attrib total_Opnd    -0.5109593175545184
+    Attrib branchCount    1.826199626612509
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -2.291819410693768
+    Attrib loc    -0.913491373543852
+    Attrib v(g)    0.5543951912079282
+    Attrib ev(g)    1.5677525476355687
+    Attrib iv(G)    1.0593093213099545
+    Attrib N    -0.042282730272240415
+    Attrib V    0.11754918596651352
+    Attrib L    -1.5565976124408851
+    Attrib D    3.069875646746858
+    Attrib I    2.178002369245297
+    Attrib E    1.6578875456791882
+    Attrib B    -0.4130689913734309
+    Attrib T    1.6680731322385856
+    Attrib lOCode    -0.40861221339099785
+    Attrib lOComment    1.01853371289118
+    Attrib locCodeAndComment    -3.7641195001388565
+    Attrib lOBlank    -2.05002249612496
+    Attrib uniq_Op    -3.5890493175438265
+    Attrib uniq_Opnd    -2.9708497184802978
+    Attrib total_Op    -0.13500680873361248
+    Attrib total_Opnd    0.20326487831943504
+    Attrib branchCount    1.1682155213434724
+Class false
+    Input
+    Node 0
+Class true
+    Input
+    Node 1
+
+
+Time taken to build model: 3.14 seconds
+
+Time taken to test model on training data: 0.06 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances        1046               94.3192 %
+Incorrectly Classified Instances        63                5.6808 %
+Kappa statistic                          0.306 
+Mean absolute error                      0.0877
+Root mean squared error                  0.2233
+Relative absolute error                 67.5461 %
+Root relative squared error             87.8619 %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.805    0.943      0.999    0.970      0.413    0.866     0.988     false
+                 0.195    0.001    0.938      0.195    0.323      0.413    0.866     0.447     true
+Weighted Avg.    0.943    0.749    0.943      0.943    0.925      0.413    0.866     0.951     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1031    1 |    a = false
+   62   15 |    b = true
+
+Time taken to perform cross-validation: 20.83 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances        1038               93.5978 %
+Incorrectly Classified Instances        71                6.4022 %
+Kappa statistic                          0.2324
+Mean absolute error                      0.1101
+Root mean squared error                  0.2437
+Relative absolute error                 84.7067 %
+Root relative squared error             95.8556 %
+Total Number of Instances             1109     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.844    0.940      0.994    0.967      0.302    0.723     0.967     false
+                 0.156    0.006    0.667      0.156    0.253      0.302    0.723     0.236     true
+Weighted Avg.    0.936    0.786    0.921      0.936    0.917      0.302    0.723     0.916     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1026    6 |    a = false
+   65   12 |    b = true
+

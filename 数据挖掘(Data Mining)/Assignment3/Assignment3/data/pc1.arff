@@ -1,0 +1,1466 @@
+%%-*- text -*-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a PROMISE Software Engineering Repository data set made publicly
+% available in order to encourage repeatable, verifiable, refutable, and/or
+% improvable predictive models of software engineering.
+%
+% If you publish material based on PROMISE data sets then, please
+% follow the acknowledgment guidelines posted on the PROMISE repository
+% web page http://promise.site.uottawa.ca/SERepository .
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 1. Title/Topic: PC1/software defect prediction
+ 
+% 2. Sources:
+% 
+%    -- Creators:  NASA, then the NASA Metrics Data Program,
+%       -- http://mdp.ivv.nasa.gov. Contacts: Mike Chapman, 
+%          Galaxy Global Corporation (Robert.Chapman@ivv.nasa.gov)
+%          +1-304-367-8341; Pat Callis, NASA, NASA project manager 
+%          for MDP (Patrick.E.Callis@ivv.nasa.gov) +1-304-367-8309 
+% 
+%    -- Donor: Tim Menzies (tim@barmag.net)
+% 
+%    -- Date:  December 2 2004
+
+% 3. Past usage:
+% 
+%    1. How Good is Your Blind  Spot Sampling Policy?; 2003; Tim Menzies
+%       and Justin S. Di Stefano; 2004 IEEE Conference on High Assurance
+%       Software Engineering (http://menzies.us/pdf/03blind.pdf).
+% 
+%       -- Results: 
+% 
+%         -- Very simple learners (ROCKY) perform as well in this domain
+%         as more sophisticated methods (e.g. J48, model trees, model
+%         trees) for predicting detects
+% 
+%         -- Many learners have very low false alarm rates.
+% 
+% 	  -- Probability of detection (PD) rises with effort and rarely
+% 	  rises above it.
+% 
+%         -- High PDs are associated with high PFs (probability of
+%         failure)
+% 
+%         -- PD, PF, effort can change significantly while accuracy
+%         remains essentially stable
+% 
+%         -- With two notable exceptions, detectors learned from one
+%         data set (e.g. KC2) have nearly they same properties when
+%         applied to another (e.g. PC2, KC2). Exceptions:
+%            -- LinesOfCode measures generate wider inter-data-set variances; 
+%            -- Precision's inter-data-set variances vary wildly
+%
+%    2. "Assessing Predictors of Software Defects", T. Menzies and 
+%       J. DiStefano and A. Orrego and R. Chapman, 2004,
+%       Proceedings, workshop on Predictive Software Models, Chicago,
+%       Available from http://menzies.us/pdf/04psm.pdf.
+%       -- Results:
+%
+%          -- From JM1, Naive Bayes generated PDs of 20% with PF of 25%
+%           
+%          -- Naive Bayes out-performs J48 for defect detection
+%
+%          -- When learning on more and more data, little improvement is
+%             seen after processing 300 examples.
+%
+%          -- PDs are much higher from data collected below the sub-sub-
+%             system level.
+%          
+%          -- Accuracy is a surprisingly uninformative measure of success
+%             for a defect detector. Two detectors with the same accuracy
+%             can have widely varying PDs and PFs.
+
+% 4. Relevant information:
+% 
+%    -- Data from C  functions. flight software
+%       for earth orbiting satellite.
+% 
+%    -- Data comes from McCabe and Halstead features extractors of
+%    source code.  These features were defined in the 70s in an attempt
+%    to objectively characterize code features that are associated with
+%    software quality.  The nature of association is under dispute.
+%    Notes on McCabe and Halstead follow.
+%    
+%    -- The McCabe and Halstead measures are "module"-based where a
+%    "module" is the smallest unit of functionality. In C or Smalltalk,
+%    "modules" would be called "function" or "method" respectively.
+%
+%    -- Defect detectors can be assessed according to the following measures:
+%
+%                                                module actually has defects
+%                                               +-------------+------------+
+%                                               |     no      |     yes    |
+%                                         +-----+-------------+------------+
+%          classifier predicts no defects |  no |      a      |      b     |
+%                                         +-----+-------------+------------+
+%        classifier predicts some defects | yes |      c      |      d     |
+%                                         +-----+-------------+------------+
+%
+%        accuracy                   = acc          = (a+d)/(a+b+c+d
+%        probability of detection   = pd  = recall = d/(b+d)
+%        probability of false alarm = pf           = c/(a+c)
+%        precision                  = prec         = d/(c+d)
+%        effort                     = amount of code selected by detector
+%                                   = (c.LOC + d.LOC)/(Total LOC)
+%
+%        Ideally, detectors have high PDs, low PFs, and low
+%        effort. This ideal state rarely happens:
+%
+%        -- PD and effort are linked. The more modules that trigger
+%        the detector, the higher the PD. However, effort also gets
+%        increases
+%
+%        -- High PD or low PF comes at the cost of high PF or low PD
+%        (respectively). This linkage can be seen in a standard
+%        receiver operator curve (ROC).  Suppose, for example, LOC> x
+%        is used as the detector (i.e. we assume large modules have
+%        more errors). LOC > x represents a family of detectors. At
+%        x=0, EVERY module is predicted to have errors. This detector
+%        has a high PD but also a high false alarm rate. At x=0, NO
+%        module is predicted to have errors. This detector has a low
+%        false alarm rate but won't detect anything at all. At 0<x<1,
+%        a set of detectors are generated as shown below:
+%
+%                 pd
+%               1 |           x  x  x                KEY:
+%                 |        x     .                   "."  denotes the line PD=PF
+%                 |     x      .                     "x"  denotes the roc curve 
+%                 |   x      .                            for a set of detectors
+%                 |  x     .
+%                 | x    . 
+%                 | x  .
+%                 |x .
+%                 |x
+%                 x------------------ pf    
+%                0                   1
+%
+%         Note that:
+%
+%         -- The only way to make no mistakes (PF=0) is to do nothing
+%        (PD=0)
+%
+%         -- The only way to catch more detects is to make more
+%         mistakes (increasing PD means increasing PF).
+%
+%         -- Our detector bends towards the "sweet spot" of
+%         <PD=1,PF=0> but does not reach it.
+%
+%         -- The line pf=pd on the above graph represents the "no information"
+%         line. If pf=pd then the detector is pretty useless. The better
+%         the detector, the more it rises above PF=PD towards the "sweet spot".
+%
+%    NOTES ON MCCABE/HALSTEAD
+%    ======================== 
+%    McCabe argued that code with complicated pathways are more
+%    error-prone.  His metrics therefore reflect the pathways within a
+%    code module.
+%       @Article{mccabe76,
+%   		title 	= "A Complexity Measure",
+%   		author 	= "T.J. McCabe",
+%   		pages 	= "308--320",
+%   		journal = "IEEE Transactions on Software Engineering",
+%   		year 	= "1976",
+%   		volume 	= "2",
+%   		month 	= "December",
+%   		number 	= "4"}
+% 
+%    Halstead argued that code that is hard to read is more likely to be
+%    fault prone. Halstead estimates reading complexity by counting the
+%    number of concepts in a module; e.g. number of unique operators.   
+%       @Book{halstead77,
+%   		Author 	  = "M.H. Halstead",
+%   		Title 	  = "Elements of Software Science",
+%   		Publisher = "Elsevier ",
+%   		Year 	  = 1977}
+% 
+%    We study these static code measures since they are useful, easy to
+%    use, and widely used:
+% 
+%     -- USEFUL: E.g. this data set can generate highly accurate
+%     predictors for defects  
+% 
+%     -- EASY TO USE: Static code measures (e.g. lines of code, the
+%     McCabe/Halstead measures) can be automatically and cheaply
+%     collected.
+% 
+%     -- WIDELY USED: Many researchers use static measures to guide
+%     software quality predictions (see the reference list in the above
+%     "blind spot" paper. Verification and validation (V\&V) textbooks
+%     advise using static code complexity measures to decide which
+%     modules are worthy of manual inspections.  Further, we know of
+%     several large government software contractors that won't review
+%     software modules _unless_ tools like McCabe predict that they are
+%     fault prone.  Hence, defect detectors have a major economic impact
+%     when they may force programmers to rewrite code.
+% 
+%     Nevertheless, the merits of these metrics has been widely
+%     criticized.  Static code measures are hardly a complete
+%     characterization of the internals of a function. Fenton offers an
+%     insightful example where the same functionality is achieved using
+%     different programming language constructs resulting in different
+%     static measurements for that module. Fenton uses this example to
+%     argue the uselessness of static code measures.
+%          @book{fenton97,
+%            author    = "N.E. Fenton and S.L. Pfleeger",
+%            title     = {Software metrics: a Rigorous \& Practical Approach},
+%            publisher = {International Thompson Press},
+%            year      = {1997}}
+% 
+%     An alternative interpretation of Fenton's example is that static
+%     measures can never be a definite and certain indicator of the
+%     presence of a fault.  Rather, defect detectors based on static
+%     measures are best viewed as probabilistic statements that the
+%     frequency of faults tends to increase in code modules that trigger
+%     the detector.  By definition, such probabilistic statements will
+%     are not categorical claims with some a non-zero false alarm
+%     rate. The research challenge for data miners is to ensure that
+%     these false alarms do not cripple their learned theories.
+% 
+%     The McCabe metrics are a collection of four software metrics:
+%     essential complexity, cyclomatic complexity, design complexity and
+%     LOC, Lines of Code.
+% 
+%     -- Cyclomatic Complexity, or "v(G)", measures the number of
+%     "linearly independent paths". A set of paths is said to be 
+%     linearly independent if no path in the set is a linear combination
+%     of any other paths in the set through a program's "flowgraph". A
+%     flowgraph is a directed graph where each node corresponds to a
+%     program statement, and each arc indicates the flow of control from
+%     one statement to another. "v(G)" is calculated by "v(G) = e - n + 2"
+%     where "G" is a program's flowgraph, "e" is the number of arcs in
+%     the flowgraph, and "n" is the number of nodes in the
+%     flowgraph. The standard McCabes rules ("v(G)">10), are used to 
+%     identify fault-prone module.
+% 
+%     -- Essential Complexity, or "ev(G)$" is the extent to which a
+%     flowgraph can be "reduced" by decomposing all the subflowgraphs
+%     of $G$ that are "D-structured primes". Such "D-structured
+%     primes" are also sometimes referred to as "proper one-entry
+%     one-exit subflowgraphs" (for a more thorough discussion of
+%     D-primes, see the Fenton text referenced above). "ev(G)" is 
+%     calculated using "ev(G)= v(G) - m" where $m$ is the number of 
+%     subflowgraphs of "G" that are D-structured primes.
+% 
+%     -- Design Complexity, or "iv(G)", is the cyclomatic complexity of a
+%     module's reduced flowgraph.  The flowgraph, "G", of a module is
+%     reduced to eliminate any complexity which does not influence the
+%     interrelationship between design modules.  According to McCabe,
+%     this complexity measurement reflects the modules calling patterns 
+%     to its immediate subordinate modules.
+% 
+%     -- Lines of code is measured according to McCabe's line counting 
+%     conventions.
+% 
+%     The Halstead falls into three groups: the base measures, the
+%     derived measures, and lines of code measures.
+%     
+%     -- Base measures: 
+%        -- mu1             = number of unique operators
+%        -- mu2             = number of unique operands
+%        -- N1              = total occurrences of operators
+%        -- N2              = total occurrences of operands
+%        -- length     = N  = N1 + N2
+%        -- vocabulary = mu = mu1 + mu2
+%        -- Constants set for each function:
+%           -- mu1' =  2 = potential operator count (just the function
+%                          name and the "return" operator)
+%           -- mu2'      = potential operand count. (the number 
+%                          of arguments to the module)
+%        
+%        For example, the expression "return max(w+x,x+y)" has "N1=4"
+%        operators "return, max, +,+)", "N2=4" operands (w,x,x,y),
+%        "mu1=3" unique operators (return, max,+), and "mu2=3" unique
+%        operands (w,x,y).
+% 
+%      -- Derived measures:
+%         -- P = volume = V = N * log2(mu) (the number of mental 
+%                                           comparisons needed to write
+%                                           a program of length N)
+%         -- V* = volume on minimal implementation
+%               = (2 + mu2')*log2(2 + mu2')
+%         -- L  = program length = V*/N
+%         -- D  = difficulty = 1/L
+%         -- L' = 1/D 
+%         -- I  = intelligence = L'*V'
+%         -- E  = effort to write program = V/L 
+%         -- T  = time to write program = E/18 seconds
+
+% 5. Number of instances: 1109
+
+% 6. Number of attributes: 22 (5 different lines of code measure, 
+%          3 McCabe metrics, 4 base Halstead measures, 8 derived 
+%           Halstead measures, a branch-count, and 1 goal field)
+
+% 7. Attribute Information:
+% 	
+%      1. loc             : numeric % McCabe's line count of code
+%      2. v(g)            : numeric % McCabe "cyclomatic complexity"
+%      3. ev(g)           : numeric % McCabe "essential complexity"
+%      4. iv(g)           : numeric % McCabe "design complexity"
+%      5. n               : numeric % Halstead total operators + operands
+%      6. v               : numeric % Halstead "volume"
+%      7. l               : numeric % Halstead "program length"
+%      8. d               : numeric % Halstead "difficulty"
+%      9. i               : numeric % Halstead "intelligence"
+%     10. e               : numeric % Halstead "effort"
+%     11. b               : numeric % Halstead 
+%     12. t               : numeric % Halstead's time estimator
+%     13. lOCode          : numeric % Halstead's line count
+%     14. lOComment       : numeric % Halstead's count of lines of comments
+%     15. lOBlank         : numeric % Halstead's count of blank lines
+%     16. lOCodeAndComment: numeric
+%     17. uniq_Op         : numeric % unique operators
+%     18. uniq_Opnd       : numeric % unique operands
+%     19. total_Op        : numeric % total operators
+%     20. total_Opnd      : numeric % total operands
+%     21: branchCount     : numeric % of the flow graph
+%     22. defects         : {false,true} % module has/has not one or more 
+%                                        % reported defects
+
+% 8. Missing attributes: none
+
+% 9. Class Distribution: the class value (defects) is discrete 
+%    false:   77 =  6.94%
+%    true:  1032 = 93.05%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+@relation PC1
+
+@attribute loc numeric
+@attribute v(g) numeric
+@attribute ev(g) numeric
+@attribute iv(G) numeric
+@attribute N numeric
+@attribute V numeric
+@attribute L numeric
+@attribute D numeric
+@attribute I numeric
+@attribute E numeric
+@attribute B numeric
+@attribute T numeric
+@attribute lOCode numeric
+@attribute lOComment numeric
+@attribute locCodeAndComment numeric
+@attribute lOBlank numeric
+@attribute uniq_Op numeric
+@attribute uniq_Opnd numeric
+@attribute total_Op numeric
+@attribute total_Opnd numeric
+@attribute branchCount numeric
+@attribute defects {false,true}
+
+@data
+
+1.1,1.4,1.4,1.4,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,2,2,2,2,1.2,1.2,1.2,1.2,1.4,false
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,true
+91,9,3,2,318,2089.21,0.04,27.68,75.47,57833.24,0.7,3212.96,80,44,11,31,29,66,192,126,17,true
+109,21,5,18,381,2547.56,0.04,28.37,89.79,72282.68,0.85,4015.7,97,41,12,24,28,75,229,152,38,true
+505,106,41,82,2339,20696.93,0.01,75.93,272.58,1571506.88,6.9,87305.94,457,71,48,49,64,397,1397,942,178,true
+107,25,7,14,619,4282.78,0.02,52.91,80.95,226588.75,1.43,12588.26,103,32,4,39,35,86,359,260,40,true
+74,11,1,8,294,1917.93,0.03,28.77,66.66,55178.46,0.64,3065.47,60,71,14,49,29,63,169,125,21,true
+602,136,123,123,2785,25942.69,0.01,105.26,246.47,2730637.23,8.65,151702.06,600,40,2,225,99,538,1641,1144,236,true
+29,2,1,2,140,718.1,0.1,9.93,72.35,7127.8,0.24,395.99,28,3,1,8,8,27,73,67,3,true
+36,3,1,1,254,1447.91,0.04,23.72,61.05,34338.99,0.48,1907.72,34,2,2,10,15,37,137,117,5,true
+70,11,1,6,434,3047.71,0.04,26.63,114.46,81152.69,1.02,4508.48,57,14,13,18,28,102,240,194,21,true
+109,20,12,4,223,1322.55,0.04,23.91,55.32,31619.49,0.44,1756.64,89,32,20,17,23,38,144,79,39,true
+37,3,1,3,187,1095.44,0.04,24.97,43.87,27356.45,0.37,1519.8,35,15,2,24,21,37,99,88,5,true
+90,29,8,9,488,3387.95,0.05,20.69,163.74,70100.61,1.13,3894.48,66,38,24,17,21,102,287,201,57,true
+19,2,1,2,71,351.75,0.08,12.66,27.79,4451.81,0.12,247.32,18,25,1,9,15,16,44,27,3,true
+152,21,4,5,430,2850.62,0.03,33.3,85.6,94929.66,0.95,5273.87,150,62,2,39,26,73,243,187,41,true
+22,5,5,4,100,539.23,0.07,13.94,38.68,7516.89,0.18,417.61,22,0,0,12,17,25,59,41,9,true
+69,12,1,1,536,3745.93,0.04,23.38,160.24,87570.07,1.25,4865,68,15,1,17,21,106,300,236,23,true
+49,9,1,8,191,1166.73,0.05,21.31,54.76,24859.27,0.39,1381.07,46,1,3,10,25,44,116,75,12,true
+48,3,1,2,248,1470.82,0.03,33.59,43.78,49408.04,0.49,2744.89,37,27,11,23,23,38,137,111,5,true
+128,19,1,3,494,3310.02,0.02,50.76,65.2,168007.02,1.1,9333.72,107,62,21,34,34,70,285,209,37,true
+32,6,1,5,186,1116,0.03,30.72,36.33,34286,0.37,1904.78,30,6,2,11,28,36,107,79,11,true
+38,6,6,6,244,1447.1,0.05,21.71,66.64,31422.74,0.48,1745.71,38,6,0,20,19,42,148,96,11,true
+34,6,6,6,176,1026.58,0.06,17,60.39,17452.01,0.34,969.56,34,5,0,19,19,38,108,68,11,true
+16,3,1,3,60,300,0.11,9.33,32.14,2800,0.1,155.56,16,0,0,8,14,18,36,24,5,true
+15,4,3,2,86,457.69,0.07,14.73,31.08,6740.46,0.15,374.47,14,6,1,8,18,22,50,36,7,true
+14,3,1,3,47,215.49,0.16,6.43,33.52,1385.31,0.07,76.96,14,0,0,7,10,14,29,18,5,true
+22,5,5,4,100,535.76,0.07,14.52,36.9,7779.61,0.18,432.2,22,0,0,13,17,24,59,41,9,true
+22,3,1,3,74,370,0.12,8.11,45.57,3004.05,0.12,166.89,22,0,0,15,11,21,43,31,5,true
+12,2,1,2,41,187.98,0.16,6.07,30.96,1141.33,0.06,63.41,12,0,0,8,10,14,24,17,3,true
+25,8,1,4,110,611,0.08,12.13,50.38,7410.9,0.2,411.72,20,9,5,3,16,31,63,47,15,true
+23,4,1,4,101,544.62,0.08,12.22,44.56,6656.52,0.18,369.81,23,0,0,12,15,27,57,44,7,true
+8,1,1,1,49,238.04,0.14,7.03,33.87,1672.9,0.08,92.94,8,4,0,6,11,18,26,23,1,true
+47,7,1,6,149,890.61,0.08,13.2,67.47,11756.11,0.3,653.12,40,4,7,9,18,45,83,66,13,true
+19,3,3,2,77,391.73,0.08,12.25,31.98,4798.75,0.13,266.6,15,14,4,28,14,20,42,35,5,true
+64,8,1,8,198,1174.29,0.04,22.28,52.7,26165.5,0.39,1453.64,48,73,16,32,22,39,119,79,12,true
+110,25,21,9,663,4404.88,0.02,45.1,97.66,198677.1,1.47,11037.62,97,23,13,37,23,77,361,302,49,true
+58,6,1,3,314,1961.85,0.05,20,98.09,39236.98,0.65,2179.83,58,17,0,18,16,60,164,150,11,true
+167,26,1,23,671,4888.5,0.04,22.35,218.7,109272.46,1.63,6070.69,166,49,1,39,20,136,367,304,51,true
+60,12,4,7,183,1080.96,0.04,26.43,40.9,28568.25,0.36,1587.13,58,0,2,13,25,35,109,74,16,true
+14,3,1,1,46,218.72,0.08,12.5,17.5,2734.06,0.07,151.89,13,3,1,2,15,12,26,20,5,true
+15,1,1,1,53,232.79,0.26,3.91,59.59,909.35,0.08,50.52,13,7,2,8,5,16,28,25,1,true
+120,7,3,4,1002,7090.97,0.02,59.93,118.33,424927.99,2.36,23607.11,120,42,0,36,28,107,544,458,13,true
+28,6,1,5,86,477.69,0.07,13.73,34.79,6559.11,0.16,364.4,28,0,0,7,21,26,52,34,8,true
+64,12,8,7,368,2358.66,0.03,36.58,64.48,86270.84,0.79,4792.82,54,18,10,80,26,59,202,166,23,true
+61,7,1,4,304,1893.56,0.05,19.66,96.31,37229.33,0.63,2068.3,49,0,12,11,16,59,159,145,13,true
+3,1,1,1,10,33.22,0.33,3,11.07,99.66,0.01,5.54,3,0,0,1,6,4,6,4,1,true
+141,24,9,18,657,4553.49,0.02,51.91,87.72,236376.96,1.52,13132.05,141,50,0,56,32,90,365,292,36,true
+6,1,1,1,30,139.32,0.15,6.5,21.43,905.55,0.05,50.31,6,1,0,7,13,12,18,12,1,true
+93,17,4,12,409,2680.83,0.03,38.18,70.21,102358.84,0.89,5686.6,93,27,0,31,28,66,229,180,24,true
+6,1,1,1,30,139.32,0.15,6.5,21.43,905.55,0.05,50.31,6,1,0,7,13,12,18,12,1,true
+31,7,4,4,108,603.18,0.07,14.1,42.78,8504.78,0.2,472.49,28,1,3,9,18,30,61,47,13,true
+153,25,6,13,841,5942.58,0.02,61.92,95.98,367939.9,1.98,20441.11,153,55,0,55,33,101,462,379,40,true
+63,17,9,7,429,2843.99,0.03,32,88.87,91007.81,0.95,5055.99,57,6,6,5,24,75,229,200,33,true
+106,29,20,5,539,3676.08,0.03,39.86,92.23,146524.08,1.23,8140.23,106,39,0,32,28,85,297,242,57,true
+23,5,4,3,113,650.3,0.05,20.26,32.1,13174.23,0.22,731.9,21,8,2,9,25,29,66,47,9,true
+29,5,5,5,164,920.81,0.05,20.61,44.67,18980.62,0.31,1054.48,29,9,0,7,18,31,93,71,9,true
+84,9,1,3,876,6498.04,0.02,46.39,140.08,301439.38,2.17,16746.63,84,20,0,27,31,140,457,419,17,true
+17,1,1,1,102,550.02,0.07,13.54,40.63,7446.38,0.18,413.69,16,9,1,12,16,26,58,44,1,true
+6,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,6,0,0,0,4,5,6,5,1,true
+15,4,3,2,86,457.69,0.07,14.73,31.08,6740.46,0.15,374.47,14,5,1,7,18,22,50,36,7,true
+29,5,5,5,146,815.4,0.05,18.6,43.84,15166.52,0.27,842.58,29,7,0,5,18,30,84,62,9,true
+5,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,5,0,0,0,4,5,6,5,1,true
+15,3,1,3,53,249.12,0.13,7.7,32.35,1918.25,0.08,106.57,15,0,0,9,11,15,32,21,5,true
+5,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,5,0,0,0,4,5,6,5,1,true
+6,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,6,0,0,0,4,5,6,5,1,true
+23,4,1,4,101,548.05,0.08,11.79,46.5,6459.19,0.18,358.84,23,0,0,12,15,28,57,44,7,true
+5,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,5,0,0,0,4,5,6,5,1,true
+5,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,5,0,0,0,4,5,6,5,1,true
+43,9,7,7,186,1084.92,0.07,13.35,81.27,14482.39,0.36,804.58,43,1,0,16,14,43,104,82,17,true
+14,4,1,2,69,353.92,0.09,10.88,32.54,3848.89,0.12,213.83,12,7,2,4,15,20,40,29,7,true
+16,5,1,2,90,482.18,0.08,12.16,39.65,5863.3,0.16,325.74,13,4,3,3,16,25,52,38,9,true
+3,1,1,1,18,68.53,0.22,4.5,15.23,308.4,0.02,17.13,3,0,0,2,9,5,13,5,1,true
+24,4,1,1,116,585.15,0.06,16,36.57,9362.4,0.2,520.13,19,6,5,7,12,21,60,56,7,true
+17,4,1,1,79,391.38,0.08,12.28,31.88,4805.3,0.13,266.96,15,6,2,8,13,18,45,34,7,true
+6,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,6,0,0,0,4,5,6,5,1,true
+27,7,1,4,94,506.88,0.05,21.45,23.63,10872.53,0.17,604.03,27,4,0,20,22,20,55,39,12,true
+6,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,6,0,0,0,4,5,6,5,1,true
+10,1,1,1,25,97.67,0.27,3.67,26.64,358.13,0.03,19.9,8,2,2,6,6,9,14,11,1,false
+29,6,1,3,79,398.51,0.08,12.92,30.85,5147.38,0.13,285.97,29,2,0,21,15,18,48,31,8,false
+8,2,1,1,11,33,0.22,4.5,7.33,148.5,0.01,8.25,6,3,2,2,6,2,8,3,3,false
+108,22,5,17,464,3215.86,0.03,33.04,97.32,106264.81,1.07,5903.6,107,35,1,43,31,91,270,194,39,false
+14,7,1,2,82,430.33,0.07,14.55,29.59,6259.35,0.14,347.74,14,0,0,1,16,22,42,40,13,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+13,4,1,3,42,181.52,0.08,12.75,14.24,2314.39,0.06,128.58,13,0,0,2,12,8,25,17,7,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+56,1,1,1,327,2078.92,0.02,44.27,46.96,92035.5,0.69,5113.08,49,1,7,2,34,48,202,125,29,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+7,1,1,1,31,129.27,0.24,4.14,31.25,534.7,0.04,29.71,7,9,0,5,7,11,18,13,1,false
+9,2,1,1,30,120,0.24,4.2,28.57,504,0.04,28,9,2,0,2,6,10,16,14,3,false
+10,1,1,1,35,153.73,0.17,5.91,26.02,908.41,0.05,50.47,10,15,0,11,10,11,22,13,1,false
+7,1,1,1,31,129.27,0.24,4.14,31.25,534.7,0.04,29.71,7,9,0,5,7,11,18,13,1,false
+9,2,1,1,30,120,0.24,4.2,28.57,504,0.04,28,9,2,0,2,6,10,16,14,3,false
+14,1,1,1,68,343.02,0.13,7.43,46.18,2548.14,0.11,141.56,14,19,0,18,12,21,42,26,1,false
+11,3,1,1,57,264.7,0.11,9.33,28.36,2470.53,0.09,137.25,11,2,0,7,10,15,29,28,5,false
+19,5,1,5,66,320.63,0.09,11.67,27.48,3740.65,0.11,207.81,17,5,2,14,14,15,41,25,9,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+14,2,1,2,61,293.25,0.13,7.78,37.7,2280.82,0.1,126.71,14,8,0,9,10,18,33,28,3,false
+4,1,1,1,11,34.87,0.4,2.5,13.95,87.17,0.01,4.84,4,2,0,1,5,4,7,4,1,false
+4,1,1,1,11,34.87,0.4,2.5,13.95,87.17,0.01,4.84,4,3,0,3,5,4,7,4,1,false
+11,1,1,1,38,152,0.14,7,21.71,1064,0.05,59.11,10,6,1,5,8,8,24,14,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+6,2,1,2,20,76.15,0.15,6.67,11.42,507.65,0.03,28.2,6,0,0,0,8,6,10,10,3,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+6,1,1,1,15,45,0.56,1.8,25,81,0.02,4.5,6,0,0,1,3,5,9,6,1,false
+14,2,1,2,50,232.19,0.11,9.21,25.22,2138.11,0.08,118.78,14,0,0,5,13,12,33,17,3,false
+17,6,1,3,71,316.62,0.05,21.67,14.61,6860.09,0.11,381.12,17,0,0,1,13,9,41,30,11,false
+36,7,5,7,154,882.1,0.06,15.94,55.33,14063.19,0.29,781.29,35,9,1,23,18,35,92,62,13,false
+49,10,7,7,168,1022.69,0.05,21.36,47.89,21841.82,0.34,1213.43,43,11,6,30,26,42,99,69,18,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+40,9,5,7,165,974.64,0.04,23.21,41.98,22625.5,0.32,1256.97,36,2,4,16,25,35,100,65,15,false
+7,2,1,1,10,28.07,0.5,2,14.04,56.15,0.01,3.12,7,0,0,5,4,3,7,3,3,false
+76,14,5,8,227,1426.79,0.04,25.15,56.74,35879.48,0.48,1993.3,67,17,9,18,27,51,132,95,25,false
+19,2,1,2,90,478.97,0.08,12.67,37.81,6067,0.16,337.06,18,3,1,16,16,24,52,38,3,false
+15,3,1,3,48,228.23,0.16,6.18,36.95,1409.68,0.08,78.32,15,15,0,7,10,17,27,21,5,false
+10,3,1,1,31,142.13,0.09,10.83,13.12,1539.78,0.05,85.54,10,0,0,2,15,9,18,13,5,false
+10,1,1,1,37,167.37,0.14,7.09,23.6,1186.82,0.06,65.93,10,19,0,11,12,11,24,13,1,false
+15,3,1,3,48,228.23,0.16,6.18,36.95,1409.68,0.08,78.32,15,15,0,7,10,17,27,21,5,false
+10,3,1,1,31,142.13,0.09,10.83,13.12,1539.78,0.05,85.54,10,0,0,2,15,9,18,13,5,false
+9,1,1,1,31,131.69,0.16,6.11,21.55,804.75,0.04,44.71,9,15,0,15,10,9,20,11,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+57,9,1,9,211,1330.1,0.04,22.33,59.57,29696.99,0.44,1649.83,57,19,0,25,27,52,125,86,13,false
+36,9,5,5,112,618.64,0.08,12,51.55,7423.67,0.21,412.43,28,6,8,14,16,30,67,45,17,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+9,1,1,1,24,93.77,0.17,6,15.63,562.59,0.03,31.26,9,0,0,1,9,6,16,8,1,false
+8,1,1,1,14,42,0.3,3.33,12.6,140,0.01,7.78,7,4,1,4,5,3,10,4,1,false
+14,2,1,2,35,148.68,0.21,4.73,31.45,702.84,0.05,39.05,14,4,0,7,8,11,22,13,3,false
+4,1,1,1,15,53.77,0.29,3.5,15.36,188.21,0.02,10.46,4,0,0,0,6,6,8,7,1,false
+36,10,1,6,151,856.54,0.07,14.58,58.73,12491.15,0.29,693.95,36,0,0,3,15,36,81,70,19,false
+3,1,1,1,11,34.87,0.5,2,17.43,69.74,0.01,3.87,3,0,0,1,4,5,6,5,1,false
+10,2,1,2,29,120.93,0.15,6.5,18.6,786.03,0.04,43.67,10,0,0,0,9,9,16,13,3,false
+8,2,1,2,41,192.72,0.1,9.92,19.43,1911.12,0.06,106.17,8,0,0,0,14,12,24,17,3,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+51,14,9,11,245,1496.59,0.05,21.88,68.42,32737.87,0.5,1818.77,51,10,0,28,21,48,145,100,27,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+18,5,1,5,87,387.97,0.05,19,20.42,7371.44,0.13,409.52,18,5,0,7,11,11,49,38,6,false
+9,1,1,1,31,131.69,0.16,6.11,21.55,804.75,0.04,44.71,9,16,0,10,10,9,20,11,1,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+3,1,1,1,12,41.51,0.29,3.5,11.86,145.3,0.01,8.07,3,0,0,1,7,4,8,4,1,false
+10,1,1,1,37,167.37,0.14,7.09,23.6,1186.82,0.06,65.93,10,19,0,11,12,11,24,13,1,false
+35,7,5,7,148,843.67,0.06,15.62,54.02,13176.06,0.28,732,34,5,1,22,18,34,89,59,13,false
+23,6,5,4,85,446.07,0.1,9.92,44.98,4423.57,0.15,245.75,22,5,1,13,14,24,51,34,11,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+63,11,5,6,267,1692.74,0.03,33.53,50.49,56756.57,0.56,3153.14,63,10,0,31,30,51,153,114,16,false
+22,3,1,2,55,241.58,0.12,8.64,27.97,2086.35,0.08,115.91,17,9,5,7,10,11,36,19,5,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+8,3,1,3,48,214.05,0.08,12,17.84,2568.63,0.07,142.7,8,0,0,0,11,11,24,24,5,false
+142,73,15,60,1061,8015.42,0.02,60.04,133.5,481241.52,2.67,26735.64,139,0,3,8,36,152,554,507,143,false
+58,72,70,71,483,2980.07,0.03,33.23,89.69,99019.72,0.99,5501.1,58,0,0,2,17,55,268,215,143,false
+22,14,9,1,102,500.5,0.03,31.95,15.66,15993.34,0.17,888.52,21,4,1,4,19,11,65,37,27,false
+29,8,6,6,141,765.1,0.04,26.96,28.38,20624.52,0.26,1145.81,29,0,0,1,20,23,79,62,15,false
+44,6,1,3,202,1183.31,0.06,16.4,72.17,19400.82,0.39,1077.82,44,15,0,15,15,43,108,94,11,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+5,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,5,0,0,1,4,3,4,3,1,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+8,1,1,1,25,97.67,0.18,5.71,17.09,558.13,0.03,31.01,8,9,0,5,8,7,15,10,1,false
+16,1,1,1,54,244.27,0.12,8.08,30.24,1972.97,0.08,109.61,16,12,0,11,10,13,33,21,1,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+8,1,1,1,25,97.67,0.18,5.71,17.09,558.13,0.03,31.01,8,9,0,5,8,7,15,10,1,false
+9,1,1,1,31,131.69,0.16,6.11,21.55,804.75,0.04,44.71,9,16,0,10,10,9,20,11,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+3,1,1,1,29,118.54,0.16,6.43,18.44,762.02,0.04,42.33,3,0,0,1,10,7,20,9,1,false
+3,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,3,0,0,0,3,1,3,1,1,false
+23,3,1,3,100,495.42,0.08,13.2,37.53,6539.54,0.17,363.31,23,2,0,7,11,20,52,48,5,false
+14,2,1,2,63,272.28,0.07,15,18.15,4084.22,0.09,226.9,14,0,0,2,10,10,33,30,3,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,0,0,0,3,2,3,2,1,false
+0,1,1,1,5,11.61,0.5,2,5.8,23.22,0,1.29,0,0,0,0,4,1,4,1,1,false
+27,8,1,8,127,713.07,0.04,22.41,31.82,15978.01,0.24,887.67,27,0,0,2,22,27,72,55,15,false
+18,5,3,3,97,512.67,0.05,18.86,27.19,9667.76,0.17,537.1,18,3,0,9,18,21,53,44,9,false
+53,3,3,2,296,1907.11,0.06,16.76,113.81,31957.74,0.64,1775.43,51,26,2,48,17,70,158,138,5,false
+253,33,13,27,1054,8002.45,0.01,72.75,109.99,582205.62,2.67,32344.76,218,159,35,17,47,146,602,452,51,false
+11,2,1,2,40,180.94,0.15,6.87,26.32,1243.98,0.06,69.11,11,14,0,7,11,12,25,15,3,false
+10,1,1,1,39,162.63,0.17,5.73,28.4,931.41,0.05,51.74,10,9,0,7,7,11,21,18,1,false
+17,1,1,1,60,285.29,0.1,10.21,27.93,2914.07,0.1,161.89,17,18,0,11,13,14,38,22,1,false
+11,2,1,2,40,180.94,0.15,6.87,26.32,1243.98,0.06,69.11,11,14,0,7,11,12,25,15,3,false
+10,1,1,1,39,162.63,0.17,5.73,28.4,931.41,0.05,51.74,10,9,0,7,7,11,21,18,1,false
+15,1,1,1,48,210.83,0.12,8.18,25.77,1724.98,0.07,95.83,15,12,0,14,10,11,30,18,1,false
+19,3,1,3,134,727.12,0.09,10.84,67.09,7881.04,0.24,437.84,19,0,0,3,12,31,78,56,5,false
+28,2,1,2,175,955.4,0.07,14.63,65.33,13972.73,0.32,776.26,26,0,2,10,12,32,97,78,3,false
+4,1,1,1,11,34.87,0.4,2.5,13.95,87.17,0.01,4.84,4,2,0,1,5,4,7,4,1,false
+4,1,1,1,12,39.86,0.33,3,13.29,119.59,0.01,6.64,2,3,2,1,6,4,8,4,1,false
+62,6,1,5,268,1703.82,0.04,25.45,66.95,43359.38,0.57,2408.85,59,6,3,16,24,58,145,123,11,false
+3,2,1,2,5,11.61,0.5,2,5.8,23.22,0,1.29,3,0,0,1,4,1,4,1,3,false
+0,1,1,1,5,11.61,0.5,2,5.8,23.22,0,1.29,0,0,0,0,4,1,4,1,1,false
+13,3,1,3,50,219.62,0.09,10.91,20.13,2395.81,0.07,133.1,13,1,0,2,10,11,26,24,5,false
+16,2,1,2,185,1003.86,0.06,16.47,60.96,16530.21,0.33,918.35,16,8,0,10,13,30,109,76,3,false
+5,1,1,1,12,39.86,0.21,4.67,8.54,186.03,0.01,10.33,5,0,0,2,7,3,8,4,1,false
+15,3,1,2,45,200.67,0.1,10.5,19.11,2107.08,0.07,117.06,14,0,1,2,11,11,24,21,5,false
+91,16,7,10,424,2581.08,0.02,58.5,44.12,150993.43,0.86,8388.52,83,19,8,42,26,42,235,189,24,false
+26,5,1,5,86,460.75,0.09,10.67,43.17,4917.61,0.15,273.2,26,18,0,14,15,26,49,37,9,false
+11,1,1,1,44,196.21,0.25,3.94,49.83,772.6,0.07,42.92,10,15,1,11,6,16,23,21,1,false
+16,1,1,1,54,244.27,0.11,9.17,26.65,2239.16,0.08,124.4,16,15,0,12,11,12,34,20,1,false
+26,5,1,5,86,460.75,0.09,10.67,43.17,4917.61,0.15,273.2,26,18,0,14,15,26,49,37,9,false
+11,1,1,1,44,193.26,0.24,4.2,46.01,811.7,0.06,45.09,10,15,1,13,6,15,23,21,1,false
+17,1,1,1,60,285.29,0.1,10.21,27.93,2914.07,0.1,161.89,17,18,0,11,13,14,38,22,1,false
+20,9,9,4,115,616.12,0.05,19.57,31.49,12054.49,0.21,669.69,20,5,0,11,18,23,65,50,17,false
+23,3,3,3,107,557.41,0.06,16.37,34.03,9130.93,0.19,507.27,22,1,1,3,16,21,64,43,5,false
+30,7,5,5,124,688.77,0.07,13.68,50.36,9420.58,0.23,523.37,29,0,1,11,16,31,71,53,13,false
+29,6,5,2,159,873.2,0.04,24,36.38,20956.91,0.29,1164.27,29,6,0,9,18,27,87,72,11,false
+8,1,1,1,25,97.67,0.27,3.67,26.64,358.13,0.03,19.9,6,2,2,1,6,9,14,11,1,false
+8,2,1,1,27,114.69,0.15,6.67,17.2,764.63,0.04,42.48,8,0,0,0,10,9,15,12,3,false
+43,13,3,9,176,1047.94,0.05,20.63,50.81,21613.73,0.35,1200.76,43,0,0,1,22,40,101,75,19,false
+45,12,1,5,221,1359.09,0.03,28.6,47.52,38870.09,0.45,2159.45,43,2,2,4,26,45,122,99,20,false
+21,8,4,2,83,411.2,0.04,26.13,15.74,10742.56,0.14,596.81,20,1,1,4,19,12,50,33,15,false
+3,1,1,1,19,63.12,0.33,3,21.04,189.35,0.02,10.52,3,0,0,0,4,6,10,9,1,false
+33,9,1,6,96,484.26,0.1,10,48.43,4842.62,0.16,269.03,33,5,0,13,11,22,56,40,17,false
+46,8,1,5,176,1022.09,0.04,24.91,41.03,25462.18,0.34,1414.57,45,7,1,23,22,34,99,77,11,false
+18,6,1,4,75,360.55,0.11,8.89,40.56,3204.9,0.12,178.05,15,5,3,3,10,18,43,32,11,false
+45,5,1,3,128,736.63,0.07,14.66,50.26,10796.83,0.25,599.82,36,0,9,1,19,35,74,54,13,false
+19,2,1,1,118,636.29,0.06,16.62,38.3,10572.26,0.21,587.35,16,16,3,17,16,26,64,54,3,false
+8,1,1,1,33,142.62,0.21,4.67,30.56,665.58,0.05,36.98,8,12,0,8,8,12,19,14,1,false
+5,1,1,1,13,43.19,0.27,3.75,11.52,161.94,0.01,9,4,1,1,2,6,4,8,5,1,false
+11,1,1,1,41,190.4,0.14,6.92,27.5,1318.14,0.06,73.23,11,18,0,11,12,13,26,15,1,false
+8,1,1,1,33,142.62,0.21,4.67,30.56,665.58,0.05,36.98,8,12,0,8,8,12,19,14,1,false
+5,1,1,1,13,43.19,0.27,3.75,11.52,161.94,0.01,9,4,1,1,2,6,4,8,5,1,false
+16,1,1,1,54,244.27,0.11,9.17,26.65,2239.16,0.08,124.4,16,15,0,12,11,12,34,20,1,false
+19,3,1,2,161,899.18,0.06,15.45,58.18,13896.4,0.3,772.02,19,13,0,12,15,33,93,68,5,false
+27,3,1,3,110,554.88,0.08,12.29,45.16,6817.14,0.18,378.73,27,1,0,4,12,21,67,43,5,false
+10,1,1,1,37,148,0.14,7,21.14,1036,0.05,57.56,9,2,1,3,8,8,23,14,1,false
+7,2,1,2,40,175.69,0.16,6.38,27.56,1120.04,0.06,62.22,7,3,0,1,9,12,23,17,3,false
+17,4,1,3,63,284.98,0.09,11.15,25.55,3178.67,0.09,176.59,17,0,0,0,10,13,34,29,7,false
+8,1,1,1,51,216.64,0.22,4.46,48.53,967.16,0.07,53.73,8,0,0,0,5,14,26,25,1,false
+21,8,4,2,83,411.2,0.04,26.13,15.74,10742.56,0.14,596.81,20,1,1,4,19,12,50,33,15,false
+13,3,3,3,53,249.12,0.08,12.83,19.41,3197.08,0.08,177.62,13,0,0,1,14,12,31,22,5,false
+27,8,4,6,105,579.97,0.06,16.8,34.52,9743.56,0.19,541.31,25,0,2,9,21,25,65,40,12,false
+14,1,1,1,99,499.4,0.08,12.86,38.84,6420.79,0.17,356.71,14,10,0,22,12,21,54,45,1,false
+14,5,1,2,66,317.29,0.05,20,15.86,6345.71,0.11,352.54,12,4,2,6,16,12,36,30,9,false
+28,3,1,2,123,667.43,0.11,8.79,75.95,5865.3,0.22,325.85,27,9,1,14,10,33,65,58,5,false
+25,6,5,3,93,494.94,0.09,11.31,43.77,5596.62,0.16,310.92,18,1,7,2,14,26,51,42,11,false
+19,5,1,2,91,437.47,0.04,24.81,17.63,10852.6,0.15,602.92,16,1,3,5,15,13,48,43,9,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+6,1,1,1,17,56.47,0.19,5.25,10.76,296.48,0.02,16.47,4,0,2,2,6,4,10,7,1,false
+9,1,1,1,31,131.69,0.16,6.11,21.55,804.75,0.04,44.71,9,13,0,9,10,9,20,11,1,false
+7,1,1,1,28,114.45,0.24,4.2,27.25,480.69,0.04,26.7,7,9,0,6,7,10,16,12,1,false
+6,1,1,1,17,56.47,0.19,5.25,10.76,296.48,0.02,16.47,4,0,2,2,6,4,10,7,1,false
+7,1,1,1,29,120.93,0.16,6.25,19.35,755.8,0.04,41.99,7,12,0,12,10,8,19,10,1,false
+32,9,1,7,98,498.57,0.1,9.8,50.85,4888.17,0.17,271.56,32,4,0,13,11,23,57,41,17,false
+32,7,1,3,120,642.91,0.06,16.96,37.91,10903.69,0.21,605.76,32,8,0,19,16,25,67,53,13,false
+64,8,4,2,275,1662.21,0.02,40.3,41.25,66987,0.55,3721.5,62,35,2,19,26,40,151,124,15,false
+7,2,1,2,16,57.36,0.33,3,19.12,172.08,0.02,9.56,7,0,0,2,6,6,10,6,3,false
+4,2,1,2,13,44.97,0.19,5.25,8.57,236.11,0.01,13.12,4,0,0,0,7,4,7,6,3,false
+5,1,1,1,13,43.19,0.17,5.83,7.4,251.91,0.01,14,5,1,0,0,7,3,8,5,1,false
+10,2,1,2,54,247.59,0.15,6.5,38.09,1609.32,0.08,89.41,10,0,0,1,8,16,28,26,3,false
+10,4,1,1,48,200.16,0.04,23.4,8.55,4683.66,0.07,260.2,10,0,0,1,13,5,30,18,7,false
+13,7,4,7,91,450.83,0.03,30.08,14.99,13562.53,0.15,753.47,13,0,0,2,19,12,53,38,13,false
+8,4,1,4,28,106.61,0.22,4.5,23.69,479.73,0.04,26.65,5,5,3,6,6,8,16,12,7,false
+18,5,3,2,72,356.7,0.07,13.59,26.25,4846.95,0.12,269.28,14,6,4,10,14,17,39,33,9,false
+5,1,1,1,12,38.04,0.32,3.12,12.17,118.87,0.01,6.6,5,1,0,2,5,4,7,5,1,false
+5,1,1,1,12,38.04,0.32,3.12,12.17,118.87,0.01,6.6,5,1,0,2,5,4,7,5,1,false
+11,1,1,1,41,190.4,0.14,6.92,27.5,1318.14,0.06,73.23,11,18,0,11,12,13,26,15,1,false
+24,7,4,5,93,504.64,0.06,15.65,32.24,7898.75,0.17,438.82,22,0,2,8,20,23,57,36,11,false
+12,3,3,1,36,152.93,0.13,7.78,19.66,1189.42,0.05,66.08,12,4,0,3,10,9,22,14,5,false
+3,1,1,1,14,46.51,0.33,3,15.5,139.52,0.02,7.75,1,0,2,0,5,5,8,6,1,false
+64,8,4,2,260,1565.82,0.03,37.19,42.11,58228.77,0.52,3234.93,62,38,2,19,25,40,141,119,15,false
+12,3,1,2,58,284.6,0.09,11.09,25.67,3155.71,0.09,175.32,11,0,1,0,13,17,29,29,5,false
+19,9,6,4,145,786.81,0.04,27.71,28.4,21801.15,0.26,1211.17,19,0,0,2,19,24,75,70,17,false
+0,2,1,1,12,39.86,0.33,3,13.29,119.59,0.01,6.64,0,0,0,0,6,4,8,4,3,false
+46,14,9,4,238,1533.42,0.04,22.38,68.52,34316.47,0.51,1906.47,46,8,0,42,25,62,127,111,27,false
+72,21,1,6,371,2431.75,0.06,16.92,143.69,41152.73,0.81,2286.26,62,16,10,10,16,78,206,165,41,false
+47,10,9,7,230,1414.44,0.06,15.9,88.97,22487.01,0.47,1249.28,47,15,0,18,17,54,129,101,19,false
+72,3,1,1,412,2681.21,0.05,19.74,135.85,52918.65,0.89,2939.92,65,5,7,10,15,76,212,200,4,false
+41,8,3,4,134,784.97,0.06,17.42,45.07,13671.55,0.26,759.53,37,8,4,21,22,36,77,57,14,false
+6,1,1,1,16,50.72,0.23,4.38,11.59,221.89,0.02,12.33,4,0,2,2,5,4,9,7,1,false
+6,1,1,1,16,50.72,0.23,4.38,11.59,221.89,0.02,12.33,4,0,2,2,5,4,9,7,1,false
+9,1,1,1,31,131.69,0.16,6.11,21.55,804.75,0.04,44.71,9,13,0,9,10,9,20,11,1,false
+12,1,1,1,44,196.21,0.08,12.28,15.98,2409.08,0.07,133.84,12,5,0,7,13,9,27,17,1,false
+123,27,8,27,388,2707.18,0.02,42.84,63.2,115969.02,0.9,6442.72,122,6,1,30,46,80,239,149,36,false
+24,4,1,4,109,602.07,0.06,16.14,37.27,9725.72,0.2,540.32,24,1,0,9,20,26,67,42,5,false
+24,8,3,2,136,660.69,0.02,43.21,15.29,28547.12,0.22,1585.95,24,0,0,0,17,12,75,61,15,false
+19,5,1,5,111,590.73,0.08,13,45.44,7679.54,0.2,426.64,19,0,0,1,13,27,57,54,9,false
+15,2,1,2,62,287.92,0.09,11.39,25.27,3280.22,0.1,182.23,15,0,0,2,11,14,33,29,3,false
+0,2,1,1,12,38.04,0.25,4,9.51,152.16,0.01,8.45,0,0,0,0,6,3,8,4,3,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+6,4,4,2,35,153.73,0.13,7.7,19.97,1183.73,0.05,65.76,6,0,0,3,11,10,21,14,7,false
+27,9,9,5,98,494.35,0.08,12.68,39,6265.89,0.16,348.11,27,3,0,11,13,20,59,39,17,false
+17,5,5,3,61,302.21,0.09,10.78,28.03,3258.16,0.1,181.01,17,3,0,0,15,16,38,23,9,false
+32,3,1,1,239,1434,0.06,15.4,93.12,22083.6,0.48,1226.87,32,21,0,48,14,50,129,110,5,false
+32,3,1,1,252,1534.04,0.06,17.85,85.96,27376.73,0.51,1520.93,31,21,1,48,16,52,136,116,5,false
+63,6,1,4,182,1133.65,0.15,6.87,164.89,7793.81,0.38,432.99,61,50,2,27,11,64,102,80,11,false
+4,1,1,1,16,59.21,0.24,4.08,14.5,241.76,0.02,13.43,4,0,0,1,7,6,9,7,1,false
+11,2,1,1,17,53.89,0.25,4,13.47,215.55,0.02,11.98,11,0,0,1,6,3,13,4,3,false
+7,2,1,2,24,96,0.22,4.5,21.33,432,0.03,24,6,3,1,4,8,8,15,9,3,false
+25,6,4,2,175,1016.29,0.05,18.95,53.64,19255.97,0.34,1069.78,23,13,2,8,18,38,95,80,11,false
+4,1,1,1,11,34.87,0.25,4,8.72,139.48,0.01,7.75,4,0,0,0,6,3,7,4,1,false
+21,7,1,6,139,763.37,0.05,18.48,41.3,14109.14,0.25,783.84,21,0,0,1,16,29,72,67,13,false
+11,2,1,2,34,141.78,0.16,6.4,22.15,907.38,0.05,50.41,11,0,0,1,8,10,18,16,3,false
+0,2,1,1,12,38.04,0.25,4,9.51,152.16,0.01,8.45,0,0,0,0,6,3,8,4,3,false
+66,28,22,17,366,2358.12,0.02,46.25,50.98,109073.64,0.79,6059.65,66,7,0,8,32,55,207,159,52,false
+40,9,1,5,247,1508.81,0.03,31.25,48.28,47150.17,0.5,2619.45,40,3,0,17,25,44,137,110,17,false
+42,6,1,3,242,1386.16,0.03,38.68,35.84,53612.97,0.46,2978.5,40,16,2,14,22,31,133,109,11,false
+16,1,1,1,67,294.29,0.21,4.69,62.78,1379.46,0.1,76.64,16,1,0,2,5,16,37,30,1,false
+5,2,1,1,18,68.53,0.17,6,11.42,411.19,0.02,22.84,5,1,0,2,8,6,9,9,3,false
+19,5,5,3,70,346.79,0.09,11.53,30.08,3998.33,0.12,222.13,19,4,0,0,14,17,42,28,9,false
+28,5,1,5,113,605.4,0.06,17.35,34.89,10506.27,0.2,583.68,28,10,0,6,17,24,64,49,6,false
+28,5,1,5,113,605.4,0.06,17.35,34.89,10506.27,0.2,583.68,28,10,0,6,17,24,64,49,6,false
+17,3,1,1,40,180.94,0.11,8.73,20.73,1579.13,0.06,87.73,17,7,0,5,12,11,24,16,5,false
+9,1,1,1,25,92.51,0.5,2,46.26,185.02,0.03,10.28,9,0,0,2,4,9,16,9,1,false
+35,7,3,6,167,956.56,0.04,27.98,34.18,26767.81,0.32,1487.1,33,25,2,23,23,30,94,73,13,false
+6,1,1,1,25,83.05,0.25,4,20.76,332.19,0.03,18.46,6,0,0,1,4,6,13,12,1,false
+11,1,1,1,86,421.99,0.08,13,32.46,5485.9,0.14,304.77,11,1,0,2,12,18,47,39,1,false
+42,7,1,7,156,880.44,0.04,24.62,35.76,21677.08,0.29,1204.28,42,7,0,14,21,29,88,68,9,false
+21,5,3,4,53,246.12,0.07,15,16.41,3691.87,0.08,205.1,21,5,0,9,15,10,33,20,9,false
+21,7,6,3,70,325.07,0.06,16.25,20,5282.39,0.11,293.47,21,0,0,1,13,12,40,30,13,false
+0,2,1,1,12,38.04,0.25,4,9.51,152.16,0.01,8.45,0,0,0,0,6,3,8,4,3,false
+36,15,1,8,193,1094.78,0.04,27.02,40.52,29576.11,0.36,1643.12,36,5,0,4,19,32,102,91,29,false
+37,8,3,7,250,1561.98,0.04,24.23,64.45,37848.02,0.52,2102.67,37,5,0,18,24,52,145,105,15,false
+12,4,1,2,55,272.48,0.12,8.31,32.81,2263.1,0.09,125.73,10,1,2,3,13,18,32,23,7,false
+21,6,4,4,80,419.83,0.06,15.5,27.09,6507.43,0.14,361.52,19,0,2,7,19,19,49,31,10,false
+10,1,1,1,40,166.8,0.27,3.65,45.65,609.45,0.06,33.86,8,3,2,2,5,13,21,19,1,false
+13,1,1,1,49,218.51,0.23,4.31,50.67,942.33,0.07,52.35,11,15,2,9,6,16,26,23,1,false
+23,5,1,5,76,365.36,0.07,13.43,27.2,4907.99,0.12,272.67,23,7,0,10,13,15,45,31,9,false
+77,11,5,3,153,863.51,0.05,19.55,44.17,16883.11,0.29,937.95,62,12,15,15,21,29,99,54,21,false
+4,1,1,1,17,53.89,0.31,3.2,16.84,172.44,0.02,9.58,4,0,0,0,4,5,9,8,1,false
+4,1,1,1,11,34.87,0.32,3.12,11.16,108.97,0.01,6.05,4,0,0,0,5,4,6,5,1,false
+9,1,1,1,31,114.71,0.05,21.67,5.29,2485.46,0.04,138.08,9,0,0,2,10,3,18,13,1,false
+0,2,1,1,12,38.04,0.25,4,9.51,152.16,0.01,8.45,0,0,0,0,6,3,8,4,3,false
+21,9,4,7,94,470,0.04,23.8,19.75,11186,0.16,621.44,18,0,3,2,17,15,52,42,15,false
+41,9,3,8,290,1833.36,0.04,26.36,69.56,48322.11,0.61,2684.56,41,7,0,19,24,56,167,123,17,false
+46,9,1,2,161,908.66,0.04,25.98,34.97,23608.35,0.3,1311.58,45,7,1,21,23,27,100,61,10,false
+4,1,1,1,15,51.89,0.28,3.6,14.41,186.81,0.02,10.38,4,0,0,3,6,5,9,6,1,false
+3,1,1,1,10,31.7,0.29,3.5,9.06,110.95,0.01,6.16,3,0,0,0,7,2,8,2,1,false
+12,2,1,1,27,112.59,0.16,6.25,18.01,703.67,0.04,39.09,12,0,0,2,10,8,17,10,3,false
+40,9,1,5,247,1492.97,0.03,33.54,44.52,50068.96,0.5,2781.61,40,3,0,16,25,41,137,110,17,false
+9,4,1,4,27,108,0.18,5.5,19.64,594,0.04,33,9,1,0,4,8,8,16,11,7,false
+12,2,1,2,23,94.01,0.25,4,23.5,376.05,0.03,20.89,12,3,0,2,8,9,14,9,3,false
+3,1,1,1,12,39.86,0.21,4.67,8.54,186.03,0.01,10.33,3,0,0,0,7,3,8,4,1,false
+103,19,6,7,716,4670.87,0.02,43.99,106.19,205454.31,1.56,11414.13,101,37,2,31,19,73,378,338,37,false
+5,2,1,2,20,78.14,0.18,5.71,13.67,446.5,0.03,24.81,5,0,0,1,8,7,10,10,3,false
+16,4,3,3,69,351.03,0.1,9.9,35.44,3476.92,0.12,193.16,16,2,0,2,13,21,37,32,7,false
+0,2,1,1,12,39.86,0.33,3,13.29,119.59,0.01,6.64,0,0,0,0,6,4,8,4,3,false
+8,3,1,3,31,133.98,0.17,6,22.33,803.88,0.04,44.66,8,0,0,1,10,10,19,12,5,false
+77,14,6,10,555,3763.65,0.02,45,83.64,169364.46,1.25,9409.14,77,9,0,25,30,80,315,240,27,false
+8,1,1,1,31,124,0.5,2,62,248,0.04,13.78,8,0,0,1,4,12,19,12,1,false
+15,3,1,2,51,233.83,0.09,10.58,22.11,2473.23,0.08,137.4,13,3,2,6,11,13,26,25,5,false
+5,1,1,1,12,39.86,0.21,4.67,8.54,186.03,0.01,10.33,5,0,0,2,7,3,8,4,1,false
+12,3,3,1,32,135.93,0.12,8.25,16.48,1121.45,0.05,62.3,12,4,0,4,11,8,20,12,5,false
+44,11,3,8,324,2098.14,0.03,31.21,67.22,65489.41,0.7,3638.3,44,5,0,19,28,61,188,136,21,false
+4,1,1,1,20,71.7,0.25,4,17.92,286.8,0.02,15.93,4,2,0,2,6,6,12,8,1,false
+15,3,1,3,41,174.17,0.09,11,15.83,1915.82,0.06,106.43,14,1,1,5,11,8,25,16,5,false
+52,4,1,1,224,1312.19,0.05,19.73,66.5,25890.47,0.44,1438.36,41,29,11,24,19,39,143,81,7,false
+4,1,1,1,8,22.46,0.4,2.5,8.98,56.15,0.01,3.12,4,0,0,0,5,2,6,2,1,false
+12,3,1,3,64,317.07,0.06,16,19.82,5073.1,0.11,281.84,12,0,0,1,16,15,34,30,5,false
+7,3,3,3,24,98.1,0.2,5.06,19.38,496.63,0.03,27.59,7,1,0,1,9,8,15,9,5,false
+8,2,1,2,29,116,0.1,10,11.6,1160,0.04,64.44,8,0,0,2,10,6,17,12,3,false
+28,5,3,4,102,535.29,0.04,24.44,21.9,13084.83,0.18,726.94,28,0,0,6,20,18,58,44,9,false
+155,26,17,11,604,4287.21,0.02,44.73,95.85,191759.06,1.43,10653.28,143,7,12,101,34,103,333,271,46,false
+9,2,1,2,37,165,0.14,7.08,23.29,1168.74,0.05,64.93,9,2,0,4,10,12,20,17,3,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,2,0,1,1,4,3,4,3,1,false
+31,3,1,1,252,1517.64,0.06,17.4,87.22,26406.88,0.51,1467.05,31,27,0,12,15,50,136,116,5,false
+3,1,1,1,10,31.7,0.29,3.5,9.06,110.95,0.01,6.16,3,0,0,0,7,2,8,2,1,false
+49,10,3,10,326,2094.96,0.04,25.56,81.98,53537.93,0.7,2974.33,49,8,0,19,23,63,186,140,19,false
+37,6,1,2,97,541.74,0.07,13.93,38.89,7545.68,0.18,419.2,37,0,0,4,20,28,58,39,11,false
+15,2,1,2,60,275.1,0.14,6.9,39.87,1898.17,0.09,105.45,13,7,2,5,9,15,37,23,3,false
+18,1,1,1,84,416.15,0.11,9.05,46,3765.19,0.14,209.18,18,2,0,8,10,21,46,38,1,false
+144,36,1,17,1070,7270.02,0.01,87.53,83.06,636348.83,2.42,35352.71,102,24,42,62,29,82,575,495,71,false
+39,8,1,8,175,977.37,0.04,24.9,39.25,24336.47,0.33,1352.03,39,3,0,5,18,30,92,83,15,false
+19,8,8,8,85,428.77,0.05,18.35,23.36,7869.25,0.14,437.18,19,1,0,1,16,17,46,39,15,false
+13,2,1,1,43,188.87,0.14,7.13,26.51,1345.7,0.06,74.76,13,0,0,1,9,12,24,19,3,false
+89,34,17,15,470,3199.46,0.02,53.33,59.99,170637.7,1.07,9479.87,87,0,2,12,40,72,278,192,55,false
+70,20,1,19,213,1346.57,0.04,25.62,52.55,34502.44,0.45,1916.8,70,0,0,24,31,49,132,81,22,false
+21,3,1,3,64,322.84,0.1,9.95,32.45,3211.42,0.11,178.41,21,1,0,3,14,19,37,27,4,false
+8,1,1,1,19,60.23,0.67,1.5,40.15,90.34,0.02,5.02,8,0,0,1,3,6,13,6,1,false
+40,6,3,6,273,1735.61,0.03,31.11,55.79,53996.81,0.58,2999.82,40,7,0,18,28,54,153,120,11,false
+48,3,1,1,284,1815.42,0.07,15.11,120.16,27428.6,0.61,1523.81,46,8,2,13,15,69,145,139,5,false
+31,3,1,1,252,1517.64,0.06,17.4,87.22,26406.88,0.51,1467.05,31,27,0,11,15,50,136,116,5,false
+78,12,1,10,281,1728.08,0.03,39.72,43.51,68640.9,0.58,3813.38,76,3,2,16,28,43,159,122,19,false
+5,1,1,1,12,39.86,0.21,4.67,8.54,186.03,0.01,10.33,5,0,0,2,7,3,8,4,1,false
+46,10,3,9,335,2174.77,0.04,27.5,79.08,59806.2,0.72,3322.57,46,7,0,20,25,65,192,143,19,false
+5,2,1,2,21,85.84,0.13,7.86,10.92,674.43,0.03,37.47,5,0,0,4,10,7,10,11,3,false
+69,13,7,8,378,2441.67,0.04,26.83,90.99,65518.01,0.81,3639.89,68,34,1,26,22,66,217,161,25,false
+54,7,1,6,154,894.33,0.05,20.71,43.19,18517.95,0.3,1028.77,52,12,2,12,22,34,90,64,12,false
+54,5,1,1,507,3543.26,0.04,23.87,148.42,84587.05,1.18,4699.28,54,2,0,19,21,106,266,241,9,false
+141,36,1,17,1056,7133.16,0.01,89.75,79.48,640223.79,2.38,35567.99,99,24,42,56,29,79,567,489,71,false
+21,5,5,3,111,582.52,0.04,24,24.27,13980.48,0.19,776.69,21,0,0,1,19,19,63,48,9,false
+13,3,1,3,45,200.67,0.1,10.5,19.11,2107.08,0.07,117.06,13,1,0,1,11,11,24,21,5,false
+7,3,1,1,29,113.3,0.1,9.75,11.62,1104.67,0.04,61.37,7,0,0,1,9,6,16,13,5,false
+10,1,1,1,32,130.8,0.26,3.82,34.26,499.41,0.04,27.75,10,0,0,3,6,11,18,14,1,false
+41,2,1,2,343,2149.51,0.04,28.31,75.92,60857.94,0.72,3381,41,12,0,14,21,56,192,151,3,false
+42,6,1,6,221,1401.11,0.12,8.26,169.61,11574.36,0.47,643.02,37,10,5,5,12,69,126,95,11,false
+16,7,7,3,97,426.05,0.05,22,19.37,9373.21,0.14,520.73,16,2,0,8,11,10,57,40,13,false
+28,7,5,7,125,694.32,0.06,15.87,43.76,11016.6,0.23,612.03,28,7,0,8,17,30,69,56,13,false
+31,3,1,1,252,1517.64,0.06,17.4,87.22,26406.88,0.51,1467.05,31,27,0,12,15,50,136,116,5,false
+5,2,1,2,24,101.95,0.11,9.43,10.81,961.25,0.03,53.4,5,0,0,2,12,7,13,11,3,false
+8,1,1,1,25,97.67,0.18,5.71,17.09,558.13,0.03,31.01,8,0,0,2,8,7,15,10,1,false
+32,4,1,4,102,556.86,0.07,13.54,41.14,7538.26,0.19,418.79,31,12,1,6,17,27,59,43,7,false
+83,15,5,6,558,3537.64,0.02,40.15,88.12,142018.98,1.18,7889.94,83,34,0,24,19,62,296,262,29,false
+4,1,1,1,8,20.68,0.67,1.5,13.79,31.02,0.01,1.72,4,0,0,5,3,3,5,3,1,false
+39,8,5,8,134,767.54,0.05,18.7,41.04,14355.42,0.26,797.52,37,0,2,2,21,32,77,57,13,false
+9,3,1,2,37,157.17,0.07,14.57,10.79,2290.24,0.05,127.24,9,1,0,1,12,7,20,17,5,false
+5,1,1,1,13,39,0.33,3,13,117,0.01,6.5,5,0,0,0,4,4,7,6,1,false
+3,3,1,2,32,135.93,0.11,8.89,15.29,1208.3,0.05,67.13,3,0,0,0,10,9,16,16,5,false
+9,1,1,1,65,322.02,0.11,9.16,35.16,2949.05,0.11,163.84,9,2,0,5,12,19,36,29,1,false
+31,7,5,4,125,660.68,0.03,32.08,20.59,21196.67,0.22,1177.59,28,19,3,14,21,18,70,55,13,false
+37,14,5,1,174,817.88,0.03,29.7,27.54,24290.93,0.27,1349.5,36,20,1,16,11,15,93,81,27,false
+50,10,5,7,351,2300.66,0.03,32.88,69.97,75642.93,0.77,4202.39,50,19,0,22,28,66,196,155,19,false
+13,1,1,1,70,312.16,0.1,10.38,30.06,3241.66,0.1,180.09,13,0,0,6,9,13,40,30,1,false
+76,8,1,4,473,2946.23,0.04,26.51,111.14,78099.28,0.98,4338.85,76,13,0,48,14,61,242,231,15,false
+31,3,1,1,252,1517.64,0.06,17.4,87.22,26406.88,0.51,1467.05,31,27,0,11,15,50,136,116,5,false
+79,23,1,22,243,1569.64,0.03,28.96,54.19,45461.48,0.52,2525.64,79,0,0,27,34,54,151,92,25,false
+12,2,1,2,42,201.91,0.13,7.5,26.92,1514.32,0.07,84.13,11,1,1,4,12,16,22,20,3,false
+5,1,1,1,8,20.68,0.5,2,10.34,41.36,0.01,2.3,5,0,0,1,4,2,6,2,1,false
+44,6,1,3,182,1052.21,0.05,22.17,47.47,23323.93,0.35,1295.77,43,27,1,11,19,36,98,84,11,false
+7,2,1,2,20,76.15,0.2,5,15.23,380.74,0.03,21.15,7,2,0,1,7,7,10,10,3,false
+8,2,1,2,33,149.28,0.1,10.4,14.35,1552.49,0.05,86.25,8,0,0,1,13,10,17,16,3,false
+14,5,3,3,56,280,0.1,10.11,27.69,2831.11,0.09,157.28,14,1,0,1,14,18,30,26,9,false
+4,3,3,3,23,85.11,0.15,6.75,12.61,574.49,0.03,31.92,4,0,0,0,9,4,17,6,5,false
+88,36,15,24,516,3538.72,0.03,29.92,118.25,105895.19,1.18,5883.07,84,1,4,13,23,93,274,242,71,false
+31,7,5,4,125,669.69,0.03,28.88,23.19,19337.41,0.22,1074.3,26,19,5,19,21,20,70,55,13,false
+40,7,3,6,167,969.83,0.06,17.53,55.34,16997.52,0.32,944.31,40,16,0,20,18,38,93,74,13,false
+11,4,1,2,52,244.42,0.07,14,17.46,3421.92,0.08,190.11,9,0,2,5,14,12,28,24,7,false
+21,6,5,6,110,585.41,0.07,15,39.03,8781.18,0.2,487.84,21,7,0,9,15,25,60,50,11,false
+28,7,5,7,125,694.32,0.06,15.87,43.76,11016.6,0.23,612.03,28,7,0,8,17,30,69,56,13,false
+50,3,1,2,440,2856.42,0.04,28,102.01,79979.63,0.95,4443.31,50,13,0,17,20,70,244,196,5,false
+9,1,1,1,64,276.6,0.17,6,46.1,1659.62,0.09,92.2,9,9,0,7,6,14,36,28,1,false
+33,6,5,4,108,609.54,0.11,9.14,66.7,5570.49,0.2,309.47,33,4,0,8,14,36,61,47,11,false
+21,2,1,2,99,515.74,0.07,14.48,35.63,7465.89,0.17,414.77,21,3,0,8,16,21,61,38,3,false
+106,48,1,2,1007,5430.06,0.01,115.43,47.04,626797.86,1.81,34822.1,103,0,3,1,13,29,492,515,95,false
+6,2,1,1,21,77.71,0.07,15,5.18,1165.64,0.03,64.76,6,1,0,0,10,3,12,9,3,false
+12,4,1,1,48,220.08,0.1,10.05,21.91,2210.79,0.07,122.82,12,0,0,1,13,11,31,17,7,false
+6,1,1,1,10,30,0.22,4.5,6.67,135,0.01,7.5,6,0,0,2,6,2,7,3,1,false
+50,20,12,7,307,1813.42,0.01,70.29,25.8,127457.2,0.6,7080.96,50,6,0,4,32,28,184,123,37,false
+31,7,5,4,125,665.24,0.03,30.39,21.89,20219.83,0.22,1123.32,27,21,4,19,21,19,70,55,13,false
+49,1,1,1,283,1628.63,0.18,5.64,288.76,9185.49,0.54,510.31,46,4,3,5,4,50,142,141,1,false
+55,15,1,14,159,957.56,0.05,19.67,48.69,18831.94,0.32,1046.22,55,0,0,19,26,39,100,59,17,false
+21,6,5,6,109,576.11,0.07,14,41.15,8065.52,0.19,448.08,21,7,0,9,14,25,59,50,11,false
+76,8,1,4,473,2946.23,0.04,26.51,111.14,78099.28,0.98,4338.85,76,13,0,48,14,61,242,231,15,false
+29,1,1,1,184,1112.17,0.09,10.79,103.05,12003.03,0.37,666.83,29,2,0,8,13,53,96,88,1,false
+34,5,1,5,100,542.63,0.08,13.04,41.62,7074.24,0.18,393.01,34,3,0,7,16,27,56,44,7,false
+16,4,1,3,59,283.63,0.07,13.5,21.01,3829.06,0.09,212.73,16,3,0,0,14,14,32,27,7,false
+5,2,1,1,19,68.11,0.24,4.2,16.21,286.08,0.02,15.89,5,0,0,0,7,5,13,6,3,false
+20,10,1,6,113,601.38,0.05,22.09,27.22,13284.98,0.2,738.05,20,0,0,5,18,22,59,54,19,false
+9,2,1,2,38,158.46,0.14,7.2,22.01,1140.89,0.05,63.38,9,1,0,3,8,10,20,18,3,false
+10,4,1,1,37,154.29,0.05,22.1,6.98,3409.75,0.05,189.43,10,0,0,5,13,5,20,17,7,false
+13,2,1,1,75,324.14,0.08,12.33,26.28,3997.78,0.11,222.1,12,1,1,2,8,12,38,37,3,false
+40,3,1,2,334,2099.32,0.04,28.18,74.49,59167.8,0.7,3287.1,39,8,1,15,21,57,181,153,5,false
+5,1,1,1,17,62.91,0.24,4.08,15.41,256.87,0.02,14.27,5,9,0,3,7,6,10,7,1,false
+21,6,5,6,110,585.41,0.07,15,39.03,8781.18,0.2,487.84,21,7,0,9,15,25,60,50,11,false
+9,1,1,1,62,301.19,0.09,10.56,28.52,3181.37,0.1,176.74,9,1,0,5,13,16,36,26,1,false
+23,1,1,1,85,394.73,0.35,2.86,137.84,1130.36,0.13,62.8,23,0,0,2,3,22,43,42,1,false
+12,2,1,1,47,183.62,0.14,7.33,25.04,1346.57,0.06,74.81,11,2,1,3,6,9,25,22,3,false
+36,5,1,5,115,631.56,0.07,14.07,44.89,8885.44,0.21,493.64,36,3,0,7,16,29,64,51,7,false
+54,11,1,7,214,1284,0.04,27.6,46.52,35438.4,0.43,1968.8,54,7,0,17,24,40,122,92,15,false
+6,2,1,2,11,33,0.5,2,16.5,66,0.01,3.67,6,0,0,2,4,4,7,4,3,false
+152,53,1,43,2134,15811.64,0,270.66,58.42,4279633.01,5.27,237757.4,152,0,0,14,66,104,1281,853,72,false
+20,7,4,3,127,689.14,0.05,20.52,33.58,14141.06,0.23,785.61,20,0,0,1,18,25,70,57,13,false
+23,1,1,1,218,1080.01,0.06,17.04,63.37,18407.21,0.36,1022.62,23,7,0,9,8,23,120,98,1,false
+49,6,3,4,254,1535.28,0.03,31.02,49.49,47629.26,0.51,2646.07,49,30,0,20,23,43,138,116,11,false
+21,6,5,6,109,576.11,0.07,14,41.15,8065.52,0.19,448.08,21,7,0,9,14,25,59,50,11,false
+16,2,1,2,73,347.11,0.14,7.37,47.11,2557.63,0.12,142.09,16,0,0,8,8,19,38,35,3,false
+22,4,1,4,73,365,0.07,14,26.07,5110,0.12,283.89,21,3,1,8,16,16,45,28,5,false
+42,5,1,5,146,858.87,0.07,14.05,61.13,12066.02,0.29,670.33,37,22,5,16,18,41,82,64,9,false
+18,1,1,1,123,584.85,0.19,5.3,110.26,3102.25,0.19,172.35,18,5,0,5,4,23,62,61,1,false
+16,6,1,1,74,325.03,0.06,16.82,19.33,5466.44,0.11,303.69,16,0,0,3,10,11,37,37,11,false
+4,2,1,2,9,28.53,0.33,3,9.51,85.59,0.01,4.75,4,0,0,0,6,3,6,3,3,false
+51,12,10,9,272,1644.08,0.03,29.75,55.26,48911.24,0.55,2717.29,50,1,1,5,22,44,153,119,23,false
+60,13,12,2,213,1287.46,0.03,28.96,44.45,37289.12,0.43,2071.62,56,4,4,30,25,41,118,95,25,false
+77,12,1,7,393,2532.08,0.02,53.47,47.35,135395.77,0.84,7521.99,71,20,6,21,33,54,218,175,20,false
+23,6,1,1,141,765.1,0.03,30.07,25.45,23005.27,0.26,1278.07,21,9,2,13,21,22,78,63,11,false
+18,3,3,2,83,444.68,0.07,13.7,32.47,6090.14,0.15,338.34,18,10,0,8,18,23,48,35,5,false
+19,5,1,4,58,284.6,0.13,8,35.57,2276.8,0.09,126.49,17,9,2,6,12,18,34,24,9,false
+27,6,1,5,185,1079.08,0.04,24.5,44.04,26437.57,0.36,1468.75,27,6,0,9,21,36,101,84,11,false
+12,3,1,3,22,85.95,0.22,4.5,19.1,386.78,0.03,21.49,11,0,1,5,9,6,16,6,4,false
+30,6,1,3,129,691.12,0.06,16.07,43,11109.18,0.23,617.18,27,5,3,13,14,27,67,62,11,false
+89,20,12,10,337,2198.44,0.04,23.83,92.24,52396.16,0.73,2910.9,87,35,2,27,23,69,194,143,39,false
+10,5,1,2,66,320.63,0.04,23.38,13.72,7494.65,0.11,416.37,9,3,1,2,17,12,33,33,9,false
+6,1,1,1,19,68.11,0.31,3.21,21.19,218.94,0.02,12.16,6,0,0,0,5,7,10,9,1,false
+50,19,11,12,294,1757.32,0.03,36.22,48.52,63649.28,0.59,3536.07,46,0,4,3,22,41,159,135,37,false
+11,1,1,1,55,220,0.22,4.5,48.89,990,0.07,55,11,0,0,4,4,12,28,27,1,false
+11,2,1,2,24,86.04,0.35,2.86,30.11,245.83,0.03,13.66,10,7,1,6,5,7,16,8,3,false
+5,1,1,1,23,94.01,0.2,5.06,18.57,475.93,0.03,26.44,5,1,0,4,9,8,14,9,1,false
+122,15,1,2,532,3503.2,0.02,60.25,58.14,211067.8,1.17,11725.99,120,0,2,18,32,64,291,241,17,false
+39,6,3,4,133,779.11,0.06,15.89,49.03,12381.56,0.26,687.86,39,11,0,8,21,37,77,56,11,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,3,0,1,4,3,4,3,1,false
+27,5,1,3,142,728.36,0.04,22.33,32.61,16266.67,0.24,903.7,27,3,0,12,14,21,75,67,9,false
+12,3,1,3,22,85.95,0.22,4.5,19.1,386.78,0.03,21.49,9,2,3,5,9,6,16,6,4,false
+5,1,1,1,25,100,0.14,7.07,14.14,707.14,0.03,39.29,5,0,0,1,9,7,14,11,1,false
+130,31,23,13,560,3775.22,0.02,42.69,88.43,161178.36,1.26,8954.35,126,60,4,32,27,80,307,253,61,false
+84,14,9,8,295,1996.61,0.03,30.58,65.3,61049.26,0.67,3391.63,83,16,1,17,37,72,176,119,24,false
+42,2,1,2,471,2867.19,0.04,28.52,100.54,81768.15,0.96,4542.68,42,2,0,3,14,54,251,220,3,false
+24,6,4,4,111,569.35,0.05,19.5,29.2,11102.33,0.19,616.8,24,3,0,4,15,20,59,52,11,false
+4,1,1,1,7,19.65,0.4,2.5,7.86,49.13,0.01,2.73,4,0,0,0,5,2,5,2,1,false
+12,7,1,4,84,423.73,0.09,10.86,39.03,4600.49,0.14,255.58,12,0,0,0,12,21,46,38,13,false
+17,3,1,3,63,315,0.1,9.72,32.4,3062.5,0.11,170.14,17,0,0,9,14,18,38,25,5,false
+118,21,14,10,440,2942.06,0.04,22.73,129.41,66879.33,0.98,3715.52,101,38,17,29,19,84,239,201,41,false
+9,2,1,2,18,59.79,0.33,3,19.93,179.38,0.02,9.97,8,5,1,6,5,5,12,6,3,false
+39,6,3,4,133,779.11,0.06,15.89,49.03,12381.56,0.26,687.86,39,11,0,8,21,37,77,56,11,false
+5,1,1,1,17,62.91,0.24,4.08,15.41,256.87,0.02,14.27,5,9,0,3,7,6,10,7,1,false
+69,11,1,7,270,1785.97,0.04,22.5,79.38,40184.36,0.6,2232.46,60,8,9,31,30,68,168,102,18,false
+67,11,5,4,284,1774.41,0.04,28.21,62.91,50051.79,0.59,2780.66,64,33,3,13,23,53,154,130,21,false
+5,1,1,1,21,84,0.22,4.5,18.67,378,0.03,21,5,2,0,2,8,8,12,9,1,false
+4,2,1,1,14,48.43,0.16,6.13,7.91,296.65,0.02,16.48,4,0,0,0,7,4,7,7,3,false
+28,4,1,2,108,519.19,0.05,19.13,27.15,9929.59,0.17,551.64,26,7,2,6,12,16,57,51,7,false
+3,1,1,1,1,0,0,0,0,0,0,0,3,0,0,0,1,0,1,0,1,false
+6,2,1,2,17,64.73,0.21,4.67,13.87,302.05,0.02,16.78,5,3,1,2,8,6,10,7,3,false
+34,6,6,6,176,1026.58,0.06,17,60.39,17452.01,0.34,969.56,34,5,0,19,19,38,108,68,11,false
+63,20,13,2,375,2363.92,0.02,43.1,54.85,101875.76,0.79,5659.76,60,26,3,31,27,52,209,166,39,false
+22,4,1,2,103,555.41,0.05,20.91,26.56,11613.09,0.19,645.17,21,11,1,9,20,22,57,46,7,false
+11,2,1,1,63,312.11,0.06,16.39,19.04,5116.45,0.1,284.25,11,7,0,4,17,14,36,27,3,false
+49,6,3,4,254,1535.28,0.03,31.02,49.49,47629.26,0.51,2646.07,49,30,0,20,23,43,138,116,11,false
+8,2,1,2,32,130.8,0.15,6.67,19.62,871.99,0.04,48.44,8,1,0,2,8,9,17,15,3,false
+13,3,1,1,84,416.15,0.05,18.67,22.29,7768.18,0.14,431.57,13,0,0,2,16,15,49,35,5,false
+20,2,1,2,51,245.18,0.13,7.44,32.95,1824.39,0.08,101.36,20,0,0,2,11,17,28,23,3,false
+12,2,1,2,46,184,0.09,11,16.73,2024,0.06,112.44,12,0,0,0,8,8,24,22,3,false
+4,2,1,2,25,102.19,0.12,8.4,12.17,858.37,0.03,47.69,4,0,0,0,12,5,18,7,3,false
+5,2,1,2,17,64.73,0.21,4.67,13.87,302.05,0.02,16.78,4,0,1,1,8,6,10,7,3,false
+29,9,9,5,136,723.78,0.07,15.35,47.16,11107.27,0.24,617.07,29,2,0,15,14,26,79,57,17,false
+76,21,3,2,331,2121.51,0.03,30.42,69.75,64529.21,0.71,3584.96,73,35,3,122,25,60,185,146,41,false
+45,11,8,3,203,1227.01,0.04,27.74,44.23,34042.1,0.41,1891.23,43,20,2,24,25,41,112,91,21,false
+18,3,3,2,83,444.68,0.07,13.7,32.47,6090.14,0.15,338.34,18,10,0,8,18,23,48,35,5,false
+12,1,1,1,61,249.34,0.22,4.62,54.02,1150.78,0.08,63.93,12,0,0,5,4,13,31,30,1,false
+28,7,3,2,177,948.29,0.02,41.68,22.75,39528.58,0.32,2196.03,26,9,2,8,22,19,105,72,13,false
+20,2,1,2,53,254.79,0.13,7.76,32.81,1978.37,0.08,109.91,20,0,0,2,11,17,29,24,3,false
+22,1,1,1,144,786.16,0.06,16,49.13,12578.53,0.26,698.81,22,22,0,11,16,28,88,56,1,false
+8,2,1,2,25,95.18,0.18,5.5,17.31,523.51,0.03,29.08,7,0,1,1,7,7,14,11,3,false
+12,2,1,1,31,114.71,0.17,6,19.12,688.28,0.04,38.24,11,0,1,1,6,7,17,14,3,false
+4,1,1,1,7,19.65,0.4,2.5,7.86,49.13,0.01,2.73,4,0,0,0,5,2,5,2,1,false
+46,14,7,11,221,1315.88,0.02,42.62,30.87,56084.29,0.44,3115.79,45,1,1,13,29,33,124,97,26,false
+17,3,1,3,73,374.44,0.08,12.63,29.64,4729.74,0.12,262.76,17,0,0,10,16,19,43,30,5,false
+76,16,3,4,466,2994.64,0.02,44.63,67.09,133660.73,1,7425.6,73,22,3,41,26,60,260,206,31,false
+11,5,5,3,42,189.99,0.1,9.75,19.49,1852.4,0.06,102.91,10,3,1,6,13,10,27,15,9,false
+5,1,1,1,22,69.74,0.18,5.63,12.4,392.28,0.02,21.79,5,0,0,2,5,4,13,9,1,false
+22,3,3,2,107,591.02,0.07,14.79,39.97,8738.67,0.2,485.48,22,14,0,12,18,28,61,46,5,false
+39,6,3,4,133,779.11,0.06,15.89,49.03,12381.56,0.26,687.86,39,11,0,8,21,37,77,56,11,false
+29,9,9,5,136,723.78,0.07,15.35,47.16,11107.27,0.24,617.07,29,0,0,14,14,26,79,57,17,false
+14,2,1,1,50,226.18,0.1,10.08,22.43,2280.63,0.08,126.7,14,1,0,7,11,12,28,22,3,false
+14,3,3,2,39,181.11,0.12,8.67,20.9,1569.62,0.06,87.2,14,0,0,3,13,12,23,16,5,false
+14,1,1,1,81,393.5,0.1,10.24,38.45,4027.55,0.13,223.75,14,13,0,4,12,17,52,29,1,false
+20,3,1,2,91,450.83,0.07,13.89,32.45,6264.19,0.15,348.01,19,0,1,0,12,19,47,44,5,false
+20,3,1,1,88,366.95,0.07,13.36,27.46,4903.83,0.12,272.44,17,0,3,7,7,11,46,42,5,false
+33,9,4,5,223,1338,0.03,39.36,34,52659.86,0.45,2925.55,28,1,5,1,29,35,128,95,15,false
+20,1,1,1,89,408.06,0.19,5.33,76.51,2176.33,0.14,120.91,20,0,0,5,6,18,57,32,1,false
+17,3,1,3,73,374.44,0.08,12.63,29.64,4729.74,0.12,262.76,17,0,0,10,16,19,43,30,5,false
+15,3,1,3,50,242.9,0.12,8.4,28.92,2040.35,0.08,113.35,14,0,1,5,14,15,32,18,4,false
+15,3,3,1,59,305.03,0.09,11.5,26.52,3507.79,0.1,194.88,15,8,0,5,18,18,36,23,5,false
+39,6,3,4,133,779.11,0.06,15.89,49.03,12381.56,0.26,687.86,39,11,0,8,21,37,77,56,11,false
+42,11,1,2,136,759.55,0.03,29,26.19,22027.09,0.25,1223.73,38,12,4,27,24,24,78,58,19,false
+11,2,1,2,35,160.47,0.14,7,22.92,1123.32,0.05,62.41,11,0,0,7,12,12,21,14,3,false
+22,3,1,1,123,591.3,0.08,12.2,48.47,7213.92,0.2,400.77,22,5,0,10,8,20,62,61,5,false
+13,1,1,1,89,445,0.14,7.17,62.09,3189.17,0.15,177.18,13,6,0,5,8,24,46,43,1,false
+7,1,1,1,17,64.73,0.29,3.5,18.49,226.54,0.02,12.59,7,1,0,1,7,7,10,7,1,false
+8,3,1,3,41,160.18,0.06,17,9.42,2723.1,0.05,151.28,8,0,0,0,10,5,24,17,5,false
+10,5,5,5,49,230.32,0.06,16,14.4,3685.14,0.08,204.73,10,2,0,1,16,10,29,20,9,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+88,34,15,22,466,3109.35,0.02,44.8,69.41,139298.89,1.04,7738.83,88,1,0,9,32,70,270,196,59,false
+17,3,1,3,73,371.38,0.08,13.33,27.85,4951.8,0.12,275.1,17,0,0,10,16,18,43,30,5,false
+10,3,1,3,38,166.91,0.14,7.27,22.95,1213.88,0.06,67.44,8,1,2,1,10,11,22,16,5,false
+12,3,1,3,49,230.32,0.09,11.67,19.74,2687.08,0.08,149.28,12,1,0,7,14,12,29,20,5,false
+15,3,3,1,59,305.03,0.09,11.5,26.52,3507.79,0.1,194.88,15,8,0,5,18,18,36,23,5,false
+11,2,1,1,63,312.11,0.06,16.39,19.04,5116.45,0.1,284.25,11,7,0,4,17,14,36,27,3,false
+84,14,1,6,260,1565.82,0.02,45.43,34.47,71132.77,0.52,3951.82,82,10,2,57,30,35,154,106,23,false
+19,4,1,4,91,466.76,0.08,13,35.9,6067.94,0.16,337.11,19,0,0,11,14,21,52,39,7,false
+20,4,1,4,65,309.07,0.09,11.61,26.63,3587.39,0.1,199.3,18,2,2,6,13,14,40,25,6,false
+91,15,1,15,382,2300.54,0.02,47.92,48.01,110234.42,0.77,6124.13,90,0,1,21,23,42,207,175,16,false
+5,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,5,0,0,2,6,6,8,6,1,false
+10,2,1,1,68,311.78,0.15,6.79,45.89,2118.25,0.1,117.68,10,9,0,2,7,17,35,33,3,false
+48,5,1,5,197,1211.5,0.05,20.2,59.96,24477.25,0.4,1359.85,48,4,0,11,22,49,107,90,9,false
+10,3,1,2,37,159.91,0.08,12.75,12.54,2038.87,0.05,113.27,10,1,0,1,12,8,20,17,5,false
+42,15,10,8,446,2733.66,0.02,59.06,46.29,161452.64,0.91,8969.59,39,2,3,12,29,41,279,167,27,false
+5,1,1,1,31,126.71,0.13,7.88,16.09,997.85,0.04,55.44,5,0,0,1,9,8,17,14,1,false
+11,2,1,2,35,160.47,0.14,7,22.92,1123.32,0.05,62.41,11,0,0,7,12,12,21,14,3,false
+10,3,1,1,35,148.68,0.06,16.25,9.15,2416.01,0.05,134.22,10,0,0,3,13,6,20,15,5,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,1,0,1,4,3,4,3,1,false
+13,2,1,2,81,389.4,0.06,18,21.63,7009.12,0.13,389.4,13,3,0,7,14,14,45,36,3,false
+83,20,15,7,325,2109.85,0.03,39.17,53.86,82648.01,0.7,4591.56,80,23,3,32,32,58,183,142,39,false
+45,11,8,3,203,1227.01,0.04,27.74,44.23,34042.1,0.41,1891.23,43,20,2,24,25,41,112,91,21,false
+19,4,1,4,91,466.76,0.08,13,35.9,6067.94,0.16,337.11,19,0,0,11,14,21,52,39,7,false
+7,1,1,1,16,55.35,0.24,4.2,13.18,232.47,0.02,12.92,7,0,0,3,6,5,9,7,1,false
+13,2,1,2,97,485,0.07,14.03,34.58,6802.76,0.16,377.93,11,3,2,3,13,19,56,41,3,false
+13,1,1,1,73,315.5,0.11,8.88,35.51,2803.1,0.11,155.73,13,3,0,1,7,13,40,33,1,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+20,5,1,4,149,751.61,0.02,43.85,17.14,32955.41,0.25,1830.86,20,0,0,0,20,13,92,57,9,false
+11,2,1,2,35,160.47,0.14,7,22.92,1123.32,0.05,62.41,11,0,0,7,12,12,21,14,3,false
+7,3,1,1,40,172.88,0.09,11,15.72,1901.65,0.06,105.65,6,8,1,8,11,9,22,18,5,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,1,4,3,4,3,1,false
+7,1,1,1,31,111.13,0.27,3.75,29.64,416.75,0.04,23.15,7,0,0,4,4,8,16,15,1,false
+83,20,15,7,325,2115.03,0.02,40.4,52.36,85440.05,0.71,4746.67,80,22,3,32,33,58,183,142,39,false
+22,3,3,2,107,591.02,0.07,14.79,39.97,8738.67,0.2,485.48,22,14,0,12,18,28,61,46,5,false
+13,2,1,2,54,272.4,0.1,10.35,26.31,2820.11,0.09,156.67,13,0,0,8,16,17,32,22,3,false
+7,2,1,1,22,88,0.17,5.83,15.09,513.33,0.03,28.52,6,0,1,0,10,6,15,7,3,false
+51,8,5,4,136,775.26,0.07,14.29,54.24,11081.65,0.26,615.65,51,8,0,9,18,34,82,54,15,false
+5,1,1,1,14,46.51,0.27,3.75,12.4,174.4,0.02,9.69,4,3,1,0,6,4,9,5,1,false
+18,8,3,5,131,697.17,0.04,27.6,25.26,19238.64,0.23,1068.81,18,0,0,3,19,21,70,61,15,false
+4,1,1,1,49,208.15,0.1,10,20.81,2081.48,0.07,115.64,4,0,0,0,10,9,31,18,1,false
+20,4,1,4,86,454.54,0.07,13.91,32.68,6322.3,0.15,351.24,20,0,0,13,17,22,50,36,7,false
+15,7,7,1,79,371.33,0.06,17.5,21.22,6498.36,0.12,361.02,13,7,2,28,13,13,44,35,13,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,4,0,1,4,3,4,3,1,false
+35,2,1,1,213,1322.61,0.08,13.22,100.04,17485.4,0.44,971.41,35,4,0,8,15,59,109,104,3,false
+3,1,1,1,9,27,0.3,3.33,8.1,90,0.01,5,3,0,0,0,5,3,5,4,1,false
+15,3,3,1,59,305.03,0.09,11.5,26.52,3507.79,0.1,194.88,15,8,0,5,18,18,36,23,5,false
+17,2,1,2,107,573.26,0.07,14.72,38.94,8438.36,0.19,468.8,16,2,1,5,16,25,61,46,3,false
+18,7,1,3,124,650.74,0.06,16.19,40.19,10535.84,0.22,585.32,16,5,2,10,17,21,84,40,13,false
+61,10,5,2,392,2478.2,0.02,40.23,61.6,99691.06,0.83,5538.39,60,58,1,18,25,55,215,177,19,false
+10,2,1,1,115,527.27,0.03,36.4,14.49,19192.65,0.18,1066.26,7,3,3,1,14,10,63,52,3,false
+13,4,3,2,61,310.34,0.05,20.17,15.39,6258.43,0.1,347.69,13,0,0,1,22,12,39,22,7,false
+6,1,1,1,18,64.53,0.35,2.86,22.59,184.37,0.02,10.24,6,0,0,0,5,7,10,8,1,false
+22,5,5,4,100,535.76,0.07,14.52,36.9,7779.61,0.18,432.2,22,0,0,13,17,24,59,41,9,false
+6,2,1,1,29,120.93,0.13,7.5,16.12,906.96,0.04,50.39,5,7,1,9,10,8,17,12,3,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,1,0,1,4,3,4,3,1,false
+13,2,1,2,46,213.62,0.11,8.77,24.36,1873.26,0.07,104.07,13,1,0,8,12,13,27,19,3,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+15,3,3,1,59,305.03,0.09,11.5,26.52,3507.79,0.1,194.88,15,8,0,5,18,18,36,23,5,false
+10,5,5,5,45,208.97,0.06,16,13.06,3343.58,0.07,185.75,10,2,0,1,16,9,27,18,9,false
+10,1,1,1,22,85.95,0.17,6,14.33,515.71,0.03,28.65,10,0,0,1,9,6,14,8,1,false
+141,57,42,43,951,6928.42,0.02,59.64,116.17,413206.28,2.31,22955.9,135,3,6,16,34,122,523,428,110,false
+22,5,5,4,100,539.23,0.07,13.94,38.68,7516.89,0.18,417.61,22,0,0,12,17,25,59,41,9,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,1,0,1,4,3,4,3,1,false
+23,7,7,4,104,524.62,0.06,15.84,33.12,8311.04,0.17,461.72,23,0,0,11,14,19,61,43,13,false
+5,1,1,1,22,81.41,0.23,4.29,19,348.9,0.03,19.38,5,0,0,1,6,7,12,10,1,false
+83,20,15,7,325,2109.85,0.03,39.17,53.86,82648.01,0.7,4591.56,80,23,3,32,32,58,183,142,39,false
+40,7,1,3,330,2001.81,0.03,32.98,60.7,66017.11,0.67,3667.62,40,18,0,10,20,47,175,155,12,false
+21,6,6,2,87,438.86,0.05,20.19,21.74,8859.53,0.15,492.2,20,0,1,1,17,16,49,38,11,false
+45,10,3,8,319,2049.98,0.02,41.71,49.15,85502.74,0.68,4750.15,45,0,0,3,31,55,171,148,19,false
+18,6,6,3,78,386.43,0.08,13.18,29.33,5091.75,0.13,282.87,18,0,0,9,14,17,46,32,11,false
+5,1,1,1,10,30,0.22,4.5,6.67,135,0.01,7.5,5,0,0,2,6,2,7,3,1,false
+20,4,1,4,90,457.87,0.08,13.3,34.43,6089.69,0.15,338.32,20,0,0,11,14,20,52,38,7,false
+83,20,15,7,325,2115.03,0.02,40.4,52.36,85440.05,0.71,4746.67,80,22,3,32,33,58,183,142,39,false
+5,2,1,2,26,114.2,0.12,8.13,14.06,927.88,0.04,51.55,5,0,0,2,13,8,16,10,3,false
+8,1,1,1,21,85.84,0.16,6.43,13.35,551.81,0.03,30.66,8,0,0,1,10,7,12,9,1,false
+71,23,19,19,377,2383.37,0.03,38.76,61.49,92377.54,0.79,5132.09,69,0,2,6,26,54,216,161,45,false
+14,3,1,3,47,215.49,0.16,6.43,33.52,1385.31,0.07,76.96,14,0,0,7,10,14,29,18,5,false
+5,1,1,1,10,30,0.22,4.5,6.67,135,0.01,7.5,5,0,0,2,6,2,7,3,1,false
+20,3,1,3,83,435.58,0.08,13.09,33.27,5702.11,0.15,316.78,20,3,0,12,16,22,47,36,5,false
+3,1,1,1,9,27,0.3,3.33,8.1,90,0.01,5,3,0,0,0,5,3,5,4,1,false
+8,4,3,1,31,126.71,0.07,14.4,8.8,1824.64,0.04,101.37,8,0,0,1,12,5,19,12,7,false
+14,2,1,1,129,661.68,0.06,15.91,41.58,10529.3,0.22,584.96,14,4,0,5,12,23,68,61,3,false
+8,1,1,1,41,164,0.1,10.29,15.94,1686.86,0.05,93.71,7,2,1,0,9,7,25,16,1,false
+3,2,1,2,37,157.17,0.07,14,11.23,2200.43,0.05,122.25,3,0,0,1,14,5,27,10,3,false
+62,18,12,11,319,1974.55,0.03,39.28,50.27,77553.76,0.66,4308.54,62,1,0,6,26,47,177,142,35,false
+22,3,1,3,74,370,0.12,8.11,45.57,3004.05,0.12,166.89,22,0,0,15,11,21,43,31,5,false
+5,1,1,1,11,34.87,0.19,5.25,6.64,183.06,0.01,10.17,5,0,0,2,7,2,8,3,1,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+10,4,3,1,35,148.68,0.07,13.71,10.84,2039.01,0.05,113.28,10,0,0,3,12,7,19,16,7,false
+13,2,1,1,98,485.51,0.07,14.53,33.42,7052.69,0.16,391.82,13,7,0,4,12,19,52,46,3,false
+5,1,1,1,27,85.59,0.13,7.5,11.41,641.91,0.03,35.66,4,2,1,0,5,4,15,12,1,false
+35,16,11,6,217,1306.85,0.03,38.26,34.15,50005.31,0.44,2778.07,28,12,7,7,29,36,122,95,31,false
+12,1,1,1,57,267.93,0.08,12.83,20.88,3438.37,0.09,191.02,12,0,0,0,14,12,35,22,1,false
+12,2,1,2,41,187.98,0.16,6.07,30.96,1141.33,0.06,63.41,12,0,0,8,10,14,24,17,3,false
+41,11,1,4,171,1001.71,0.04,22.67,44.18,22710.3,0.33,1261.68,34,31,7,11,23,35,102,69,17,false
+14,2,1,2,61,290.05,0.11,9.28,31.25,2692.01,0.1,149.56,14,1,0,8,11,16,34,27,3,false
+18,1,1,1,110,577.27,0.08,11.77,49.05,6794.05,0.19,377.45,16,0,2,3,12,26,59,51,1,false
+5,1,1,1,13,44.97,0.23,4.38,10.28,196.76,0.01,10.93,5,0,0,1,7,4,8,5,1,false
+26,7,1,3,120,610.5,0.03,31.67,19.28,19332.36,0.2,1074.02,21,5,5,7,19,15,70,50,13,false
+11,1,1,1,57,228,0.12,8.4,27.14,1915.2,0.08,106.4,11,3,0,4,6,10,29,28,1,false
+19,9,9,1,99,507.8,0.04,26.67,19.04,13541.31,0.17,752.29,19,0,0,1,20,15,59,40,17,false
+6,2,1,2,23,95.91,0.22,4.5,21.31,431.59,0.03,23.98,6,0,0,1,9,9,14,9,3,false
+5,1,1,1,10,30,0.22,4.5,6.67,135,0.01,7.5,5,0,0,2,6,2,7,3,1,false
+9,2,1,1,39,159.41,0.12,8.44,18.88,1346.14,0.05,74.79,9,0,0,6,8,9,20,19,3,false
+8,2,1,1,18,70.32,0.19,5.25,13.4,369.2,0.02,20.51,8,0,0,1,9,6,11,7,3,false
+83,13,1,7,703,4729.73,0.02,64.54,73.28,305254.16,1.58,16958.56,83,31,0,34,30,76,376,327,23,false
+10,4,1,2,51,230.7,0.07,14.3,16.12,3299.03,0.08,183.28,10,0,0,2,13,10,29,22,7,false
+140,43,18,27,920,6824.42,0.03,39.94,170.88,272550.45,2.27,15141.69,136,0,4,7,27,144,494,426,85,false
+5,1,1,1,10,30,0.22,4.5,6.67,135,0.01,7.5,5,0,0,2,6,2,7,3,1,false
+22,3,1,3,74,370,0.12,8.11,45.57,3004.05,0.12,166.89,22,0,0,14,11,21,43,31,5,false
+21,5,1,1,89,463.64,0.04,23.63,19.63,10953.53,0.15,608.53,19,7,2,9,21,16,53,36,9,false
+22,2,1,2,88,471.46,0.11,9.52,49.53,4487.33,0.16,249.3,22,2,0,10,13,28,47,41,3,false
+13,7,6,5,74,339.29,0.02,43.5,7.8,14758.99,0.11,819.94,13,0,0,2,18,6,45,29,13,false
+4,1,1,1,31,124,0.17,5.79,21.43,717.43,0.04,39.86,4,0,0,0,9,7,22,9,1,false
+12,3,1,2,75,384.7,0.08,12.37,31.09,4760.62,0.13,264.48,11,3,1,4,15,20,42,33,5,false
+12,2,1,2,41,187.98,0.16,6.07,30.96,1141.33,0.06,63.41,12,0,0,8,10,14,24,17,3,false
+18,1,1,1,110,577.27,0.08,11.77,49.05,6794.05,0.19,377.45,16,0,2,3,12,26,59,51,1,false
+43,13,12,7,254,1494.19,0.04,27.69,53.96,41377.61,0.5,2298.76,43,0,0,17,20,39,146,108,25,false
+5,1,1,1,12,41.51,0.33,3,13.84,124.54,0.01,6.92,5,0,0,1,6,5,7,5,1,false
+3,1,1,1,9,28.53,0.33,3,9.51,85.59,0.01,4.75,3,1,0,0,6,3,6,3,1,false
+7,2,1,2,23,85.11,0.1,10.13,8.41,861.74,0.03,47.87,7,0,0,0,9,4,14,9,3,false
+5,2,1,2,19,70.31,0.16,6.4,10.99,449.97,0.02,25,5,0,0,1,8,5,11,8,3,false
+13,1,1,1,33,134.89,0.17,5.78,23.35,779.34,0.04,43.3,13,0,0,0,8,9,20,13,1,false
+15,3,1,3,62,301.19,0.09,11.67,25.82,3513.94,0.1,195.22,15,1,0,9,14,15,37,25,5,false
+7,1,1,1,27,96.79,0.22,4.64,20.85,449.4,0.03,24.97,7,6,0,4,5,7,14,13,1,false
+36,6,1,6,107,573.26,0.09,11.67,49.14,6688.01,0.19,371.56,32,3,4,60,14,27,62,45,10,false
+7,2,1,2,26,98.99,0.17,6,16.5,593.95,0.03,33,7,2,0,4,7,7,14,12,3,false
+3,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,3,0,0,0,3,1,3,1,1,false
+11,1,1,1,55,229.35,0.26,3.86,59.46,884.62,0.08,49.15,11,0,0,0,4,14,28,27,1,false
+19,6,6,4,69,341.84,0.06,16,21.36,5469.43,0.11,303.86,18,0,1,1,16,15,39,30,11,false
+63,47,5,1,450,2668.83,0.02,52.22,51.11,139356.3,0.89,7742.02,62,0,1,1,24,37,289,161,84,false
+8,1,1,1,25,95.18,0.25,4,23.8,380.74,0.03,21.15,8,0,0,0,8,6,19,6,1,false
+3,1,1,1,7,19.65,0.4,2.5,7.86,49.13,0.01,2.73,3,0,0,2,5,2,5,2,1,false
+33,4,1,4,158,882.42,0.03,28.98,30.45,25572.65,0.29,1420.7,31,12,2,24,23,25,95,63,7,false
+10,2,1,1,27,105.49,0.08,12,8.79,1265.83,0.04,70.32,10,0,0,3,10,5,15,12,3,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,1,0,0,3,2,3,2,1,false
+5,1,1,1,15,53.77,0.17,6,8.96,322.65,0.02,17.92,5,0,0,0,8,4,9,6,1,false
+9,4,4,1,28,100.38,0.07,13.5,7.44,1355.12,0.03,75.28,9,0,0,2,9,3,19,9,7,false
+82,26,22,16,448,2893.83,0.03,34.68,83.45,100348.96,0.96,5574.94,82,0,0,3,23,65,252,196,51,false
+15,3,1,3,60,300,0.1,10.11,29.67,3033.33,0.1,168.52,15,2,0,8,14,18,34,26,5,false
+6,1,1,1,20,74.01,0.11,9,8.22,666.08,0.02,37,6,0,0,0,9,4,12,8,1,false
+12,2,1,2,43,194.51,0.1,9.82,19.81,1909.77,0.06,106.1,12,0,0,6,12,11,25,18,3,false
+24,8,7,2,95,451.71,0.02,45,10.04,20327.14,0.15,1129.29,24,0,0,2,18,9,50,45,15,false
+6,3,1,2,21,72.65,0.24,4.2,17.3,305.12,0.02,16.95,6,0,0,1,6,5,14,7,5,false
+144,25,19,22,751,5239.94,0.02,40.59,129.08,212710.32,1.75,11817.24,142,1,2,10,25,101,423,328,49,false
+61,11,8,11,359,2177.73,0.04,24.78,87.87,53973.44,0.73,2998.52,61,0,0,26,16,51,201,158,21,false
+10,3,1,2,52,255.16,0.11,9.19,27.77,2344.27,0.09,130.24,9,2,1,3,14,16,31,21,5,false
+15,3,1,3,60,300,0.1,10.11,29.67,3033.33,0.1,168.52,15,2,0,8,14,18,34,26,5,false
+7,1,1,1,27,96.79,0.22,4.64,20.85,449.4,0.03,24.97,7,7,0,7,5,7,14,13,1,false
+7,1,1,1,27,96.79,0.22,4.64,20.85,449.4,0.03,24.97,7,6,0,4,5,7,14,13,1,false
+32,7,6,3,182,1021.88,0.03,29.66,34.46,30303.94,0.34,1683.55,32,6,0,11,20,29,96,86,13,false
+20,7,1,1,134,687.32,0.03,39.33,17.47,27034.74,0.23,1501.93,20,20,0,5,20,15,75,59,11,false
+4,2,1,2,13,43.19,0.14,7,6.17,302.3,0.01,16.79,4,0,0,0,7,3,7,6,3,false
+7,7,7,1,41,167.59,0.14,7.11,23.57,1191.72,0.06,66.21,7,0,0,0,8,9,25,16,13,false
+10,3,1,2,52,255.16,0.11,9.19,27.77,2344.27,0.09,130.24,9,2,1,3,14,16,31,21,5,false
+6,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,6,0,0,0,6,6,8,6,1,false
+14,4,1,1,57,242.13,0.05,18.56,13.04,4494.57,0.08,249.7,14,0,0,0,11,8,30,27,7,false
+7,2,1,1,25,100,0.08,12.1,8.26,1210,0.03,67.22,7,0,0,1,11,5,14,11,3,false
+14,1,1,1,177,922.07,0.07,13.52,68.21,12465.06,0.31,692.5,14,7,0,9,10,27,104,73,1,false
+23,1,1,1,170,857.55,0.05,18.25,46.99,15650.23,0.29,869.46,23,11,0,8,11,22,97,73,1,false
+6,1,1,1,20,74.01,0.11,9,8.22,666.08,0.02,37,6,0,0,0,9,4,12,8,1,false
+39,5,1,5,296,1741.26,0.04,25.12,69.33,43734.03,0.58,2429.67,39,10,0,15,16,43,161,135,9,false
+6,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,6,0,0,0,6,6,8,6,1,false
+7,1,1,1,19,74.23,0.17,6,12.37,445.39,0.02,24.74,7,0,0,2,9,6,11,8,1,false
+70,16,5,8,407,2565.64,0.02,56.02,45.8,143728.13,0.86,7984.9,68,7,2,18,30,49,224,183,27,false
+23,1,1,1,159,802.06,0.05,21.45,37.39,17204.16,0.27,955.79,23,8,0,8,13,20,93,66,1,false
+72,26,13,1,425,2694.44,0.02,40.21,67.01,108344.7,0.9,6019.15,72,13,0,23,24,57,234,191,51,false
+22,1,1,1,161,894.29,0.21,4.76,187.8,4258.52,0.3,236.58,22,6,0,3,5,42,81,80,1,false
+7,1,1,1,27,96.79,0.22,4.64,20.85,449.4,0.03,24.97,7,7,0,7,5,7,14,13,1,false
+9,2,1,1,48,200.16,0.09,11.5,17.4,2301.8,0.07,127.88,9,0,0,4,9,9,25,23,3,false
+83,13,7,8,443,2889.94,0.04,27.36,105.63,79066.26,0.96,4392.57,81,21,2,15,21,71,258,185,25,false
+6,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,6,0,0,0,6,6,8,6,1,false
+9,3,1,3,30,129.66,0.17,5.73,22.64,742.59,0.04,41.25,8,0,1,0,9,11,16,14,5,false
+20,2,1,1,249,1351.14,0.04,27.26,49.57,36831.07,0.45,2046.17,20,0,0,1,16,27,157,92,3,false
+8,1,1,1,56,249.73,0.1,10,24.97,2497.28,0.08,138.74,8,2,0,2,10,12,32,24,1,false
+22,8,7,2,144,816.83,0.05,19.35,42.2,15809.6,0.27,878.31,22,0,0,9,20,31,84,60,15,false
+18,5,1,2,92,455.79,0.07,14.08,32.36,6418.99,0.15,356.61,18,0,0,3,13,18,53,39,9,false
+6,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,6,0,0,0,6,6,8,6,1,false
+6,1,1,1,23,92,0.2,5,18.4,460,0.03,25.56,6,7,0,2,8,8,13,10,1,false
+8,3,1,3,47,203.13,0.09,11.5,17.66,2336,0.07,129.78,8,0,0,0,10,10,24,23,5,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+10,3,3,1,32,133.44,0.08,13,10.26,1734.69,0.04,96.37,10,0,0,1,12,6,19,13,5,false
+11,1,1,1,81,385.15,0.09,11.69,32.95,4501.39,0.13,250.08,11,3,0,3,11,16,47,34,1,false
+13,1,1,1,64,289.51,0.15,6.56,44.12,1899.9,0.1,105.55,13,6,0,6,7,16,34,30,1,false
+21,5,1,5,152,853.44,0.07,14.3,59.67,12206.72,0.28,678.15,21,47,0,4,16,33,93,59,9,false
+5,1,1,1,14,50.19,0.33,3,16.73,150.57,0.02,8.36,5,0,0,0,6,6,8,6,1,false
+7,3,1,3,47,203.13,0.09,11.5,17.66,2336,0.07,129.78,7,0,0,0,10,10,24,23,5,false
+5,3,1,3,36,160.54,0.1,10.11,15.88,1623.23,0.05,90.18,5,0,0,0,13,9,22,14,5,false
+8,3,3,2,37,159.91,0.07,14.86,10.76,2375.83,0.05,131.99,8,0,0,1,13,7,21,16,5,false
+11,1,1,1,77,357.58,0.09,11,32.5,3933.35,0.12,218.52,11,3,0,3,10,15,44,33,1,false
+22,1,1,1,161,894.29,0.21,4.76,187.8,4258.52,0.3,236.58,22,6,0,3,5,42,81,80,1,false
+5,1,1,1,12,41.51,0.33,3,13.84,124.54,0.01,6.92,5,0,0,0,6,5,7,5,1,false
+69,49,1,4,1018,5745.45,0.01,123.06,46.69,707027.78,1.92,39279.32,69,0,0,0,16,34,495,523,97,false
+16,1,1,1,91,422.59,0.03,35.56,11.89,15025.45,0.14,834.75,13,0,3,0,16,9,51,40,5,false
+25,4,1,1,143,755.81,0.07,15.25,49.56,11526.14,0.25,640.34,22,10,3,10,13,26,82,61,7,false
+54,8,4,7,257,1558.98,0.04,24.68,63.17,38477.07,0.52,2137.62,52,18,2,35,20,47,141,116,15,false
+5,1,1,1,14,48.43,0.19,5.25,9.23,254.27,0.02,14.13,5,0,0,2,7,4,8,6,1,false
+6,3,3,2,30,125.1,0.15,6.5,19.25,813.14,0.04,45.17,6,0,0,0,9,9,17,13,5,false
+50,21,9,6,384,2345.67,0.02,65.77,35.67,154273.13,0.78,8570.73,49,0,1,1,30,39,213,171,36,false
+7,3,1,2,34,144.43,0.09,11,13.13,1588.72,0.05,88.26,7,0,0,4,11,8,18,16,5,false
+20,4,1,3,78,393.46,0.1,10.4,37.83,4092.01,0.13,227.33,20,3,0,10,13,20,46,32,7,false
+18,5,5,1,72,360,0.07,13.68,26.32,4923.53,0.12,273.53,15,9,3,5,15,17,41,31,9,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+44,8,6,8,247,1428,0.04,22.36,63.87,31928.52,0.48,1773.81,44,0,0,19,16,39,138,109,15,false
+21,3,1,3,126,651.41,0.06,16.43,39.65,10701.74,0.22,594.54,21,0,0,6,15,21,80,46,5,false
+6,1,1,1,16,59.21,0.33,3,19.74,177.62,0.02,9.87,6,0,0,0,6,7,9,7,1,false
+19,6,3,2,87,408.94,0.04,23.33,17.53,9541.89,0.14,530.11,19,0,0,4,14,12,47,40,11,false
+117,27,13,1,485,3178.98,0.04,28.44,111.77,90416.52,1.06,5023.14,116,48,1,37,25,69,328,157,48,false
+21,8,5,6,141,791.67,0.05,20.9,37.88,16545.99,0.26,919.22,21,0,0,3,19,30,75,66,15,false
+5,1,1,1,12,41.51,0.33,3,13.84,124.54,0.01,6.92,5,0,0,0,6,5,7,5,1,false
+8,3,1,3,57,279.69,0.09,11.38,24.59,3181.51,0.09,176.75,8,0,0,0,14,16,31,26,5,false
+46,12,6,1,178,983.19,0.03,33.5,29.35,32937,0.33,1829.83,41,0,5,1,23,23,111,67,16,false
+32,6,1,4,147,820.99,0.05,18.65,44.03,15307.48,0.27,850.42,27,12,5,9,17,31,79,68,11,false
+6,1,1,1,28,109.39,0.18,5.69,19.23,622.17,0.04,34.57,4,0,2,3,7,8,15,13,1,false
+11,1,1,1,126,624.23,0.08,12.38,50.42,7728.55,0.21,429.36,11,4,0,6,10,21,74,52,1,false
+81,19,1,18,304,1881.71,0.02,45.39,41.45,85416.04,0.63,4745.34,80,8,1,32,31,42,181,123,24,false
+15,3,1,3,79,395,0.09,11.7,33.76,4621.5,0.13,256.75,14,1,1,2,12,20,40,39,5,false
+4,1,1,1,11,38.05,0.29,3.5,10.87,133.19,0.01,7.4,4,0,0,0,7,4,7,4,1,false
+13,3,3,3,43,202.12,0.18,5.63,35.93,1136.92,0.07,63.16,13,0,0,1,10,16,25,18,5,false
+9,1,1,1,43,188.87,0.13,7.5,25.18,1416.52,0.06,78.7,9,3,0,5,9,12,23,20,1,false
+4,1,1,1,13,41.21,0.42,2.4,17.17,98.9,0.01,5.49,4,2,0,1,4,5,7,6,1,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+21,5,3,3,90,432.66,0.05,20.5,21.11,8869.57,0.14,492.75,19,0,2,10,14,14,49,41,9,false
+9,2,1,2,34,144.43,0.11,8.89,16.25,1283.82,0.05,71.32,9,0,0,0,10,9,18,16,3,false
+5,1,1,1,21,77.71,0.21,4.67,16.65,362.64,0.03,20.15,5,0,0,1,7,6,13,8,1,false
+32,5,1,1,146,801.81,0.05,20.33,39.43,16303.48,0.27,905.75,28,15,4,18,18,27,85,61,9,false
+13,2,1,2,69,331.71,0.09,11.7,28.35,3880.98,0.11,215.61,13,2,0,5,13,15,42,27,3,false
+22,6,1,4,80,403.55,0.08,12.02,33.56,4852.71,0.13,269.59,22,0,0,0,13,20,43,37,11,false
+4,1,1,1,14,50.19,0.25,4,12.55,200.76,0.02,11.15,4,0,0,0,8,4,10,4,1,false
+15,2,1,1,100,485.8,0.08,12.11,40.13,5880.71,0.16,326.71,14,3,1,4,10,19,54,46,3,false
+23,7,7,4,71,344.92,0.08,11.78,29.28,4063.55,0.11,225.75,23,12,0,5,13,16,42,29,13,false
+4,1,1,1,33,137.61,0.16,6.25,22.02,860.05,0.05,47.78,4,0,0,0,10,8,23,10,1,false
+33,6,3,3,257,1505.5,0.03,34.34,43.84,51695.65,0.5,2871.98,33,10,0,9,21,37,136,121,11,false
+17,3,1,3,66,302.61,0.08,12.69,23.84,3840.79,0.1,213.38,17,0,0,2,11,13,36,30,5,false
+9,2,1,2,28,114.45,0.15,6.75,16.96,772.53,0.04,42.92,9,0,0,1,9,8,16,12,3,false
+12,3,1,1,56,256.76,0.08,12,21.4,3081.09,0.09,171.17,11,3,1,4,12,12,32,24,5,false
+16,3,1,2,61,286.73,0.07,14,20.48,4014.18,0.1,223.01,16,8,0,7,13,13,33,28,5,false
+4,1,1,1,13,41.21,0.42,2.4,17.17,98.9,0.01,5.49,4,2,0,1,4,5,7,6,1,false
+13,4,4,1,41,185.47,0.1,10.4,17.83,1928.85,0.06,107.16,13,0,0,5,13,10,25,16,7,false
+22,5,3,1,111,555,0.04,28.29,19.62,15698.57,0.19,872.14,21,4,1,6,18,14,67,44,9,false
+4,1,1,1,9,25.27,0.67,1.5,16.84,37.9,0.01,2.11,4,0,0,0,3,4,5,4,1,false
+12,3,1,2,42,178.41,0.08,12.38,14.42,2207.86,0.06,122.66,12,0,0,1,11,8,24,18,5,false
+12,2,1,1,91,484.3,0.08,12.6,38.44,6102.12,0.16,339.01,12,0,0,3,15,25,49,42,3,false
+6,1,1,1,19,68.11,0.13,8,8.51,544.91,0.02,30.27,6,0,0,0,8,4,11,8,1,false
+3,1,1,1,11,36.54,0.33,3,12.18,109.62,0.01,6.09,3,0,0,0,6,4,7,4,1,false
+6,1,1,1,15,51.89,0.34,2.92,17.79,151.35,0.02,8.41,6,0,0,1,5,6,8,7,1,false
+11,5,4,1,38,152,0.05,21,7.24,3192,0.05,177.33,11,0,0,2,12,4,24,14,9,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+23,7,7,4,71,344.92,0.08,11.78,29.28,4063.55,0.11,225.75,23,12,0,5,13,16,42,29,13,false
+15,3,1,3,60,300,0.1,10.11,29.67,3033.33,0.1,168.52,15,2,0,8,14,18,34,26,5,false
+12,4,3,2,73,371.38,0.06,15.75,23.58,5849.31,0.12,324.96,12,1,0,5,18,16,45,28,7,false
+27,7,1,3,73,371.38,0.05,19.63,18.92,7291.52,0.12,405.08,27,0,0,1,19,15,42,31,13,false
+10,1,1,1,26,106.27,0.16,6.43,16.53,683.19,0.04,37.96,10,0,0,1,10,7,17,9,1,false
+34,9,1,9,200,1166.58,0.04,23.34,49.99,27225.87,0.39,1512.55,25,4,9,8,23,34,131,69,14,false
+21,4,1,2,57,276.9,0.09,10.71,25.84,2966.84,0.09,164.82,21,0,0,4,15,14,37,20,7,false
+17,2,1,1,76,333.82,0.06,16.82,19.85,5614.18,0.11,311.9,17,0,0,1,10,11,39,37,3,false
+24,6,6,4,84,416.15,0.08,13.18,31.58,5483.42,0.14,304.63,23,0,1,2,14,17,52,32,11,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,0,0,1,3,2,3,2,1,false
+16,3,1,2,61,286.73,0.07,14,20.48,4014.18,0.1,223.01,16,8,0,7,13,13,33,28,5,false
+14,3,1,1,39,181.11,0.16,6.29,28.81,1138.41,0.06,63.24,14,1,0,7,11,14,23,16,5,false
+12,2,1,2,29,118.54,0.16,6.19,19.16,733.44,0.04,40.75,12,0,0,3,9,8,18,11,3,false
+17,2,1,2,139,645.5,0.04,23.08,27.97,14896.06,0.22,827.56,17,0,0,4,12,13,89,50,3,false
+10,1,1,1,42,175.14,0.11,9.38,18.68,1641.91,0.06,91.22,10,0,0,1,10,8,27,15,1,false
+14,3,1,2,69,338.58,0.1,9.84,34.4,3332.3,0.11,185.13,14,1,0,9,11,19,35,34,5,false
+6,1,1,1,19,68.11,0.13,8,8.51,544.91,0.02,30.27,6,0,0,0,8,4,11,8,1,false
+14,4,1,2,75,360.55,0.06,16.67,21.63,6009.19,0.12,333.84,14,0,0,7,16,12,50,25,7,false
+17,3,1,1,35,153.73,0.14,7.15,21.5,1099.18,0.05,61.07,17,0,0,1,11,10,22,13,5,false
+16,2,1,1,70,320.95,0.08,12.5,25.68,4011.84,0.11,222.88,16,0,0,2,12,12,45,25,3,false
+19,3,1,1,69,316.36,0.06,16,19.77,5061.8,0.11,281.21,17,0,2,5,12,12,37,32,5,false
+3,1,1,1,9,28.53,0.29,3.5,8.15,99.85,0.01,5.55,3,0,0,1,7,2,7,2,1,false
+15,1,1,1,70,312.16,0.1,10.42,29.97,3251.67,0.1,180.65,15,0,0,1,10,12,45,25,1,false
+20,3,1,2,108,589.62,0.07,15.11,39.02,8909.79,0.2,494.99,19,0,1,2,17,27,60,48,5,false
+10,1,1,1,69,335.2,0.09,10.97,30.56,3676.73,0.11,204.26,10,3,0,5,13,16,42,27,1,false
+7,4,4,1,32,135.93,0.1,9.63,14.12,1308.36,0.05,72.69,7,0,0,1,11,8,18,14,7,false
+18,2,1,1,84,394.84,0.08,12.86,30.71,5076.47,0.13,282.03,18,0,0,2,12,14,54,30,3,false
+6,1,1,1,27,116.69,0.14,7.33,15.91,855.74,0.04,47.54,6,2,0,1,11,9,15,12,1,false
+11,5,3,1,63,288.85,0.06,17.14,16.86,4949.88,0.1,274.99,10,0,1,0,13,11,34,29,9,false
+12,3,1,3,36,152.93,0.12,8.33,18.35,1274.38,0.05,70.8,12,0,0,2,10,9,21,15,5,false
+7,3,1,1,40,169.92,0.11,9,18.88,1529.25,0.06,84.96,7,0,0,1,9,10,20,20,5,false
+11,3,1,3,36,152.93,0.12,8.33,18.35,1274.38,0.05,70.8,11,0,0,2,10,9,21,15,5,false
+12,4,3,3,51,239.72,0.08,12.83,18.68,3076.44,0.08,170.91,12,0,0,1,14,12,29,22,7,false
+11,2,1,1,35,153.73,0.09,10.56,14.55,1623.78,0.05,90.21,10,0,1,2,13,8,22,13,3,false
+19,3,1,1,69,316.36,0.06,16,19.77,5061.8,0.11,281.21,17,0,2,5,12,12,37,32,5,false
+199,58,1,2,1079,7184.21,0.02,55.52,129.4,398853.5,2.39,22158.53,199,0,0,16,18,83,567,512,115,false
+23,6,6,1,116,604.3,0.04,25.29,23.89,15285.15,0.2,849.17,23,0,0,1,20,17,73,43,11,false
+13,4,1,4,60,291.48,0.09,10.56,27.6,3078.75,0.1,171.04,12,0,1,2,13,16,34,26,7,false
+11,2,1,1,36,165.06,0.09,11.67,14.15,1925.68,0.06,106.98,10,0,1,2,15,9,22,14,3,false
+3,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,3,1,0,3,3,1,3,1,1,false
+4,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,4,0,0,0,3,2,3,2,1,false
+45,12,6,6,225,1329.05,0.04,26.92,49.36,35782.13,0.44,1987.9,45,1,0,3,21,39,125,100,23,false
+11,1,1,1,84,430.86,0.09,11.23,38.38,4837.38,0.14,268.74,11,0,0,2,13,22,46,38,1,false
+7,1,1,1,24,96,0.4,2.5,38.4,240,0.03,13.33,7,16,0,8,5,11,13,11,1,false
+3,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,3,1,0,2,3,1,3,1,1,false
+39,6,1,3,135,783.99,0.08,12,65.33,9407.91,0.26,522.65,39,1,0,6,16,40,75,60,11,false
+6,2,1,1,19,68.11,0.11,9,7.57,613.03,0.02,34.06,6,0,0,0,8,4,10,9,3,false
+10,1,1,1,22,85.95,0.17,6,14.33,515.71,0.03,28.65,10,0,0,1,9,6,14,8,1,false
+11,4,1,4,83,375.46,0.08,13.18,28.49,4947.97,0.13,274.89,11,0,0,1,9,14,42,41,7,false
+7,1,1,1,24,93.77,0.36,2.75,34.1,257.85,0.03,14.33,7,16,0,7,5,10,13,11,1,false
+13,3,1,3,60,263.54,0.04,27,9.76,7115.55,0.09,395.31,12,0,1,0,14,7,33,27,5,false
+6,3,3,3,28,109.39,0.13,8,13.67,875.14,0.04,48.62,6,0,0,0,10,5,20,8,5,false
+11,5,3,4,77,361.93,0.04,23.86,15.17,8637.06,0.12,479.84,11,0,0,3,15,11,42,35,9,false
+45,1,1,1,215,1213.43,0.21,4.65,260.82,5645.08,0.4,313.62,45,0,0,7,4,46,108,107,1,false
+7,3,1,3,41,180.09,0.08,13.33,13.51,2401.13,0.06,133.4,7,0,0,0,12,9,21,20,5,false
+11,8,7,2,70,325.07,0.05,21,15.48,6826.47,0.11,379.25,11,0,0,1,15,10,42,28,15,false
+6,2,1,1,33,140.18,0.12,8.33,16.82,1168.18,0.05,64.9,6,1,0,0,10,9,18,15,3,false
+22,8,8,1,83,385.44,0.04,25.5,15.12,9828.72,0.13,546.04,22,0,0,2,15,10,49,34,15,false
+7,3,1,3,44,196.21,0.08,12.6,15.57,2472.31,0.07,137.35,7,0,0,0,12,10,23,21,5,false
+8,7,6,1,44,179.85,0.05,21.12,8.51,3799.3,0.06,211.07,8,0,0,1,13,4,31,13,13,false
+7,2,1,1,33,140.18,0.12,8.33,16.82,1168.18,0.05,64.9,7,1,0,0,10,9,18,15,3,false
+7,1,1,1,22,85.95,0.15,6.75,12.73,580.17,0.03,32.22,7,0,0,1,9,6,13,9,1,false
+4,1,1,1,9,28.53,0.33,3,9.51,85.59,0.01,4.75,4,0,0,0,6,3,6,3,1,false
+31,1,1,1,225,1282.6,0.05,18.97,67.6,24335.63,0.43,1351.98,31,2,0,9,14,38,122,103,1,false
+14,3,1,2,44,196.21,0.08,12.6,15.57,2472.31,0.07,137.35,14,1,0,4,12,10,23,21,5,false
+14,6,6,4,63,309.13,0.05,18.31,16.89,5659.53,0.1,314.42,14,0,0,0,17,13,35,28,11,false
+6,4,4,2,27,102.8,0.1,10,10.28,1027.99,0.03,57.11,6,0,0,1,10,4,19,8,7,false
+10,2,1,2,33,137.61,0.25,4,34.4,550.43,0.05,30.58,10,0,0,4,6,12,17,16,3,false
+6,1,1,1,16,55.35,0.19,5.25,10.54,290.59,0.02,16.14,5,1,1,2,7,4,10,6,1,false
+12,4,1,2,66,317.29,0.05,20.67,15.35,6557.23,0.11,364.29,12,0,0,0,16,12,35,31,7,false
+9,6,5,2,45,187.65,0.05,18.2,10.31,3415.17,0.06,189.73,9,0,0,1,13,5,31,14,11,false
+20,7,7,4,91,477.56,0.05,19,25.13,9073.67,0.16,504.09,20,3,0,2,19,19,53,38,13,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,0,0,0,3,2,3,2,1,false
+17,7,1,3,111,515.47,0.03,39.75,12.97,20489.85,0.17,1138.33,17,1,0,1,15,10,58,53,13,false
+5,2,1,2,21,84,0.13,7.5,11.2,630,0.03,35,5,0,0,1,10,6,12,9,3,false
+6,2,1,2,27,102.8,0.12,8.67,11.86,890.92,0.03,49.5,6,0,0,0,8,6,14,13,3,false
+12,4,1,2,66,317.29,0.05,20.67,15.35,6557.23,0.11,364.29,12,0,0,0,16,12,35,31,7,false
+9,6,3,3,57,246.35,0.04,23.21,10.61,5718.84,0.08,317.71,9,0,0,2,13,7,32,25,11,false
+28,6,6,3,134,744.31,0.09,10.63,70.03,7911,0.25,439.5,26,10,2,2,12,35,72,62,11,false
+12,4,1,2,66,317.29,0.05,20.67,15.35,6557.23,0.11,364.29,12,0,0,0,16,12,35,31,7,false
+11,6,5,1,47,199.65,0.04,22.4,8.91,4472.22,0.07,248.46,11,0,0,1,14,5,31,16,11,false
+29,5,1,5,136,759.55,0.09,11.51,65.97,8745.73,0.25,485.87,24,10,5,2,13,35,74,62,9,false
+14,3,1,2,44,196.21,0.08,12.6,15.57,2472.31,0.07,137.35,14,1,0,4,12,10,23,21,5,false
+8,5,1,5,59,250.63,0.05,19.25,13.02,4824.58,0.08,268.03,8,1,0,0,11,8,31,28,9,false
+11,7,6,5,51,212.67,0.03,29.75,7.15,6326.82,0.07,351.49,11,0,0,2,14,4,34,17,13,false
+19,7,7,4,130,682.23,0.05,18.91,36.07,12903.06,0.23,716.84,19,0,0,2,15,23,72,58,13,false
+12,2,1,1,52,235.23,0.13,7.71,30.49,1814.59,0.08,100.81,11,3,1,5,9,14,28,24,3,false
+11,7,1,3,69,303.07,0.04,26.81,11.3,8126.06,0.1,451.45,11,1,0,0,13,8,36,33,13,false
+27,19,17,3,238,1291.45,0.02,46.1,28.02,59529.74,0.43,3307.21,27,0,0,3,22,21,150,88,37,false
+30,5,3,3,136,755.42,0.07,14.53,51.99,10977.26,0.25,609.85,27,12,3,7,15,32,74,62,9,false
+44,8,3,3,177,1004.02,0.03,29.57,33.95,29690.28,0.33,1649.46,43,55,1,17,23,28,105,72,15,false
+31,4,1,3,222,1197.09,0.02,40.13,29.83,48033.42,0.4,2668.52,30,0,1,7,18,24,115,107,7,false
+7,3,3,2,24,96,0.11,8.8,10.91,844.8,0.03,46.93,7,0,0,1,11,5,16,8,5,false
+4,1,1,1,18,68.53,0.19,5.33,12.85,365.51,0.02,20.31,4,0,0,0,8,6,10,8,1,false
+7,4,4,2,36,152.93,0.05,19.6,7.8,2997.34,0.05,166.52,7,0,0,2,14,5,22,14,7,false
+35,6,1,1,278,1448.23,0.02,45,32.18,65170.26,0.48,3620.57,34,0,1,7,15,22,146,132,11,false
+12,6,6,2,57,276.9,0.05,21.85,12.67,6050.37,0.09,336.13,12,0,0,1,19,10,34,23,11,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+12,6,6,2,61,299.32,0.04,25,11.97,7483.01,0.1,415.72,12,0,0,1,20,10,36,25,11,false
+36,7,1,7,161,850.95,0.04,25.74,33.06,21902.71,0.28,1216.82,36,3,0,4,16,23,87,74,13,false
+5,1,1,1,22,81.41,0.23,4.29,19,348.9,0.03,19.38,5,0,0,1,6,7,12,10,1,false
+10,3,1,1,49,215.22,0.05,21,10.25,4519.69,0.07,251.09,10,0,0,2,14,7,28,21,5,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,1,4,3,4,3,1,false
+8,3,3,2,32,135.93,0.07,14.08,9.65,1914.4,0.05,106.36,8,0,0,1,13,6,19,13,5,false
+9,1,1,1,35,143.06,0.24,4.09,34.97,585.25,0.05,32.5,9,8,0,5,6,11,20,15,1,false
+123,1,1,1,1212,8551,0.07,14.29,598.33,122205.27,2.85,6789.18,123,0,0,1,6,127,607,605,1,false
+7,3,3,2,22,83.76,0.11,8.75,9.57,732.92,0.03,40.72,7,0,0,1,10,4,15,7,5,false
+10,2,1,1,41,167.59,0.11,8.89,18.85,1489.65,0.06,82.76,9,3,1,4,8,9,21,20,3,false
+5,1,1,1,21,77.71,0.23,4.29,18.13,333.04,0.03,18.5,5,0,0,0,6,7,11,10,1,false
+18,5,1,1,72,321.08,0.04,28,11.47,8990.21,0.11,499.46,18,0,0,1,14,8,40,32,9,false
+5,1,1,1,19,63.12,0.33,3,21.04,189.35,0.02,10.52,5,1,0,2,4,6,10,9,1,false
+6,1,1,1,27,116.69,0.14,7.33,15.91,855.74,0.04,47.54,6,2,0,1,11,9,15,12,1,false
+12,2,1,1,21,77.71,0.21,4.67,16.65,362.64,0.03,20.15,12,0,0,1,7,6,13,8,3,false
+16,9,9,1,69,298.21,0.03,31.5,9.47,9393.71,0.1,521.87,16,0,0,2,15,5,48,21,17,false
+6,1,1,1,25,86.49,0.29,3.43,25.23,296.52,0.03,16.47,6,1,0,2,4,7,13,12,1,false
+6,1,1,1,16,55.35,0.19,5.25,10.54,290.59,0.02,16.14,5,1,1,2,7,4,10,6,1,false
+12,4,1,1,50,216.1,0.07,15,14.41,3241.45,0.07,180.08,12,0,0,2,12,8,30,20,7,false
+5,1,1,1,2,2,2,0.5,4,1,0,0.06,5,0,0,1,1,1,1,1,1,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,0,0,0,3,2,3,2,1,false
+8,2,1,1,27,114.69,0.15,6.67,17.2,764.63,0.04,42.48,8,0,0,0,10,9,15,12,3,false
+5,3,1,2,19,68.11,0.07,15,4.54,1021.71,0.02,56.76,5,0,0,0,10,2,13,6,5,false
+30,13,1,13,213,1195.93,0.05,18.78,63.69,22456.97,0.4,1247.61,30,0,0,4,13,36,109,104,25,false
+17,8,1,1,66,310.23,0.05,19.2,16.16,5956.4,0.1,330.91,17,0,0,0,16,10,42,24,11,false
+8,4,3,3,36,144,0.1,10,14.4,1440,0.05,80,8,0,0,1,10,6,24,12,7,false
+37,15,14,15,268,1722.24,0.06,17.3,99.56,29792.16,0.57,1655.12,37,0,0,5,19,67,146,122,29,false
+10,3,1,1,29,107.31,0.12,8.17,13.14,876.39,0.04,48.69,10,0,0,2,7,6,15,14,5,false
+13,10,6,5,85,404.17,0.05,20.46,19.75,8269.85,0.13,459.44,13,0,0,1,14,13,47,38,19,false
+12,1,1,1,111,479.73,0.09,10.71,44.78,5140.01,0.16,285.56,12,0,0,3,6,14,61,50,1,false
+9,2,1,2,49,238.04,0.08,12.31,19.34,2929.74,0.08,162.76,9,0,0,1,16,13,29,20,3,false
+11,1,1,1,34,138.97,0.1,10,13.9,1389.74,0.05,77.21,11,3,0,2,10,7,20,14,1,false
+31,9,3,2,154,802.26,0.03,29.33,27.36,23526.15,0.27,1307.01,31,0,0,0,17,20,85,69,17,false
+19,5,1,5,54,262.33,0.1,10.18,25.77,2670.15,0.09,148.34,19,0,0,0,15,14,35,19,6,false
+5,1,1,1,17,47.73,0.25,4,11.93,190.9,0.02,10.61,5,0,0,0,4,3,11,6,1,false
+0,1,1,1,2,2,0,0,0,0,0,0,0,0,0,0,2,0,2,0,1,false
+4,1,1,1,16,57.36,0.17,6,9.56,344.16,0.02,19.12,4,0,0,0,8,4,10,6,1,false
+19,5,1,5,54,259.6,0.09,10.96,23.68,2845.58,0.09,158.09,19,0,0,0,15,13,35,19,6,false
+6,4,4,1,32,135.93,0.1,9.63,14.12,1308.36,0.05,72.69,6,0,0,0,11,8,18,14,7,false
+8,5,4,4,38,155.32,0.05,21.12,7.35,3281.21,0.05,182.29,8,0,0,2,13,4,25,13,9,false
+11,5,3,1,63,288.85,0.06,17.14,16.86,4949.88,0.1,274.99,11,0,0,0,13,11,34,29,9,false
+9,2,1,2,28,116.76,0.13,7.5,15.57,875.68,0.04,48.65,9,0,0,2,10,8,16,12,3,false
+18,6,6,2,88,454.95,0.05,20,22.75,9099.07,0.15,505.5,18,0,0,1,18,18,48,40,11,false
+6,3,1,1,40,169.92,0.11,9,18.88,1529.25,0.06,84.96,6,0,0,0,9,10,20,20,5,false
+24,11,11,5,147,807.3,0.03,36.88,21.89,29769.28,0.27,1653.85,24,1,0,2,25,20,88,59,20,false
+3,1,1,1,7,18.09,0.67,1.5,12.06,27.14,0.01,1.51,3,0,0,0,3,3,4,3,1,false
+3,1,1,1,5,11.61,0.67,1.5,7.74,17.41,0,0.97,3,0,0,0,3,2,3,2,1,false
+0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,false
+5,1,1,1,33,132,0.14,7.07,18.67,933.43,0.04,51.86,5,0,0,0,9,7,22,11,1,false
+10,1,1,1,26,106.27,0.16,6.43,16.53,683.19,0.04,37.96,10,0,0,1,10,7,17,9,1,false
+13,4,1,1,70,332.84,0.04,23.27,14.3,7746.14,0.11,430.34,13,1,0,1,16,11,38,32,7,false
+10,1,1,1,22,85.95,0.17,6,14.33,515.71,0.03,28.65,10,0,0,1,9,6,14,8,1,false
+24,5,1,4,113,574.88,0.05,18.2,31.59,10462.88,0.19,581.27,24,0,0,3,14,20,61,52,9,false
+6,2,1,1,13,39,0.17,6,6.5,234,0.01,13,6,0,0,0,6,2,9,4,3,false
+74,16,1,5,488,3048.99,0.01,82.8,36.82,252471.13,1.02,14026.17,64,1,10,4,35,41,294,194,24,false
+27,7,6,7,95,483.31,0.07,13.42,36.01,6486.52,0.16,360.36,22,0,5,3,15,19,61,34,13,false
+12,1,1,1,67,298.78,0.13,7.7,38.8,2300.62,0.1,127.81,12,0,0,0,7,15,34,33,1,false
+13,3,1,3,35,133.26,0.11,9.33,14.28,1243.74,0.04,69.1,13,0,0,0,8,6,21,14,5,false
+14,2,1,2,58,254.75,0.08,12.27,20.76,3126.53,0.08,173.7,14,0,0,0,10,11,31,27,3,false
+7,2,1,1,20,74.01,0.11,9,8.22,666.08,0.02,37,7,0,0,1,9,4,12,8,3,false
+21,10,7,5,122,649.28,0.05,20.33,31.94,13197.22,0.22,733.18,20,0,1,1,17,23,67,55,19,false
+17,4,1,3,64,289.51,0.09,11.15,25.96,3229.13,0.1,179.4,17,0,0,0,10,13,35,29,7,false
+6,3,1,1,21,75.28,0.2,4.9,15.36,368.89,0.03,20.49,6,0,0,0,7,5,14,7,5,false
+21,11,3,3,172,909.09,0.04,25.31,35.91,23011.32,0.3,1278.41,21,0,0,2,15,24,91,81,21,false
+8,1,1,1,14,46.51,0.33,3,15.5,139.52,0.02,7.75,8,0,0,1,5,5,8,6,1,false
+10,3,3,2,50,240.37,0.06,18,13.35,4326.62,0.08,240.37,10,0,0,1,18,10,30,20,5,false
+7,1,1,1,33,140.18,0.16,6.3,22.25,883.14,0.05,49.06,7,0,0,1,9,10,19,14,1,false
+7,2,1,1,17,60.94,0.24,4.2,14.51,255.97,0.02,14.22,7,0,0,1,7,5,11,6,3,false
+24,5,5,5,116,595,0.04,24.08,24.71,14329.51,0.2,796.08,23,0,1,2,17,18,65,51,9,false
+8,3,1,1,37,167.37,0.08,12.44,13.45,2082.85,0.06,115.71,8,0,0,1,14,9,21,16,5,false
+29,7,3,2,122,604.41,0.05,20.94,28.86,12659.07,0.2,703.28,29,0,0,2,13,18,64,58,13,false
+6,2,1,1,20,76.15,0.14,7.2,10.58,548.26,0.03,30.46,6,0,0,1,9,5,12,8,3,false
+10,3,3,2,51,250.25,0.09,11,22.75,2752.77,0.08,152.93,10,0,0,1,15,15,29,22,5,false
+91,34,17,30,548,3829.8,0.05,21.38,179.17,81861.96,1.28,4547.89,90,1,1,5,19,108,305,243,67,false
+14,4,3,1,46,210.91,0.08,13.3,15.86,2805.08,0.07,155.84,14,0,0,1,14,10,27,19,7,false
+11,4,3,2,62,312.75,0.08,12.71,24.61,3973.8,0.1,220.77,11,0,0,1,16,17,35,27,7,false
+4,1,1,1,9,27,0.4,2.5,10.8,67.5,0.01,3.75,4,0,0,0,5,3,6,3,1,false
+5,3,3,1,17,62.91,0.21,4.8,13.11,301.96,0.02,16.78,5,0,0,0,8,5,11,6,5,false
+21,4,1,2,94,493.31,0.11,9.17,53.82,4521.96,0.16,251.22,21,0,0,1,11,27,49,45,7,false
+9,2,1,2,32,128,0.09,10.83,11.82,1386.67,0.04,77.04,9,0,0,1,10,6,19,13,3,false
+48,13,11,13,198,1196.79,0.08,12.79,93.54,15311.87,0.4,850.66,43,10,5,4,15,51,111,87,25,false
+34,8,1,4,115,638.78,0.09,11.24,56.82,7181.41,0.21,398.97,34,0,0,5,14,33,62,53,15,false
+8,3,1,2,39,168.56,0.07,13.93,12.1,2347.73,0.06,130.43,8,0,0,2,13,7,24,15,5,false
+21,4,1,2,97,493.48,0.07,14.24,34.66,7026.27,0.16,390.35,21,0,0,1,13,21,51,46,7,false
+27,9,5,2,139,744.7,0.04,23.09,32.25,17192.85,0.25,955.16,24,0,3,6,18,23,80,59,17,false
+11,2,1,2,26,108.42,0.15,6.87,15.77,745.37,0.04,41.41,11,0,0,0,10,8,15,11,3,false
+0,1,1,1,6,15.51,0.4,2.5,6.2,38.77,0.01,2.15,0,0,0,0,5,1,5,1,1,false
+16,4,1,1,60,278.63,0.05,21,13.27,5851.26,0.09,325.07,16,0,0,1,15,10,32,28,7,false
+75,54,25,24,694,4640.43,0.01,74.54,62.26,345890.61,1.55,19216.15,75,0,0,1,38,65,439,255,107,false
+12,3,3,1,43,188.87,0.06,18,10.49,3399.65,0.06,188.87,12,0,0,1,14,7,25,18,5,false
+17,6,6,3,74,359.49,0.04,23.38,15.38,8403.09,0.12,466.84,17,0,0,1,17,12,41,33,11,false
+22,6,1,1,101,554.68,0.05,20.39,27.21,11307.85,0.18,628.21,22,1,0,3,23,22,62,39,9,false
+16,5,1,1,79,366.86,0.07,14.54,25.24,5332.64,0.12,296.26,16,0,0,1,11,14,42,37,9,false
+24,1,1,1,186,938.26,0.05,21.75,43.14,20407.1,0.31,1133.73,24,0,0,2,11,22,99,87,1,false
+18,3,3,2,59,318.15,0.09,10.74,29.62,3416.62,0.11,189.81,16,0,2,3,19,23,33,26,5,false
+45,12,7,9,255,1535.7,0.03,33.68,45.6,51715.86,0.51,2873.1,43,1,2,1,28,37,166,89,20,false
+31,14,1,14,108,596.54,0.08,12.86,46.4,7669.86,0.2,426.1,31,0,0,0,18,28,68,40,15,false
+14,6,4,2,74,366.61,0.04,22.73,16.12,8332.05,0.12,462.89,14,1,0,1,20,11,49,25,11,false
+4,2,1,1,14,48.43,0.16,6.13,7.91,296.65,0.02,16.48,4,0,0,2,7,4,7,7,3,false
+14,4,1,1,94,470,0.05,21.53,21.83,10120.67,0.16,562.26,14,0,0,2,17,15,56,38,7,false
+11,5,1,3,51,230.7,0.07,14.3,16.12,3299.03,0.08,183.28,11,0,0,1,13,10,29,22,9,false
+11,2,1,1,15,49.83,0.33,3,16.61,149.49,0.02,8.3,11,0,0,0,6,4,11,4,3,false
+6,5,5,1,29,113.3,0.16,6.29,18.02,712.17,0.04,39.57,6,0,0,0,8,7,18,11,9,false
+3,1,1,1,7,19.65,0.5,2,9.83,39.3,0.01,2.18,3,0,0,0,4,3,4,3,1,false
+11,3,1,1,36,162.85,0.09,11.67,13.96,1899.9,0.05,105.55,10,0,1,1,14,9,21,15,5,false
+5,1,1,1,12,43.02,0.29,3.5,12.29,150.57,0.01,8.36,5,0,0,0,7,5,7,5,1,false
+48,10,8,1,246,1447.13,0.02,46.06,31.42,66661.35,0.48,3703.41,31,0,17,1,28,31,144,102,19,false
+52,25,25,1,249,1221.82,0.03,38.62,31.64,47183.65,0.41,2621.31,52,0,0,5,13,17,148,101,49,false
+4,1,1,1,11,33,0.4,2.5,13.2,82.5,0.01,4.58,4,0,0,2,4,4,6,5,1,false
+10,4,1,3,55,258.51,0.05,21.72,11.9,5615.72,0.09,311.98,10,0,0,1,17,9,32,23,7,false
+21,4,1,1,42,178.41,0.09,11,16.21,1962.54,0.06,109.03,21,0,0,1,11,8,26,16,7,false
+10,3,1,3,53,232.79,0.11,9,25.87,2095.13,0.08,116.4,10,0,0,0,9,12,29,24,5,false
+5,1,1,1,12,41.51,0.33,3,13.84,124.54,0.01,6.92,5,0,0,0,6,5,7,5,1,false
+30,11,6,3,158,803.82,0.03,32,25.12,25722.21,0.27,1429.01,28,4,2,2,16,18,86,72,21,false
+4,1,1,1,19,74.23,0.14,7,10.6,519.62,0.02,28.87,4,0,0,1,10,5,12,7,1,false
+6,1,1,1,18,72,0.15,6.6,10.91,475.2,0.02,26.4,6,0,0,1,11,5,12,6,1,false
+8,2,1,2,24,100.08,0.16,6.29,15.92,629.06,0.03,34.95,8,0,0,1,11,7,16,8,3,false
+15,1,1,1,68,293.89,0.1,9.82,29.93,2885.48,0.1,160.3,15,0,0,5,9,11,44,24,1,false
+18,4,3,2,66,310.23,0.06,16.32,18.99,5067.07,0.1,281.5,17,0,1,1,14,12,38,28,7,false
+35,6,4,5,305,1881.83,0.03,29.85,63.04,56178.07,0.63,3121,35,7,0,7,21,51,160,145,11,false
+15,1,1,1,68,288.86,0.09,10.8,26.75,3119.68,0.1,173.32,15,0,0,5,9,10,44,24,1,false
+67,37,18,18,469,3102.3,0.02,54.89,56.51,170295.87,1.03,9460.88,67,0,0,1,37,61,288,181,73,false
+16,9,9,2,73,330.22,0.03,32.58,10.13,10759.67,0.11,597.76,16,0,0,2,17,6,50,23,17,false
+12,10,1,9,118,567.27,0.03,32.88,17.25,18654.39,0.19,1036.34,12,0,0,4,15,13,61,57,19,false
+11,8,7,1,60,267.57,0.04,24,11.15,6421.58,0.09,356.75,11,0,0,2,16,6,42,18,15,false
+21,5,1,4,58,292.57,0.07,14.34,20.4,4196.62,0.1,233.15,20,24,1,6,17,16,31,27,9,false
+11,5,5,1,42,171.67,0.05,20.4,8.42,3502.14,0.06,194.56,11,0,0,1,12,5,25,17,9,false
+17,8,3,2,74,379.57,0.05,20.67,18.37,7844.38,0.13,435.8,17,3,0,3,20,15,43,31,13,false
+5,2,1,1,18,64.53,0.17,6,10.75,387.18,0.02,21.51,5,0,0,1,8,4,12,6,3,false
+11,3,1,1,22,83.76,0.21,4.67,17.95,390.89,0.03,21.72,11,0,0,1,8,6,15,7,4,false
+7,3,1,1,29,110.41,0.05,18.33,6.02,2024.24,0.04,112.46,7,0,0,1,11,3,19,10,5,false
+4,1,1,1,9,23.26,0.5,2,11.63,46.53,0.01,2.58,4,0,0,0,3,3,5,4,1,false
+77,21,11,20,441,3040.61,0.03,29.05,104.65,88343.08,1.01,4907.95,73,1,4,4,27,92,243,198,41,false
+4,2,1,2,26,104,0.11,8.8,11.82,915.2,0.03,50.84,4,0,0,0,11,5,18,8,3,false
+21,7,1,4,91,427.74,0.08,13.12,32.59,5614.09,0.14,311.89,21,6,0,7,10,16,49,42,13,false
+22,3,1,3,72,360,0.12,8.64,41.65,3111.43,0.12,172.86,21,0,1,1,11,21,39,33,5,false
+36,17,14,7,196,1133.15,0.03,37.08,30.56,42020.85,0.38,2334.49,34,0,2,2,25,30,107,89,33,false
+18,5,1,2,77,361.93,0.04,23.18,15.61,8390.28,0.12,466.13,18,0,0,1,15,11,43,34,9,false
+23,6,5,2,96,461.51,0.04,25.38,18.18,11715.15,0.15,650.84,23,0,0,1,15,13,52,44,11,false
+9,4,4,1,49,218.51,0.08,12.28,17.8,2682.84,0.07,149.05,9,0,0,1,13,9,32,17,7,false
+15,3,3,1,154,783.47,0.04,25.5,30.72,19978.47,0.26,1109.91,15,0,0,1,17,17,103,51,5,false
+9,1,1,1,49,211.77,0.06,16.71,12.67,3539.66,0.07,196.65,9,0,0,1,13,7,31,18,1,false
+19,9,9,4,125,674.04,0.04,25.85,26.08,17423.93,0.22,968,19,0,0,1,22,20,78,47,17,false
+26,4,1,1,185,1015.99,0.05,21.56,47.13,21902.46,0.34,1216.8,26,0,0,1,19,26,126,59,7,false
+13,3,1,1,58,262.37,0.06,15.82,16.59,4150.16,0.09,230.56,13,6,0,4,12,11,29,29,5,false
+10,4,3,3,45,213.97,0.08,11.85,18.06,2534.72,0.07,140.82,10,0,0,1,14,13,23,22,7,false
+5,2,1,1,20,81.75,0.14,7.33,11.15,599.49,0.03,33.31,5,0,0,7,11,6,12,8,3,false
+39,16,6,4,201,1240.15,0.04,26.4,46.98,32740.09,0.41,1818.89,33,0,6,5,27,45,113,88,31,false
+17,5,1,4,110,581.39,0.04,23.68,24.55,13769.86,0.19,764.99,17,0,0,0,20,19,65,45,9,false
+10,3,3,2,34,153.8,0.09,10.89,14.12,1674.72,0.05,93.04,10,0,0,1,14,9,20,14,5,false
+13,2,1,1,24,103.73,0.18,5.5,18.86,570.49,0.03,31.69,13,0,0,0,11,9,15,9,3,false
+8,3,3,2,19,68.11,0.18,5.6,12.16,381.44,0.02,21.19,8,3,0,2,7,5,11,8,5,false
+9,2,1,1,34,138.97,0.08,13.2,10.53,1834.45,0.05,101.91,9,0,0,1,12,5,23,11,3,false
+10,2,1,2,42,187.3,0.11,9,20.81,1685.67,0.06,93.65,10,0,0,1,11,11,24,18,3,false
+13,7,7,1,50,219.62,0.05,21.25,10.33,4666.84,0.07,259.26,13,0,0,1,15,6,33,17,13,false
+12,2,1,1,49,215.22,0.07,14,15.37,3013.13,0.07,167.4,12,1,0,3,12,9,28,21,3,false
+9,4,3,2,46,210.91,0.06,16.67,12.65,3515.14,0.07,195.29,9,0,0,1,15,9,26,20,7,false
+11,5,5,1,41,164,0.05,18.7,8.77,3066.8,0.05,170.38,11,0,0,1,11,5,24,17,9,false
+11,4,4,3,52,235.23,0.07,14.3,16.45,3363.72,0.08,186.87,11,0,0,1,13,10,30,22,7,false
+5,3,3,1,17,62.91,0.21,4.8,13.11,301.96,0.02,16.78,5,0,0,0,8,5,11,6,5,false
+22,7,4,7,111,549.92,0.06,15.79,34.83,8682.88,0.18,482.38,22,2,0,3,12,19,61,50,13,false
+17,7,6,6,112,574.48,0.05,21.05,27.29,12094.31,0.19,671.91,17,0,0,3,16,19,62,50,13,false
+65,35,19,11,526,3502.22,0.02,49.5,70.75,173359.85,1.17,9631.1,65,0,0,5,33,68,322,204,69,false
+9,4,3,2,45,197.65,0.05,19,10.4,3755.43,0.07,208.64,9,0,0,2,14,7,26,19,7,false
+6,2,1,1,25,102.19,0.16,6.43,15.9,656.91,0.03,36.5,6,0,0,1,10,7,16,9,3,false
+7,1,1,1,23,79.57,0.16,6.13,12.99,487.35,0.03,27.07,7,0,0,0,7,4,16,7,1,false
+8,1,1,1,31,111.13,0.14,7,15.88,777.94,0.04,43.22,8,0,0,0,7,5,21,10,1,false
+9,1,1,1,24,88.81,0.1,10.13,8.77,899.21,0.03,49.96,9,0,0,1,9,4,15,9,1,false
+8,3,3,2,28,121.01,0.1,10.21,11.85,1236.07,0.04,68.67,8,0,0,1,13,7,17,11,5,false
+5,2,1,2,22,88,0.19,5.14,17.11,452.57,0.03,25.14,5,0,0,0,9,7,14,8,3,false
+27,6,4,2,146,760.58,0.02,46.93,16.21,35696.56,0.25,1983.14,22,0,5,1,22,15,82,64,11,false
+11,1,1,1,22,85.95,0.17,6,14.33,515.71,0.03,28.65,11,0,0,1,9,6,14,8,1,false
+3,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,3,0,0,0,3,1,3,1,1,false
+10,7,1,3,63,296.13,0.05,21.6,13.71,6396.36,0.1,355.35,10,0,0,1,16,10,36,27,13,false
+13,4,1,3,88,454.95,0.04,27.3,16.66,12420.23,0.15,690.01,13,0,0,3,21,15,49,39,7,false
+7,3,3,2,26,108.42,0.13,7.86,13.8,851.86,0.04,47.33,7,0,0,1,11,7,16,10,5,false
+5,3,3,1,17,62.91,0.21,4.8,13.11,301.96,0.02,16.78,5,0,0,0,8,5,11,6,5,false
+17,7,6,6,110,568.69,0.08,12.75,44.6,7250.82,0.19,402.82,17,0,0,1,12,24,59,51,13,false
+29,11,5,3,161,917.77,0.03,34.72,26.43,31867.04,0.31,1770.39,29,1,0,4,25,27,86,75,21,false
+8,4,1,4,40,172.88,0.12,8.5,20.34,1469.46,0.06,81.64,7,0,1,0,10,10,23,17,7,false
+5,3,1,2,19,68.11,0.07,15,4.54,1021.71,0.02,56.76,5,0,0,0,10,2,13,6,5,false
+23,10,1,9,119,605.41,0.03,30.94,19.57,18729.81,0.2,1040.55,23,0,0,1,18,16,64,55,16,false
+103,28,14,13,687,4702.85,0.01,111.54,42.16,524548.83,1.57,29141.6,99,1,4,1,50,65,397,290,41,false
+15,2,1,2,57,279.69,0.06,16.5,16.95,4614.93,0.09,256.39,15,0,0,1,18,12,35,22,3,false
+38,16,7,9,228,1397.48,0.04,28.33,49.32,39595.17,0.47,2199.73,38,0,0,5,25,45,126,102,31,false
+5,2,1,1,15,53.77,0.2,5,10.75,268.87,0.02,14.94,5,0,0,1,8,4,10,5,3,false
+36,19,11,6,232,1341.28,0.03,39.58,33.88,53092.15,0.45,2949.56,36,0,0,3,25,30,137,95,37,false
+10,5,3,1,42,164.09,0.05,19.25,8.52,3158.72,0.05,175.48,10,0,0,1,11,4,28,14,9,false
+7,3,1,1,23,85.11,0.08,13.33,6.38,1134.8,0.03,63.04,7,0,0,1,10,3,15,8,5,false
+5,2,1,1,18,62.27,0.19,5.25,11.86,326.92,0.02,18.16,5,0,0,1,7,4,12,6,3,false
+10,4,1,1,41,167.59,0.04,24.38,6.88,4084.91,0.06,226.94,10,0,0,1,13,4,26,15,7,false
+7,6,5,1,39,156,0.06,16.5,9.45,2574,0.05,143,7,0,0,2,12,4,28,11,11,false
+8,2,1,1,26,104,0.12,8.33,12.48,866.67,0.03,48.15,8,0,0,1,10,6,16,10,3,false
+19,8,6,1,161,782.13,0.01,101.06,7.74,79044.51,0.26,4391.36,19,0,0,1,21,8,84,77,15,false
+4,1,1,1,4,8,0.67,1.5,5.33,12,0,0.67,4,0,0,0,3,1,3,1,1,false
+7,2,1,2,24,100.08,0.18,5.63,17.79,562.94,0.03,31.27,7,1,0,2,10,8,15,9,3,false
+6,4,4,1,26,96.21,0.08,13.33,7.22,1282.82,0.03,71.27,6,0,0,2,10,3,18,8,7,false
+10,5,5,1,43,182.66,0.05,21,8.7,3835.88,0.06,213.1,10,0,0,1,14,5,28,15,9,false
+5,3,3,1,17,62.91,0.21,4.8,13.11,301.96,0.02,16.78,5,0,0,0,8,5,11,6,5,false
+18,8,5,5,111,613.12,0.04,22.92,26.75,14050.56,0.2,780.59,18,0,0,1,22,24,61,50,15,false
+26,18,13,6,228,1335.62,0.03,35.81,37.29,47834.26,0.45,2657.46,26,0,0,1,23,35,119,109,35,false

@@ -1,0 +1,200 @@
+item: ('logout', 'dir') , 0.101
+item: ('vi', 'll', 'rm') , 0.101
+item: ('vi', 'dir', 'rm') , 0.101
+item: ('rm', 'vi', 'dir', 'cd') , 0.101
+item: ('rm', 'vi', 'll', 'cd') , 0.101
+item: ('vi', 'logout') , 0.102
+item: ('ls', 'cd') , 0.104
+item: ('vi', 'cp', 'cd') , 0.106
+item: ('ll', '&', 'cd') , 0.108
+item: ('ll', 'logout', 'cd') , 0.108
+item: ('ll', '&') , 0.109
+item: ('vi', 'cp') , 0.109
+item: ('ll', 'logout') , 0.110
+item: ('ls',) , 0.111
+item: ('pwd', 'cd') , 0.115
+item: ('rm', 'dir', 'cd') , 0.116
+item: ('rm', 'dir') , 0.117
+item: ('cat', 'cd') , 0.117
+item: ('pwd',) , 0.122
+item: ('cp', 'cd') , 0.123
+item: ('rm', 'll', 'cd') , 0.124
+item: ('cp',) , 0.125
+item: ('rm', 'll') , 0.125
+item: ('xlock',) , 0.126
+item: ('cat',) , 0.126
+item: ('vi', 'rm', 'cd') , 0.126
+item: ('rm', 'vi') , 0.128
+item: ('cd', '&') , 0.136
+item: ('vi', 'll', 'dir') , 0.136
+item: ('vi', 'll', 'dir', 'cd') , 0.136
+item: ('rm', 'cd') , 0.158
+item: ('rlogin',) , 0.161
+item: ('rm',) , 0.165
+item: ('ll', 'dir', 'cd') , 0.166
+item: ('ll', 'dir') , 0.167
+item: ('&',) , 0.172
+item: ('vi', 'dir') , 0.178
+item: ('vi', 'dir', 'cd') , 0.178
+item: ('logout', 'cd') , 0.180
+item: ('vi', 'll', 'cd') , 0.180
+item: ('vi', 'll') , 0.182
+item: ('dir', 'cd') , 0.237
+item: ('vi', 'cd') , 0.240
+item: ('dir',) , 0.241
+item: ('vi',) , 0.247
+item: ('ll', 'cd') , 0.259
+item: ('ll',) , 0.262
+item: ('logout', 'elm') , 0.338
+item: ('cd',) , 0.383
+item: ('elm',) , 0.458
+item: ('logout',) , 0.614
+
+------------------------ RULES:
+Rule: ('cd',) ==> ('pwd',) , 0.301
+Rule: ('cd',) ==> ('rm', 'dir') , 0.304
+Rule: ('cd',) ==> ('cat',) , 0.307
+Rule: ('cd',) ==> ('cp',) , 0.321
+Rule: ('cd',) ==> ('rm', 'll') , 0.324
+Rule: ('cd',) ==> ('vi', 'rm') , 0.330
+Rule: ('cd',) ==> ('&',) , 0.355
+Rule: ('cd',) ==> ('vi', 'll', 'dir') , 0.355
+Rule: ('ll',) ==> ('vi', 'rm') , 0.385
+Rule: ('ll',) ==> ('rm', 'cd', 'vi') , 0.385
+Rule: ('ll', 'cd') ==> ('rm', 'vi') , 0.390
+Rule: ('vi',) ==> ('rm', 'll') , 0.409
+Rule: ('vi',) ==> ('rm', 'dir') , 0.409
+Rule: ('vi',) ==> ('rm', 'dir', 'cd') , 0.409
+Rule: ('vi',) ==> ('rm', 'll', 'cd') , 0.409
+Rule: ('ll',) ==> ('cd', '&') , 0.410
+Rule: ('ll',) ==> ('logout', 'cd') , 0.410
+Rule: ('cd',) ==> ('rm',) , 0.413
+Rule: ('vi',) ==> ('logout',) , 0.413
+Rule: ('ll',) ==> ('&',) , 0.414
+Rule: ('ll', 'cd') ==> ('&',) , 0.415
+Rule: ('ll', 'cd') ==> ('logout',) , 0.415
+Rule: ('dir',) ==> ('logout',) , 0.418
+Rule: ('dir',) ==> ('vi', 'rm') , 0.418
+Rule: ('dir',) ==> ('rm', 'cd', 'vi') , 0.418
+Rule: ('ll',) ==> ('logout',) , 0.418
+Rule: ('vi', 'cd') ==> ('rm', 'dir') , 0.420
+Rule: ('vi', 'cd') ==> ('rm', 'll') , 0.420
+Rule: ('dir', 'cd') ==> ('rm', 'vi') , 0.426
+Rule: ('vi',) ==> ('cp', 'cd') , 0.431
+Rule: ('cd',) ==> ('ll', 'dir') , 0.433
+Rule: ('vi',) ==> ('cp',) , 0.440
+Rule: ('vi', 'cd') ==> ('cp',) , 0.443
+Rule: ('cd',) ==> ('vi', 'dir') , 0.464
+Rule: ('cd',) ==> ('logout',) , 0.470
+Rule: ('cd',) ==> ('vi', 'll') , 0.470
+Rule: ('ll',) ==> ('rm', 'cd') , 0.473
+Rule: ('ll',) ==> ('rm',) , 0.477
+Rule: ('ll', 'cd') ==> ('rm',) , 0.479
+Rule: ('dir',) ==> ('rm', 'cd') , 0.482
+Rule: ('dir',) ==> ('rm',) , 0.486
+Rule: ('dir', 'cd') ==> ('rm',) , 0.491
+Rule: ('vi',) ==> ('rm', 'cd') , 0.511
+Rule: ('ll',) ==> ('vi', 'dir') , 0.519
+Rule: ('ll',) ==> ('vi', 'dir', 'cd') , 0.519
+Rule: ('vi',) ==> ('rm',) , 0.520
+Rule: ('vi', 'cd') ==> ('rm',) , 0.525
+Rule: ('ll', 'cd') ==> ('vi', 'dir') , 0.525
+Rule: ('logout',) ==> ('elm',) , 0.551
+Rule: ('vi',) ==> ('ll', 'dir') , 0.551
+Rule: ('vi',) ==> ('ll', 'dir', 'cd') , 0.551
+Rule: ('vi', 'll') ==> ('rm',) , 0.554
+Rule: ('vi', 'll') ==> ('rm', 'cd') , 0.554
+Rule: ('vi', 'll', 'cd') ==> ('rm',) , 0.561
+Rule: ('dir',) ==> ('vi', 'll') , 0.564
+Rule: ('dir',) ==> ('vi', 'll', 'cd') , 0.564
+Rule: ('vi', 'cd') ==> ('ll', 'dir') , 0.566
+Rule: ('vi', 'dir') ==> ('rm',) , 0.568
+Rule: ('vi', 'dir') ==> ('rm', 'cd') , 0.568
+Rule: ('vi', 'dir', 'cd') ==> ('rm',) , 0.568
+Rule: ('dir', 'cd') ==> ('vi', 'll') , 0.574
+Rule: ('logout', 'cd') ==> ('ll',) , 0.598
+Rule: ('rm',) ==> ('vi', 'll') , 0.613
+Rule: ('rm',) ==> ('vi', 'dir') , 0.613
+Rule: ('rm',) ==> ('vi', 'dir', 'cd') , 0.613
+Rule: ('rm',) ==> ('vi', 'll', 'cd') , 0.613
+Rule: ('cd',) ==> ('dir',) , 0.619
+Rule: ('&',) ==> ('ll', 'cd') , 0.624
+Rule: ('cd',) ==> ('vi',) , 0.628
+Rule: ('&',) ==> ('ll',) , 0.631
+Rule: ('ll',) ==> ('dir', 'cd') , 0.632
+Rule: ('ll',) ==> ('dir',) , 0.636
+Rule: ('rm', 'cd') ==> ('vi', 'dir') , 0.639
+Rule: ('rm', 'cd') ==> ('vi', 'll') , 0.639
+Rule: ('ll', 'cd') ==> ('dir',) , 0.640
+Rule: ('cd',) ==> ('ll',) , 0.676
+Rule: ('ll',) ==> ('vi', 'cd') , 0.686
+Rule: ('dir',) ==> ('ll', 'cd') , 0.686
+Rule: ('dir',) ==> ('ll',) , 0.691
+Rule: ('ll',) ==> ('vi',) , 0.695
+Rule: ('ll', 'cd') ==> ('vi',) , 0.695
+Rule: ('dir', 'cd') ==> ('ll',) , 0.699
+Rule: ('rm',) ==> ('dir', 'cd') , 0.707
+Rule: ('rm',) ==> ('dir',) , 0.713
+Rule: ('vi',) ==> ('dir',) , 0.720
+Rule: ('vi',) ==> ('dir', 'cd') , 0.720
+Rule: ('vi',) ==> ('ll', 'cd') , 0.729
+Rule: ('rm', 'cd') ==> ('dir',) , 0.736
+Rule: ('dir',) ==> ('vi',) , 0.736
+Rule: ('dir',) ==> ('vi', 'cd') , 0.736
+Rule: ('vi',) ==> ('ll',) , 0.738
+Rule: ('elm',) ==> ('logout',) , 0.739
+Rule: ('vi', 'cd') ==> ('dir',) , 0.740
+Rule: ('vi', 'll') ==> ('dir',) , 0.747
+Rule: ('vi', 'll') ==> ('dir', 'cd') , 0.747
+Rule: ('vi', 'cd') ==> ('ll',) , 0.749
+Rule: ('dir', 'cd') ==> ('vi',) , 0.750
+Rule: ('rm',) ==> ('ll', 'cd') , 0.753
+Rule: ('vi', 'll', 'cd') ==> ('dir',) , 0.756
+Rule: ('rm',) ==> ('ll',) , 0.760
+Rule: ('vi', 'dir') ==> ('ll',) , 0.765
+Rule: ('vi', 'dir') ==> ('ll', 'cd') , 0.765
+Rule: ('vi', 'dir', 'cd') ==> ('ll',) , 0.765
+Rule: ('rm',) ==> ('vi', 'cd') , 0.767
+Rule: ('rm',) ==> ('vi',) , 0.780
+Rule: ('rm', 'cd') ==> ('ll',) , 0.785
+Rule: ('vi', 'rm') ==> ('ll',) , 0.786
+Rule: ('vi', 'rm') ==> ('dir',) , 0.786
+Rule: ('rm', 'vi') ==> ('dir', 'cd') , 0.786
+Rule: ('rm', 'vi') ==> ('ll', 'cd') , 0.786
+Rule: ('&',) ==> ('cd',) , 0.790
+Rule: ('cd', '&') ==> ('ll',) , 0.790
+Rule: ('rm', 'cd') ==> ('vi',) , 0.799
+Rule: ('rm', 'cd', 'vi') ==> ('dir',) , 0.800
+Rule: ('rm', 'cd', 'vi') ==> ('ll',) , 0.800
+Rule: ('rm', 'll') ==> ('vi',) , 0.807
+Rule: ('rm', 'll') ==> ('vi', 'cd') , 0.807
+Rule: ('rm', 'll', 'cd') ==> ('vi',) , 0.814
+Rule: ('ll', 'dir') ==> ('vi',) , 0.816
+Rule: ('ll', 'dir') ==> ('vi', 'cd') , 0.816
+Rule: ('ll', 'dir', 'cd') ==> ('vi',) , 0.821
+Rule: ('cp',) ==> ('vi', 'cd') , 0.851
+Rule: ('rm', 'dir') ==> ('vi',) , 0.860
+Rule: ('rm', 'dir') ==> ('vi', 'cd') , 0.860
+Rule: ('cp', 'cd') ==> ('vi',) , 0.866
+Rule: ('rm', 'dir', 'cd') ==> ('vi',) , 0.868
+Rule: ('cp',) ==> ('vi',) , 0.868
+Rule: ('cat',) ==> ('cd',) , 0.930
+Rule: ('ls',) ==> ('cd',) , 0.941
+Rule: ('pwd',) ==> ('cd',) , 0.946
+Rule: ('rm',) ==> ('cd',) , 0.960
+Rule: ('vi',) ==> ('cd',) , 0.973
+Rule: ('vi', 'cp') ==> ('cd',) , 0.980
+Rule: ('ll', 'logout') ==> ('cd',) , 0.980
+Rule: ('dir',) ==> ('cd',) , 0.982
+Rule: ('cp',) ==> ('cd',) , 0.982
+Rule: ('vi', 'rm') ==> ('cd',) , 0.983
+Rule: ('ll',) ==> ('cd',) , 0.987
+Rule: ('vi', 'll') ==> ('cd',) , 0.988
+Rule: ('ll', '&') ==> ('cd',) , 0.990
+Rule: ('rm', 'dir') ==> ('cd',) , 0.991
+Rule: ('rm', 'll') ==> ('cd',) , 0.991
+Rule: ('ll', 'dir') ==> ('cd',) , 0.993
+Rule: ('vi', 'dir') ==> ('cd',) , 1.000
+Rule: ('rm', 'dir', 'vi') ==> ('cd',) , 1.000
+Rule: ('rm', 'll', 'vi') ==> ('cd',) , 1.000
+Rule: ('vi', 'll', 'dir') ==> ('cd',) , 1.000

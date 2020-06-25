@@ -1,0 +1,27 @@
+|Trigger
+in_data => in_data.IN2
+en => en.IN2
+clk => clk.IN2
+out_lock2 << mysynchro:F.port3
+out_lock1 << myasynchro:G.port3
+clr_n => clr_n.IN2
+
+
+|Trigger|myasynchro:G
+in_data => out_lock1.DATAB
+en => always0.IN0
+en => out_lock1.OUTPUTSELECT
+clk => out_lock1~reg0.CLK
+out_lock1 <= out_lock1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clr_n => always0.IN1
+
+
+|Trigger|mysynchro:F
+in_data => out_lock2~reg0.DATAIN
+en => out_lock2.OUTPUTSELECT
+en => out_lock2~reg0.ENA
+clk => out_lock2~reg0.CLK
+out_lock2 <= out_lock2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clr_n => out_lock2~reg0.ALOAD
+
+

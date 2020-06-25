@@ -1,0 +1,125 @@
+item: ('butter', 'other vegetables') , 0.020
+item: ('whole milk', 'frozen vegetables') , 0.020
+item: ('whole milk', 'bottled beer') , 0.020
+item: ('tropical fruit', 'pip fruit') , 0.020
+item: ('whole milk', 'frankfurter') , 0.021
+item: ('yogurt', 'whipped/sour cream') , 0.021
+item: ('tropical fruit', 'soda') , 0.021
+item: ('rolls/buns', 'pastry') , 0.021
+item: ('chewing gum',) , 0.021
+item: ('pastry', 'soda') , 0.021
+item: ('other vegetables', 'fruit/vegetable juice') , 0.021
+item: ('tropical fruit', 'root vegetables') , 0.021
+item: ('whole milk', 'beef') , 0.021
+item: ('pork', 'other vegetables') , 0.022
+item: ('yogurt', 'citrus fruit') , 0.022
+item: ('whole milk', 'pork') , 0.022
+item: ('other vegetables', 'domestic eggs') , 0.022
+item: ('whole milk', 'yogurt', 'other vegetables') , 0.022
+item: ('grapes',) , 0.022
+item: ('other vegetables', 'pastry') , 0.023
+item: ('yogurt', 'bottled water') , 0.023
+item: ('other vegetables', 'shopping bags') , 0.023
+item: ('whole milk', 'other vegetables', 'root vegetables') , 0.023
+item: ('cat food',) , 0.023
+item: ('whole milk', 'margarine') , 0.024
+item: ('rolls/buns', 'bottled water') , 0.024
+item: ('sausage', 'soda') , 0.024
+item: ('rolls/buns', 'root vegetables') , 0.024
+item: ('hard cheese',) , 0.025
+item: ('sliced cheese',) , 0.025
+item: ('whole milk', 'shopping bags') , 0.025
+item: ('tropical fruit', 'rolls/buns') , 0.025
+item: ('shopping bags', 'soda') , 0.025
+item: ('other vegetables', 'bottled water') , 0.025
+item: ('ice cream',) , 0.025
+item: ('whole milk', 'brown bread') , 0.025
+item: ('meat',) , 0.026
+item: ('yogurt', 'root vegetables') , 0.026
+item: ('beverages',) , 0.026
+item: ('ham',) , 0.026
+item: ('whole milk', 'curd') , 0.026
+item: ('pip fruit', 'other vegetables') , 0.026
+item: ('whole milk', 'fruit/vegetable juice') , 0.027
+item: ('sausage', 'other vegetables') , 0.027
+item: ('specialty bar',) , 0.027
+item: ('whole milk', 'newspapers') , 0.027
+item: ('yogurt', 'soda') , 0.027
+item: ('whole milk', 'butter') , 0.028
+item: ('butter milk',) , 0.028
+item: ('oil',) , 0.028
+item: ('misc. beverages',) , 0.028
+item: ('frozen meals',) , 0.028
+item: ('other vegetables', 'whipped/sour cream') , 0.029
+item: ('citrus fruit', 'other vegetables') , 0.029
+item: ('bottled water', 'soda') , 0.029
+item: ('yogurt', 'tropical fruit') , 0.029
+item: ('candy',) , 0.030
+item: ('whole milk', 'sausage') , 0.030
+item: ('whole milk', 'domestic eggs') , 0.030
+item: ('whole milk', 'pip fruit') , 0.030
+item: ('specialty chocolate',) , 0.030
+item: ('whole milk', 'citrus fruit') , 0.031
+item: ('sausage', 'rolls/buns') , 0.031
+item: ('onions',) , 0.031
+item: ('whole milk', 'whipped/sour cream') , 0.032
+item: ('other vegetables', 'soda') , 0.033
+item: ('hygiene articles',) , 0.033
+item: ('hamburger meat',) , 0.033
+item: ('berries',) , 0.033
+item: ('whole milk', 'pastry') , 0.033
+item: ('UHT-milk',) , 0.033
+item: ('sugar',) , 0.034
+item: ('whole milk', 'bottled water') , 0.034
+item: ('yogurt', 'rolls/buns') , 0.034
+item: ('tropical fruit', 'other vegetables') , 0.036
+item: ('dessert',) , 0.037
+item: ('cream cheese ',) , 0.037
+item: ('long life bakery product',) , 0.037
+item: ('salty snack',) , 0.038
+item: ('rolls/buns', 'soda') , 0.038
+item: ('waffles',) , 0.038
+item: ('whole milk', 'soda') , 0.040
+item: ('white bread',) , 0.042
+item: ('whole milk', 'tropical fruit') , 0.042
+item: ('other vegetables', 'rolls/buns') , 0.043
+item: ('chicken',) , 0.043
+item: ('yogurt', 'other vegetables') , 0.043
+item: ('other vegetables', 'root vegetables') , 0.047
+item: ('frozen vegetables',) , 0.048
+item: ('whole milk', 'root vegetables') , 0.049
+item: ('chocolate',) , 0.050
+item: ('napkins',) , 0.052
+item: ('beef',) , 0.052
+item: ('curd',) , 0.053
+item: ('butter',) , 0.055
+item: ('yogurt', 'whole milk') , 0.056
+item: ('whole milk', 'rolls/buns') , 0.057
+item: ('pork',) , 0.058
+item: ('coffee',) , 0.058
+item: ('margarine',) , 0.059
+item: ('frankfurter',) , 0.059
+item: ('domestic eggs',) , 0.063
+item: ('brown bread',) , 0.065
+item: ('whipped/sour cream',) , 0.072
+item: ('fruit/vegetable juice',) , 0.072
+item: ('whole milk', 'other vegetables') , 0.075
+item: ('pip fruit',) , 0.076
+item: ('canned beer',) , 0.078
+item: ('newspapers',) , 0.080
+item: ('bottled beer',) , 0.081
+item: ('citrus fruit',) , 0.083
+item: ('pastry',) , 0.089
+item: ('sausage',) , 0.094
+item: ('shopping bags',) , 0.099
+item: ('tropical fruit',) , 0.105
+item: ('root vegetables',) , 0.109
+item: ('bottled water',) , 0.111
+item: ('yogurt',) , 0.140
+item: ('soda',) , 0.174
+item: ('rolls/buns',) , 0.184
+item: ('other vegetables',) , 0.193
+item: ('whole milk',) , 0.256
+
+------------------------ RULES:
+Rule: ('yogurt', 'other vegetables') ==> ('whole milk',) , 0.513

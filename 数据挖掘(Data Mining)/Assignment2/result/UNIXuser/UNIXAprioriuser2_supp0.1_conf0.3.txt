@@ -1,0 +1,99 @@
+item: ('rm', 'ls', 'quota') , 0.101
+item: ('cd', '&') , 0.102
+item: ('volcheck', 'cd') , 0.102
+item: ('emacs', 'setenv', 'logout') , 0.107
+item: ('setenv', 'logout') , 0.110
+item: ('more', 'ls', 'cd') , 0.111
+item: ('finger',) , 0.113
+item: ('xcc',) , 0.113
+item: ('rm', 'quota') , 0.113
+item: ('xcc', 'cd') , 0.113
+item: ('ls', 'quota', 'cd') , 0.115
+item: ('volcheck',) , 0.117
+item: ('setenv', 'emacs') , 0.118
+item: ('eject',) , 0.119
+item: ('logout', 'emacs') , 0.122
+item: ('ls', 'more') , 0.126
+item: ('setenv',) , 0.132
+item: ('emacs', 'ls') , 0.135
+item: ('a.out',) , 0.136
+item: ('a.out', 'cd') , 0.136
+item: ('rm', 'ls', 'cd') , 0.144
+item: ('more', 'cd') , 0.146
+item: ('emacs', 'cd') , 0.148
+item: ('quota', 'ls') , 0.152
+item: ('quota', 'cd') , 0.154
+item: ('rm', 'ls') , 0.160
+item: ('rm', 'cd') , 0.170
+item: ('more',) , 0.174
+item: ('rm',) , 0.196
+item: ('netscape', '&') , 0.196
+item: ('netscape',) , 0.201
+item: ('&',) , 0.215
+item: ('logout',) , 0.256
+item: ('emacs', 'quota') , 0.270
+item: ('ls', 'cd') , 0.274
+item: ('quota',) , 0.348
+item: ('ls',) , 0.348
+item: ('cd',) , 0.433
+item: ('emacs',) , 0.436
+
+------------------------ RULES:
+Rule: ('emacs',) ==> ('ls',) , 0.310
+Rule: ('cd',) ==> ('a.out',) , 0.315
+Rule: ('ls',) ==> ('cd', 'more') , 0.319
+Rule: ('quota',) ==> ('rm',) , 0.323
+Rule: ('ls',) ==> ('quota', 'cd') , 0.331
+Rule: ('quota',) ==> ('ls', 'cd') , 0.331
+Rule: ('cd',) ==> ('rm', 'ls') , 0.333
+Rule: ('cd',) ==> ('more',) , 0.336
+Rule: ('emacs',) ==> ('cd',) , 0.340
+Rule: ('cd',) ==> ('emacs',) , 0.343
+Rule: ('cd',) ==> ('quota',) , 0.355
+Rule: ('ls',) ==> ('more',) , 0.361
+Rule: ('ls',) ==> ('emacs',) , 0.388
+Rule: ('cd',) ==> ('rm',) , 0.391
+Rule: ('ls', 'cd') ==> ('more',) , 0.406
+Rule: ('ls',) ==> ('rm', 'cd') , 0.414
+Rule: ('logout',) ==> ('setenv', 'emacs') , 0.420
+Rule: ('ls', 'cd') ==> ('quota',) , 0.420
+Rule: ('logout',) ==> ('setenv',) , 0.430
+Rule: ('quota',) ==> ('ls',) , 0.437
+Rule: ('ls',) ==> ('quota',) , 0.437
+Rule: ('quota',) ==> ('cd',) , 0.441
+Rule: ('ls',) ==> ('rm',) , 0.460
+Rule: ('&',) ==> ('cd',) , 0.475
+Rule: ('logout',) ==> ('emacs',) , 0.477
+Rule: ('rm',) ==> ('ls', 'quota') , 0.514
+Rule: ('ls', 'cd') ==> ('rm',) , 0.527
+Rule: ('rm',) ==> ('quota',) , 0.574
+Rule: ('emacs',) ==> ('quota',) , 0.620
+Rule: ('rm', 'ls') ==> ('quota',) , 0.628
+Rule: ('cd',) ==> ('ls',) , 0.633
+Rule: ('more',) ==> ('ls', 'cd') , 0.641
+Rule: ('ls', 'quota') ==> ('rm',) , 0.661
+Rule: ('more',) ==> ('ls',) , 0.725
+Rule: ('rm',) ==> ('ls', 'cd') , 0.736
+Rule: ('quota', 'cd') ==> ('ls',) , 0.750
+Rule: ('ls', 'quota') ==> ('cd',) , 0.757
+Rule: ('cd', 'more') ==> ('ls',) , 0.764
+Rule: ('quota',) ==> ('emacs',) , 0.776
+Rule: ('ls',) ==> ('cd',) , 0.787
+Rule: ('setenv',) ==> ('logout', 'emacs') , 0.810
+Rule: ('rm',) ==> ('ls',) , 0.818
+Rule: ('setenv',) ==> ('logout',) , 0.830
+Rule: ('more',) ==> ('cd',) , 0.840
+Rule: ('rm', 'cd') ==> ('ls',) , 0.852
+Rule: ('rm',) ==> ('cd',) , 0.865
+Rule: ('volcheck',) ==> ('cd',) , 0.875
+Rule: ('logout', 'emacs') ==> ('setenv',) , 0.880
+Rule: ('ls', 'more') ==> ('cd',) , 0.884
+Rule: ('setenv',) ==> ('emacs',) , 0.890
+Rule: ('rm', 'quota') ==> ('ls',) , 0.894
+Rule: ('rm', 'ls') ==> ('cd',) , 0.901
+Rule: ('setenv', 'emacs') ==> ('logout',) , 0.910
+Rule: ('&',) ==> ('netscape',) , 0.914
+Rule: ('netscape',) ==> ('&',) , 0.974
+Rule: ('setenv', 'logout') ==> ('emacs',) , 0.976
+Rule: ('a.out',) ==> ('cd',) , 1.000
+Rule: ('xcc',) ==> ('cd',) , 1.000

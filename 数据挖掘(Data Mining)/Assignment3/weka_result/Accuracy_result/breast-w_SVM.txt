@@ -1,0 +1,49 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     wisconsin-breast-cancer-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    699
+Attributes:   10
+              Clump_Thickness
+              Cell_Size_Uniformity
+              Cell_Shape_Uniformity
+              Marginal_Adhesion
+              Single_Epi_Cell_Size
+              Bare_Nuclei
+              Bland_Chromatin
+              Normal_Nucleoli
+              Mitoses
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 0.52 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         669               95.7082 %
+Incorrectly Classified Instances        30                4.2918 %
+Kappa statistic                          0.9072
+Mean absolute error                      0.0429
+Root mean squared error                  0.2072
+Relative absolute error                  9.4959 %
+Root relative squared error             43.5866 %
+Total Number of Instances              699     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.941    0.012    0.993      0.941    0.966      0.910    0.964     0.973     benign
+                 0.988    0.059    0.898      0.988    0.941      0.910    0.964     0.891     malignant
+Weighted Avg.    0.957    0.028    0.960      0.957    0.958      0.910    0.964     0.945     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 431  27 |   a = benign
+   3 238 |   b = malignant
+

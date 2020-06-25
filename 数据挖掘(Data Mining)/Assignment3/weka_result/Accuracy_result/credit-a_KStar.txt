@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0.65 seconds
+
+Time taken to test model on training data: 1.24 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         690              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.001 
+Root mean squared error                  0.0118
+Relative absolute error                  0.1955 %
+Root relative squared error              2.3808 %
+Total Number of Instances              690     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     +
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     -
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 307   0 |   a = +
+   0 383 |   b = -
+
+Time taken to perform cross-validation: 1.13 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         545               78.9855 %
+Incorrectly Classified Instances       145               21.0145 %
+Kappa statistic                          0.5666
+Mean absolute error                      0.2236
+Root mean squared error                  0.4089
+Relative absolute error                 45.2617 %
+Root relative squared error             82.2793 %
+Total Number of Instances              690     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.671    0.115    0.824      0.671    0.740      0.575    0.858     0.855     +
+                 0.885    0.329    0.770      0.885    0.824      0.575    0.858     0.866     -
+Weighted Avg.    0.790    0.234    0.794      0.790    0.786      0.575    0.858     0.861     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 206 101 |   a = +
+  44 339 |   b = -
+

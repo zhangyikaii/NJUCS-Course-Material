@@ -1,0 +1,207 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                                       Class
+Attribute                               good       bad
+                                       (0.7)     (0.3)
+=======================================================
+checking_status
+  <0                                    140.0     136.0
+  0<=X<200                              165.0     106.0
+  >=200                                  50.0      15.0
+  no checking                           349.0      47.0
+  [total]                               704.0     304.0
+
+duration
+  mean                                19.1766   24.8129
+  std. dev.                           10.9817   13.3608
+  weight sum                              700       300
+  precision                             2.125     2.125
+
+credit_history
+  no credits/all paid                    16.0      26.0
+  all paid                               22.0      29.0
+  existing paid                         362.0     170.0
+  delayed previously                     61.0      29.0
+  critical/other existing credit        244.0      51.0
+  [total]                               705.0     305.0
+
+purpose
+  new car                               146.0      90.0
+  used car                               87.0      18.0
+  furniture/equipment                   124.0      59.0
+  radio/tv                              219.0      63.0
+  domestic appliance                      9.0       5.0
+  repairs                                15.0       9.0
+  education                              29.0      23.0
+  vacation                                1.0       1.0
+  retraining                              9.0       2.0
+  business                               64.0      35.0
+  other                                   8.0       6.0
+  [total]                               711.0     311.0
+
+credit_amount
+  mean                              2985.6721 3938.1609
+  std. dev.                         2399.7801 3529.4788
+  weight sum                              700       300
+  precision                           19.7543   19.7543
+
+savings_status
+  <100                                  387.0     218.0
+  100<=X<500                             70.0      35.0
+  500<=X<1000                            53.0      12.0
+  >=1000                                 43.0       7.0
+  no known savings                      152.0      33.0
+  [total]                               705.0     305.0
+
+employment
+  unemployed                             40.0      24.0
+  <1                                    103.0      71.0
+  1<=X<4                                236.0     105.0
+  4<=X<7                                136.0      40.0
+  >=7                                   190.0      65.0
+  [total]                               705.0     305.0
+
+installment_commitment
+  mean                                   2.92    3.0967
+  std. dev.                            1.1273    1.0866
+  weight sum                              700       300
+  precision                                 1         1
+
+personal_status
+  male div/sep                           31.0      21.0
+  female div/dep/mar                    202.0     110.0
+  male single                           403.0     147.0
+  male mar/wid                           68.0      26.0
+  female single                           1.0       1.0
+  [total]                               705.0     305.0
+
+other_parties
+  none                                  636.0     273.0
+  co applicant                           24.0      19.0
+  guarantor                              43.0      11.0
+  [total]                               703.0     303.0
+
+residence_since
+  mean                                 2.8429      2.85
+  std. dev.                            1.1076    1.0928
+  weight sum                              700       300
+  precision                                 1         1
+
+property_magnitude
+  real estate                           223.0      61.0
+  life insurance                        162.0      72.0
+  car                                   231.0     103.0
+  no known property                      88.0      68.0
+  [total]                               704.0     304.0
+
+age
+  mean                                36.1723   33.9267
+  std. dev.                           11.4005    11.259
+  weight sum                              700       300
+  precision                            1.0769    1.0769
+
+other_payment_plans
+  bank                                   83.0      58.0
+  stores                                 29.0      20.0
+  none                                  591.0     225.0
+  [total]                               703.0     303.0
+
+housing
+  rent                                  110.0      71.0
+  own                                   528.0     187.0
+  for free                               65.0      45.0
+  [total]                               703.0     303.0
+
+existing_credits
+  mean                                 1.4243    1.3667
+  std. dev.                            0.5843    0.5588
+  weight sum                              700       300
+  precision                                 1         1
+
+job
+  unemp/unskilled non res                16.0       8.0
+  unskilled resident                    145.0      57.0
+  skilled                               445.0     187.0
+  high qualif/self emp/mgmt              98.0      52.0
+  [total]                               704.0     304.0
+
+num_dependents
+  mean                                 1.1557    1.1533
+  std. dev.                            0.3626    0.3603
+  weight sum                              700       300
+  precision                                 1         1
+
+own_telephone
+  none                                  410.0     188.0
+  yes                                   292.0     114.0
+  [total]                               702.0     302.0
+
+foreign_worker
+  yes                                   668.0     297.0
+  no                                     34.0       5.0
+  [total]                               702.0     302.0
+
+
+
+Time taken to build model: 0.66 seconds
+
+Time taken to test model on training data: 0.16 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         772               77.2    %
+Incorrectly Classified Instances       228               22.8    %
+Kappa statistic                          0.43  
+Mean absolute error                      0.2821
+Root mean squared error                  0.4077
+Relative absolute error                 67.1408 %
+Root relative squared error             88.9752 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.873    0.463    0.815      0.873    0.843      0.433    0.809     0.906     good
+                 0.537    0.127    0.644      0.537    0.585      0.433    0.809     0.609     bad
+Weighted Avg.    0.772    0.362    0.763      0.772    0.766      0.433    0.809     0.817     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 611  89 |   a = good
+ 139 161 |   b = bad
+
+Time taken to perform cross-validation: 0.14 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         754               75.4    %
+Incorrectly Classified Instances       246               24.6    %
+Kappa statistic                          0.3813
+Mean absolute error                      0.2936
+Root mean squared error                  0.4201
+Relative absolute error                 69.8801 %
+Root relative squared error             91.6718 %
+Total Number of Instances             1000     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.864    0.503    0.800      0.864    0.831      0.385    0.787     0.891     good
+                 0.497    0.136    0.611      0.497    0.548      0.385    0.787     0.577     bad
+Weighted Avg.    0.754    0.393    0.743      0.754    0.746      0.385    0.787     0.797     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 605  95 |   a = good
+ 151 149 |   b = bad
+

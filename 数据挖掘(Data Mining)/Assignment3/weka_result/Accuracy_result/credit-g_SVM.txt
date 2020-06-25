@@ -1,0 +1,60 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     german_credit-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    1000
+Attributes:   21
+              checking_status
+              duration
+              credit_history
+              purpose
+              credit_amount
+              savings_status
+              employment
+              installment_commitment
+              personal_status
+              other_parties
+              residence_since
+              property_magnitude
+              age
+              other_payment_plans
+              housing
+              existing_credits
+              job
+              num_dependents
+              own_telephone
+              foreign_worker
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 0.2 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         687               68.7    %
+Incorrectly Classified Instances       313               31.3    %
+Kappa statistic                         -0.0256
+Mean absolute error                      0.313 
+Root mean squared error                  0.5595
+Relative absolute error                 74.4923 %
+Root relative squared error            122.085  %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.981    1.000    0.696      0.981    0.814      -0.075   0.491     0.696     good
+                 0.000    0.019    0.000      0.000    0.000      -0.075   0.491     0.300     bad
+Weighted Avg.    0.687    0.706    0.487      0.687    0.570      -0.075   0.491     0.577     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 687  13 |   a = good
+ 300   0 |   b = bad
+

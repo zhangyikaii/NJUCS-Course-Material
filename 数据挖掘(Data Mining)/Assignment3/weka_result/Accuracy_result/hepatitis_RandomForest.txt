@@ -1,0 +1,68 @@
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.16 seconds
+
+Time taken to test model on training data: 0.14 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         155              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.0821
+Root mean squared error                  0.1218
+Relative absolute error                 24.879  %
+Root relative squared error             30.0864 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     DIE
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     LIVE
+Weighted Avg.    1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  32   0 |   a = DIE
+   0 123 |   b = LIVE
+
+Time taken to perform cross-validation: 1.09 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         132               85.1613 %
+Incorrectly Classified Instances        23               14.8387 %
+Kappa statistic                          0.5193
+Mean absolute error                      0.2186
+Root mean squared error                  0.3236
+Relative absolute error                 66.1967 %
+Root relative squared error             79.9229 %
+Total Number of Instances              155     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.563    0.073    0.667      0.563    0.610      0.522    0.874     0.694     DIE
+                 0.927    0.438    0.891      0.927    0.908      0.522    0.874     0.959     LIVE
+Weighted Avg.    0.852    0.362    0.844      0.852    0.847      0.522    0.874     0.904     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  18  14 |   a = DIE
+   9 114 |   b = LIVE
+

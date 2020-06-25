@@ -1,0 +1,106 @@
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    13.85348539596192
+    Node 2    -1.6130269005946314
+    Node 3    -8.12719726385548
+    Node 4    -7.390947086901944
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -13.853485395961915
+    Node 2    1.613026900594631
+    Node 3    8.12719726385547
+    Node 4    7.39094708690195
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    33.58218484970731
+    Attrib id    1.9108725483208728
+    Attrib start    21.981454068265574
+    Attrib end    -10.189929341519386
+    Attrib event    -0.025090266301722928
+    Attrib size    23.039370369904443
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    105.08675092900182
+    Attrib id    0.16033001783465542
+    Attrib start    107.94857653500752
+    Attrib end    -0.06242901253692731
+    Attrib event    -0.0812717518644467
+    Attrib size    -3.9041462794030752
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    121.26615774136599
+    Attrib id    -0.3491339996538247
+    Attrib start    117.64001052979408
+    Attrib end    -0.14947377712733725
+    Attrib event    -0.21764018989318765
+    Attrib size    4.163090257189734
+Class 0
+    Input
+    Node 0
+Class 1
+    Input
+    Node 1
+
+
+Time taken to build model: 6.64 seconds
+
+Time taken to test model on training data: 0.16 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances       14063               90.4664 %
+Incorrectly Classified Instances      1482                9.5336 %
+Kappa statistic                          0.781 
+Mean absolute error                      0.128 
+Root mean squared error                  0.2863
+Relative absolute error                 29.0195 %
+Root relative squared error             60.9483 %
+Total Number of Instances            15545     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.829    0.058    0.874      0.829    0.851      0.782    0.927     0.900     0
+                 0.942    0.171    0.918      0.942    0.930      0.782    0.927     0.950     1
+Weighted Avg.    0.905    0.134    0.904      0.905    0.904      0.782    0.927     0.933     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4235  873 |    a = 0
+  609 9828 |    b = 1
+
+Time taken to perform cross-validation: 52.66 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances       14175               91.1869 %
+Incorrectly Classified Instances      1370                8.8131 %
+Kappa statistic                          0.796 
+Mean absolute error                      0.1413
+Root mean squared error                  0.2705
+Relative absolute error                 32.0258 %
+Root relative squared error             57.6001 %
+Total Number of Instances            15545     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.825    0.045    0.899      0.825    0.860      0.798    0.940     0.908     0
+                 0.955    0.175    0.917      0.955    0.936      0.798    0.940     0.961     1
+Weighted Avg.    0.912    0.133    0.911      0.912    0.911      0.798    0.940     0.944     
+
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4212  896 |    a = 0
+  474 9963 |    b = 1
+

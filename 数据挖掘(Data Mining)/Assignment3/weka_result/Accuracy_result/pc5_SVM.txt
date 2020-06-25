@@ -1,0 +1,78 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model E:\Weka-3-8 -seed 1
+Relation:     pc5-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    17186
+Attributes:   39
+              LOC_BLANK
+              BRANCH_COUNT
+              CALL_PAIRS
+              LOC_CODE_AND_COMMENT
+              LOC_COMMENTS
+              CONDITION_COUNT
+              CYCLOMATIC_COMPLEXITY
+              CYCLOMATIC_DENSITY
+              DECISION_COUNT
+              DESIGN_COMPLEXITY
+              DESIGN_DENSITY
+              EDGE_COUNT
+              ESSENTIAL_COMPLEXITY
+              ESSENTIAL_DENSITY
+              LOC_EXECUTABLE
+              PARAMETER_COUNT
+              GLOBAL_DATA_COMPLEXITY
+              GLOBAL_DATA_DENSITY
+              HALSTEAD_CONTENT
+              HALSTEAD_DIFFICULTY
+              HALSTEAD_EFFORT
+              HALSTEAD_ERROR_EST
+              HALSTEAD_LENGTH
+              HALSTEAD_LEVEL
+              HALSTEAD_PROG_TIME
+              HALSTEAD_VOLUME
+              MAINTENANCE_SEVERITY
+              MODIFIED_CONDITION_COUNT
+              MULTIPLE_CONDITION_COUNT
+              NODE_COUNT
+              NORMALIZED_CYLOMATIC_COMPLEXITY
+              NUM_OPERANDS
+              NUM_OPERATORS
+              NUM_UNIQUE_OPERANDS
+              NUM_UNIQUE_OPERATORS
+              NUMBER_OF_LINES
+              PERCENT_COMMENTS
+              LOC_TOTAL
+              c
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 20.99 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16714               97.2536 %
+Incorrectly Classified Instances       472                2.7464 %
+Kappa statistic                          0.1699
+Mean absolute error                      0.0275
+Root mean squared error                  0.1657
+Relative absolute error                 47.106  %
+Root relative squared error             97.1104 %
+Total Number of Instances            17186     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.903    0.973      1.000    0.986      0.289    0.548     0.973     FALSE
+                 0.097    0.000    0.893      0.097    0.175      0.289    0.548     0.114     TRUE
+Weighted Avg.    0.973    0.876    0.970      0.973    0.962      0.289    0.548     0.947     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 16664     6 |     a = FALSE
+   466    50 |     b = TRUE
+

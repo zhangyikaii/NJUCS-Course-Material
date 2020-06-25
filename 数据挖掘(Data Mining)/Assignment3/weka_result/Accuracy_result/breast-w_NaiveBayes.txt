@@ -1,0 +1,124 @@
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                            Class
+Attribute                  benign malignant
+                           (0.65)    (0.35)
+============================================
+Clump_Thickness
+  mean                      2.9563     7.195
+  std. dev.                 1.6725    2.4238
+  weight sum                   458       241
+  precision                      1         1
+
+Cell_Size_Uniformity
+  mean                      1.3253    6.5726
+  std. dev.                 0.9067    2.7139
+  weight sum                   458       241
+  precision                      1         1
+
+Cell_Shape_Uniformity
+  mean                      1.4432    6.5602
+  std. dev.                 0.9967    2.5567
+  weight sum                   458       241
+  precision                      1         1
+
+Marginal_Adhesion
+  mean                      1.3646    5.5477
+  std. dev.                 0.9957    3.2038
+  weight sum                   458       241
+  precision                      1         1
+
+Single_Epi_Cell_Size
+  mean                      2.1201    5.2988
+  std. dev.                 0.9161    2.4465
+  weight sum                   458       241
+  precision                      1         1
+
+Bare_Nuclei
+  mean                      1.3166    7.5398
+  std. dev.                 1.2517    3.1299
+  weight sum                   458       241
+  precision                    0.9       0.9
+
+Bland_Chromatin
+  mean                      2.1004    5.9793
+  std. dev.                 1.0792    2.2691
+  weight sum                   458       241
+  precision                      1         1
+
+Normal_Nucleoli
+  mean                      1.2904    5.8631
+  std. dev.                 1.0577    3.3437
+  weight sum                   458       241
+  precision                      1         1
+
+Mitoses
+  mean                      1.1889    2.7401
+  std. dev.                 0.4833    2.5138
+  weight sum                   458       241
+  precision                  1.125     1.125
+
+
+
+Time taken to build model: 0.58 seconds
+
+Time taken to test model on training data: 0.08 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         672               96.1373 %
+Incorrectly Classified Instances        27                3.8627 %
+Kappa statistic                          0.9157
+Mean absolute error                      0.0389
+Root mean squared error                  0.1947
+Relative absolute error                  8.5993 %
+Root relative squared error             40.9553 %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.954    0.025    0.986      0.954    0.970      0.917    0.991     0.996     benign
+                 0.975    0.046    0.918      0.975    0.946      0.917    0.986     0.954     malignant
+Weighted Avg.    0.961    0.032    0.963      0.961    0.962      0.917    0.989     0.981     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 437  21 |   a = benign
+   6 235 |   b = malignant
+
+Time taken to perform cross-validation: 0.19 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         671               95.9943 %
+Incorrectly Classified Instances        28                4.0057 %
+Kappa statistic                          0.9127
+Mean absolute error                      0.0407
+Root mean squared error                  0.1995
+Relative absolute error                  8.9982 %
+Root relative squared error             41.9636 %
+Total Number of Instances              699     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.952    0.025    0.986      0.952    0.969      0.914    0.987     0.994     benign
+                 0.975    0.048    0.914      0.975    0.944      0.914    0.983     0.941     malignant
+Weighted Avg.    0.960    0.033    0.962      0.960    0.960      0.914    0.986     0.976     
+
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 436  22 |   a = benign
+   6 235 |   b = malignant
+
