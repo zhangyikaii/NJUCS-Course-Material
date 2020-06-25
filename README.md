@@ -18,19 +18,19 @@
 
 | 课程                  | 时间        |
 | --------------------- | ----------- |
-| [机器学习导论]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0(Machine%20Learning)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/机器学习(Machine Learning)) | Spring 2020 |
-| [模式识别]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB(Pattern%20Recognition)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/模式识别(Pattern Recognition)) | Spring 2020 |
-| [数据挖掘]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98(Data%20Mining)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/数据挖掘(Data Mining)) | Spring 2019 |
-| [概率论与数理统计]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1(Probability%20and%20Mathematical%20Statistics)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/概率论与数理统计(Probability and Mathematical Statistics)) | Spring 2020 |
-| [高级程序设计]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1(Advanced%20Programing)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/高级程序设计(Advanced Programing)) | Fall 2019 |
+| [机器学习导论](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0(Machine%20Learning)) | Spring 2020 |
+| [模式识别](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB(Pattern%20Recognition)) | Spring 2020 |
+| [数据挖掘](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98(Data%20Mining)) | Spring 2019 |
+| [概率论与数理统计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1(Probability%20and%20Mathematical%20Statistics)) | Spring 2020 |
+| [高级程序设计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1(Advanced%20Programing)) | Fall 2019 |
 | [计算机网络](          | Spring 2020 |
-| [操作系统]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F(Operating%20System)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/操作系统(Operating System)) | Fall 2019 |
-| [计算机系统基础]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80(Introduction%20to%20Computer%20Systems)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/计算机系统基础(Introduction to Computer Systems)) | Spring 2019 |
-| [计算机图形学]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6(Computer%20Graphics)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/计算机图形学(Computer Graphics)) | Fall 2019 |
-| [数据库概论]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E5%BA%93(Introduction%20of%20Database)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/数据库(Introduction of Database)) | Fall 2019 |
-| [程序设计基础实验]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C(Practice%20of%20Fundamental%20Programming)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/程序设计基础实验(Practice of Fundamental Programming)) | Spring 2018 |
-| [数字电路与数字系统]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF(Digital%20Circuits)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/数字电路(Digital Circuits)) | Fall 2019 |
-| [数字电路与数字系统实验]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%AE%9E%E9%AA%8C(Experiments%20in%20Digital%20Circuit)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/数字电路实验(Experiments in Digital Circuit)) | Spring 2019 |
+| [操作系统](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F(Operating%20System)) | Fall 2019 |
+| [计算机系统基础](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80(Introduction%20to%20Computer%20Systems)) | Spring 2019 |
+| [计算机图形学](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6(Computer%20Graphics)) | Fall 2019 |
+| [数据库概论](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E5%BA%93(Introduction%20of%20Database)) | Fall 2019 |
+| [程序设计基础实验](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C(Practice%20of%20Fundamental%20Programming)) | Spring 2018 |
+| [数字电路与数字系统](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF(Digital%20Circuits)) | Fall 2019 |
+| [数字电路与数字系统实验](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%AE%9E%E9%AA%8C(Experiments%20in%20Digital%20Circuit)) | Spring 2019 |
 
 
 star :night_with_stars:
