@@ -8,7 +8,7 @@
 
 1. 括号匹配, 用栈即可.
 2. 路径异或, 树上BFS.
-3. special judge
+3. special judge.
 
 &nbsp;
 
