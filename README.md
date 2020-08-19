@@ -23,7 +23,7 @@
 | [数据挖掘](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98(Data%20Mining)) | Spring 2019 |
 | [概率论与数理统计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1(Probability%20and%20Mathematical%20Statistics)) | Spring 2020 |
 | [高级程序设计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1(Advanced%20Programing)) | Fall 2019 |
-| [计算机网络](          | Spring 2020 |
+| [计算机网络]([https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C(Computer%20Networks)](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/计算机网络(Computer Networks)) | Spring 2020 |
 | [操作系统](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F(Operating%20System)) | Fall 2019 |
 | [计算机系统基础](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80(Introduction%20to%20Computer%20Systems)) | Spring 2019 |
 | [计算机图形学](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6(Computer%20Graphics)) | Fall 2019 |
