@@ -1,14 +1,12 @@
-# 南京大学 NJU 计算机系 CS 课程作业代码实验报告
+# 南京大学 计算机系 NJU-CS 课程分享
 
-##### (数据挖掘 模式识别 机器学习导论 概率论与数理统计 计算机网络 计算机图形学 高级程序设计 数据库 操作系统 程设实验 数电 数电实验... ) 更新中, star! :star2:
+[![](https://img.shields.io/github/repo-size/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/repo-size/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg) [![](https://img.shields.io/github/stars/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/stars/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg) [![](https://img.shields.io/github/forks/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/forks/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)
 
----
+&nbsp;
 
 :notebook_with_decorative_cover: 最近更新 `2020-8-19 17:29:20`
 
 我上过或正在上的一些课程资料, 主要是作业, 实验报告, 大作业代码.
-
-加油! **更新中..**
 
 如果只需要下载*子文件夹*请戳[DownGit](https://yehonal.github.io/DownGit/#/home)
 
@@ -39,8 +37,14 @@ For English version, please refer to [README-en.md](README-en.md).
 
 &nbsp;
 
-### 声明
+### 许可
 
 [CC-BY-NC-SA：署名-非商业性使用-相同方式共享](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+&nbsp;
+
+### 免责声明
+
+本项目建立的初衷是为了方便朋友们更好地学习, **严禁用于任何商业用途!**
 
 如果您认为本仓库的一些文件侵犯了您的权益或者有些地方不妥, 请 [向我发送邮件](mailto:zykhelloha@gmail.com). 我将会从仓库中彻底清除它们.
