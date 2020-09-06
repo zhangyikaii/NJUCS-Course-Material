@@ -1,0 +1,62 @@
+Name,Location,Date established as park[5][9],Area (2018)[10],Recreation visitors (2018)[7],
+Acadia,Maine,February 26 1919,49075.26,3537575,44°21N 68°13W / 44.35°N 68.21°W / 44.35; -68.21 
+American Samoa,American Samoa,October 31 1988,8256.67,28626,14°15S 170°41W / 14.25°S 170.68°W / -14.25; -170.68 
+Arches,Utah,November 12 1971,76678.98,1663557,38°41N 109°34W / 38.68°N 109.57°W / 38.68; -109.57 
+Badlands,South Dakota,November 10 1978,242755.94,1008942,43°45N 102°30W / 43.75°N 102.50°W / 43.75; -102.50 
+Big Bend,Texas,June 12 1944,801163.21,440091,29°15N 103°15W / 29.25°N 103.25°W / 29.25; -103.25 
+Biscayne,Florida,June 28 1980,172971.11,469253,25°39N 80°05W / 25.65°N 80.08°W / 25.65; -80.08 
+Black Canyon of the Gunnison,Colorado,October 21 1999,30779.83,308962,38°34N 107°43W / 38.57°N 107.72°W / 38.57; -107.72 
+Bryce Canyon,Utah,February 25 1928,35835.08,2679478,37°34N 112°11W / 37.57°N 112.18°W / 37.57; -112.18 
+Canyonlands,Utah,September 12 1964,337597.83,739449,38°12N 109°56W / 38.2°N 109.93°W / 38.2; -109.93 
+Capitol Reef,Utah,December 18 1971,241904.50,1227627,38°12N 111°10W / 38.20°N 111.17°W / 38.20; -111.17 
+Carlsbad Caverns,New Mexico,May 14 1930,46766.45,465912,32°10N 104°26W / 32.17°N 104.44°W / 32.17; -104.44 
+Channel Islands,California,March 5 1980,249561.00,366250,34°01N 119°25W / 34.01°N 119.42°W / 34.01; -119.42 
+Congaree,South Carolina,November 10 2003,26639.99,145929,33°47N 80°47W / 33.78°N 80.78°W / 33.78; -80.78 
+Crater Lake,Oregon,May 22 1902,183224.05,720659,42°56N 122°06W / 42.94°N 122.1°W / 42.94; -122.1 
+Cuyahoga Valley,Ohio,October 11 2000,32571.88,2096053,41°14N 81°33W / 41.24°N 81.55°W / 41.24; -81.55 
+Death Valley,California Nevada,October 31 1994,3372981.42,1678660,36°14N 116°49W / 36.24°N 116.82°W / 36.24; -116.82 
+Denali,Alaska,February 26 1917,4740911.16,594660,63°20N 150°30W / 63.33°N 150.50°W / 63.33; -150.50 
+Dry Tortugas,Florida,October 26 1992,64701.22,56810,24°38N 82°52W / 24.63°N 82.87°W / 24.63; -82.87 
+Everglades,Florida,May 30 1934,1508938.57,597124,25°19N 80°56W / 25.32°N 80.93°W / 25.32; -80.93 
+Gates of the Arctic,Alaska,December 2 1980,7523897.45,9591,67°47N 153°18W / 67.78°N 153.30°W / 67.78; -153.30 
+Gateway Arch,Missouri,February 22 2018[44],192.83,2016180,38°38N 90°11W / 38.63°N 90.19°W / 38.63; -90.19 
+Glacier,Montana,May 11 1910,1013125.99,2965309,48°48N 114°00W / 48.80°N 114.00°W / 48.80; -114.00 
+Glacier Bay,Alaska,December 2 1980,3223383.43,597915,58°30N 137°00W / 58.50°N 137.00°W / 58.50; -137.00 
+Grand Canyon,Arizona,February 26 1919,1201647.03,6380495,36°04N 112°08W / 36.06°N 112.14°W / 36.06; -112.14 
+Grand Teton,Wyoming,February 26 1929,310044.36,3491151,43°44N 110°48W / 43.73°N 110.80°W / 43.73; -110.80 
+Great Basin,Nevada,October 27 1986,77180.00,153094,38°59N 114°18W / 38.98°N 114.30°W / 38.98; -114.30 
+Great Sand Dunes,Colorado,September 13 2004,107341.87,442905,37°44N 105°31W / 37.73°N 105.51°W / 37.73; -105.51 
+Great Smoky Mountains,Tennessee North Carolina,June 15 1934,522426.88,11421200,35°41N 83°32W / 35.68°N 83.53°W / 35.68; -83.53 
+Guadalupe Mountains,Texas,October 15 1966,86367.10,172347,31°55N 104°52W / 31.92°N 104.87°W / 31.92; -104.87 
+Haleakal,Hawaii,August 1 1916,33264.62,1044084,20°43N 156°10W / 20.72°N 156.17°W / 20.72; -156.17 (Haleakal)
+Hawaii Volcanoes,Hawaii,August 1 1916,325605.28,1116891,19°23N 155°12W / 19.38°N 155.20°W / 19.38; -155.20 (Hawaii Volcanoes)
+Hot Springs,Arkansas,March 4 1921,5551.76,1506887,34°31N 93°03W / 34.51°N 93.05°W / 34.51; -93.05 
+Indiana Dunes,Indiana,February 15 2019,15348.43,1756079,41°3912N 87°0309W / 41.6533°N 87.0524°W / 41.6533; -87.0524 
+Isle Royale,Michigan,April 3 1940,571790.30,25798,48°06N 88°33W / 48.10°N 88.55°W / 48.10; -88.55 
+Joshua Tree,California,October 31 1994,790635.74,2942382,33°47N 115°54W / 33.79°N 115.90°W / 33.79; -115.90 
+Katmai,Alaska,December 2 1980,3674529.33,37818,58°30N 155°00W / 58.50°N 155.00°W / 58.50; -155.00 
+Kenai Fjords,Alaska,December 2 1980,669650.05,321596,59°55N 149°39W / 59.92°N 149.65°W / 59.92; -149.65 
+Kings Canyon,California,March 4 1940,461901.20,699023,36°48N 118°33W / 36.80°N 118.55°W / 36.80; -118.55 
+Kobuk Valley,Alaska,December 2 1980,1750716.16,14937,67°33N 159°17W / 67.55°N 159.28°W / 67.55; -159.28 
+Lake Clark,Alaska,December 2 1980,2619816.49,14479,60°58N 153°25W / 60.97°N 153.42°W / 60.97; -153.42 
+Lassen Volcanic,California,August 9 1916,106589.02,499435,40°29N 121°31W / 40.49°N 121.51°W / 40.49; -121.51 
+Mammoth Cave,Kentucky,July 1 1941,54011.91,533206,37°11N 86°06W / 37.18°N 86.10°W / 37.18; -86.10 
+Mesa Verde,Colorado,June 29 1906,52485.17,563420,37°11N 108°29W / 37.18°N 108.49°W / 37.18; -108.49 
+Mount Rainier,Washington,March 2 1899,236381.64,1518491,46°51N 121°45W / 46.85°N 121.75°W / 46.85; -121.75 
+North Cascades,Washington,October 2 1968,504780.94,30085,48°42N 121°12W / 48.70°N 121.20°W / 48.70; -121.20 
+Olympic,Washington,June 29 1938,922649.41,3104455,47°58N 123°30W / 47.97°N 123.50°W / 47.97; -123.50 
+Petrified Forest,Arizona,December 9 1962,221390.21,644922,35°04N 109°47W / 35.07°N 109.78°W / 35.07; -109.78 
+Pinnacles,California,January 10 2013,26685.73,222152,36°29N 121°10W / 36.48°N 121.16°W / 36.48; -121.16 
+Redwood,California,October 2 1968,138999.37,482536,41°18N 124°00W / 41.30°N 124.00°W / 41.30; -124.00 
+Rocky Mountain,Colorado,January 26 1915,265807.25,4590493,40°24N 105°35W / 40.40°N 105.58°W / 40.40; -105.58 
+Saguaro,Arizona,October 14 1994,91715.72,957405,32°15N 110°30W / 32.25°N 110.50°W / 32.25; -110.50 
+Sequoia,California,September 25 1890,404062.63,1229594,36°26N 118°41W / 36.43°N 118.68°W / 36.43; -118.68 
+Shenandoah,Virginia,December 26 1935,199223.77,1264880,38°32N 78°21W / 38.53°N 78.35°W / 38.53; -78.35 
+Theodore Roosevelt,North Dakota,November 10 1978,70446.89,749389,46°58N 103°27W / 46.97°N 103.45°W / 46.97; -103.45 
+Virgin Islands,United States Virgin Islands,August 2 1956,14944.53,112287,18°20N 64°44W / 18.33°N 64.73°W / 18.33; -64.73 
+Voyageurs,Minnesota,January 8 1971,218200.15,239656,48°30N 92°53W / 48.50°N 92.88°W / 48.50; -92.88 
+Wind Cave,South Dakota,January 9 1903,33970.84,656397,43°34N 103°29W / 43.57°N 103.48°W / 43.57; -103.48 
+Wrangell–St. Elias,Alaska,December 2 1980,8323146.48,79450,61°00N 142°00W / 61.00°N 142.00°W / 61.00; -142.00 (Wrangell – St. Elias)
+Yellowstone,Wyoming Montana Idaho,March 1 1872,2219790.71,4115000,44°36N 110°30W / 44.60°N 110.50°W / 44.60; -110.50 
+Yosemite,California,October 1 1890,761747.50,4009436,37°50N 119°30W / 37.83°N 119.50°W / 37.83; -119.50 
+Zion,Utah,November 19 1919,147242.66,4320033,37°18N 113°03W / 37.30°N 113.05°W / 37.30; -113.05 
