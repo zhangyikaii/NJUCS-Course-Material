@@ -18,7 +18,7 @@
 | ------------------------------------------------------------ | ----------- |
 | [机器学习导论](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0(Machine%20Learning)) | Spring 2020 |
 | [模式识别](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB(Pattern%20Recognition)) | Spring 2020 |
-| [信息论基础](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98(Data%20Mining)) | Fall 2020 |
+| [信息论基础](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%9F%BA%E7%A1%80(Elements%20of%20Information%20Theory)) | Fall 2020 |
 | [数据挖掘](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98(Data%20Mining)) | Spring 2019 |
 | [概率论与数理统计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1(Probability%20and%20Mathematical%20Statistics)) | Spring 2020 |
 | [高级程序设计](https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/tree/master/%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1(Advanced%20Programing)) | Fall 2019   |
