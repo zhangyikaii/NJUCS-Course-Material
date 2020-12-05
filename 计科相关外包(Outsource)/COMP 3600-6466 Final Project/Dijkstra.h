@@ -5,8 +5,11 @@ public:
 	Dijkstra() { }
 
 	void print() {
-		For(i, 1, dst.size() - 1)
+		For(i, 1, dst.size() - 1) {
+			if (dst[i] >= 99999)
+				continue;
 			cout << "to: " << i << ", cost: " << dst[i] << " | ";
+		}
 		cout << endl << endl;
 	}
 	void dijkstra(const Graph &g, int s) {

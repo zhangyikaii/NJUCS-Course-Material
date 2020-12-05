@@ -50,6 +50,8 @@ public:
 	void print() {
 		cout << "After heap sort, the path from the source point to the destination results in: (id, cost format)" << endl;
 		for (auto i : nodeVec) {
+			if (i.cost >= 99999)
+				continue;
 			cout << "to: " << i.id << ", cost: " << i.cost << " | ";
 		}
 
