@@ -49,4 +49,4 @@ For English version, please refer to [README-en.md](README-en.md).
 
 本项目建立的初衷是为了方便朋友们更好地学习, **严禁用于任何商业用途!**
 
-如果您认为本仓库的一些文件侵犯了您的权益或者有些地方不妥, 请 [向我发送邮件](mailto:zykhelloha@gmail.com). 我将会从仓库中彻底清除它们.
+如果您认为本仓库的一些文件侵犯了您的权益或者有些地方不妥, 请 [向我发送邮件](mailto:zykycy@gmail.com). 我将会从仓库中彻底清除它们.
