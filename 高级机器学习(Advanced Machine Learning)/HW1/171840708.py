@@ -133,7 +133,6 @@ def load_data():
     test_y = np.loadtxt('test_y.csv', delimiter=',').astype(np.int)
     return label_X, label_y, unlabel_X, unlabel_y, test_X, test_y
 
-
 def normalized(a, axis=-1, order=2):
     l2 = np.atleast_1d(np.linalg.norm(a, order, axis))
     l2[l2==0] = 1
