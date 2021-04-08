@@ -1,0 +1,6 @@
+'over-or-under-correct', (0, 70)
+'make-adder-correct', (512, 70)
+'filter-lst-correct', (1024, 70)
+'no-repeats-correct', (1536, 70)
+'substitute-correct', (2048, 70)
+'sub_all-correct', (2560, 70)

@@ -1,0 +1,25 @@
+{
+    "name": "Lab 09",
+    "endpoint": "cal/cs61a/sp20/lab11",
+    "src": [
+        "lab09.sql"
+    ],
+    "tests": {
+        "lab*.py": "doctest",
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "lets-count",
+        "smallest-int",
+        "matchmaker",
+        "smallest-int-having"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Homework 7",
+    "endpoint": "cal/cs61a/sp20/hw07",
+    "src": [
+        "hw07.scm"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "derive-sum",
+        "derive-product",
+        "make-exp",
+        "derive-exp"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "unlock",
+        "backup"
+    ]
+}
