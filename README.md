@@ -44,7 +44,7 @@ For English version, please refer to [README-en.md](README-en.md).
 
 我们非常欢迎大家任何形式的贡献! PR(Pull Request)、Issue、作业、实验、选课/考试攻略, 非常欢迎!
 
-**欢迎贡献! 欢迎贡献! 欢迎贡献! **
+**欢迎贡献! 欢迎贡献! 欢迎贡献!**
 
 ### 指引:
 
