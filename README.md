@@ -1,4 +1,7 @@
 # 南京大学 计算机系 NJU-CS 课程分享计划
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![](https://img.shields.io/github/repo-size/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/repo-size/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg) [![](https://img.shields.io/github/stars/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/stars/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg) [![](https://img.shields.io/github/forks/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)](https://img.shields.io/github/forks/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang.svg)
 
@@ -82,6 +85,19 @@ For English version, please refer to [README-en.md](README-en.md).
 ## Contributors
 
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://zhangyk.top"><img src="https://avatars.githubusercontent.com/u/46623714?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kaiaicy</b></sub></a><br /><a href="https://github.com/ZhangYikaii/NJUCS-Course-Material-from-YikaiZhang/commits?author=ZhangYikaii" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 &nbsp;
 
