@@ -1,0 +1,3 @@
+'name_eval-correct', (0, 70)
+'callexpr-eval-correct', (512, 70)
+'lambda-apply-correct', (1024, 70)

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128403415-1"></script>-->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-128403415-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>Scheme-o-matic</title>
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/starter-template.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">61A Scheme</a>
+
+    <ul class="nav navbar-expand mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="new-btn">New</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="open-btn">Open</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="settings-btn">Settings</a>
+        </li>
+    </ul>
+    <form class="documentation-form form-inline my-2 my-lg-0">
+        <input id="documentation-search" class="form-control mr-sm-2" type="search" aria-label="Search"
+               placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Search documentation</button>
+    </form>
+</nav>
+<div id="body" class="container-fluid">
+</div>
+
+<div class="modal fade" id="fileChooserModal" tabindex="-1" role="dialog" aria-labelledby="fileChooserModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="fileChooserModalLabel">Open file</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="file-list" class="table table-hover">
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="loadingModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="fileChooserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loadingModalLabel">Loading...</h5>
+            </div>
+            <div class="modal-body">
+                <p>
+                    A long-running operation is currently in progress.
+                </p>
+                <p>
+                    If the editor isn't responding, open the terminal that you used to start the IDE
+                    (where you ran <code>python editor</code>) and stop the process by pressing <kbd>Ctrl</kbd> +
+                    <kbd>C</kbd>.
+                </p>
+                <p>
+                    Run <code>python editor</code> again, then refresh this page.
+                </p>
+                <p>
+                    If this window keeps appearing while using the interface, try closing some files (particularly if you've just run a program for a very long time!).
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="terminate_btn" data-toggle="tooltip"
+                            title="Terminate the current task."
+                            class="btn btn-danger">Terminate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="documentationModal" tabindex="-1" role="dialog"
+     aria-labelledby="fileChooserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="documentationModalLabel">Documentation</h5>
+            </div>
+            <div class="modal-body">
+                <form class="documentation-form form my-2 my-lg-0" autocomplete="off">
+                    <input id="documentation-search-modal" class="form-control mr-sm-2" type="search"
+                           aria-label="Search" placeholder="Search">
+                </form>
+                <br>
+                <ul class="list-group" id="documentation-body">
+                  Fail
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog"
+     aria-labelledby="fileChooserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" checked class="custom-control-input" id="hideReturnFramesCheckbox">
+                      <label class="custom-control-label" for="hideReturnFramesCheckbox">
+                          Hide frames after return. Note that frames that continue to be referenced from closures <strong> will also be hidden. </strong>
+                      </label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="javastyleCheckbox">
+                      <label class="custom-control-label" for="javastyleCheckbox">
+                          Enable Java-style formatting, where close parens appear on their own line, rather than being grouped with the previous line
+                      </label>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="tailVizCheckbox">
+                      <label class="custom-control-label" for="tailVizCheckbox">
+                          Visualize tail recursion explicitly in environment diagrams and the debugger, rather than hiding it. Note that you will have to rerun your code after modifying this setting.
+                      </label>
+                    </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newFileModal" tabindex="-1" role="dialog"
+     aria-labelledby="fileChooserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newFileModalLabel">New File</h5>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="fileNameInput" placeholder="New file name">
+                  <div class="input-group-append">
+                    <span class="input-group-text">.scm</span>
+                  </div>
+                </div>
+                <div class="alert alert-danger" role="alert" id="file_already_exists">
+                  Error: File already exists.
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="newFileButton">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="disconnectedModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+     aria-labelledby="disconnectedModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="disconnectedModalLabel">Process Disconnected</h5>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Warning! The <code>editor</code> process is no longer responding to queries from the front end. <b>You have likely stopped the process in the terminal.</b>
+                <p>
+                    Run <code>python editor -nb</code> in a terminal, then refresh / reconnect.
+                </p>
+                <p>
+                    Remember to run <code>python ok</code> (to unlock or submit tests) in a <b>separate</b> terminal window, so that you don't have to stop the editor process.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="reconnect-button" data-toggle="tooltip"
+                            title="Reconnect to the Scheme process."
+                            class="btn btn-primary"
+                            data-dismiss="modal">Reconnect</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formatFailModal" tabindex="-1" role="dialog"
+     aria-labelledby="formatFailModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formatFailModalLabel">Auto-formatting Failed!</h5>
+            </div>
+            <div class="modal-body">
+                <p>
+                    The auto-formatter was unable to parse your code.
+                <p>
+                    Verify that all your parentheses are matched, and that you do not have a prefix (like <code>'</code> or <code>,</code>) unattached to an expression.
+                </p>
+                <p>
+                    If you're sure your code is correct, please let a member of course staff know, or report a bug to the maintainer of this tool.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-toggle="tooltip"
+                            title="Dismiss modal"
+                            class="btn btn-secondary"
+                            data-dismiss="modal">Dismiss</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/jquery.js"></script>
+<script src="/svg.js"></script>
+<script src="/svg-pan-zoom.js"></script>
+<script type="text/javascript" src="/goldenlayout.js"></script>
+<link type="text/css" rel="stylesheet" href="/goldenlayout-base.css"/>
+<link type="text/css" rel="stylesheet" href="/goldenlayout-light-theme.css"/>
+<script src="/popper.min.js"></script>
+<script src="/bootstrap.min.js"></script>
+<script src="ace/src-min-noconflict/ace.js"></script>
+<script src="ace/src-min-noconflict/ext-language_tools.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<script>
+    start_data = <START_DATA>;
+</script>
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>

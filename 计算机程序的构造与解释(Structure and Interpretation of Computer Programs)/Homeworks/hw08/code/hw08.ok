@@ -1,0 +1,23 @@
+{
+    "name": "Homework 8",
+    "endpoint": "",
+    "src": [
+        "hw08.scm"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "list-comp",
+        "mult3",
+        "rle"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "unlock",
+        "backup"
+    ]
+}

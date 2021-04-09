@@ -1,0 +1,245 @@
+<Packages>
+    <ApplicationName>SQLiteStudio</ApplicationName>
+    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <Package>
+        <Name>io.qt</Name>
+        <Title>Qt</Title>
+        <Description>Qt framework</Description>
+        <Version>5.10.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>30131871</Size>
+        <ForcedInstallation>true</ForcedInstallation>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio</Name>
+        <Title>SQLiteStudio</Title>
+        <Description>SQLiteStudio core application</Description>
+        <Version>3.2.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>9286412</Size>
+        <Dependencies>io.qt</Dependencies>
+        <ForcedInstallation>true</ForcedInstallation>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins</Name>
+        <Title>SQLiteStudio plugins</Title>
+        <Description>Optional plugins for SQLiteStudio.</Description>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>0</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.configmigration</Name>
+        <Title>Configuration migration plugin</Title>
+        <Description>Plugin for migrating old SQLiteStudio 2.x.x configuration to current version.</Description>
+        <Version>1.0.3</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>125480</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.csvexport</Name>
+        <Title>CSV Export plugin</Title>
+        <Description>Plugin for exporting into CSV format.</Description>
+        <Version>1.0.5</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>52264</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.csvimport</Name>
+        <Title>CSV Import plugin</Title>
+        <Description>Plugin for importing data from CSV format</Description>
+        <Version>1.0.5</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>59944</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.dbandroid</Name>
+        <Title>Android plugin</Title>
+        <Description>Plugin for accessing Android SQLite databases directly on the Android device from your computer.</Description>
+        <Version>1.2.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>286760</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.dbsqlite2</Name>
+        <Title>SQLite 2 plugin</Title>
+        <Description>Plugin for SQLite 2 databases</Description>
+        <Version>1.0.6</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>481320</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.dbsqlitecipher</Name>
+        <Title>SQLCipher plugin</Title>
+        <Description>Plugin for SQLCipher databases</Description>
+        <Version>1.1.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>782888</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.dbsqlitesystemdata</Name>
+        <Title>System.Data.SQLite plugin</Title>
+        <Description>Plugin for System.Data.SQLite (ADO.NET) databases</Description>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>941608</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.dbsqlitewx</Name>
+        <Title>WxSQLite plugin</Title>
+        <Description>Plugin for WxSQLite3 databases</Description>
+        <Version>1.0.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>1011752</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.htmlexport</Name>
+        <Title>HTML Export plugin</Title>
+        <Description>Plugin for exporting into HTML format.</Description>
+        <Version>1.0.2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>105512</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.jsonexport</Name>
+        <Title>JSON Export plugin</Title>
+        <Description>Plugin for exporting into JSON format.</Description>
+        <Version>1.0.2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>74280</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.multieditorimage</Name>
+        <Title>Image editor/viewer plugin</Title>
+        <Description>Plugin that introduces image editor/viewer tab for cell editor and form view.</Description>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>48168</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.pdfexport</Name>
+        <Title>PDF Export plugin</Title>
+        <Description>Plugin for exporting into PDF format.</Description>
+        <Version>1.0.3</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>133160</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.printing</Name>
+        <Title>Printing plugin</Title>
+        <Description>Plugin for printing schema, data and queries out of SQLiteStudio.</Description>
+        <Version>1.0.3</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>60456</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins,pl.com.salsoft.sqlitestudio.plugins.pdfexport</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.regexpimport</Name>
+        <Title>RegExp Import plugin</Title>
+        <Description>Plugin for importing data from any files using Regular Expressions.</Description>
+        <Version>1.0.2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>62504</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.scriptingtcl</Name>
+        <Title>Tcl plugin</Title>
+        <Description>Plugin for implementing functions in SQLiteStudio with Tcl scripts.</Description>
+        <Version>1.0.3</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>1323048</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.sqlenterpriseformatter</Name>
+        <Title>SQL enterprise formatter plugin</Title>
+        <Description>Plugin for advanced, highly customizable SQL formatting.</Description>
+        <Version>1.0.6</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>251432</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.sqlexport</Name>
+        <Title>SQL export plugin</Title>
+        <Description>Plugin for exporting schema and data into SQL/DDL format.</Description>
+        <Version>1.1.2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>77352</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.sqlformattersimple</Name>
+        <Title>SQL simple formatter plugin</Title>
+        <Description>Plugin for limited SQL formatting - only keywords and some of whitespaces. For better experience the enterprise SQL formatter plugin is recommended.</Description>
+        <Version>1.0.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>40488</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>pl.com.salsoft.sqlitestudio.plugins.xmlexport</Name>
+        <Title>XML Export plugin</Title>
+        <Description>Plugin for exporting schema and data to XML format.</Description>
+        <Version>1.0.2</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2018-07-27</InstallDate>
+        <Size>92200</Size>
+        <Dependencies>pl.com.salsoft.sqlitestudio.plugins</Dependencies>
+        <Checkable>true</Checkable>
+    </Package>
+</Packages>

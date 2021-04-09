@@ -1,0 +1,37 @@
+{
+    "name": "Project 3: Ants Vs. SomeBees",
+    "endpoint": "",
+    "src": [
+        "ants.py"
+    ],
+    "tests": {
+        "tests/0[0-9].py": "ok_test",
+        "tests/1[0-3].py": "ok_test",
+        "tests/OPTIONAL.py": "ok_test"
+    },
+    "default_tests": [
+        "00",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "OPTIONAL"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "collaborate"
+    ]
+}

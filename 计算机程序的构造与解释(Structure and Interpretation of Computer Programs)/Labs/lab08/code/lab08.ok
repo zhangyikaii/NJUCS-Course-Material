@@ -1,0 +1,23 @@
+{
+    "name": "Lab 10",
+    "endpoint": "cal/cs61a/sp20/lab10",
+    "src": [
+        "expr.py"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "default_tests": [
+        "name_eval",
+        "callexpr_eval",
+        "lambda_apply"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

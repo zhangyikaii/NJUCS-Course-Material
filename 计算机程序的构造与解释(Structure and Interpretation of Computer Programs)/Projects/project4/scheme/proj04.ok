@@ -1,0 +1,43 @@
+{
+    "name": "Project 4: Scheme Interpreter",
+    "endpoint": "cal/cs61a/sp20/proj04",
+    "src": [
+        "scheme_reader.py",
+        "scheme.py",
+        "questions.scm",
+        "tests.scm"
+    ],
+    "tests": {
+        "tests/01.py": "ok_test",
+        "tests/02.py": "ok_test",
+        "tests/eval_apply.py": "ok_test",
+        "tests/03.py": "ok_test",
+        "tests/04.py": "ok_test",
+        "tests/05.py": "ok_test",
+        "tests/06.py": "ok_test",
+        "tests/07.py": "ok_test",
+        "tests/08.py": "ok_test",
+        "tests/09.py": "ok_test",
+        "tests/10.py": "ok_test",
+        "tests/11.py": "ok_test",
+        "tests/12.py": "ok_test",
+        "tests/13.py": "ok_test",
+        "tests/14.py": "ok_test",
+        "tests/15.py": "ok_test",
+        "tests/16.py": "ok_test",
+        "tests/17.py": "ok_test",
+        "tests/18.py": "ok_test",
+        "tests/19.py": "ok_test",
+        "tests/20.py": "ok_test",
+        "tests.scm": "scheme_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "collaborate",
+        "backup"
+    ]
+}
