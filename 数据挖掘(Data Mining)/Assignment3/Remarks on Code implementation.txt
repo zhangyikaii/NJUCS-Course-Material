@@ -1,0 +1,6 @@
+You may choose to:
+
+1) implement the compared algorithm by your own (encouraged and additional point reward would be given. In this case, source codes should be submitted for check)
+2) use existing codes from packages on the web (save efforts and time). Please indicate this in your report), in this case . There are a number online resources that these algoirhtms. E.g., the WEKA package introduced in our reference book.
+
+* I. H. Witten, E. Frank. Data Mining: Practical Machine Learning Tools and Techniques, 2nd edition. Morgan Kaufmann Publishers, 2005

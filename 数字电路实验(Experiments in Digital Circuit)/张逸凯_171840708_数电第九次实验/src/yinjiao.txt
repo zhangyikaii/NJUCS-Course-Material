@@ -1,0 +1,52 @@
+To, Location
+
+clk, PIN_AF14
+clrn, PIN_AC29
+ps2_clk, PIN_AB25
+ps2_data, PIN_AA25
+segh0[6], PIN_AH22
+segh0[5], PIN_AF23
+segh0[4], PIN_AG23
+segh0[3], PIN_AE23
+segh0[2], PIN_AE22
+segh0[1], PIN_AG22
+segh0[0], PIN_AD21
+
+segh1[6], PIN_AB21
+segh1[5], PIN_AF19
+segh1[4], PIN_AE19
+segh1[3], PIN_AG20
+segh1[2], PIN_AF20
+segh1[1], PIN_AG21
+segh1[0], PIN_AF21
+
+segm1[6], PIN_AD20
+segm1[5], PIN_AA19
+segm1[4], PIN_AC20
+segm1[3], PIN_AA20
+segm1[2], PIN_AD19
+segm1[1], PIN_W19
+segm1[0], PIN_Y19
+
+segm0[6], PIN_W16
+segm0[5], PIN_AF18
+segm0[4], PIN_Y18
+segm0[3], PIN_Y17
+segm0[2], PIN_AA18
+segm0[1], PIN_AB17
+segm0[0], PIN_AA21
+
+seg0[6], PIN_AH18
+seg0[5], PIN_AG18
+seg0[4], PIN_AH17
+seg0[3], PIN_AG16
+seg0[2], PIN_AG17
+seg0[1], PIN_V18
+seg0[0], PIN_W17
+seg1[6], PIN_V17
+seg1[5], PIN_AE17
+seg1[4], PIN_AE18
+seg1[3], PIN_AD17
+seg1[2], PIN_AE16
+seg1[1], PIN_V16
+seg1[0], PIN_AF16

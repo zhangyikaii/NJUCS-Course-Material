@@ -1,10 +1,4 @@
-## 南京大学 数电实验 2019春季课程 实验报告 代码
+## 数字电路实验
 
-
-
-*感谢 Hongqiu Wu, Xiangrong Bin 同学!*
-
-
-
-:night_with_stars:
+专业核心实验课.
 
